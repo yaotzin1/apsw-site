@@ -66,7 +66,7 @@ open http://localhost:8088/
 ### Option A: Cyber_Folks / cPanel (Shared Hosting)
 1. Upload all workspace files directly to `public_html/`.
 2. Ensure `.logs/` directory has write permissions (`chmod 770 .logs`).
-3. Configure PHP version to **PHP 8.2 or PHP 8.3**.
+3. Configure PHP version to **PHP 8.2, 8.3, 8.4 or 8.5** in cPanel / Cyber_Folks.
 4. Test contact form submission at `https://apsw.pl/#contact`.
 
 ### Option B: Hetzner Cloud / Docker PaaS (Coolify / Portainer)
