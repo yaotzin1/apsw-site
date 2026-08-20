@@ -1,0 +1,10 @@
+.git
+.gitignore
+.dockerignore
+branding_raw/
+.logs/
+*.log
+.system_generated
+pureCV.tex
+projectlist.tex
+LICENSE

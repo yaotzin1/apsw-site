@@ -1,0 +1,385 @@
+\documentclass[11pt,a4paper]{scrartcl}
+
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{tabularx} % Used for perfect paragraph tracking and alignment
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2cm, right=2cm}
+
+% Professional Color Palette
+\definecolor{primarytheme}{HTML}{1B4332} % Deep Elegant Green
+\definecolor{darktext}{HTML}{2D3142}     % Soft Charcoal Text
+\definecolor{lightgray}{HTML}{F4F4F6}    % Light Border/Background
+\definecolor{accentgreen}{HTML}{40916C}  % Accent Elegant Green
+
+\setkomafont{section}{\mysection}
+
+% Custom Project Block Command (Completely stabilized sizing and macros)
+\newcommand{\projectentry}[9]{%
+	\noindent
+	\begin{minipage}{\linewidth}
+		\vspace*{10pt}
+		\section*{#1}
+		\vspace*{-8pt}
+		\nopagebreak
+		\begingroup
+		\small
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X @{}}
+			\textbf{Timeline:} & #2 \\
+			\textbf{Company / Domain:} & #3 \\
+			\textbf{Role / Position:} & \textbf{\color{accentgreen}#4} \\
+			\textbf{Core Tech Stack:} & #5 \\
+			\textbf{Tools \& Frameworks:} & #6 \\
+			\textbf{Team Structure:} & #8%
+			\if\relax\detokenize{#9}\relax\else \quad | \quad \textbf{URL:} \url{#9}\fi \\
+		\end{tabularx}
+		\endgroup
+		\par\vspace*{6pt}
+		\noindent\textbf{Project Overview:} {\small\color{darktext}#7}
+		\vspace*{12pt}
+	\end{minipage}
+	\nopagebreak
+}
+	
+	\makeatletter
+	\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+	\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+	\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+	\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+	\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+	\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+	\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+	\makeatother
+	
+	% Elegant Section Heading
+	\newcommand{\mysection}[1]{%
+		\Large\sf\bf%
+		\setlength{\fboxsep}{0cm}%
+		\colorbox{primarytheme}{%
+			\begin{minipage}{\linewidth}%
+				\color{white}%
+				\vspace*{6pt}%
+				\hspace*{8pt}%
+				#1%
+				\vspace*{6pt}%
+			\end{minipage}%
+		}%
+	}
+	
+	\begin{document}
+		
+		\projectentry{Bank Financial Application}
+		{17.11.2022 — Present}
+		{BCF / Zielona Góra / Institutional Finance \& Banking Architecture}
+		{Technical Lead (Java) \& Solution Architect}
+		{Java 11/17, Spring Boot, Azure SQL DB, BICEP}
+		{Azure Pipelines (YAML), DataBricks, ADF, Karate Test Suite, Cucumber, IntelliJ IDEA}
+		{Architected and deployed enterprise cloud-native transaction management utilities for ABN AMRO Bank. Operating sequentially within the CRCA and CRAS team modules, drove infrastructural stabilization, continuous deployment engineering, and service decoupling frameworks. Managed target assignment pathways for the domestic development squad, translating complex regulatory specifications into high-performance features. Orchestrated platform migration from classic pipelines into declarative YAML-driven infrastructure (IaaS).}
+		{5 Devs / 1 Designer / 1 Analyst / 2 Testers}
+		{}
+		
+		\projectentry{Company Management Application}
+		{05.08.2021 — 01.10.2022}
+		{BCF / Zielona Góra / Enterprise Transaction Software}
+		{Senior Front-End Software Developer}
+		{ReactJS, JavaScript (ES6+), Azure Cloud Platform}
+		{Splunk Core, Aspose Middleware, IntelliJ IDEA}
+		{Engineered front-end layers for PwC’s high-availability corporate analytics platform, Junction. Served inside a cross-functional, globally distributed group handling multi-million dollar data analytics strategies and deal pipelines. Designed responsive data-visualization matrices and interactive transaction layout models, maintaining a strict zero-downtime development and hot-fix standard across operational time zones.}
+		{25 Devs / 4 Designers / 5 Analysts / 10 Testers}
+		{https://www.pwc.com/us/en/services/consulting/deals/ai-powered-deals/junction.html}
+		
+		\projectentry{New Version of Recruitment Portal}
+		{01.08.2019 — 01.08.2021}
+		{BCF / Zielona Góra / Programmatic Recruitment Systems}
+		{Technical Lead — Front-End Operations}
+		{ReactJS, JavaScript, Node.js, Azure Architecture}
+		{VS Code, IntelliJ IDEA}
+		{Headed frontend product delivery for the global programmatic recruitment platform We Select. Supervised an international engineering workforce to transition a legacy platform into a high-performance workspace combining automated social advertisement engines with modular Applicant Tracking Systems (ATS). Designed core rendering schemes, set up front-to-back REST interfaces, and established strict linting and UI verification patterns.}
+		{9 Devs / 1 Designer / 2 Analysts / 1 Tester}
+		{https://www.weselect.com/}
+		
+		\projectentry{Software Refactor for Probe Classification Machine}
+		{01.06.2019 — 31.07.2019}
+		{BCF / Zielona Góra / Biotech Laboratory Instrumentation}
+		{Systems Architect / Senior Developer}
+		{C / C++}
+		{draw.io, UML Modelling Frameworks}
+		{Formulated the architectural redesign and codebase decomposition blueprint for legacy telemetry loops driving Roche COBAS medical analysis machinery. Documented hidden software states and asynchronous sorting logic errors, refactoring device control routines into cleanly isolated, decoupled operational modules to support rigorous biomedical software compliance.}
+		{0 Devs / 1 Designer / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{Communication Application for Doctors}
+		{01.06.2019 — 31.07.2019}
+		{BCF / Zielona Góra / Telehealth Ecosystems}
+		{Full-Stack Software Engineer}
+		{Angular, TypeScript, Python}
+		{Flask Framework, Ionic Platform v3.0, Webpack}
+		{Developed secure web and hybrid communication portals enabling healthcare personnel to execute remote diagnostics, review difficult cases, and exchange anonymized patient metrics safely. Programmed REST endpoints in Flask, customized data layers, and delivered real-time chat components.}
+		{2 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{https://www.medixus.co}
+		
+		\projectentry{Teaching Platform}
+		{01.05.2019 — 2020}
+		{APSW / Zielona Góra / Educational Software Solutions}
+		{Core Architect / Full-Stack Developer}
+		{Java, TypeScript}
+		{Spring Boot, WebFlux (Reactive), Angular, Docker, Microservices}
+		{Designed a high-throughput reactive platform supporting interactive remote education modules running directly through user browsers. Built non-blocking backend components with Spring WebFlux and managed deployment layers using Docker containers.}
+		{2 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{Dedicated ERP}
+		{01.05.2019 — Present}
+		{APSW / Zielona Góra / Scaled Business Operations Systems}
+		{Enterprise Systems Architect}
+		{PHP 5/7, Symfony 6, JavaScript}
+		{MariaDB, PHPUnit, Docker Containerization, Git Enterprise}
+		{Drove modernization and capability extensions for a sprawling bespoke ERP ecosystem. Broke down monolithic data processing logic into agile microservices, designed structural schemas, and implemented a central Single Sign-On (SSO) identity federation service across all auxiliary business software platforms.}
+		{3 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{EMAP2 Enterprise Asset Management \& Maintenance System}
+		{01.11.2018 — Present}
+		{APSW / Zielona Góra / Heavy Industry Engineering \& Logistics}
+		{Lead Software Architect \& Principal Developer}
+		{PHP, Java, JavaScript, Relational SQL Databases}
+		{Symfony Core, Spring Engine, Multi-Tenant Layers, Automated Notification Pipelines}
+		{Architected and managed EMAP2, an enterprise asset tracking and preventative maintenance engine utilized by complex, distributed industrial units (Organizational Units / JO like drilling rigs, fields, and depots). Built structural asset registry paradigms where machinery components are represented via recursive tree models mapping multi-unit telemetry indices (operational days, metric meter counts drilled, engine runtime, vehicle mileage, and fuel consumption). Constructed complex inspection planning loops with automatic color-coded threshold notification logic, as well as an advanced multi-tier ticketing hub tracking incident registration, machinery locks, field supervisor emails, and automated double-tracking overrides.}
+		{3 Devs / 1 Designer / 1 Analyst / 1 Tester}
+		{}
+		
+		\projectentry{Fleet Manager}
+		{01.09.2018 — 30.04.2019}
+		{GlobalLogic / Zielona Góra, Wrocław / Transport Logistics Platforms}
+		{Backend Software Architect}
+		{Java 8, TypeScript}
+		{Spring Boot 2.0.4, Angular 7, MongoDB, Amazon Web Services (AWS), JUnit 5}
+		{Oversaw architectural migration for an international market leader in fleet management solutions, extracting a massive legacy system into microservices. Created data persistence pipelines using MongoDB and orchestrated service instances inside AWS clouds.}
+		{9 Devs / 2 Designers / 0 Analysts / 1 Tester}
+		{}
+		
+		\projectentry{License Manager}
+		{01.06.2018 — 01.03.2019}
+		{GlobalLogic / Zielona Góra, Wrocław / Corporate Resource Auditing}
+		{Technical Lead / Architect}
+		{Java 8, TypeScript}
+		{Spring Boot 2.0.4, Angular 6, Oracle DB, LDAP Security, Kerberos Identity, JUnit 5}
+		{Engineered an enterprise compliance audit tracker helping corporate networks track distributed software usage. Constructed full-text retrieval query modules, built secure enterprise directory integration filters via LDAP/Kerberos, and achieved 85\% automated test coverage metrics.}
+		{2 Devs / 1 Designer / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{Device Manager}
+		{01.01.2017 — 31.05.2018}
+		{GlobalLogic / Zielona Góra, Wrocław / Distributed Point of Sale Systems}
+		{Technical Lead}
+		{JavaScript}
+		{Node.js, React, CouchDB, VS Code}
+		{Managed the product migration converting legacy point-of-sale desktop client platforms into web-native services. Configured non-relational storage synchronization profiles utilizing CouchDB data instances.}
+		{8 Devs / 1 Designer / 0 Analysts / 1 Tester}
+		{}
+		
+		\projectentry{Universal Management System}
+		{01.01.2016 — 31.12.2016}
+		{GlobalLogic / Zielona Góra, Wrocław / Operations Software}
+		{Technical Lead}
+		{PHP, Microsoft SQL Server (MSSQL)}
+		{Symfony Components, Composer, NetBeans IDE}
+		{Supervised the development and upkeep of an administration tracking tool mapping team performance and task logs for internal Project Managers.}
+		{3 Devs / 0 Designers / 0 Analysts / 2 Testers}
+		{}
+		
+		\projectentry{Working Hours Validator}
+		{01.12.2015 — 31.12.2015}
+		{REC Sp. z o.o. / Zielona Góra, Wrocław / Financial Utilities}
+		{Software Engineer}
+		{Java 8}
+		{JavaFX, Eclipse IDE}
+		{Constructed a standalone cross-verification client checking real-time contractor time logs against raw time-tracking database exports to detect reporting discrepancies.}
+		{3 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{Auction Mechanism}
+		{01.08.2015 — 30.11.2015}
+		{REC Sp. z o.o. / Zielona Góra, Wrocław / E-Commerce Systems}
+		{Software Engineer}
+		{Node.js, PHP}
+		{AngularJS, Bootstrap, MongoDB, Atom, JIRA, Git}
+		{Designed the full-stack layout for a fine arts auction platform. Created transactional event modules, led code quality assessments, and optimized relational data synchronization schemes.}
+		{3 Devs / 0 Designers / 0 Analysts / 1 Tester}
+		{http://aukcjeisztuka.pl/}
+		
+		\projectentry{LD Reports}
+		{01.08.2014 — 01.06.2015}
+		{REC Sp. z o.o. / Zielona Góra / Telephony Platforms}
+		{Software Engineer}
+		{PHP 5.4}
+		{LeadDesk APIs, Bootstrap, NetBeans, JIRA}
+		{Programmed data aggregation frameworks matching telemetry pipelines from LeadDesk communication engines into standardized management charts.}
+		{6 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{Sport Portals}
+		{28.10.2013 — 07.02.2014}
+		{REC Sp. z o.o. / Zielona Góra, Munich / Content Management Engine}
+		{Software Engineer}
+		{PHP}
+		{Pimcore CMS, Zend Framework 2, PHPUnit, jQuery, NetBeans}
+		{Programmed REST data exchange connectors linking large sports portals. Developed content structures within Pimcore and managed unit test coverages via PHPUnit.}
+		{9 Devs / 1 Designer / 1 Analyst / 3 Testers}
+		{http://www.leaddesk.com/pl/}
+		
+		\projectentry{Group Buying}
+		{01.09.2013 — 13.10.2013}
+		{REC Sp. z o.o. / Zielona Góra / E-Commerce Portals}
+		{Software Engineer}
+		{PHP}
+		{WordPress, jQuery, CSS3, HTML5, NetBeans}
+		{Maintained Earthguy, a regional localized consumer coupon ecosystem. Adapted modern visual wireframes into legacy templates using responsive web methodologies.}
+		{1 Devs / 0 Designers / 0 Analysts / 1 Tester}
+		{}
+		
+		\projectentry{Aquapark WWW Enhancement}
+		{03.06.2013 — 30.06.2013}
+		{REC Sp. z o.o. / Zielona Góra, Wrocław / Public Facility CMS}
+		{Software Engineer}
+		{PHP 5.3.3}
+		{Pimcore 1.4.8, jQuery, SVN Version Control, NetBeans}
+		{Extended core content administration modules to automate the generation and regulatory deployment of independent public information BIP sheets.}
+		{1 Devs / 0 Designers / 0 Analysts / 1 Tester}
+		{}
+		
+		\projectentry{Evaluation}
+		{04.03.2013 — 31.07.2013}
+		{REC Sp. z o.o. / Wrocław / Public Administration Infrastructure}
+		{Software Engineer / System Designer}
+		{Java}
+		{Spring, JSF2, JPA, Liquibase, Mercurial, Google Guava, Eclipse}
+		{Contributed to a data compilation engine utilized by European Union infrastructure bodies. Modularized legacy components into decoupled modules and designed custom reusable JSF2 composite interface pieces.}
+		{10 Devs / 1 Designer / 1 Analyst / 2 Testers}
+		{}
+		
+		\projectentry{Recacademy}
+		{20.02.2013 — 20.02.2013}
+		{REC global / Zielona Góra / Internal Automation Tools}
+		{Technical Lead / Software Designer}
+		{PHP}
+		{Laravel, Phing Build System, NetBeans 7.3}
+		{Constructed an internal scheduling and training pipeline automation client meeting operational requirements for the REC Academy division.}
+		{2 Devs / 1 Designer / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{Aquapark WWW}
+		{16.10.2012 — 28.01.2013}
+		{REC Sp. z o.o. / Zielona Góra / Public Enterprise Solutions}
+		{Technical Lead / Software Designer}
+		{PHP}
+		{Pimcore 1.4.8, Zend Framework, Zend Server, NetBeans 7.2}
+		{Headed the architecture redesign and delivery cycle of a consumer website. Integrated front-end flows with structural backends powered by a enterprise Zend Server runtime.}
+		{2 Devs / 1 Designer / 0 Analysts / 1 Tester}
+		{}
+		
+		\projectentry{Aquapark Mobile Backend}
+		{01.09.2012 — 16.10.2012}
+		{REC Sp. z o.o. / Zielona Góra / Mobile Infrastructure Backends}
+		{Software Engineer}
+		{PHP}
+		{Pimcore 1.4.6, Zend Framework, Zend Server, PUSH Notification Services}
+		{Architected and delivered low-latency REST endpoints handling data exchanges for smartphone applications, covering mobile media payloads and push alerts.}
+		{2 Devs / 1 Designer / 0 Analysts / 1 Tester}
+		{https://play.google.com/store/apps/details?id=pl.wroc.aquapark}
+		
+		\projectentry{Queue Mechanism}
+		{01.08.2011 — 13.07.2012}
+		{APATOR RECTOR Sp. z o.o. / Zielona Góra / GIS \& Energy Utility Platforms}
+		{System Designer / Technical Leader}
+		{Java, JavaScript}
+		{EJB, BPEL, SOA (JAX-WS), ArcGIS, IBM WebSphere Server, IBM Rational Software Architect}
+		{Engineered an enterprise transaction queuing engine for Energa Operator handling database conflict isolation parameters inside distributed multi-user GIS databases. Designed SOAP integration patterns using WebSphere nodes to sequence heavy data commits efficiently.}
+		{2 Devs / 1 Designer / 1 Analyst / 0 Testers}
+		{www.energa-operator.pl}
+		
+		\projectentry{Webapp Based on STROM}
+		{10.05.2010 — 31.05.2011}
+		{ASTEC Sp. z o.o. / Zielona Góra / Telecom Infrastructure Geospatial Networks}
+		{GSS \& Java Specialist}
+		{Java, Magik, Groovy (Grails)}
+		{Geospatial Server 4.1.1, Smallworld Core 4.2, ExtJS 3.4, PostGIS, GeoJSON, REST}
+		{Ported core desktop STROM GIS operations into web-native modules for an international telecommunications enterprise, mapping network features into high-performance web components.}
+		{4 Devs / 1 Designer / 1 Analyst / 0 Testers}
+		{http://www.nis.ch/produkte#nisStrom}
+		
+		\projectentry{Training Course about GeoSpatial Server 4.1.1}
+		{03.05.2010 — 07.05.2010}
+		{ASTEC Sp. z o.o. / Zielona Góra, Luzern / Corporate Knowledge Transfer}
+		{GSS Specialist / Trainer}
+		{Java, Magik}
+		{GeoSpatial Server 4.1.1, Smallworld Core 4.2, Microsoft Office Suite}
+		{Delivered advanced on-site training workshops covering GeoSpatial Server patterns and custom integration pathways for client infrastructure groups in Switzerland.}
+		{1 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{http://www.nis.ch/}
+		
+		\projectentry{Webservice Client for GE Energy Services}
+		{01.04.2010 — 16.04.2010}
+		{ASTEC Sp. z o.o. / Zielona Góra / Cryptographic Security Operations}
+		{Java Developer}
+		{Java}
+		{JAX-WS, XCA, OpenSSL, Eclipse IDE}
+		{Built specialized secure web-service components implementing explicit Public Key Infrastructure (PKI) certificates, OpenSSL profiles, and custom token profiles.}
+		{1 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{CIOFS-FP Student Management}
+		{25.11.2009 — 16.07.2010}
+		{ASTEC Sp. z o.o. / Zielona Góra / Educational Resource Systems}
+		{Technical Lead / Core Systems Engineer}
+		{Java, JavaScript}
+		{EJB, JBoss SEAM Framework, GWT, REST, jQuery, Mootools}
+		{Executed greenfield construction of a multi-tenant student management system using JBoss SEAM. Configured operational security workflows and rich interface elements using GWT.}
+		{3 Devs / 1 Designer / 0 Analysts / 0 Testers}
+		{http://www.ciofs-fp.org/}
+		
+		\projectentry{Geospatial Server Training Materials}
+		{11.11.2009 — 31.05.2010}
+		{ASTEC sp. z o.o. / Zielona Góra, Cambridge / Technical Systems Support}
+		{Junior Java Developer / Team Coordinator}
+		{Java, JavaScript, XML}
+		{GeoSpatial Server 4.1.1, Smallworld Core 4.2, MyEclipse, REST APIs}
+		{Collaborated with corporate engineering pipelines in Cambridge to build standardized software integration modules and sandbox exercise blueprints for GSS platforms.}
+		{12 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{http://www.gedigitalenergy.com/newsletter/Nov_2010/Product_News/GeoSpatialServer/GeoSpatial_server.htm}
+		
+		\projectentry{Maintenance}
+		{07.07.2007 — 31.10.2008}
+		{ASTEC sp. z o.o. / Zielona Góra / Internal Tools Management}
+		{Junior Java Developer}
+		{PHP, JavaScript, XML}
+		{Joomla!, VIM, Apache HTTP Server, Linux Operations}
+		{Managed codebase refactoring, feature backports, and runtime maintenance for core internal corporate applications alongside commercial client tasks.}
+		{1 Devs / 0 Designers / 0 Analysts / 0 Testers}
+		{http://www.astec.net/}
+		
+		\projectentry{Bugfixing of Intranet Application}
+		{01.04.2008 — 30.06.2008}
+		{ASTEC sp. z o.o. / Zielona Góra, Warsaw / Enterprise Telecom Portal Infrastructure}
+		{Junior Java Developer}
+		{Java, XML, JSP}
+		{Struts Framework, Hibernate ORM, XSLT Middleware, Eclipse}
+		{Remediated architecture regressions and processed operational defect tickets in high-load internal modules deployed by a large telecommunications operator.}
+		{1 Devs / 0 Designers / 2 Analysts / 0 Testers}
+		{}
+		
+		\projectentry{MDT}
+		{01.07.2007 — 30.09.2007}
+		{ASTEC sp. z o.o / Zielona Góra / IDE Systems Development}
+		{Junior Java Developer}
+		{Java}
+		{Eclipse Rich Client Platform (RCP), Component Plugins}
+		{Contributed to ASTEC’s flagship developer workspace system designed to extend native, advanced Eclipse IDE capabilities into legacy Smallworld GIS codebases.}
+		{Up to 10 Devs / 2 Designers / 2 Analysts / 1 Tester}
+		{http://www.mdt.net/}
+		
+	\end{document}

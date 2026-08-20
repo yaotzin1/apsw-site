@@ -1,0 +1,21 @@
+services:
+  apsw-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apsw-site
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    volumes:
+      # Mount current directory for real-time testing & hot-reload
+      - .:/var/www/html
+    environment:
+      - PHP_MEMORY_LIMIT=256M
+      - UPLOAD_MAX_FILESIZE=20M
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

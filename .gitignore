@@ -1,0 +1,18 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE & Editor configurations
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Server Runtime & Logs
+.logs/*.log
+*.log
+
+# Temp files
+*.tmp
+*.bak

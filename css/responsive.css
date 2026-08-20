@@ -1,0 +1,123 @@
+/* ==========================================================================
+   APSW RESPONSIVE STYLES & BREAKPOINTS
+   Mobile-First & Fluid Layout Optimizations
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .spec-kit-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .estimator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architect-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .contact-section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 68px;
+  }
+
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-surface-1);
+    border-bottom: 1px solid var(--border-medium);
+    flex-direction: column;
+    padding: 24px;
+    gap: 18px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-menu.mobile-open {
+    display: flex;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 30px);
+    padding-bottom: 60px;
+  }
+
+  .hero-metrics-bar {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .spec-kit-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agentic-dev-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-header, .comparison-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .col-slop::before {
+    content: 'Standard Prompting: ';
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .col-speckit::before {
+    content: 'Spec-Kit AI: ';
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

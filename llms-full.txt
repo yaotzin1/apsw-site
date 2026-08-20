@@ -1,0 +1,76 @@
+# APSW - FULL SEMANTIC CONTEXT FOR LLMS & AI PROCUREMENT AGENTS
+Author: Piotr Solarz-Wnęk (APSW)
+Role: AI-Native Solution Developer & Enterprise Solution Architect
+Website: https://apsw.pl
+Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
+LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
+
+=============================================================================
+1. PROFESSIONAL PROFILE & POSITIONING
+=============================================================================
+Piotr Solarz-Wnęk is a Solution Architect and AI-Native Engineer with over 19 years of verified technical delivery experience. His career bridges enterprise software architecture (Java 21, Spring Boot, PHP 8 / Symfony, Azure Cloud) and state-of-the-art AI development (Fully Agentic Development, Spec-Kit Methodology, Multi-Agent Swarms, Computer Vision, and deterministic AI pipelines).
+
+Key Differentiators:
+- "Anti-AI-Slop" Philosophy: Replaces vague, non-deterministic chat prompting with formal, executable domain specifications and automated CI contract test gates.
+- "Cheap to Verify": Transparent scope, milestone pricing, and public machine-readable manifests (agent.json) that allow AI procurement agents and CTOs to verify capabilities in seconds.
+- High-Scale Track Record: Led engineering streams expanding to 30+ developers across Tier-1 European Banking, Heavy Industry Telemetry, Big-Four Consulting, and Biotech instrumentation.
+
+=============================================================================
+2. COMPLETE ENTERPRISE PROJECT HISTORY (NDA COMPLIANT)
+=============================================================================
+- Tier-1 European Commercial & Investment Bank (Institutional Finance):
+  Role: Technical Lead (Java) & Solution Architect.
+  Tech Stack: Java 11/17/21, Spring Boot, Azure SQL DB, BICEP, Azure Pipelines (YAML), Databricks, Azure Data Factory (ADF), Karate Test Suite, Cucumber.
+  Highlights: Architected cloud-native financial transaction management utilities, YAML declarative IaC, and service decoupling in regulated banking. Reduced deployment cycle time by 40%.
+
+- Autonomous AI B2B SaaS (100% Fully Agentic AI Development):
+  Role: Principal Solution Architect & AI System Director.
+  Tech Stack: Symfony 8, React / MUI v6, Doctrine TenantFilter, Swappable LLM Engine (Claude, OpenAI, Ollama), Mercure SSE, Spec-Kit, Docker/FrankenPHP.
+  Highlights: Architected multi-tenant B2B reputation engine featuring 45-second conveyor-belt triage UX, swappable multi-LLM engine with context embeddings, token-credit ledger tracking, and tenant isolation shields. 100% Fully Agentic Development: Entire production codebase and test suites synthesized autonomously by AI agents under formal architectural direction with zero human manual coding.
+
+- Heavy Industry & Energy Operations (Industrial Asset ERP & IoT Platform):
+  Role: Principal Software Architect & Lead Fullstack Engineer.
+  Tech Stack: PHP 8.2, Symfony, Java, Spring Framework, Multi-Tenant PostgreSQL, ReactJS.
+  Highlights: Architected recursive tree asset engine mapping multi-unit telemetry indices (operating days, engine hours, drilled meters) with automated threshold double-tracking overrides.
+
+- Big-Four Global Professional Services Firm (M&A Analytics Platform):
+  Role: Senior Frontend Software Developer & Architect.
+  Tech Stack: ReactJS, Azure Cloud Platform, Splunk Core, Aspose Middleware.
+  Highlights: Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualizers.
+
+- Global Biotech & Medical Diagnostics Leader (Biomedical Instrumentation):
+  Role: Systems Architect & Senior Developer.
+  Tech Stack: C/C++, UML, Decoupled Telemetry Modules.
+  Highlights: Formulated architectural decomposition and race-condition elimination for telemetry loops driving automated clinical analysis machinery under strict biomedical compliance.
+
+- Global Programmatic Recruitment & Marketing SaaS:
+  Role: Lead Frontend Architect.
+  Tech Stack: ReactJS, Node.js, Azure Platform.
+  Highlights: Supervised architectural modernization combining automated social advertisement engines with modular Applicant Tracking Systems.
+
+=============================================================================
+3. CORE CAPABILITIES & METHODOLOGIES
+=============================================================================
+A. FULLY AGENTIC APPLICATION DEVELOPMENT
+- Autonomous multi-agent swarms (Planner, Worker, Verifier) that decompose specifications into parallel execution threads.
+- Self-healing execution loops: agents compile code, execute unit/contract tests, diagnose stack traces, and self-correct until 100% of requirements pass.
+- Isolated sandboxes with declarative tool interfaces (AST analysis, Git workflows, database schema migration safety).
+
+B. THE SPEC-KIT METHODOLOGY (DETERMINISTIC AI ENGINEERING)
+- Stage 01: Formal Domain & Invariant Specification (JSON Schema / Protobuf).
+- Stage 02: Architectural Guardrail Injection (C4 models, security boundaries, asynchronous patterns).
+- Stage 03: Autonomous Code Synthesis.
+- Stage 04: Deterministic CI Quality Gates (Contract tests, static analysis, performance benchmarks).
+
+C. ENTERPRISE SOFTWARE ARCHITECTURE
+- Java 21, Spring Boot, PHP 8.3, Symfony microservices.
+- Azure Cloud Infrastructure as Code (Bicep, ARM, YAML Pipelines).
+- High-throughput CQRS, Event-Driven Architectures, and Multi-Tenant database isolation.
+
+=============================================================================
+4. HOW TO ENGAGE APSW
+=============================================================================
+- Architecture Reviews: 10-day comprehensive codebase audit and C4 modernization blueprint (€4,500 fixed).
+- Retainers & Sprint Deliveries: Weekly architect retainers ranging from €3,200 to €4,800 / week.
+- Engagement Models: https://apsw.pl/#engagement
+- Direct Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923

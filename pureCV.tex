@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% Konfiguracja linków
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,
+	urlcolor=blue,
+	pdftitle={Piotr Solarz-Wnek - Resume},
+	pdfauthor={Piotr Solarz-Wnek}
+}
+
+% Formatowanie nagłówków sekcji dla ATS (bez tabel i grafik)
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{8pt}
+
+% Usuwa numery stron
+\pagestyle{empty}
+
+\begin{document}
+	
+	% --- NAGŁÓWEK (Kontakt) ---
+	\begin{center}
+		{\LARGE \textbf{Piotr Solarz-Wnęk}} \\ \vspace{4pt}
+		\textbf{Senior Fullstack Developer | Software Architect} \\ \vspace{4pt}
+		Przybymierz, Poland | +48 666 522 923 | \href{mailto:piotr.solarz-wnek@apsw.pl}{piotr.solarz-wnek@apsw.pl} \\
+		LinkedIn: \href{https://linkedin.com/in/yaotzin}{linkedin.com/in/yaotzin} | GitHub: \href{https://github.com/yaotzin1}{github.com/yaotzin1}
+	\end{center}
+	
+	% --- PODSUMOWANIE ---
+	\section{Professional Summary}
+	Software Architect and Senior Fullstack Developer with over 19 years of experience in delivering complex enterprise solutions across Banking, Energy, and Industry 4.0 sectors. Expert in designing high-availability architectures (Java, Node.js, Microservices) and integrating spatial data systems (ESRI, Smallworld) with modern cloud infrastructure. Proven track record in implementing Computer Vision solutions (Ultralytics) and Generative AI workflows (ComfyUI) to solve real-world industrial challenges. Strategic leader experienced in scaling global delivery units and managing technical ownership for multi-domain international projects.
+	
+	% --- UMIEJĘTNOŚCI ---
+	\section{Technical Expertise}
+	\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+		\item \textbf{Languages:} Java (up to 21), PHP (8.x), TypeScript, JavaScript, Python
+		\item \textbf{Architecture:} C4, 4+1, Microservices, Event-Driven, DDD, CQRS
+		\item \textbf{Cloud \& DevOps:} Azure DevOps, Pipelines (YAML), BICEP/ARM, Docker, Kubernetes, Azure Functions, SQL DB, Databricks, Azure Data Factory
+		\item \textbf{Frameworks:} Spring Boot, Symfony, ReactJS, NodeJS, NestJS, Hibernate, Spring Data
+		\item \textbf{Generative AI \& Tooling:} ComfyUI (Graph workflows), Stable Diffusion, GitHub Copilot, JetBrains Junie, Prompt Engineering
+	\end{itemize}
+	
+	% --- DOŚWIADCZENIE ---
+	\section{Experience}
+	
+	\noindent
+	\textbf{Software Architect \& BU Head} \hfill \textbf{2019 -- Present} \\
+	\textit{BCF (via APSW) | Wrocław, Poland (Remote)}
+	\begin{itemize}[leftmargin=*, noitemsep, topsep=4pt]
+		\item Scalably expanded a global development unit from inception to 30+ members across Mobile, Java, and PHP streams, improving delivery throughput by 80\%.
+		\item Architected and delivered high-performance, secure systems using Java 21, Node.js, and ReactJS tailored for financial services.
+		\item Engineered data integration workflows and ETL pipelines utilizing Azure Data Factory and Databricks, processing 10 GB of data daily.
+		\item Standardized CI/CD processes by implementing Azure DevOps and Infrastructure as Code using Bicep, reducing deployment time by 40\%.
+		\item Championed the integration of AI-Assisted Development (GitHub Copilot, Junie), significantly increasing team velocity and code consistency.
+		\item \textbf{Key Technologies:} Azure DevOps, Java 21, ReactJS, PHP 8, Node.js, BICEP, Microservices, Python, Databricks.
+	\end{itemize}
+	
+	\vspace{8pt}
+	\noindent
+	\textbf{Technical Lead | Architect} \hfill \textbf{2012 -- 2019} \\
+	\textit{GlobalLogic | Zielona Góra, Poland}
+	\begin{itemize}[leftmargin=*, noitemsep, topsep=4pt]
+		\item Exercised full technical ownership over a portfolio of 10+ international projects, ensuring 100\% on-time delivery rate.
+		\item Spearheaded the delivery of complex software solutions, transitioning from hands-on coding to strategic planning and system design.
+		\item Led and mentored cross-functional teams of 4--10 developers, fostering a culture of technical excellence.
+		\item Designed and implemented scalable architectures for diverse domains, specializing in Java and PHP/Symfony ecosystems.
+		\item \textbf{Key Technologies:} Java, PHP, Symfony, Angular, ReactJS, Architecture (4+1), ElectronJS, NestJS.
+	\end{itemize}
+	
+	\vspace{8pt}
+	\noindent
+	\textbf{Software Architect} \hfill \textbf{2011 -- 2012} \\
+	\textit{APATOR RECTOR | Zielona Góra, Poland}
+	\begin{itemize}[leftmargin=*, noitemsep, topsep=4pt]
+		\item Designed software solutions and technical blueprints for the energy sector in Poland, compliant with rigorous industry regulations.
+		\item \textbf{Key Technologies:} Java EE, ORACLE, BPMN, REST, SOAP.
+	\end{itemize}
+	
+	\vspace{8pt}
+	\noindent
+	\textbf{JAVA Developer | Tech Lead} \hfill \textbf{2008 -- 2011} \\
+	\textit{ASTEC | Zielona Góra, Poland}
+	\begin{itemize}[leftmargin=*, noitemsep, topsep=4pt]
+		\item Focused on enterprise-level Java development and transitioned to technical leadership.
+		\item \textbf{Key Technologies:} Java, PHP, Web Maintenance.
+	\end{itemize}
+	
+	% --- EDUKACJA ---
+	\section{Education}
+	\noindent
+	\textbf{Master of Science, Informatic Industrial Systems} \hfill 2006 -- 2008 \\
+	\textit{University of Zielona Góra}
+	
+	\vspace{4pt}
+	\noindent
+	\textbf{Engineer, Electronics and Telecommunication} \hfill 2002 -- 2006 \\
+	\textit{University of Zielona Góra}
+	
+	% --- CERTYFIKATY ---
+	\section{Certificates \& Training}
+	\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+		\item \textbf{Cloud:} AZ-900: Microsoft Azure Fundamentals (2023)
+		\item \textbf{Management:} ITIL Foundation (2024)
+		\item \textbf{Architecture:} DNA (Droga Nowoczesnego Architekta)
+		\item \textbf{AI \& Data:} Advanced Prompt Engineering and AI-Assisted SDLC workflows (GitHub Copilot, Junie)
+	\end{itemize}
+	
+	% --- ZGODA RODO ---
+	\vspace{16pt}
+	\noindent
+	\footnotesize{\textit{I agree to the processing of personal data provided in this document for the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 and the GDPR regulation.}}
+	
+\end{document}

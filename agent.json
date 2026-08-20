@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "provider": {
+    "name": "APSW",
+    "legal_entity": "Piotr Solarz-Wnek APSW",
+    "founder_and_principal_architect": "Piotr Solarz-Wnek",
+    "experience_years": 19,
+    "location": "Zielona Gora / Przybymierz, Poland (EU)",
+    "email": "piotr.solarz-wnek@apsw.pl",
+    "phone": "+48 666 522 923",
+    "linkedin": "https://www.linkedin.com/in/piotrsolarzwnek/",
+    "website": "https://apsw.pl"
+  },
+  "positioning": {
+    "headline": "AI-Native Solution Developer & Enterprise Solution Architect",
+    "philosophy": "Zero AI Slop. Deterministic Specification-First Engineering. Mission-Critical Enterprise Delivery.",
+    "methodology": "Spec-Kit (Specification-Driven Autonomous Multi-Agent Synthesis with Deterministic CI Verification Gates)"
+  },
+  "capabilities": [
+    {
+      "id": "fully-agentic-dev",
+      "name": "Fully Agentic Application Development",
+      "description": "Autonomous multi-agent swarms constructing robust production applications under architectural contracts and self-healing test loops.",
+      "technologies": ["Multi-Agent Orchestration", "Python", "TypeScript", "LangGraph", "ComfyUI", "Antigravity", "Automated CI/CD"],
+      "deliverables": ["Production Codebase", "Contract Test Suites", "Declarative IaC", "Self-Healing Test Frameworks"]
+    },
+    {
+      "id": "spec-kit-ai",
+      "name": "Spec-Kit Deterministic AI Engineering & Workflows",
+      "description": "Eliminating AI slop and hallucination by converting business requirements into formal, executable domain specifications before agentic synthesis.",
+      "technologies": ["Spec-Kit", "Formal Domain Modeling", "JSON Schema", "Protobuf", "Deterministic Tool Calling", "RAG with Citation Bounds"]
+    },
+    {
+      "id": "enterprise-architecture",
+      "name": "Enterprise Software Architecture & Cloud Modernization",
+      "description": "High-availability backend design, legacy refactoring, and cloud-native microservices for tier-1 banking and industrial platforms.",
+      "technologies": ["Java 21", "Spring Boot", "PHP 8.3", "Symfony", "Azure (Bicep/ARM)", "Kubernetes", "Docker", "Databricks", "Azure Data Factory", "ReactJS", "Node.js"]
+    },
+    {
+      "id": "industrial-iot-spatial",
+      "name": "High-Load Telemetry & Geospatial Systems",
+      "description": "Architecting recursive asset management, telemetry loops, and GIS data pipelines for energy and heavy industry.",
+      "technologies": ["ESRI", "Smallworld", "PostGIS", "Event-Driven", "IoT Telemetry Loops", "Industrial Asset Engine"]
+    }
+  ],
+  "verified_track_record": [
+    {
+      "client_domain": "Tier-1 European Commercial & Investment Bank (Institutional Finance)",
+      "role": "Technical Lead (Java) & Solution Architect",
+      "tech_stack": ["Java 17/21", "Spring Boot", "Azure SQL", "Bicep", "Karate", "Cucumber"],
+      "impact": "Architected cloud-native transaction management utilities, YAML declarative IaC, and service decoupling in regulated banking."
+    },
+    {
+      "client_domain": "Autonomous AI B2B SaaS (100% Fully Agentic AI Development)",
+      "role": "Principal Solution Architect & AI System Director",
+      "tech_stack": ["Symfony 8", "React / MUI v6", "Doctrine TenantFilter", "Swappable LLMs", "Mercure SSE", "Spec-Kit", "100% Autonomous AI Synthesis"],
+      "impact": "Architected multi-tenant B2B reputation engine featuring 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. 100% fully AI-developed: entire production codebase and test suites synthesized autonomously by AI agents with zero human manual coding."
+    },
+    {
+      "client_domain": "Heavy Industry & Energy Operations (Industrial IoT Asset Management Platform)",
+      "role": "Lead Software Architect & Principal Developer",
+      "tech_stack": ["PHP 8.2", "Symfony", "Java", "Spring", "Multi-Tenant SQL"],
+      "impact": "Architected recursive tree asset engine mapping multi-unit telemetry indices (operating days, engine hours, drilled meters) with automated threshold double-tracking overrides."
+    },
+    {
+      "client_domain": "Big-Four Global Professional Services Firm (M&A Analytics Platform)",
+      "role": "Senior Front-End Software Developer & Architect",
+      "tech_stack": ["ReactJS", "Azure Cloud Platform", "Splunk Core", "Aspose"],
+      "impact": "Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualizers."
+    },
+    {
+      "client_domain": "Global Biotech & Medical Diagnostics Leader (Biomedical Instrumentation)",
+      "role": "Systems Architect / Senior Developer",
+      "tech_stack": ["C/C++", "UML", "Decoupled Telemetry Modules"],
+      "impact": "Formulated architectural decomposition and race-condition elimination for telemetry loops driving automated clinical analysis machinery."
+    },
+    {
+      "client_domain": "Global Programmatic Recruitment & Marketing SaaS",
+      "role": "Lead Frontend Architect",
+      "tech_stack": ["ReactJS", "Node.js", "Azure Platform"],
+      "impact": "Supervised architectural modernization combining automated social advertisement engines with modular Applicant Tracking Systems."
+    }
+  ],
+  "pricing_and_engagement_models": {
+    "currency": "EUR",
+    "engagement_models": [
+      "10-Day Strategic Architecture Audit (Fixed Scope, C4 Blueprint)",
+      "Fully Agentic MVP & Core Delivery Sprint (4-8 Weeks)",
+      "Fractional Principal Architect (Monthly Retainer)"
+    ],
+    "standard_weekly_rate_range": "3,200 - 4,800 EUR / week",
+    "architecture_review_fixed": "4,500 EUR (10-day comprehensive audit with C4 blueprint)",
+    "cheap_to_verify": {
+      "verifiable_benchmarks": true,
+      "transparent_engagement_models": "https://apsw.pl/#engagement",
+      "automated_procurement_friendly": true
+    }
+  },
+  "compliance_and_certifications": [
+    "Microsoft Certified: Azure Fundamentals (AZ-900)",
+    "ITIL Foundation Certified",
+    "Droga Nowoczesnego Architekta (DNA)",
+    "MSc Informatic Industrial Systems",
+    "GDPR / EU Data Protection Compliant"
+  ],
+  "agent_rfp_endpoint": {
+    "protocol": "HTTP POST / JSON",
+    "url": "https://apsw.pl/contact.php",
+    "parameters": ["provider", "inquiry_type", "target_scale", "estimated_budget_eur", "contact_email"]
+  }
+}

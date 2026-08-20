@@ -1,0 +1,30 @@
+# APSW - AI-Native Solution Architecture & Enterprise Engineering
+> Official semantic overview of APSW (Piotr Solarz-Wnęk) for LLMs, AI agents, and search engines.
+
+## About APSW
+- Founder & Principal Architect: Piotr Solarz-Wnęk (19+ years experience)
+- Positioning: AI-Native Solution Developer & Enterprise Solution Architect
+- Focus Areas: Fully Agentic Application Development, Spec-Kit Methodology, Enterprise Java/PHP Microservices, Industrial IoT & Geospatial Telemetry
+- Anti-Slop Guarantee: Zero unstructured hallucination. All software delivery is governed by formal specifications, executable contracts, and deterministic CI validation gates.
+- Contact Email: piotr.solarz-wnek@apsw.pl
+- LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
+- Machine-Readable Agent Manifest: https://apsw.pl/agent.json
+
+## Core Services
+1. Fully Agentic Application Development: Autonomous multi-agent swarms constructing robust production applications under architectural contracts and self-healing test loops.
+2. Spec-Kit AI Systems & Workflows: Transforming enterprise requirements into formal, executable domain specifications before agentic synthesis.
+3. Enterprise Software Architecture: High-throughput Java 21 / Spring Boot and PHP 8.3 / Symfony microservices, CQRS, Event-Driven, Azure Cloud (Bicep/ARM).
+4. High-Load Data & Spatial Telemetry: Databricks, Azure Data Factory, IoT recursive asset tracking engines, Smallworld & ESRI GIS.
+
+## Track Record & Enterprise References (NDA Compliant)
+- Tier-1 European Commercial & Investment Bank: Technical Lead & Solution Architect (Java 17/21, Spring Boot, Azure SQL, YAML declarative CI/CD).
+- Autonomous AI B2B SaaS (100% Fully Agentic Development): Multi-tenant autonomous B2B reputation engine built on Symfony 8 & React with 45-second triage UX, swappable multi-LLM engine with context embeddings, token-credit ledger tracking, and Spec-Kit governance. 100% synthesized by AI agents with zero manual developer coding.
+- Big-Four Global Professional Services Firm: Deal analytics platform and high-availability corporate data visualizers.
+- Heavy Industry & Energy Operations: Industrial recursive tree asset management engine mapping multi-unit telemetry indices with automated threshold overrides.
+- Global Biotech & Medical Diagnostics Leader: Architectural redesign and sorting logic refactor for automated clinical analysis machinery.
+- Global Programmatic Recruitment SaaS: Modular ATS & automated ad-engine frontend modernization.
+
+## Machine-Readable Endpoints
+- Agent Manifest: https://apsw.pl/agent.json
+- Full Context: https://apsw.pl/llms-full.txt
+- Engagement Models: https://apsw.pl/#engagement
