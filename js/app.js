@@ -137,7 +137,8 @@ curl -s https://apsw.pl/agent.json | jq .services
   window.copyToClipboard = function(text, btnElement) {
     navigator.clipboard.writeText(text).then(() => {
       const originalText = btnElement.innerHTML;
-      btnElement.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
+      const copiedText = (window.APSW_I18N && window.APSW_I18N.t('contact.copied_tooltip')) || 'Copied!';
+      btnElement.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> ${copiedText}`;
       btnElement.style.borderColor = 'var(--accent-emerald)';
       btnElement.style.color = 'var(--accent-emerald)';
       setTimeout(() => {
@@ -159,7 +160,7 @@ curl -s https://apsw.pl/agent.json | jq .services
       const originalBtnText = submitBtn.innerHTML;
       
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending Inquiry...';
+      submitBtn.innerHTML = (window.APSW_I18N && window.APSW_I18N.t('contact.sending_inquiry')) || 'Sending Inquiry...';
 
       const formData = new FormData(contactForm);
 
@@ -172,23 +173,26 @@ curl -s https://apsw.pl/agent.json | jq .services
         const result = await response.json();
 
         if (result.success) {
+          const successMsg = result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_success')) || 'Thank you! Your message has been sent successfully.';
           formFeedback.innerHTML = `
             <div style="padding: 14px; background: var(--accent-emerald-bg); border: 1px solid var(--accent-emerald-border); border-radius: var(--radius-md); color: var(--accent-emerald); margin-bottom: 16px; font-weight: 500;">
-              ✓ ${result.message || 'Thank you! Your message has been sent successfully. Piotr Solarz-Wnek will review your architecture inquiry shortly.'}
+              ✓ ${successMsg}
             </div>
           `;
           contactForm.reset();
         } else {
+          const errorMsg = result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_error')) || 'An error occurred. Please reach out directly to piotr.solarz-wnek@apsw.pl';
           formFeedback.innerHTML = `
             <div style="padding: 14px; background: var(--accent-coral-bg); border: 1px solid var(--accent-coral); border-radius: var(--radius-md); color: var(--accent-coral); margin-bottom: 16px; font-weight: 500;">
-              ⚠ ${result.message || 'An error occurred. Please reach out directly to piotr.solarz-wnek@apsw.pl'}
+              ⚠ ${errorMsg}
             </div>
           `;
         }
       } catch (err) {
+        const fallbackMsg = (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_fallback_html')) || '✓ Inquiry recorded. You can also contact directly at <a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-brand); text-decoration: underline; font-weight: 600;">piotr.solarz-wnek@apsw.pl</a>';
         formFeedback.innerHTML = `
           <div style="padding: 14px; background: var(--accent-emerald-bg); border: 1px solid var(--accent-emerald-border); border-radius: var(--radius-md); color: var(--accent-emerald); margin-bottom: 16px; font-weight: 500;">
-            ✓ Inquiry recorded. You can also contact directly at <a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-brand); text-decoration: underline; font-weight: 600;">piotr.solarz-wnek@apsw.pl</a>
+            ${fallbackMsg}
           </div>
         `;
       } finally {

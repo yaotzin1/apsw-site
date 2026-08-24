@@ -121,3 +121,19 @@
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .nav-actions .btn-sm {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .lang-btn {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+}

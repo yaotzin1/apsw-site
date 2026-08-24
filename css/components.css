@@ -134,6 +134,46 @@
   color: var(--text-primary);
 }
 
+.lang-switcher-group {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 2px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1.2;
+  transition: all var(--transition-fast);
+}
+
+.lang-btn:hover {
+  color: var(--text-primary);
+}
+
+.lang-btn.active {
+  background: var(--bg-surface-1);
+  color: var(--brand-teal-dark);
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .lang-btn.active {
+  background: var(--bg-surface-3);
+  color: var(--text-cyan);
+}
+
 .agent-badge-btn {
   display: inline-flex;
   align-items: center;

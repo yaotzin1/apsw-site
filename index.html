@@ -145,31 +145,37 @@
         <img src="assets/brand/apsw-logo-white.svg" alt="APSW Logo" class="nav-logo nav-logo-dark" width="38" height="38">
         <div class="brand-text-block">
           <span class="brand-title">APSW</span>
-          <span class="brand-sub">AI NATIVE ARCHITECTURE</span>
+          <span class="brand-sub" data-i18n="nav.brand_sub">AI NATIVE ARCHITECTURE</span>
         </div>
       </a>
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu">
-          <li><a href="#speckit" class="nav-link">Spec-Kit AI</a></li>
-          <li><a href="#agentic-dev" class="nav-link">Agentic Dev</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#engagement" class="nav-link">Engagements</a></li>
-          <li><a href="#track-record" class="nav-link">Case Studies</a></li>
-          <li><a href="#architect" class="nav-link">About</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
+          <li><a href="#agentic-dev" class="nav-link" data-i18n="nav.agentic">Agentic Dev</a></li>
+          <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+          <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
+          <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
+          <li><a href="#architect" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
+        <!-- Language Switcher (EN / PL) -->
+        <div class="lang-switcher-group" role="group" aria-label="Language selector" data-i18n-aria="nav.lang_toggle_aria">
+          <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button class="lang-btn" data-lang="pl" aria-pressed="false">PL</button>
+        </div>
+
         <!-- Light / Dark Theme Switcher -->
-        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme" data-i18n-title="nav.theme_toggle_title">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
 
-        <a href="#contact" class="btn btn-primary btn-sm">Book Review</a>
+        <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.book_review">Book Review</a>
         <button class="mobile-toggle" aria-label="Toggle navigation menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
@@ -186,24 +192,24 @@
         <div class="hero-single-column">
           
           <div class="hero-status-badge">
-            <span>● Available for Strategic AI & Enterprise Architecture Engagements</span>
+            <span data-i18n="hero.status_badge">● Available for Strategic AI & Enterprise Architecture Engagements</span>
           </div>
 
-          <h1 class="hero-title">
+          <h1 class="hero-title" data-i18n-html="hero.title_html">
             Move Beyond Fragile AI Prototypes. <br>
             <span class="title-accent">Build Reliable, Production-Ready Systems.</span>
           </h1>
 
-          <p class="hero-description">
+          <p class="hero-description" data-i18n-html="hero.description_html">
             Building AI into enterprise software is easy to prototype, but notoriously hard to run reliably in production. Backed by 19+ years of architecture experience across Tier-1 Banking and Industrial IoT, APSW delivers <strong>deterministic, fully agentic applications</strong> governed by formal contracts and zero AI slop.
           </p>
 
           <div class="hero-cta-group">
-            <a href="#speckit" class="btn btn-emerald">
+            <a href="#speckit" class="btn btn-emerald" data-i18n="hero.cta_speckit">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
               Explore Spec-Kit Workflow
             </a>
-            <a href="#engagement" class="btn btn-secondary">
+            <a href="#engagement" class="btn btn-secondary" data-i18n="hero.cta_engagement">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
               Engagement Models
             </a>
@@ -212,20 +218,20 @@
           <!-- Trust Bar / Metrics Grid -->
           <div class="hero-metrics-bar">
             <div class="metric-item">
-              <span class="metric-value">19+ Years</span>
-              <span class="metric-label">Enterprise Architecture Track Record</span>
+              <span class="metric-value" data-i18n="hero.metric_years_val">19+ Years</span>
+              <span class="metric-label" data-i18n="hero.metric_years_lbl">Enterprise Architecture Track Record</span>
             </div>
             <div class="metric-item">
-              <span class="metric-value">5x Velocity</span>
-              <span class="metric-label">Fully Agentic Multi-Agent Delivery</span>
+              <span class="metric-value" data-i18n="hero.metric_velocity_val">5x Velocity</span>
+              <span class="metric-label" data-i18n="hero.metric_velocity_lbl">Fully Agentic Multi-Agent Delivery</span>
             </div>
             <div class="metric-item">
-              <span class="metric-value">Tier-1 Regulated</span>
-              <span class="metric-label">Institutional Finance & Biotech Proven</span>
+              <span class="metric-value" data-i18n="hero.metric_regulated_val">Tier-1 Regulated</span>
+              <span class="metric-label" data-i18n="hero.metric_regulated_lbl">Institutional Finance & Biotech Proven</span>
             </div>
             <div class="metric-item">
-              <span class="metric-value">Zero AI Slop</span>
-              <span class="metric-label">Deterministic Spec-Kit CI Gates</span>
+              <span class="metric-value" data-i18n="hero.metric_anti_slop_val">Zero AI Slop</span>
+              <span class="metric-label" data-i18n="hero.metric_anti_slop_lbl">Deterministic Spec-Kit CI Gates</span>
             </div>
           </div>
 
@@ -239,9 +245,9 @@
     <section class="section" id="speckit">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag emerald">Methodology</span>
-          <h2 class="section-title">The Spec-Kit Approach: <br>Specification-Driven AI Engineering</h2>
-          <p class="section-subtitle">
+          <span class="section-tag emerald" data-i18n="speckit.tag">Methodology</span>
+          <h2 class="section-title" data-i18n-html="speckit.title_html">The Spec-Kit Approach: <br>Specification-Driven AI Engineering</h2>
+          <p class="section-subtitle" data-i18n-html="speckit.subtitle_html">
             Most generative AI initiatives fail in production because unstructured prompting produces "AI slop" — non-deterministic code with hidden state bugs and hallucinations. <strong>Spec-Kit replaces prompt-and-pray with formal executable contracts and CI verification gates.</strong>
           </p>
         </div>
@@ -249,43 +255,43 @@
         <!-- 4-Stage Interactive Pipeline Cards -->
         <div class="spec-kit-card-grid">
           <div class="pipeline-step-card active" data-step="1" role="button" tabindex="0">
-            <span class="step-number-badge">STAGE 01</span>
+            <span class="step-number-badge" data-i18n="speckit.stage1_badge">STAGE 01</span>
             <div class="step-icon-wrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
             </div>
-            <h3 class="step-title">Formal Domain Specification</h3>
-            <p class="step-desc">Drafting machine-readable schemas, strict invariant boundaries, and edge-case contracts before writing code.</p>
-            <span class="step-output-tag" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2);">GUARANTEE: Zero Scope Creep</span>
+            <h3 class="step-title" data-i18n="speckit.stage1_title">Formal Domain Specification</h3>
+            <p class="step-desc" data-i18n="speckit.stage1_desc">Drafting machine-readable schemas, strict invariant boundaries, and edge-case contracts before writing code.</p>
+            <span class="step-output-tag" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2);" data-i18n="speckit.stage1_guarantee">GUARANTEE: Zero Scope Creep</span>
           </div>
 
           <div class="pipeline-step-card" data-step="2" role="button" tabindex="0">
-            <span class="step-number-badge">STAGE 02</span>
+            <span class="step-number-badge" data-i18n="speckit.stage2_badge">STAGE 02</span>
             <div class="step-icon-wrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             </div>
-            <h3 class="step-title">Architectural Guardrails</h3>
-            <p class="step-desc">Injecting C4 boundaries, security compliance (GDPR/PCI-DSS), database isolation levels, and non-blocking asynchronous patterns.</p>
-            <span class="step-output-tag" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2);">GUARANTEE: 100% Security & Isolation</span>
+            <h3 class="step-title" data-i18n="speckit.stage2_title">Architectural Guardrails</h3>
+            <p class="step-desc" data-i18n="speckit.stage2_desc">Injecting C4 boundaries, security compliance (GDPR/PCI-DSS), database isolation levels, and non-blocking asynchronous patterns.</p>
+            <span class="step-output-tag" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2);" data-i18n="speckit.stage2_guarantee">GUARANTEE: 100% Security & Isolation</span>
           </div>
 
           <div class="pipeline-step-card" data-step="3" role="button" tabindex="0">
-            <span class="step-number-badge">STAGE 03</span>
+            <span class="step-number-badge" data-i18n="speckit.stage3_badge">STAGE 03</span>
             <div class="step-icon-wrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             </div>
-            <h3 class="step-title">Autonomous Code Synthesis</h3>
-            <p class="step-desc">Multi-agent swarms (Planner-Executor-Critic) generate clean, context-isolated code and 100% test suites against the spec.</p>
-            <span class="step-output-tag" style="background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.2);">GUARANTEE: 5x Time-to-Market Velocity</span>
+            <h3 class="step-title" data-i18n="speckit.stage3_title">Autonomous Code Synthesis</h3>
+            <p class="step-desc" data-i18n="speckit.stage3_desc">Multi-agent swarms (Planner-Executor-Critic) generate clean, context-isolated code and 100% test suites against the spec.</p>
+            <span class="step-output-tag" style="background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.2);" data-i18n="speckit.stage3_guarantee">GUARANTEE: 5x Time-to-Market Velocity</span>
           </div>
 
           <div class="pipeline-step-card" data-step="4" role="button" tabindex="0">
-            <span class="step-number-badge">STAGE 04</span>
+            <span class="step-number-badge" data-i18n="speckit.stage4_badge">STAGE 04</span>
             <div class="step-icon-wrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             </div>
-            <h3 class="step-title">Deterministic CI Quality Gate</h3>
-            <p class="step-desc">Continuous automated contract testing, static analysis, performance benchmarks, and strict zero-hallucination gates.</p>
-            <span class="step-output-tag" style="background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.2);">GUARANTEE: Zero Production Regressions</span>
+            <h3 class="step-title" data-i18n="speckit.stage4_title">Deterministic CI Quality Gate</h3>
+            <p class="step-desc" data-i18n="speckit.stage4_desc">Continuous automated contract testing, static analysis, performance benchmarks, and strict zero-hallucination gates.</p>
+            <span class="step-output-tag" style="background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.2);" data-i18n="speckit.stage4_guarantee">GUARANTEE: Zero Production Regressions</span>
           </div>
         </div>
 
@@ -313,29 +319,29 @@
         <!-- Comparison Table: Prompting vs Spec-Kit -->
         <div class="comparison-container">
           <div class="comparison-header">
-            <span>Engineering Dimension</span>
-            <span style="color: var(--accent-coral);">Standard AI Chat / Prompting ("AI Slop")</span>
-            <span style="color: var(--accent-emerald);">APSW Spec-Kit Methodology</span>
+            <span data-i18n="speckit.comp_dim">Engineering Dimension</span>
+            <span style="color: var(--accent-coral);" data-i18n="speckit.comp_slop_header">Standard AI Chat / Prompting ("AI Slop")</span>
+            <span style="color: var(--accent-emerald);" data-i18n="speckit.comp_speckit_header">APSW Spec-Kit Methodology</span>
           </div>
           <div class="comparison-row">
-            <span class="col-feature">Output Determinism</span>
-            <span class="col-slop">✕ Non-deterministic, probabilistic drifts</span>
-            <span class="col-speckit">✓ 100% Deterministic against schema contracts</span>
+            <span class="col-feature" data-i18n="speckit.comp_dim_1">Output Determinism</span>
+            <span class="col-slop" data-i18n="speckit.comp_slop_1">✕ Non-deterministic, probabilistic drifts</span>
+            <span class="col-speckit" data-i18n="speckit.comp_speckit_1">✓ 100% Deterministic against schema contracts</span>
           </div>
           <div class="comparison-row">
-            <span class="col-feature">Architectural Control</span>
-            <span class="col-slop">✕ Uncontrolled spaghetti code & hallucinations</span>
-            <span class="col-speckit">✓ Strict C4 boundary enforcement & clean domain logic</span>
+            <span class="col-feature" data-i18n="speckit.comp_dim_2">Architectural Control</span>
+            <span class="col-slop" data-i18n="speckit.comp_slop_2">✕ Uncontrolled spaghetti code & hallucinations</span>
+            <span class="col-speckit" data-i18n="speckit.comp_speckit_2">✓ Strict C4 boundary enforcement & clean domain logic</span>
           </div>
           <div class="comparison-row">
-            <span class="col-feature">Enterprise Verification</span>
-            <span class="col-slop">✕ "Looks good to me" manual inspection</span>
-            <span class="col-speckit">✓ Automated contract tests & CI gating ("Cheap to Verify")</span>
+            <span class="col-feature" data-i18n="speckit.comp_dim_3">Enterprise Verification</span>
+            <span class="col-slop" data-i18n="speckit.comp_slop_3">✕ "Looks good to me" manual inspection</span>
+            <span class="col-speckit" data-i18n="speckit.comp_speckit_3">✓ Automated contract tests & CI gating ("Cheap to Verify")</span>
           </div>
           <div class="comparison-row">
-            <span class="col-feature">Regulated Compliance</span>
-            <span class="col-slop">✕ High risk of security & data leakage</span>
-            <span class="col-speckit">✓ Zero-leakage sandboxes & GDPR / PCI-DSS compliance</span>
+            <span class="col-feature" data-i18n="speckit.comp_dim_4">Regulated Compliance</span>
+            <span class="col-slop" data-i18n="speckit.comp_slop_4">✕ High risk of security & data leakage</span>
+            <span class="col-speckit" data-i18n="speckit.comp_speckit_4">✓ Zero-leakage sandboxes & GDPR / PCI-DSS compliance</span>
           </div>
         </div>
 
@@ -348,9 +354,9 @@
     <section class="section" id="agentic-dev">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Autonomous Engineering</span>
-          <h2 class="section-title">Fully Agentic Application Development</h2>
-          <p class="section-subtitle">
+          <span class="section-tag" data-i18n="agentic.tag">Autonomous Engineering</span>
+          <h2 class="section-title" data-i18n="agentic.title">Fully Agentic Application Development</h2>
+          <p class="section-subtitle" data-i18n="agentic.subtitle">
             Moving past copilot auto-complete into end-to-end autonomous multi-agent development pipelines that architect, code, test, and self-heal production systems under expert architectural direction.
           </p>
         </div>
@@ -363,8 +369,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               </div>
               <div>
-                <h3 class="step-title">Hierarchical Multi-Agent Swarms</h3>
-                <p class="step-desc">Coordinating specialized Planner, Architect, Worker, and Critic subagents. Complex tasks are broken down into isolated, parallel execution threads with strict context boundaries.</p>
+                <h3 class="step-title" data-i18n="agentic.feat1_title">Hierarchical Multi-Agent Swarms</h3>
+                <p class="step-desc" data-i18n="agentic.feat1_desc">Coordinating specialized Planner, Architect, Worker, and Critic subagents. Complex tasks are broken down into isolated, parallel execution threads with strict context boundaries.</p>
               </div>
             </div>
 
@@ -373,8 +379,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
               </div>
               <div>
-                <h3 class="step-title">Self-Healing Execution & Test Loops</h3>
-                <p class="step-desc">Agents don't just write code; they run test suites, inspect compile errors, diagnose regressions, and automatically self-correct until all contract requirements pass 100%.</p>
+                <h3 class="step-title" data-i18n="agentic.feat2_title">Self-Healing Execution & Test Loops</h3>
+                <p class="step-desc" data-i18n="agentic.feat2_desc">Agents don't just write code; they run test suites, inspect compile errors, diagnose regressions, and automatically self-correct until all contract requirements pass 100%.</p>
               </div>
             </div>
 
@@ -383,8 +389,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
               </div>
               <div>
-                <h3 class="step-title">Deterministic Tool-Use & Sandbox Security</h3>
-                <p class="step-desc">Autonomous agents operate in isolated secure sandboxes with declarative tool interfaces (AST parsing, Git branching, database migration verification, and CI triggers).</p>
+                <h3 class="step-title" data-i18n="agentic.feat3_title">Deterministic Tool-Use & Sandbox Security</h3>
+                <p class="step-desc" data-i18n="agentic.feat3_desc">Autonomous agents operate in isolated secure sandboxes with declarative tool interfaces (AST parsing, Git branching, database migration verification, and CI triggers).</p>
               </div>
             </div>
           </div>
@@ -393,16 +399,16 @@
           <div class="agentic-visual-card">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #1e293b;">
               <span style="font-family: var(--font-mono); font-size: 0.78rem; color: #38bdf8;">AGENTIC_SWARM_ORCHESTRATION.log</span>
-              <span class="step-output-tag">ACTIVE SWARM</span>
+              <span class="step-output-tag" data-i18n="agentic.swarm_badge">ACTIVE SWARM</span>
             </div>
             <div style="font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.55; color: #94a3b8;">
-              <p><span style="color: #a855f7;">[ARCHITECT_AGENT]</span> Loaded Spec: <span style="color: #38bdf8;">SPEC-FINANCIAL-TRANSACTIONS-V3</span></p>
-              <p><span style="color: #a855f7;">[ARCHITECT_AGENT]</span> Enforcing C4 Guardrails & Spring Boot 3.3 / Java 21 Aggregate Rules</p>
-              <p><span style="color: #38bdf8;">[PLANNER_AGENT]</span> Decomposed into 3 Parallel Subtasks (Entity, Controller, Karate Suite)</p>
-              <p><span style="color: #34d399;">[WORKER_SUBAGENT_01]</span> Generated idempotent transaction commit handler</p>
-              <p><span style="color: #34d399;">[WORKER_SUBAGENT_02]</span> Executed test runner: 34 tests passed, 0 failures</p>
-              <p><span style="color: #fbbf24;">[CRITIC_VERIFIER]</span> Static analysis: 0 warnings, OWASP security pass certified</p>
-              <p style="color: #34d399; font-weight: 700; margin-top: 10px;">✓ SYNTHESIS_COMPLETE: Production branch ready for pull request.</p>
+              <p data-i18n-html="agentic.swarm_log1_html"><span style="color: #a855f7;">[ARCHITECT_AGENT]</span> Loaded Spec: <span style="color: #38bdf8;">SPEC-FINANCIAL-TRANSACTIONS-V3</span></p>
+              <p data-i18n-html="agentic.swarm_log2_html"><span style="color: #a855f7;">[ARCHITECT_AGENT]</span> Enforcing C4 Guardrails & Spring Boot 3.3 / Java 21 Aggregate Rules</p>
+              <p data-i18n-html="agentic.swarm_log3_html"><span style="color: #38bdf8;">[PLANNER_AGENT]</span> Decomposed into 3 Parallel Subtasks (Entity, Controller, Karate Suite)</p>
+              <p data-i18n-html="agentic.swarm_log4_html"><span style="color: #34d399;">[WORKER_SUBAGENT_01]</span> Generated idempotent transaction commit handler</p>
+              <p data-i18n-html="agentic.swarm_log5_html"><span style="color: #34d399;">[WORKER_SUBAGENT_02]</span> Executed test runner: 34 tests passed, 0 failures</p>
+              <p data-i18n-html="agentic.swarm_log6_html"><span style="color: #fbbf24;">[CRITIC_VERIFIER]</span> Static analysis: 0 warnings, OWASP security pass certified</p>
+              <p style="color: #34d399; font-weight: 700; margin-top: 10px;" data-i18n-html="agentic.swarm_log7_html">✓ SYNTHESIS_COMPLETE: Production branch ready for pull request.</p>
             </div>
           </div>
 
@@ -416,9 +422,9 @@
     <section class="section" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Capabilities</span>
-          <h2 class="section-title">End-to-End Architectural Solutions</h2>
-          <p class="section-subtitle">
+          <span class="section-tag" data-i18n="services.tag">Capabilities</span>
+          <h2 class="section-title" data-i18n="services.title">End-to-End Architectural Solutions</h2>
+          <p class="section-subtitle" data-i18n="services.subtitle">
             From strategic technical blueprints to autonomous agent swarms and high-load telemetry backends.
           </p>
         </div>
@@ -430,12 +436,12 @@
             <div class="service-icon-wrap">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
             </div>
-            <h3 class="service-title">Fully Agentic Application Development</h3>
-            <p class="service-desc">Complete end-to-end software development executed by coordinated multi-agent swarms with autonomous self-healing test loops.</p>
+            <h3 class="service-title" data-i18n="services.s1_title">Fully Agentic Application Development</h3>
+            <p class="service-desc" data-i18n="services.s1_desc">Complete end-to-end software development executed by coordinated multi-agent swarms with autonomous self-healing test loops.</p>
             <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Autonomous Feature Synthesis Swarms</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Self-Debugging & Automated CI Repair</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Deterministic Tool & API Contracts</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d1">Autonomous Feature Synthesis Swarms</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d2">Self-Debugging & Automated CI Repair</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d3">Deterministic Tool & API Contracts</span></li>
             </ul>
             <div class="service-tech-tags">
               <span class="tech-tag">Agentic Swarms</span>
@@ -448,14 +454,14 @@
           <!-- Service 2 -->
           <div class="service-card">
             <div class="service-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="21 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             </div>
-            <h3 class="service-title">Spec-Kit AI & Agentic Workflows</h3>
-            <p class="service-desc">Architecting deterministic AI pipelines, custom graph workflows (ComfyUI / LangGraph), tool-calling agents, and enterprise RAG.</p>
+            <h3 class="service-title" data-i18n="services.s2_title">Spec-Kit AI & Agentic Workflows</h3>
+            <p class="service-desc" data-i18n="services.s2_desc">Architecting deterministic AI pipelines, custom graph workflows (ComfyUI / LangGraph), tool-calling agents, and enterprise RAG.</p>
             <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Formal Spec-Kit Domain Modeling</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Deterministic RAG with Source Citations</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Computer Vision (Ultralytics) Integration</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d1">Formal Spec-Kit Domain Modeling</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d2">Deterministic RAG with Source Citations</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d3">Computer Vision (Ultralytics) Integration</span></li>
             </ul>
             <div class="service-tech-tags">
               <span class="tech-tag">Spec-Kit</span>
@@ -470,12 +476,12 @@
             <div class="service-icon-wrap">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
             </div>
-            <h3 class="service-title">Enterprise Software Architecture</h3>
-            <p class="service-desc">Designing resilient, high-throughput microservices, CQRS data patterns, and cloud infrastructures for regulated financial & industrial sectors.</p>
+            <h3 class="service-title" data-i18n="services.s3_title">Enterprise Software Architecture</h3>
+            <p class="service-desc" data-i18n="services.s3_desc">Designing resilient, high-throughput microservices, CQRS data patterns, and cloud infrastructures for regulated financial & industrial sectors.</p>
             <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Java 21 / Spring Boot & Symfony 8 Core</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Azure Infrastructure as Code (Bicep/YAML)</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> C4 System Blueprints & Decoupling</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d1">Java 21 / Spring Boot & Symfony 8 Core</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d2">Azure Infrastructure as Code (Bicep/YAML)</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d3">C4 System Blueprints & Decoupling</span></li>
             </ul>
             <div class="service-tech-tags">
               <span class="tech-tag">Java 21</span>
@@ -490,12 +496,12 @@
             <div class="service-icon-wrap">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
             </div>
-            <h3 class="service-title">High-Load Telemetry & Spatial Systems</h3>
-            <p class="service-desc">Constructing recursive multi-tenant asset management engines and geospatial data integrations (ESRI, Smallworld GIS).</p>
+            <h3 class="service-title" data-i18n="services.s4_title">High-Load Telemetry & Spatial Systems</h3>
+            <p class="service-desc" data-i18n="services.s4_desc">Constructing recursive multi-tenant asset management engines and geospatial data integrations (ESRI, Smallworld GIS).</p>
             <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Industrial Machinery Telemetry Engines</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Databricks & Azure Data Factory ETL</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Geospatial GIS (Smallworld, ESRI, PostGIS)</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d1">Industrial Machinery Telemetry Engines</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d2">Databricks & Azure Data Factory ETL</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d3">Geospatial GIS (Smallworld, ESRI, PostGIS)</span></li>
             </ul>
             <div class="service-tech-tags">
               <span class="tech-tag">Databricks</span>
@@ -510,12 +516,12 @@
             <div class="service-icon-wrap">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
             </div>
-            <h3 class="service-title">Spec-Kit AI Team Enablement</h3>
-            <p class="service-desc">Transforming engineering organizations from chaotic AI chat usage into disciplined, deterministic Spec-Driven AI workflows.</p>
+            <h3 class="service-title" data-i18n="services.s5_title">Spec-Kit AI Team Enablement</h3>
+            <p class="service-desc" data-i18n="services.s5_desc">Transforming engineering organizations from chaotic AI chat usage into disciplined, deterministic Spec-Driven AI workflows.</p>
             <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Spec-Kit SDLC Guidelines & Tooling</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> AI Velocity & Code Consistency Audits</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Hands-On Senior Engineering Workshops</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d1">Spec-Kit SDLC Guidelines & Tooling</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d2">AI Velocity & Code Consistency Audits</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d3">Hands-On Senior Engineering Workshops</span></li>
             </ul>
             <div class="service-tech-tags">
               <span class="tech-tag">AI SDLC</span>
@@ -529,12 +535,12 @@
             <div class="service-icon-wrap">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </div>
-            <h3 class="service-title">Strategic Architecture Audit & Blueprint</h3>
-            <p class="service-desc">A deep-dive technical health check of your codebases, microservice boundaries, security policies, and AI readiness.</p>
+            <h3 class="service-title" data-i18n="services.s6_title">Strategic Architecture Audit & Blueprint</h3>
+            <p class="service-desc" data-i18n="services.s6_desc">A deep-dive technical health check of your codebases, microservice boundaries, security policies, and AI readiness.</p>
             <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 10-Day Comprehensive Architecture Audit</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> C4 Container & Component Schemas</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Executive Modernization Roadmap</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d1">10-Day Comprehensive Architecture Audit</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d2">C4 Container & Component Schemas</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d3">Executive Modernization Roadmap</span></li>
             </ul>
             <div class="service-tech-tags">
               <span class="tech-tag">C4 Architecture</span>
@@ -553,9 +559,9 @@
     <section class="section" id="engagement">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag emerald">Engagement Models</span>
-          <h2 class="section-title">Clear, Predictable Engagement Models</h2>
-          <p class="section-subtitle">
+          <span class="section-tag emerald" data-i18n="engagement.tag">Engagement Models</span>
+          <h2 class="section-title" data-i18n="engagement.title">Clear, Predictable Engagement Models</h2>
+          <p class="section-subtitle" data-i18n="engagement.subtitle">
             Whether you need a rapid diagnostic audit, end-to-end autonomous AI delivery, or continuous architectural leadership.
           </p>
         </div>
@@ -564,65 +570,65 @@
           
           <!-- Model 1: Strategic Architecture Audit -->
           <div class="engagement-card">
-            <span class="engagement-badge">DIAGNOSTIC & AUDIT</span>
-            <h3 class="engagement-title">10-Day Strategic Architecture Audit</h3>
-            <p class="engagement-desc">Deep-dive technical inspection of your legacy codebases, microservice boundaries, security policies, and AI integration readiness.</p>
+            <span class="engagement-badge" data-i18n="engagement.m1_badge">DIAGNOSTIC & AUDIT</span>
+            <h3 class="engagement-title" data-i18n="engagement.m1_title">10-Day Strategic Architecture Audit</h3>
+            <p class="engagement-desc" data-i18n="engagement.m1_desc">Deep-dive technical inspection of your legacy codebases, microservice boundaries, security policies, and AI integration readiness.</p>
             
             <div class="engagement-timeline-box">
-              <span class="timeline-lbl">Timeline</span>
-              <span class="timeline-val">10 Working Days (Fixed Scope)</span>
+              <span class="timeline-lbl" data-i18n="engagement.m1_timeline_lbl">Timeline</span>
+              <span class="timeline-val" data-i18n="engagement.m1_timeline_val">10 Working Days (Fixed Scope)</span>
             </div>
 
             <ul class="engagement-deliverables">
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Comprehensive Codebase & Technical Debt Audit</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> C4 System Architecture & Component Blueprints</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Security, GDPR & Database Isolation Review</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Executive Modernization & AI Roadmap</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d1">Comprehensive Codebase & Technical Debt Audit</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d2">C4 System Architecture & Component Blueprints</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d3">Security, GDPR & Database Isolation Review</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d4">Executive Modernization & AI Roadmap</span></li>
             </ul>
 
-            <a href="#contact" class="btn btn-secondary">Request Architecture Audit</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="engagement.m1_btn">Request Architecture Audit</a>
           </div>
 
           <!-- Model 2: Fully Agentic Delivery Sprint (Featured) -->
           <div class="engagement-card featured">
-            <span class="engagement-badge featured-tag">MOST POPULAR &bull; CORE DELIVERY</span>
-            <h3 class="engagement-title">Fully Agentic MVP & Core Delivery Sprint</h3>
-            <p class="engagement-desc">End-to-end production software delivery executed autonomously by multi-agent swarms under formal Spec-Kit contracts and self-healing test loops.</p>
+            <span class="engagement-badge featured-tag" data-i18n="engagement.m2_badge">MOST POPULAR &bull; CORE DELIVERY</span>
+            <h3 class="engagement-title" data-i18n="engagement.m2_title">Fully Agentic MVP & Core Delivery Sprint</h3>
+            <p class="engagement-desc" data-i18n="engagement.m2_desc">End-to-end production software delivery executed autonomously by multi-agent swarms under formal Spec-Kit contracts and self-healing test loops.</p>
             
             <div class="engagement-timeline-box">
-              <span class="timeline-lbl">Timeline</span>
-              <span class="timeline-val">4 – 8 Weeks Sprint</span>
+              <span class="timeline-lbl" data-i18n="engagement.m2_timeline_lbl">Timeline</span>
+              <span class="timeline-val" data-i18n="engagement.m2_timeline_val">4 – 8 Weeks Sprint</span>
             </div>
 
             <ul class="engagement-deliverables">
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Formal Spec-Kit Domain Contract & Invariant Modeling</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Autonomous Multi-Agent Synthesis (Zero AI Slop)</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% Automated Contract Test Suites & CI Gates</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Production Codebase & Docker / Cloud Deployment</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d1">Formal Spec-Kit Domain Contract & Invariant Modeling</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d2">Autonomous Multi-Agent Synthesis (Zero AI Slop)</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d3">100% Automated Contract Test Suites & CI Gates</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d4">Production Codebase & Docker / Cloud Deployment</span></li>
             </ul>
 
-            <a href="#contact" class="btn btn-emerald">Discuss Delivery Sprint</a>
+            <a href="#contact" class="btn btn-emerald" data-i18n="engagement.m2_btn">Discuss Delivery Sprint</a>
           </div>
 
           <!-- Model 3: Fractional Principal Architect -->
           <div class="engagement-card">
-            <span class="engagement-badge">LEADERSHIP & RETAINER</span>
-            <h3 class="engagement-title">Fractional Principal Architect & Advisory</h3>
-            <p class="engagement-desc">Continuous senior architectural leadership, technical governance, C4 system steering, and Spec-Kit team enablement for growing engineering units.</p>
+            <span class="engagement-badge" data-i18n="engagement.m3_badge">LEADERSHIP & RETAINER</span>
+            <h3 class="engagement-title" data-i18n="engagement.m3_title">Fractional Principal Architect & Advisory</h3>
+            <p class="engagement-desc" data-i18n="engagement.m3_desc">Continuous senior architectural leadership, technical governance, C4 system steering, and Spec-Kit team enablement for growing engineering units.</p>
             
             <div class="engagement-timeline-box">
-              <span class="timeline-lbl">Timeline</span>
-              <span class="timeline-val">Monthly Dedicated Retainer</span>
+              <span class="timeline-lbl" data-i18n="engagement.m3_timeline_lbl">Timeline</span>
+              <span class="timeline-val" data-i18n="engagement.m3_timeline_val">Monthly Dedicated Retainer</span>
             </div>
 
             <ul class="engagement-deliverables">
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Weekly Architecture Governance & Code Reviews</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Spec-Kit Engineering SDLC Tooling & Team Mentorship</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tier-1 Cloud & High-Load Architecture Steering</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct Async Access & Dedicated Standups</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m3_d1">Weekly Architecture Governance & Code Reviews</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m3_d2">Spec-Kit Engineering SDLC Tooling & Team Mentorship</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m3_d3">Tier-1 Cloud & High-Load Architecture Steering</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m3_d4">Direct Async Access & Dedicated Standups</span></li>
             </ul>
 
-            <a href="#contact" class="btn btn-secondary">Inquire About Retainer</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="engagement.m3_btn">Inquire About Retainer</a>
           </div>
 
         </div>
@@ -635,9 +641,9 @@
     <section class="section" id="track-record">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Track Record (NDA Compliant)</span>
-          <h2 class="section-title">Verifiable Enterprise Experience</h2>
-          <p class="section-subtitle">
+          <span class="section-tag" data-i18n="track_record.tag">Track Record (NDA Compliant)</span>
+          <h2 class="section-title" data-i18n="track_record.title">Verifiable Enterprise Experience</h2>
+          <p class="section-subtitle" data-i18n="track_record.subtitle">
             19+ years delivering mission-critical platforms across institutional finance, biomedical instruments, and heavy industry IoT.
           </p>
         </div>
@@ -647,19 +653,19 @@
           <!-- Case 1: Tier-1 European Commercial & Investment Bank -->
           <div class="case-card">
             <div class="case-card-top">
-              <span class="case-client-badge">Tier-1 European Bank</span>
-              <span class="case-domain-tag">Institutional Finance</span>
+              <span class="case-client-badge" data-i18n="track_record.c1_client">Tier-1 European Bank</span>
+              <span class="case-domain-tag" data-i18n="track_record.c1_domain">Institutional Finance</span>
             </div>
-            <h3 class="case-title">Cloud-Native Financial Transaction Management Platform</h3>
-            <p class="case-desc">Architected enterprise cloud-native transaction management utilities for a leading European financial institution. Drove infrastructural stabilization, continuous deployment engineering, and service decoupling in strictly regulated banking.</p>
+            <h3 class="case-title" data-i18n="track_record.c1_title">Cloud-Native Financial Transaction Management Platform</h3>
+            <p class="case-desc" data-i18n="track_record.c1_desc">Architected enterprise cloud-native transaction management utilities for a leading European financial institution. Drove infrastructural stabilization, continuous deployment engineering, and service decoupling in strictly regulated banking.</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
-                <span class="cm-val">-40% Cycle Time</span>
-                <span class="cm-lbl">Release Velocity Acceleration</span>
+                <span class="cm-val" data-i18n="track_record.c1_m1_val">-40% Cycle Time</span>
+                <span class="cm-lbl" data-i18n="track_record.c1_m1_lbl">Release Velocity Acceleration</span>
               </div>
               <div class="case-metric-box">
-                <span class="cm-val">Zero Disruption</span>
-                <span class="cm-lbl">100% Declarative IaC for Settlements</span>
+                <span class="cm-val" data-i18n="track_record.c1_m2_val">Zero Disruption</span>
+                <span class="cm-lbl" data-i18n="track_record.c1_m2_lbl">100% Declarative IaC for Settlements</span>
               </div>
             </div>
             <div class="service-tech-tags">
@@ -675,19 +681,19 @@
           <!-- Case 2: Enterprise Asset Management & Maintenance Engine -->
           <div class="case-card">
             <div class="case-card-top">
-              <span class="case-client-badge">Heavy Industry / Oil & Drilling</span>
-              <span class="case-domain-tag">Industrial IoT & Asset ERP</span>
+              <span class="case-client-badge" data-i18n="track_record.c2_client">Heavy Industry / Oil & Drilling</span>
+              <span class="case-domain-tag" data-i18n="track_record.c2_domain">Industrial IoT & Asset ERP</span>
             </div>
-            <h3 class="case-title">Preventative Maintenance & Telemetry Asset Engine</h3>
-            <p class="case-desc">Principal architect and developer for a multi-tenant telemetry and preventative maintenance platform deployed across distributed drilling rigs and heavy machinery. Engineered recursive tree models mapping operational days, metric drilled meters, engine hours, and automatic threshold overrides.</p>
+            <h3 class="case-title" data-i18n="track_record.c2_title">Preventative Maintenance & Telemetry Asset Engine</h3>
+            <p class="case-desc" data-i18n="track_record.c2_desc">Principal architect and developer for a multi-tenant telemetry and preventative maintenance platform deployed across distributed drilling rigs and heavy machinery. Engineered recursive tree models mapping operational days, metric drilled meters, engine hours, and automatic threshold overrides.</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
-                <span class="cm-val">99.99% Reliability</span>
-                <span class="cm-lbl">Asset Telemetry & Anomaly Tracking</span>
+                <span class="cm-val" data-i18n="track_record.c2_m1_val">99.99% Reliability</span>
+                <span class="cm-lbl" data-i18n="track_record.c2_m1_lbl">Asset Telemetry & Anomaly Tracking</span>
               </div>
               <div class="case-metric-box">
-                <span class="cm-val">Zero Downtime</span>
-                <span class="cm-lbl">Preventative Incident Automation</span>
+                <span class="cm-val" data-i18n="track_record.c2_m2_val">Zero Downtime</span>
+                <span class="cm-lbl" data-i18n="track_record.c2_m2_lbl">Preventative Incident Automation</span>
               </div>
             </div>
             <div class="service-tech-tags">
@@ -702,19 +708,19 @@
           <!-- Case 3: Autonomous AI B2B SaaS -->
           <div class="case-card">
             <div class="case-card-top">
-              <span class="case-client-badge">Autonomous AI B2B SaaS</span>
-              <span class="case-domain-tag">100% Agentic Development</span>
+              <span class="case-client-badge" data-i18n="track_record.c3_client">Autonomous AI B2B SaaS</span>
+              <span class="case-domain-tag" data-i18n="track_record.c3_domain">100% Agentic Development</span>
             </div>
-            <h3 class="case-title">AI Reputation Engine & Multi-Tenant Agentic Triage</h3>
-            <p class="case-desc">Architected an enterprise multi-tenant B2B reputation engine featuring a 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. <strong>100% Autonomous Multi-Agent Synthesis: The entire production codebase, migrations, and test suites were synthesized autonomously by AI agents under formal architectural direction and deterministic CI contract gates — zero human manual coding.</strong></p>
+            <h3 class="case-title" data-i18n="track_record.c3_title">AI Reputation Engine & Multi-Tenant Agentic Triage</h3>
+            <p class="case-desc" data-i18n-html="track_record.c3_desc_html">Architected an enterprise multi-tenant B2B reputation engine featuring a 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. <strong>100% Autonomous Multi-Agent Synthesis: The entire production codebase, migrations, and test suites were synthesized autonomously by AI agents under formal architectural direction and deterministic CI contract gates — zero human manual coding.</strong></p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
-                <span class="cm-val">3 Mos → 2 Wks</span>
-                <span class="cm-lbl">Time-to-Market Acceleration</span>
+                <span class="cm-val" data-i18n="track_record.c3_m1_val">3 Mos → 2 Wks</span>
+                <span class="cm-lbl" data-i18n="track_record.c3_m1_lbl">Time-to-Market Acceleration</span>
               </div>
               <div class="case-metric-box">
-                <span class="cm-val">100% AI Synthesized</span>
-                <span class="cm-lbl">0 Manual Developers / 100% CI Contract Gates</span>
+                <span class="cm-val" data-i18n="track_record.c3_m2_val">100% AI Synthesized</span>
+                <span class="cm-lbl" data-i18n="track_record.c3_m2_lbl">0 Manual Developers / 100% CI Contract Gates</span>
               </div>
             </div>
             <div class="service-tech-tags">
@@ -731,19 +737,19 @@
           <!-- Case 4: Big-Four Professional Services Firm -->
           <div class="case-card">
             <div class="case-card-top">
-              <span class="case-client-badge">Big-Four Consulting Firm</span>
-              <span class="case-domain-tag">M&A Analytics Platform</span>
+              <span class="case-client-badge" data-i18n="track_record.c4_client">Big-Four Consulting Firm</span>
+              <span class="case-domain-tag" data-i18n="track_record.c4_domain">M&A Analytics Platform</span>
             </div>
-            <h3 class="case-title">Corporate Deal Analytics & Interactive Visualizers</h3>
-            <p class="case-desc">Engineered frontend data layers for a global professional services firm's high-availability corporate analytics platform, supporting multi-million dollar M&A deal pipelines with interactive data-visualization matrices and zero-downtime hot-fix reliability across international timezones.</p>
+            <h3 class="case-title" data-i18n="track_record.c4_title">Corporate Deal Analytics & Interactive Visualizers</h3>
+            <p class="case-desc" data-i18n="track_record.c4_desc">Engineered frontend data layers for a global professional services firm's high-availability corporate analytics platform, supporting multi-million dollar M&A deal pipelines with interactive data-visualization matrices and zero-downtime hot-fix reliability across international timezones.</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
-                <span class="cm-val">$100M+ Pipeline</span>
-                <span class="cm-lbl">Deal Transaction Data Engines</span>
+                <span class="cm-val" data-i18n="track_record.c4_m1_val">$100M+ Pipeline</span>
+                <span class="cm-lbl" data-i18n="track_record.c4_m1_lbl">Deal Transaction Data Engines</span>
               </div>
               <div class="case-metric-box">
-                <span class="cm-val">Zero Downtime</span>
-                <span class="cm-lbl">Real-Time Global Hot-Fix Reliability</span>
+                <span class="cm-val" data-i18n="track_record.c4_m2_val">Zero Downtime</span>
+                <span class="cm-lbl" data-i18n="track_record.c4_m2_lbl">Real-Time Global Hot-Fix Reliability</span>
               </div>
             </div>
             <div class="service-tech-tags">
@@ -757,19 +763,19 @@
           <!-- Case 5: Global Biotech Diagnostic Machinery -->
           <div class="case-card">
             <div class="case-card-top">
-              <span class="case-client-badge">Global Biotech Leader</span>
-              <span class="case-domain-tag">Biotech Instrumentation</span>
+              <span class="case-client-badge" data-i18n="track_record.c5_client">Global Biotech Leader</span>
+              <span class="case-domain-tag" data-i18n="track_record.c5_domain">Biotech Instrumentation</span>
             </div>
-            <h3 class="case-title">Medical Analysis Probe Classification Machine</h3>
-            <p class="case-desc">Formulated the architectural redesign and codebase decomposition blueprint for legacy telemetry loops driving automated clinical analysis machinery. Remediated hidden software race states and asynchronous sorting logic errors into isolated operational modules.</p>
+            <h3 class="case-title" data-i18n="track_record.c5_title">Medical Analysis Probe Classification Machine</h3>
+            <p class="case-desc" data-i18n="track_record.c5_desc">Formulated the architectural redesign and codebase decomposition blueprint for legacy telemetry loops driving automated clinical analysis machinery. Remediated hidden software race states and asynchronous sorting logic errors into isolated operational modules.</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
-                <span class="cm-val">100% Compliance</span>
-                <span class="cm-lbl">Strict Biomedical Diagnostic Standards</span>
+                <span class="cm-val" data-i18n="track_record.c5_m1_val">100% Compliance</span>
+                <span class="cm-lbl" data-i18n="track_record.c5_m1_lbl">Strict Biomedical Diagnostic Standards</span>
               </div>
               <div class="case-metric-box">
-                <span class="cm-val">Zero Race States</span>
-                <span class="cm-lbl">Decoupled Telemetry Modules</span>
+                <span class="cm-val" data-i18n="track_record.c5_m2_val">Zero Race States</span>
+                <span class="cm-lbl" data-i18n="track_record.c5_m2_lbl">Decoupled Telemetry Modules</span>
               </div>
             </div>
             <div class="service-tech-tags">
@@ -782,19 +788,19 @@
           <!-- Case 6: Global Programmatic Recruitment SaaS -->
           <div class="case-card">
             <div class="case-card-top">
-              <span class="case-client-badge">Programmatic Marketing SaaS</span>
-              <span class="case-domain-tag">Recruitment & Ad Engines</span>
+              <span class="case-client-badge" data-i18n="track_record.c6_client">Programmatic Marketing SaaS</span>
+              <span class="case-domain-tag" data-i18n="track_record.c6_domain">Recruitment & Ad Engines</span>
             </div>
-            <h3 class="case-title">Modular ATS & Automated Social Advertisement Engine</h3>
-            <p class="case-desc">Supervised frontend architecture to modernize a legacy platform into a high-performance workspace combining automated social advertisement engines with modular Applicant Tracking Systems (ATS).</p>
+            <h3 class="case-title" data-i18n="track_record.c6_title">Modular ATS & Automated Social Advertisement Engine</h3>
+            <p class="case-desc" data-i18n="track_record.c6_desc">Supervised frontend architecture to modernize a legacy platform into a high-performance workspace combining automated social advertisement engines with modular Applicant Tracking Systems (ATS).</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
-                <span class="cm-val">High Velocity</span>
-                <span class="cm-lbl">International Engineering Squad</span>
+                <span class="cm-val" data-i18n="track_record.c6_m1_val">High Velocity</span>
+                <span class="cm-lbl" data-i18n="track_record.c6_m1_lbl">International Engineering Squad</span>
               </div>
               <div class="case-metric-box">
-                <span class="cm-val">Full-Stack REST</span>
-                <span class="cm-lbl">Ad Engine Interfaces</span>
+                <span class="cm-val" data-i18n="track_record.c6_m2_val">Full-Stack REST</span>
+                <span class="cm-lbl" data-i18n="track_record.c6_m2_lbl">Ad Engine Interfaces</span>
               </div>
             </div>
             <div class="service-tech-tags">
@@ -816,24 +822,24 @@
         <div class="architect-profile-grid">
           
           <div class="architect-bio-card">
-            <span class="section-tag emerald">Principal Architect</span>
-            <h2 style="font-size: 2.2rem; margin-bottom: 6px;">Piotr Solarz-Wnęk</h2>
-            <div style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--brand-teal-dark); margin-bottom: 16px; font-weight: 600;">
+            <span class="section-tag emerald" data-i18n="architect.tag">Principal Architect</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 6px;" data-i18n="architect.name">Piotr Solarz-Wnęk</h2>
+            <div style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--brand-teal-dark); margin-bottom: 16px; font-weight: 600;" data-i18n="architect.subtitle">
               MSc Informatic Industrial Systems | 19+ Years Experience
             </div>
-            <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 16px;">
+            <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 16px;" data-i18n-html="architect.bio_p1_html">
               Software Architect, AI-Native developer, and former Business Unit Head who expanded global engineering units to 30+ engineers across Banking, Energy, and Industry 4.0. Certified Azure Architect (AZ-900), ITIL Foundation, and alumni of <em>Droga Nowoczesnego Architekta</em>.
             </p>
-            <p style="color: var(--text-secondary); line-height: 1.68;">
+            <p style="color: var(--text-secondary); line-height: 1.68;" data-i18n-html="architect.bio_p2_html">
               Pioneering <strong>Spec-Kit</strong> and <strong>Fully Agentic Development</strong> to make AI-assisted engineering deterministic, safe, and free from AI slop.
             </p>
 
             <div class="social-links-row">
-              <a href="https://www.linkedin.com/in/piotrsolarzwnek/" target="_blank" rel="noopener noreferrer" class="social-icon-btn">
+              <a href="https://www.linkedin.com/in/piotrsolarzwnek/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" data-i18n="architect.linkedin_btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 LinkedIn Profile
               </a>
-              <a href="mailto:piotr.solarz-wnek@apsw.pl" class="social-icon-btn">
+              <a href="mailto:piotr.solarz-wnek@apsw.pl" class="social-icon-btn" data-i18n="architect.email_btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 Direct Email
               </a>
@@ -842,7 +848,7 @@
 
           <!-- Credentials Box -->
           <div style="background: var(--bg-surface-2); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px;">
-            <h4 style="margin-bottom: 14px; font-size: 1.05rem; color: var(--text-primary);">Certified Credentials & Education</h4>
+            <h4 style="margin-bottom: 14px; font-size: 1.05rem; color: var(--text-primary);" data-i18n="architect.credentials_title">Certified Credentials & Education</h4>
             
             <div class="cert-badges-grid">
               <span class="cert-pill">
@@ -869,10 +875,10 @@
 
             <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
               <div>
-                <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary);">Enterprise Leadership:</div>
-                <div style="font-size: 0.78rem; color: var(--text-muted);">Scaled BU to 30+ Engineers across Mobile, Java & PHP streams</div>
+                <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary);" data-i18n="architect.leadership_title">Enterprise Leadership:</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);" data-i18n="architect.leadership_desc">Scaled BU to 30+ Engineers across Mobile, Java & PHP streams</div>
               </div>
-              <a href="mailto:piotr.solarz-wnek@apsw.pl" class="btn btn-emerald btn-sm">Direct Contact</a>
+              <a href="mailto:piotr.solarz-wnek@apsw.pl" class="btn btn-emerald btn-sm" data-i18n="architect.direct_contact_btn">Direct Contact</a>
             </div>
           </div>
 
@@ -886,9 +892,9 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag emerald">Let's Connect</span>
-          <h2 class="section-title">Schedule an Architecture Review</h2>
-          <p class="section-subtitle">
+          <span class="section-tag emerald" data-i18n="contact.tag">Let's Connect</span>
+          <h2 class="section-title" data-i18n="contact.title">Schedule an Architecture Review</h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">
             Whether you want to build a Fully Agentic Application, eliminate AI slop via Spec-Kit, or modernize legacy systems — let's engineer the right solution.
           </p>
         </div>
@@ -902,9 +908,9 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
               <div>
-                <h3 style="font-size: 1.05rem; margin-bottom: 2px;">Direct Email</h3>
+                <h3 style="font-size: 1.05rem; margin-bottom: 2px;" data-i18n="contact.direct_email_title">Direct Email</h3>
                 <p style="margin-bottom: 2px;"><a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--brand-teal-dark); font-weight: 600;">piotr.solarz-wnek@apsw.pl</a></p>
-                <span style="font-size: 0.78rem; color: var(--text-muted);">Average response time: &lt; 4 business hours</span>
+                <span style="font-size: 0.78rem; color: var(--text-muted);" data-i18n="contact.response_time">Average response time: &lt; 4 business hours</span>
               </div>
             </div>
 
@@ -913,9 +919,9 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               </div>
               <div>
-                <h3 style="font-size: 1.05rem; margin-bottom: 2px;">Direct Phone / WhatsApp</h3>
+                <h3 style="font-size: 1.05rem; margin-bottom: 2px;" data-i18n="contact.phone_title">Direct Phone / WhatsApp</h3>
                 <p style="margin-bottom: 2px;"><a href="tel:+48666522923" style="color: var(--brand-teal-dark); font-weight: 600;">+48 666 522 923</a></p>
-                <span style="font-size: 0.78rem; color: var(--text-muted);">Europe / Warsaw (UTC+1 / UTC+2)</span>
+                <span style="font-size: 0.78rem; color: var(--text-muted);" data-i18n="contact.timezone">Europe / Warsaw (UTC+1 / UTC+2)</span>
               </div>
             </div>
 
@@ -924,31 +930,31 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               </div>
               <div>
-                <h3 style="font-size: 1.05rem; margin-bottom: 2px;">Engagement Availability</h3>
-                <p style="margin-bottom: 2px; color: var(--text-primary); font-weight: 500;">Strategic Sprints & Retainers</p>
-                <span style="font-size: 0.78rem; color: var(--text-muted);">Remote / EU Hybrid architecture engagements</span>
+                <h3 style="font-size: 1.05rem; margin-bottom: 2px;" data-i18n="contact.availability_title">Engagement Availability</h3>
+                <p style="margin-bottom: 2px; color: var(--text-primary); font-weight: 500;" data-i18n="contact.availability_val">Strategic Sprints & Retainers</p>
+                <span style="font-size: 0.78rem; color: var(--text-muted);" data-i18n="contact.availability_desc">Remote / EU Hybrid architecture engagements</span>
               </div>
             </div>
 
             <!-- What Happens Next: 3-Step Engagement SLA -->
             <div class="contact-card-item" style="background: var(--bg-surface-2); border-color: var(--border-medium);">
               <div style="width: 100%;">
-                <div style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--accent-emerald); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                <div style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--accent-emerald); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;" data-i18n="contact.sla_title">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                   What Happens Next (Direct SLA)
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                   <div style="display: flex; gap: 10px; align-items: flex-start;">
                     <span style="background: var(--bg-surface-1); border: 1px solid var(--border-medium); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; color: var(--brand-teal-dark);">1</span>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;"><strong style="color: var(--text-primary);">Stack Review (&lt; 4h):</strong> Piotr personally reviews your requirements under mutual NDA.</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;" data-i18n-html="contact.sla_step1_html"><strong style="color: var(--text-primary);">Stack Review (&lt; 4h):</strong> Piotr personally reviews your requirements under mutual NDA.</div>
                   </div>
                   <div style="display: flex; gap: 10px; align-items: flex-start;">
                     <span style="background: var(--bg-surface-1); border: 1px solid var(--border-medium); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; color: var(--brand-teal-dark);">2</span>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;"><strong style="color: var(--text-primary);">Technical Alignment:</strong> Direct 30-min call with the Principal Architect. Zero sales pitch.</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;" data-i18n-html="contact.sla_step2_html"><strong style="color: var(--text-primary);">Technical Alignment:</strong> Direct 30-min call with the Principal Architect. Zero sales pitch.</div>
                   </div>
                   <div style="display: flex; gap: 10px; align-items: flex-start;">
                     <span style="background: var(--bg-surface-1); border: 1px solid var(--border-medium); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; color: var(--brand-teal-dark);">3</span>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;"><strong style="color: var(--text-primary);">Actionable Scope (24h):</strong> Concrete 10-Day Audit or Core Delivery Sprint roadmap.</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;" data-i18n-html="contact.sla_step3_html"><strong style="color: var(--text-primary);">Actionable Scope (24h):</strong> Concrete 10-Day Audit or Core Delivery Sprint roadmap.</div>
                   </div>
                 </div>
               </div>
@@ -966,41 +972,41 @@
               <input type="hidden" name="form_rendered_at" id="form-rendered-at" value="">
 
               <div class="form-group">
-                <label class="form-label" for="form-name">Your Name / Company *</label>
-                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Jensen (CTO, Fintech)" required>
+                <label class="form-label" for="form-name" data-i18n="contact.form_name_label">Your Name / Company *</label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Jensen (CTO, Fintech)" data-i18n-placeholder="contact.form_name_placeholder" required>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="form-email">Work Email *</label>
-                <input type="email" id="form-email" name="email" class="form-input" placeholder="alex@company.com" required>
+                <label class="form-label" for="form-email" data-i18n="contact.form_email_label">Work Email *</label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="alex@company.com" data-i18n-placeholder="contact.form_email_placeholder" required>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="form-service">Primary Area of Interest</label>
+                <label class="form-label" for="form-service" data-i18n="contact.form_service_label">Primary Area of Interest</label>
                 <select id="form-service" name="service_type" class="form-select">
-                  <option value="Fully Agentic Application Development">Fully Agentic Application Development</option>
-                  <option value="Spec-Kit AI Deterministic Engineering">Spec-Kit AI & Agentic Systems</option>
-                  <option value="Enterprise Architecture & Cloud Modernization">Enterprise Architecture & Cloud Modernization</option>
-                  <option value="Industrial IoT / Spatial Telemetry">High-Load Telemetry / Spatial IoT Systems</option>
-                  <option value="Engineering Team Enablement">Spec-Kit AI Team Enablement & Workshops</option>
-                  <option value="Architecture Review Audit">10-Day Comprehensive Architecture Audit</option>
+                  <option value="Fully Agentic Application Development" data-i18n="contact.opt_agentic">Fully Agentic Application Development</option>
+                  <option value="Spec-Kit AI Deterministic Engineering" data-i18n="contact.opt_speckit">Spec-Kit AI & Agentic Systems</option>
+                  <option value="Enterprise Architecture & Cloud Modernization" data-i18n="contact.opt_enterprise">Enterprise Architecture & Cloud Modernization</option>
+                  <option value="Industrial IoT / Spatial Telemetry" data-i18n="contact.opt_iot">High-Load Telemetry / Spatial IoT Systems</option>
+                  <option value="Engineering Team Enablement" data-i18n="contact.opt_enablement">Spec-Kit AI Team Enablement & Workshops</option>
+                  <option value="Architecture Review Audit" data-i18n="contact.opt_audit">10-Day Comprehensive Architecture Audit</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="form-message">Project Description / Technical Goals *</label>
-                <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about your system architecture, challenges, target timeline, or tech stack..." required></textarea>
+                <label class="form-label" for="form-message" data-i18n="contact.form_msg_label">Project Description / Technical Goals *</label>
+                <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about your system architecture, challenges, target timeline, or tech stack..." data-i18n-placeholder="contact.form_msg_placeholder" required></textarea>
               </div>
 
               <!-- Mutual NDA Option -->
               <div class="form-group" style="margin-bottom: 20px;">
                 <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 0.84rem; color: var(--text-secondary); line-height: 1.45;">
                   <input type="checkbox" id="form-nda" name="nda_requested" value="yes" style="margin-top: 2px; width: 16px; height: 16px; accent-color: var(--accent-emerald); cursor: pointer;">
-                  <span><strong style="color: var(--text-primary);">Request Mutual NDA:</strong> Execute a bilateral Non-Disclosure Agreement before our technical alignment call.</span>
+                  <span data-i18n-html="contact.nda_text_html"><strong style="color: var(--text-primary);">Request Mutual NDA:</strong> Execute a bilateral Non-Disclosure Agreement before our technical alignment call.</span>
                 </label>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.form_submit_btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 Send Architecture Inquiry
               </button>
@@ -1025,39 +1031,39 @@
             <img src="assets/brand/apsw-logo-white.svg" alt="APSW Logo" class="nav-logo nav-logo-dark" width="34" height="34">
             <div class="brand-text-block">
               <span class="brand-title" style="font-size: 1.15rem;">APSW</span>
-              <span class="brand-sub" style="font-size: 0.65rem;">AI NATIVE ARCHITECTURE</span>
+              <span class="brand-sub" style="font-size: 0.65rem;" data-i18n="nav.brand_sub">AI NATIVE ARCHITECTURE</span>
             </div>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 14px;">
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 14px;" data-i18n="footer.footer_desc">
             APSW — AI-Native Solution Architecture & Enterprise Engineering by Piotr Solarz-Wnęk. Zero AI Slop. Deterministic systems engineered for high-availability production.
           </p>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-brand);">
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-brand);" data-i18n="footer.footer_deploy">
             Deployment Ready: Cyber_Folks / Hetzner
           </div>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Methodology & Tech</h4>
+          <h4 class="footer-col-title" data-i18n="footer.col1_title">Methodology & Tech</h4>
           <ul class="footer-links">
-            <li><a href="#speckit">Spec-Kit AI Workflow</a></li>
-            <li><a href="#agentic-dev">Fully Agentic Dev</a></li>
-            <li><a href="#engagement">Engagement Models</a></li>
-            <li><a href="#track-record">Verifiable Case Studies</a></li>
+            <li><a href="#speckit" data-i18n="nav.speckit">Spec-Kit AI Workflow</a></li>
+            <li><a href="#agentic-dev" data-i18n="nav.agentic">Fully Agentic Dev</a></li>
+            <li><a href="#engagement" data-i18n="nav.engagement">Engagement Models</a></li>
+            <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Services</h4>
+          <h4 class="footer-col-title" data-i18n="footer.col2_title">Services</h4>
           <ul class="footer-links">
-            <li><a href="#services">Agentic Swarms</a></li>
-            <li><a href="#services">Enterprise Java 21 / Spring</a></li>
-            <li><a href="#services">Symfony 8 Microservices</a></li>
-            <li><a href="#services">Telemetry & IoT Engines</a></li>
+            <li><a href="#services" data-i18n="services.s1_title">Agentic Swarms</a></li>
+            <li><a href="#services" data-i18n="services.s3_d1">Enterprise Java 21 / Spring</a></li>
+            <li><a href="#services" data-i18n="services.s3_title">Symfony 8 Microservices</a></li>
+            <li><a href="#services" data-i18n="services.s4_title">Telemetry & IoT Engines</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Availability & Office</h4>
+          <h4 class="footer-col-title" data-i18n="footer.col3_title">Availability & Office</h4>
           <ul class="footer-links">
             <li style="font-size: 0.85rem; color: var(--text-secondary);">Zielona Góra / Poland (EU)</li>
             <li style="font-size: 0.85rem; color: var(--text-secondary);">CET / CEST (UTC+1 / UTC+2)</li>
@@ -1069,7 +1075,7 @@
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 APSW — Piotr Solarz-Wnęk. All rights reserved.</div>
+        <div data-i18n="footer.rights">&copy; 2026 APSW — Piotr Solarz-Wnęk. All rights reserved.</div>
         <div style="display: flex; gap: 16px;">
           <a href="https://www.linkedin.com/in/piotrsolarzwnek/" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">LinkedIn</a>
           <a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-muted);">piotr.solarz-wnek@apsw.pl</a>
@@ -1079,6 +1085,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
   <script src="js/spec-kit-flow.js"></script>
 </body>
