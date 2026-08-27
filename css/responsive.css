@@ -3,6 +3,36 @@
    Mobile-First & Fluid Layout Optimizations
    ========================================================================== */
 
+/* Desktop nav carries 7 items; tighten spacing before the mobile menu kicks in
+   at 768px so labels never wrap or collide with the nav actions. */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .nav-menu {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .nav-menu {
+    gap: 11px;
+  }
+
+  .nav-link {
+    font-size: 0.76rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;

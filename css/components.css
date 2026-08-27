@@ -31,6 +31,9 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  /* The container is capped at 1200px, so the header crowds on ANY viewport
+     width. Keep a hard minimum between brand / menu / actions. */
+  gap: 22px;
 }
 
 .nav-brand {
@@ -88,8 +91,13 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 20px;
   list-style: none;
+  flex-wrap: nowrap;
+}
+
+.nav-menu > li {
+  flex: 0 0 auto;
 }
 
 .nav-link {
@@ -98,6 +106,7 @@
   color: var(--text-secondary);
   transition: color var(--transition-fast);
   padding: 4px 0;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -113,6 +122,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 0 0 auto;
+}
+
+/* Header labels must never break onto a second line. */
+.nav-actions .btn,
+.brand-sub,
+.brand-title {
+  white-space: nowrap;
 }
 
 .theme-toggle-btn {
@@ -1087,4 +1104,110 @@
   align-items: center;
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+/* =======================================================================
+   CAREER TIMELINE (19+ years verifiable chronology)
+   ======================================================================= */
+.career-timeline {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: 34px;
+}
+
+.career-timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--brand-teal-mid) 0%, var(--border-subtle) 100%);
+}
+
+.career-entry {
+  position: relative;
+  padding: 0 0 30px 0;
+}
+
+.career-entry:last-child {
+  padding-bottom: 0;
+}
+
+.career-entry::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-canvas);
+  border: 2px solid var(--brand-teal-mid);
+  transition: var(--transition-fast);
+}
+
+.career-entry.is-current::before {
+  background: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 0 4px var(--accent-emerald-bg);
+}
+
+.career-entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.career-period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-brand);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.career-company {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.career-role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-emerald);
+  margin-bottom: 6px;
+}
+
+.career-desc {
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 640px) {
+  .career-timeline {
+    padding-left: 26px;
+  }
+  .career-timeline::before {
+    left: 5px;
+  }
+  .career-entry::before {
+    left: -27px;
+  }
+  .career-period {
+    font-size: 0.72rem;
+  }
 }
