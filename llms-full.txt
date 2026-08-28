@@ -74,3 +74,38 @@ C. ENTERPRISE SOFTWARE ARCHITECTURE
 - Retainers & Sprint Deliveries: Weekly architect retainers ranging from €3,200 to €4,800 / week.
 - Engagement Models: https://apsw.pl/#engagement
 - Direct Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
+
+## AGENT GOVERNANCE LAYER (THE MECHANISM BEHIND "ZERO AI SLOP")
+
+Every claim about deterministic agentic delivery rests on one artifact: a version-controlled
+governance directory that every agent must read before it writes a line of code. It ships into
+the client repository on day one of an engagement and is reviewed like any other code.
+
+Inventory: 11 rules, 10 workflows, 14 role-scoped skills.
+
+The 6-stage specification pipeline (specs/<feature>/ is version-controlled):
+1. Specify    - define WHAT to build, technology-agnostic: user stories, acceptance criteria,
+                non-functional requirements. Output: spec.md
+2. Clarify    - hunt ambiguity and edge cases; encode every resolution back into spec.md
+3. Plan       - define HOW: architecture, schema diffs, API contracts, tenancy controls,
+                trade-offs considered. Output: plan.md, data-model.md, research.md
+4. Tasks      - ordered, dependency-aware task list. Output: tasks.md
+5. Analyze    - review tasks against migration safety, tenancy leaks and permissions BEFORE
+                any code is written
+6. Implement  - execute tasks against the spec, run the verification suite, then report
+
+The merge gate - "No test, no merge". All four must pass before an agent may report completion:
+  npm run type-check | npm run lint | bin/phpunit | npx playwright test
+
+The 7-question self-review, answered in writing and posted as a comment on every pull request:
+1. Architectural alignment - extension architecture, or logic bolted onto the core?
+2. Thin controllers - HTTP mapping only; side-effects dispatched asynchronously
+3. Tenancy and state isolation - enforced at the ORM layer, no state leak under worker mode
+4. Anti-slop interface integrity - technical concepts hidden behind the user's own words;
+   no decorative sparkles, no nested card bloat, no unformatted strings
+5. Defensive migrations - additive and zero-downtime against live production data
+6. Real-time push, not polling - server-sent events or optimistic UI, never setInterval
+7. Empirical verification - tests written AND run; a claim of passing is not a pass
+
+Published excerpt: 5 of 35 files at https://apsw.pl/#governance, generalized so that
+client-identifying specifics are removed under NDA.

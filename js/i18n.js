@@ -11,6 +11,7 @@ const APSW_TRANSLATIONS = {
     },
     nav: {
       brand_sub: "AI NATIVE ARCHITECTURE",
+      governance: "Governance",
       speckit: "Spec-Kit AI",
       agentic: "Agentic Dev",
       services: "Services",
@@ -37,6 +38,26 @@ const APSW_TRANSLATIONS = {
       metric_regulated_lbl: "Institutional Finance & Biotech Proven",
       metric_anti_slop_val: "Zero AI Slop",
       metric_anti_slop_lbl: "Deterministic Spec-Kit CI Gates"
+    },
+    governance: {
+      tag: "The Governance Layer",
+      title: "The rules the agents cannot break",
+      subtitle: "Everything else on this page is a claim. This is the mechanism behind it: written, version-controlled constraints that every agent reads before it writes a line of code. Read them yourself.",
+      meta_rules: "rules",
+      meta_workflows: "workflows",
+      meta_skills: "skills",
+      meta_stages: "pipeline stages",
+      meta_note: "Excerpt — 5 of 35 files, client specifics removed",
+      tree_aria: "Governance documents",
+      skills_note: "14 role-scoped skills",
+      cap_spec_pipeline: "the six stages behind the four-stage summary on this page",
+      cap_review: "7 questions, answered in writing on every pull request",
+      cap_testing: "coverage is a merge condition, not a target",
+      cap_security: "non-negotiable on regulated-sector delivery",
+      cap_verification: "executed before completion is reported",
+      gate_label: "No test, no merge",
+      gate_note: "All four must pass before an agent may report a task complete.",
+      footer_link: "Agent Governance Layer"
     },
     speckit: {
       tag: "Methodology",
@@ -230,7 +251,18 @@ const APSW_TRANSLATIONS = {
       c8_m1_val: "Monolith → Microservices",
       c8_m1_lbl: "Domain-Aligned Service Decomposition",
       c8_m2_val: "Incremental Cutover",
-      c8_m2_lbl: "Strangler-Fig Migration Pattern"
+      c8_m2_lbl: "Strangler-Fig Migration Pattern",
+      filter_aria: "Filter case studies by domain",
+      filter_all: "All Engagements",
+      filter_finance: "Finance & Insurance",
+      filter_industry: "Industry & Energy",
+      filter_saas: "SaaS Platforms",
+      filter_biotech: "Biotech",
+      filter_ai: "Agentic AI",
+      cta_title: "Recognise your problem in one of these?",
+      cta_desc: "Book a 45-minute architecture review. You leave with a written assessment of your delivery risk — no obligation, no sales deck.",
+      cta_primary: "Book Architecture Review",
+      cta_secondary: "See Engagement Models"
     },
     career: {
       tag: "Professional Chronology",
@@ -352,6 +384,7 @@ const APSW_TRANSLATIONS = {
     },
     nav: {
       brand_sub: "ARCHITEKTURA AI-NATIVE",
+      governance: "Nadzór",
       speckit: "Metodyka Spec-Kit",
       agentic: "Agentic Dev",
       services: "Usługi",
@@ -378,6 +411,26 @@ const APSW_TRANSLATIONS = {
       metric_regulated_lbl: "Sprawdzone w Bankowości i Biotech",
       metric_anti_slop_val: "Zero AI Slop",
       metric_anti_slop_lbl: "Deterministyczne Bramki Jakości CI"
+    },
+    governance: {
+      tag: "Warstwa Nadzoru",
+      title: "Zasady, których agenci nie mogą złamać",
+      subtitle: "Wszystko inne na tej stronie to deklaracja. To jest mechanizm, który za nią stoi: spisane, wersjonowane ograniczenia, które każdy agent czyta, zanim napisze linijkę kodu. Przeczytaj je sam.",
+      meta_rules: "reguł",
+      meta_workflows: "procesów",
+      meta_skills: "umiejętności",
+      meta_stages: "etapów pipeline’u",
+      meta_note: "Fragment — 5 z 35 plików, szczegóły klientów usunięte. Dokumenty w języku źródłowym (angielskim).",
+      tree_aria: "Dokumenty nadzoru",
+      skills_note: "14 umiejętności przypisanych do ról",
+      cap_spec_pipeline: "sześć etapów stojących za czteroetapowym skrótem na tej stronie",
+      cap_review: "7 pytań, na które trzeba odpowiedzieć pisemnie przy każdym pull requeście",
+      cap_testing: "pokrycie testami jest warunkiem merge’a, nie celem",
+      cap_security: "nienegocjowalne przy projektach dla sektora regulowanego",
+      cap_verification: "wykonywane, zanim zadanie zostanie zgłoszone jako gotowe",
+      gate_label: "Bez testów nie ma merge’a",
+      gate_note: "Wszystkie cztery muszą przejść, zanim agent może zgłosić zadanie jako ukończone.",
+      footer_link: "Warstwa Nadzoru Agentów"
     },
     speckit: {
       tag: "Metodyka Inżynieryjna",
@@ -571,7 +624,18 @@ const APSW_TRANSLATIONS = {
       c8_m1_val: "Monolit → Mikroserwisy",
       c8_m1_lbl: "Dekompozycja Usług Zgodna z Domenami",
       c8_m2_val: "Migracja Przyrostowa",
-      c8_m2_lbl: "Wzorzec Strangler-Fig"
+      c8_m2_lbl: "Wzorzec Strangler-Fig",
+      filter_aria: "Filtruj projekty według domeny",
+      filter_all: "Wszystkie Projekty",
+      filter_finance: "Finanse i Ubezpieczenia",
+      filter_industry: "Przemysł i Energetyka",
+      filter_saas: "Platformy SaaS",
+      filter_biotech: "Biotechnologia",
+      filter_ai: "Agentic AI",
+      cta_title: "Rozpoznajesz u siebie któryś z tych problemów?",
+      cta_desc: "Umów 45-minutowy przegląd architektury. Wychodzisz z pisemną oceną ryzyka dostarczania — bez zobowiązań i bez prezentacji sprzedażowej.",
+      cta_primary: "Umów Przegląd Architektury",
+      cta_secondary: "Zobacz Modele Współpracy"
     },
     career: {
       tag: "Przebieg Kariery",

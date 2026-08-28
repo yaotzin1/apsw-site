@@ -35,99 +35,140 @@
   <link rel="icon" type="image/svg+xml" href="assets/brand/apsw-logo-color.svg">
 
   <!-- Stylesheets -->
+  <!-- Tab behaviour is enhancement only: without JS every governance document stays visible. -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://apsw.pl/#organization",
-        "name": "APSW - Piotr Solarz-Wnek",
-        "url": "https://apsw.pl",
-        "logo": "https://apsw.pl/assets/brand/apsw-logo.png",
-        "image": "https://apsw.pl/assets/brand/apsw-logo.png",
-        "description": "AI-Native Solution Development, Fully Agentic Software Synthesis, and Enterprise Software Architecture led by Piotr Solarz-Wnęk.",
-        "email": "piotr.solarz-wnek@apsw.pl",
-        "telephone": "+48666522923",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Przybymierz / Zielona Gora",
-          "addressCountry": "PL"
-        },
-        "founder": {
-          "@type": "Person",
-          "@id": "https://apsw.pl/#founder",
-          "name": "Piotr Solarz-Wnęk",
-          "jobTitle": "Senior Fullstack Developer | Enterprise Solution Architect",
-          "sameAs": [
-            "https://www.linkedin.com/in/piotrsolarzwnek/"
-          ]
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "APSW Architecture & AI Engineering Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Fully Agentic Application Development",
-                "description": "Autonomous multi-agent swarms constructing robust production applications under architectural contracts."
-              }
+        {
+            "@type": "ProfessionalService",
+            "@id": "https://apsw.pl/#organization",
+            "name": "APSW - Piotr Solarz-Wnek",
+            "url": "https://apsw.pl",
+            "logo": "https://apsw.pl/assets/brand/apsw-logo.png",
+            "image": "https://apsw.pl/assets/brand/apsw-logo.png",
+            "description": "AI-Native Solution Development, Fully Agentic Software Synthesis, and Enterprise Software Architecture led by Piotr Solarz-Wnęk.",
+            "email": "piotr.solarz-wnek@apsw.pl",
+            "telephone": "+48666522923",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Przybymierz / Zielona Gora",
+                "addressCountry": "PL"
             },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Spec-Kit Deterministic AI Systems",
-                "description": "Specification-driven AI workflows eliminating hallucinations and AI slop via formal contract gates."
-              }
+            "founder": {
+                "@type": "Person",
+                "@id": "https://apsw.pl/#founder",
+                "name": "Piotr Solarz-Wnęk",
+                "jobTitle": "Senior Fullstack Developer | Enterprise Solution Architect",
+                "sameAs": [
+                    "https://www.linkedin.com/in/piotrsolarzwnek/"
+                ]
             },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Enterprise Software Architecture & Modernization",
-                "description": "High-throughput Java 21, Spring Boot, Symfony 8 microservices and Azure Cloud IaC."
-              }
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "APSW Architecture & AI Engineering Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Fully Agentic Application Development",
+                            "description": "Autonomous multi-agent swarms constructing robust production applications under architectural contracts."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Spec-Kit Deterministic AI Systems",
+                            "description": "Specification-driven AI workflows eliminating hallucinations and AI slop via formal contract gates."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Enterprise Software Architecture & Modernization",
+                            "description": "High-throughput Java 21, Spring Boot, Symfony 8 microservices and Azure Cloud IaC."
+                        }
+                    }
+                ]
             }
-          ]
+        },
+        {
+            "@type": "HowTo",
+            "name": "Spec-Kit Methodology: Deterministic AI Software Engineering",
+            "description": "A 4-stage specification-first workflow for building robust, enterprise-grade AI applications without AI slop.",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "name": "Formal Domain & Specification Drafting",
+                    "text": "Define deterministic domain schemas, strict input/output contracts, business invariants, and edge case matrices."
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Architectural Guardrails Injection",
+                    "text": "Inject C4 constraints, security policies, and non-blocking asynchronous interaction models into agent context."
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Fully Agentic Code Synthesis",
+                    "text": "Autonomous specialized agents synthesize clean code, migration scripts, and full test suites verified against the contract."
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Deterministic Verification & CI Quality Gates",
+                    "text": "Automated contract testing, static analysis, and performance benchmarks enforce zero regressions before merge."
+                }
+            ]
+        },
+        {
+            "@type": "CreativeWork",
+            "@id": "https://apsw.pl/#governance",
+            "name": "APSW Agent Governance Layer",
+            "description": "Version-controlled constraints every AI agent reads before writing code: 11 rules, 10 workflows, 14 role-scoped skills, a 6-stage specification pipeline and a 7-question self-review gate enforced on every pull request.",
+            "author": {
+                "@id": "https://apsw.pl/#organization"
+            },
+            "inLanguage": "en",
+            "url": "https://apsw.pl/#governance",
+            "hasPart": [
+                {
+                    "@type": "CreativeWork",
+                    "name": ".agents/rules/spec_pipeline.md",
+                    "abstract": "the six stages behind the four-stage summary on this page"
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": ".agents/rules/review.md",
+                    "abstract": "7 questions, answered in writing on every pull request"
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": ".agents/rules/testing.md",
+                    "abstract": "coverage is a merge condition, not a target"
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": ".agents/rules/security.md",
+                    "abstract": "non-negotiable on regulated-sector delivery"
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": ".agents/workflows/verification.md",
+                    "abstract": "executed before completion is reported"
+                }
+            ]
         }
-      },
-      {
-        "@type": "HowTo",
-        "name": "Spec-Kit Methodology: Deterministic AI Software Engineering",
-        "description": "A 4-stage specification-first workflow for building robust, enterprise-grade AI applications without AI slop.",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "name": "Formal Domain & Specification Drafting",
-            "text": "Define deterministic domain schemas, strict input/output contracts, business invariants, and edge case matrices."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Architectural Guardrails Injection",
-            "text": "Inject C4 constraints, security policies, and non-blocking asynchronous interaction models into agent context."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Fully Agentic Code Synthesis",
-            "text": "Autonomous specialized agents synthesize clean code, migration scripts, and full test suites verified against the contract."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Deterministic Verification & CI Quality Gates",
-            "text": "Automated contract testing, static analysis, and performance benchmarks enforce zero regressions before merge."
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
 </head>
 <body>
@@ -151,11 +192,11 @@
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu">
-          <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
-          <li><a href="#agentic-dev" class="nav-link" data-i18n="nav.agentic">Agentic Dev</a></li>
-          <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
-          <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
+          <li><a href="#governance" class="nav-link" data-i18n="nav.governance">Governance</a></li>
           <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
+          <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+          <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
+          <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
           <li><a href="#career" class="nav-link" data-i18n="nav.career">Career</a></li>
           <li><a href="#architect" class="nav-link" data-i18n="nav.about">About</a></li>
           <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
@@ -233,6 +274,659 @@
             <div class="metric-item">
               <span class="metric-value" data-i18n="hero.metric_anti_slop_val">Zero AI Slop</span>
               <span class="metric-label" data-i18n="hero.metric_anti_slop_lbl">Deterministic Spec-Kit CI Gates</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         THE GOVERNANCE LAYER - INSPECTABLE PROOF ARTIFACT
+         Rule documents are rendered statically so agents and crawlers read them
+         without executing JavaScript. Tabs are progressive enhancement only.
+         ======================================================================= -->
+    <section class="section" id="governance">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="governance.tag">The Governance Layer</span>
+          <h2 class="section-title" data-i18n="governance.title">The rules the agents cannot break</h2>
+          <p class="section-subtitle" data-i18n="governance.subtitle">
+            Everything else on this page is a claim. This is the mechanism behind it: written,
+            version-controlled constraints that every agent reads before it writes a line of code.
+            Read them yourself.
+          </p>
+        </div>
+
+        <div class="governance-shell">
+
+          <div class="gov-meta">
+            <span><b>11</b> <span data-i18n="governance.meta_rules">rules</span></span>
+            <span><b>10</b> <span data-i18n="governance.meta_workflows">workflows</span></span>
+            <span><b>14</b> <span data-i18n="governance.meta_skills">skills</span></span>
+            <span><b>6</b> <span data-i18n="governance.meta_stages">pipeline stages</span></span>
+            <span class="gov-meta-note" data-i18n="governance.meta_note">Excerpt &mdash; 5 of 35 files, client specifics removed</span>
+          </div>
+
+          <div class="gov-body">
+            <div class="gov-tree" role="tablist" aria-orientation="vertical" data-i18n-aria="governance.tree_aria" aria-label="Governance documents">
+          <div class="gov-tree-group"><span>.agents/rules</span><span>11</span></div>
+          <span class="gov-file gov-file-dim">agent_execution_standards.md</span>
+          <span class="gov-file gov-file-dim">agent_orchestration.md</span>
+          <span class="gov-file gov-file-dim">architecture.md</span>
+          <span class="gov-file gov-file-dim">backend.md</span>
+          <span class="gov-file gov-file-dim">database.md</span>
+          <span class="gov-file gov-file-dim">frontend.md</span>
+          <span class="gov-file gov-file-dim">qa.md</span>
+          <button type="button" class="gov-file" role="tab" id="gov-tab-review" aria-controls="gov-panel-review" aria-selected="false" tabindex="-1" data-file="review">review.md</button>
+          <button type="button" class="gov-file" role="tab" id="gov-tab-security" aria-controls="gov-panel-security" aria-selected="false" tabindex="-1" data-file="security">security.md</button>
+          <button type="button" class="gov-file" role="tab" id="gov-tab-spec_pipeline" aria-controls="gov-panel-spec_pipeline" aria-selected="true" tabindex="0" data-file="spec_pipeline">spec_pipeline.md</button>
+          <button type="button" class="gov-file" role="tab" id="gov-tab-testing" aria-controls="gov-panel-testing" aria-selected="false" tabindex="-1" data-file="testing">testing.md</button>
+          <div class="gov-tree-group"><span>.agents/workflows</span><span>10</span></div>
+          <span class="gov-file gov-file-dim">agent_orchestration.md</span>
+          <span class="gov-file gov-file-dim">branching.md</span>
+          <span class="gov-file gov-file-dim">ci_deploy.md</span>
+          <span class="gov-file gov-file-dim">create_addon.md</span>
+          <span class="gov-file gov-file-dim">database_migration.md</span>
+          <span class="gov-file gov-file-dim">qa_e2e.md</span>
+          <span class="gov-file gov-file-dim">refactor.md</span>
+          <span class="gov-file gov-file-dim">spec_driven_development.md</span>
+          <span class="gov-file gov-file-dim">spec_pipeline.md</span>
+          <button type="button" class="gov-file" role="tab" id="gov-tab-verification" aria-controls="gov-panel-verification" aria-selected="false" tabindex="-1" data-file="verification">verification.md</button>
+          <div class="gov-tree-group"><span>.agents/skills</span><span>14</span></div>
+          <span class="gov-file gov-file-dim" data-i18n="governance.skills_note">14 role-scoped skills</span>
+            </div>
+
+            <div class="gov-doc">
+          <article class="gov-panel is-active" id="gov-panel-spec_pipeline" role="tabpanel" aria-labelledby="gov-tab-spec_pipeline" tabindex="0">
+            <div class="gov-doc-head">
+              <span class="gov-doc-path">.agents/rules/spec_pipeline.md</span>
+              <span class="gov-doc-rule" data-i18n="governance.cap_spec_pipeline">the six stages behind the four-stage summary on this page</span>
+            </div>
+            <div class="gov-doc-body">
+              <span class="gov-line h h1"># Spec-Driven Development Pipeline</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line ">Every non-trivial feature <em>MUST</em> pass all six stages.</span>
+              <span class="gov-line ">Specifications are version-controlled under <code>specs/&lt;feature&gt;/</code>.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 1. Specify</span>
+              <span class="gov-line out">   -&gt; specs/&lt;feature&gt;/spec.md</span>
+              <span class="gov-line ">   Define WHAT, technology-agnostic. User stories, acceptance</span>
+              <span class="gov-line ">   criteria, non-functional requirements.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 2. Clarify</span>
+              <span class="gov-line ">   Hunt ambiguity and edge cases. Encode every resolution back</span>
+              <span class="gov-line ">   into spec.md. Nothing stays implicit.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 3. Plan</span>
+              <span class="gov-line out">   -&gt; plan.md &middot; data-model.md &middot; research.md</span>
+              <span class="gov-line ">   Define HOW. Architecture, schema diffs, API contracts,</span>
+              <span class="gov-line ">   tenancy controls, trade-offs that were considered.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 4. Generate tasks</span>
+              <span class="gov-line out">   -&gt; tasks.md</span>
+              <span class="gov-line ">   An ordered, dependency-aware list. Entity and migration,</span>
+              <span class="gov-line ">   service layer, endpoint, component, tests.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 5. Analyze</span>
+              <span class="gov-line ">   Review the task list against migration safety, tenancy</span>
+              <span class="gov-line ">   leaks and permissions &mdash; <em>before</em> any code is written.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 6. Implement</span>
+              <span class="gov-line ">   Execute tasks in order against the spec. Run the</span>
+              <span class="gov-line ">   verification suite. Only then report completion.</span>
+            </div>
+          </article>
+          <article class="gov-panel" id="gov-panel-review" role="tabpanel" aria-labelledby="gov-tab-review" tabindex="0">
+            <div class="gov-doc-head">
+              <span class="gov-doc-path">.agents/rules/review.md</span>
+              <span class="gov-doc-rule" data-i18n="governance.cap_review">7 questions, answered in writing on every pull request</span>
+            </div>
+            <div class="gov-doc-body">
+              <span class="gov-line h h1"># Self-Review Checklist</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line ">Before finalizing a task, declaring completion or opening a</span>
+              <span class="gov-line ">pull request, the agent <em>MUST</em> answer all seven questions and</span>
+              <span class="gov-line ">post the answers as a comment on the PR.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 1. Architectural alignment</span>
+              <span class="gov-line ">   Does this follow the established extension architecture,</span>
+              <span class="gov-line ">   or does it bolt logic onto the core?</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 2. Thin controllers</span>
+              <span class="gov-line ">   Is the controller only parsing requests and mapping</span>
+              <span class="gov-line ">   responses? Are side-effects dispatched asynchronously?</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 3. Tenancy and state isolation</span>
+              <span class="gov-line ">   Is isolation enforced by the ORM filter rather than by</span>
+              <span class="gov-line ">   hand-written WHERE clauses? Does state leak between</span>
+              <span class="gov-line ">   requests under worker mode?</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 4. Anti-slop interface integrity</span>
+              <span class="gov-line ">   Are internal technical concepts hidden behind the words</span>
+              <span class="gov-line ">   the user actually uses? No decorative sparkles, no nested</span>
+              <span class="gov-line ">   card bloat, no unformatted strings.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 5. Defensive migrations</span>
+              <span class="gov-line ">   Is the migration additive and zero-downtime against live</span>
+              <span class="gov-line ">   production data? No NOT NULL columns without defaults.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 6. Real-time push, not polling</span>
+              <span class="gov-line ">   Server-sent events or optimistic UI &mdash; never a client-side</span>
+              <span class="gov-line ">   <code>setInterval</code> loop.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 7. Empirical verification</span>
+              <span class="gov-line ">   Were tests written, and were they <em>run</em>? Paste the green</span>
+              <span class="gov-line ">   output. A claim of passing is not a pass.</span>
+            </div>
+          </article>
+          <article class="gov-panel" id="gov-panel-testing" role="tabpanel" aria-labelledby="gov-tab-testing" tabindex="0">
+            <div class="gov-doc-head">
+              <span class="gov-doc-path">.agents/rules/testing.md</span>
+              <span class="gov-doc-rule" data-i18n="governance.cap_testing">coverage is a merge condition, not a target</span>
+            </div>
+            <div class="gov-doc-body">
+              <span class="gov-line h h1"># Testing &amp; Code Verification</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 1. Strict enforcement</span>
+              <span class="gov-line ">   Write automated tests for <em>every</em> feature, bug fix,</span>
+              <span class="gov-line ">   refactor and architectural change. Code submitted without</span>
+              <span class="gov-line ">   coverage is incomplete and is rejected.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 2. Backend</span>
+              <span class="gov-line ">   Unit tests for domain logic, services, commands and</span>
+              <span class="gov-line ">   message handlers. Functional tests for controllers,</span>
+              <span class="gov-line ">   security roles and tenancy boundaries.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 3. Frontend</span>
+              <span class="gov-line ">   Components, hooks, context providers and optimistic UI</span>
+              <span class="gov-line ">   state machines all carry coverage.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 4. End-to-end</span>
+              <span class="gov-line ">   Critical user journeys have browser coverage across</span>
+              <span class="gov-line ">   Chromium, WebKit and Firefox.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 5. Selector discipline</span>
+              <span class="gov-line ">   Use role, label and text selectors. <em>Never</em> brittle XPath</span>
+              <span class="gov-line ">   or deep CSS chains.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## 6. No hardcoded sleeps</span>
+              <span class="gov-line ">   <em>Never</em> <code>waitForTimeout(5000)</code>. Wait on a state assertion,</span>
+              <span class="gov-line ">   a locator or a network event.</span>
+            </div>
+          </article>
+          <article class="gov-panel" id="gov-panel-security" role="tabpanel" aria-labelledby="gov-tab-security" tabindex="0">
+            <div class="gov-doc-head">
+              <span class="gov-doc-path">.agents/rules/security.md</span>
+              <span class="gov-doc-rule" data-i18n="governance.cap_security">non-negotiable on regulated-sector delivery</span>
+            </div>
+            <div class="gov-doc-body">
+              <span class="gov-line h h1"># Security Baseline</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line ">An agent that cannot satisfy a line here stops and escalates</span>
+              <span class="gov-line ">rather than improvising around it.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Credentials and sessions</span>
+              <span class="gov-line ">   HttpOnly cookies for tokens. Constant-time comparison for</span>
+              <span class="gov-line ">   every secret check. No secret ever reaches a log line.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Authorization</span>
+              <span class="gov-line ">   Capability checks at the boundary, not in the template.</span>
+              <span class="gov-line ">   System roles are protected from deletion.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Data isolation</span>
+              <span class="gov-line ">   Tenant scoping is enforced at the ORM layer so a missing</span>
+              <span class="gov-line ">   clause cannot become a data leak.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Input and output</span>
+              <span class="gov-line ">   Validate at the edge against the declared schema. Encode</span>
+              <span class="gov-line ">   on output. Parameterized queries only &mdash; <em>no</em> exceptions.</span>
+            </div>
+          </article>
+          <article class="gov-panel" id="gov-panel-verification" role="tabpanel" aria-labelledby="gov-tab-verification" tabindex="0">
+            <div class="gov-doc-head">
+              <span class="gov-doc-path">.agents/workflows/verification.md</span>
+              <span class="gov-doc-rule" data-i18n="governance.cap_verification">executed before completion is reported</span>
+            </div>
+            <div class="gov-doc-body">
+              <span class="gov-line h h1"># Workflow: Mandatory Verification Suite</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Step 1 &mdash; Type-check</span>
+              <span class="gov-line out">   $ npm run type-check</span>
+              <span class="gov-line ">   Confirm 0 compilation errors.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Step 2 &mdash; Lint</span>
+              <span class="gov-line out">   $ npm run lint</span>
+              <span class="gov-line ">   Confirm 0 errors.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Step 3 &mdash; Backend test suite</span>
+              <span class="gov-line out">   $ bin/phpunit</span>
+              <span class="gov-line ">   Confirm a green pass across unit and controller suites.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Step 4 &mdash; End-to-end</span>
+              <span class="gov-line out">   $ npx playwright test</span>
+              <span class="gov-line ">   Confirm the modified user journeys still pass.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line h">## Step 5 &mdash; Self-review</span>
+              <span class="gov-line ">   Answer the 7 questions in rules/review.md and attach the</span>
+              <span class="gov-line ">   answers to the pull request.</span>
+              <span class="gov-line ">&nbsp;</span>
+              <span class="gov-line ">A task is not complete until all five steps have <em>run</em> and</span>
+              <span class="gov-line ">their output has been read.</span>
+            </div>
+          </article>
+            </div>
+          </div>
+
+          <div class="gov-gate">
+            <span class="gov-gate-label" data-i18n="governance.gate_label">No test, no merge</span>
+            <span class="gov-cmd">npm run type-check</span>
+            <span class="gov-cmd">npm run lint</span>
+            <span class="gov-cmd">bin/phpunit</span>
+            <span class="gov-cmd">npx playwright test</span>
+            <span class="gov-gate-note" data-i18n="governance.gate_note">All four must pass before an agent may report a task complete.</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         ANONYMIZED VERIFIABLE CASE STUDIES (NDA COMPLIANT)
+         ======================================================================= -->
+    <section class="section" id="track-record">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="track_record.tag">Track Record (NDA Compliant)</span>
+          <h2 class="section-title" data-i18n="track_record.title">Verifiable Enterprise Experience</h2>
+          <p class="section-subtitle" data-i18n="track_record.subtitle">
+            19+ years delivering mission-critical platforms across institutional finance, insurance, biomedical instruments, and heavy industry IoT.
+          </p>
+        </div>
+
+        <div class="case-filter-bar" role="group" data-i18n-aria="track_record.filter_aria" aria-label="Filter case studies by domain">
+          <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">
+            <span data-i18n="track_record.filter_all">All Engagements</span><span class="chip-count"></span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="finance" aria-pressed="false">
+            <span data-i18n="track_record.filter_finance">Finance &amp; Insurance</span><span class="chip-count"></span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="industry" aria-pressed="false">
+            <span data-i18n="track_record.filter_industry">Industry &amp; Energy</span><span class="chip-count"></span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="saas" aria-pressed="false">
+            <span data-i18n="track_record.filter_saas">SaaS Platforms</span><span class="chip-count"></span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="biotech" aria-pressed="false">
+            <span data-i18n="track_record.filter_biotech">Biotech</span><span class="chip-count"></span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="ai" aria-pressed="false">
+            <span data-i18n="track_record.filter_ai">Agentic AI</span><span class="chip-count"></span>
+          </button>
+        </div>
+
+        <div class="case-studies-grid">
+          
+          <!-- Case 1: Tier-1 European Commercial & Investment Bank -->
+          <div class="case-card" data-domains="finance">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c1_client">Tier-1 European Bank</span>
+              <span class="case-domain-tag" data-i18n="track_record.c1_domain">Institutional Finance</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c1_title">Cloud-Native Financial Transaction Management Platform</h3>
+            <p class="case-desc" data-i18n="track_record.c1_desc">Architected enterprise cloud-native transaction management utilities for a leading European financial institution. Drove infrastructural stabilization, continuous deployment engineering, and service decoupling in strictly regulated banking.</p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c1_m1_val">-40% Cycle Time</span>
+                <span class="cm-lbl" data-i18n="track_record.c1_m1_lbl">Release Velocity Acceleration</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c1_m2_val">Zero Disruption</span>
+                <span class="cm-lbl" data-i18n="track_record.c1_m2_lbl">100% Declarative IaC for Settlements</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag">Java 21</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">Azure SQL</span>
+              <span class="tech-tag">BICEP</span>
+              <span class="tech-tag">Databricks</span>
+              <span class="tech-tag">Karate</span>
+            </div>
+          </div>
+
+          <!-- Case 2: Enterprise Asset Management & Maintenance Engine -->
+          <div class="case-card" data-domains="industry">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c2_client">Heavy Industry / Oil & Drilling</span>
+              <span class="case-domain-tag" data-i18n="track_record.c2_domain">Industrial IoT & Asset ERP</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c2_title">Preventative Maintenance & Telemetry Asset Engine</h3>
+            <p class="case-desc" data-i18n="track_record.c2_desc">Principal architect and developer for a multi-tenant telemetry and preventative maintenance platform deployed across distributed drilling rigs and heavy machinery. Engineered recursive tree models mapping operational days, metric drilled meters, engine hours, and automatic threshold overrides.</p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c2_m1_val">99.99% Reliability</span>
+                <span class="cm-lbl" data-i18n="track_record.c2_m1_lbl">Asset Telemetry & Anomaly Tracking</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c2_m2_val">Zero Downtime</span>
+                <span class="cm-lbl" data-i18n="track_record.c2_m2_lbl">Preventative Incident Automation</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag">PHP 8.2</span>
+              <span class="tech-tag">Symfony</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Engine</span>
+              <span class="tech-tag">SQL Multi-Tenant</span>
+            </div>
+          </div>
+
+          <!-- Case 3: Autonomous AI B2B SaaS -->
+          <div class="case-card" data-domains="ai saas">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c3_client">Autonomous AI B2B SaaS</span>
+              <span class="case-domain-tag" data-i18n="track_record.c3_domain">100% Agentic Development</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c3_title">AI Reputation Engine & Multi-Tenant Agentic Triage</h3>
+            <p class="case-desc" data-i18n-html="track_record.c3_desc_html">Architected an enterprise multi-tenant B2B reputation engine featuring a 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. <strong>100% Autonomous Multi-Agent Synthesis: The entire production codebase, migrations, and test suites were synthesized autonomously by AI agents under formal architectural direction and deterministic CI contract gates — zero human manual coding.</strong></p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c3_m1_val">3 Mos → 2 Wks</span>
+                <span class="cm-lbl" data-i18n="track_record.c3_m1_lbl">Time-to-Market Acceleration</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c3_m2_val">100% AI Synthesized</span>
+                <span class="cm-lbl" data-i18n="track_record.c3_m2_lbl">0 Manual Developers / 100% CI Contract Gates</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag" style="color: var(--accent-emerald); font-weight: 700;">100% Agentic AI</span>
+              <span class="tech-tag">Symfony 8</span>
+              <span class="tech-tag">React / MUI v6</span>
+              <span class="tech-tag">Doctrine TenantFilter</span>
+              <span class="tech-tag">Swappable LLMs</span>
+              <span class="tech-tag">Mercure SSE</span>
+              <span class="tech-tag">Spec-Kit</span>
+            </div>
+          </div>
+
+          <!-- Case 4: Big-Four Professional Services Firm -->
+          <div class="case-card" data-domains="finance saas">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c4_client">Big-Four Consulting Firm</span>
+              <span class="case-domain-tag" data-i18n="track_record.c4_domain">M&A Analytics Platform</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c4_title">Corporate Deal Analytics & Interactive Visualizers</h3>
+            <p class="case-desc" data-i18n="track_record.c4_desc">Engineered frontend data layers for a global professional services firm's high-availability corporate analytics platform, supporting multi-million dollar M&A deal pipelines with interactive data-visualization matrices and zero-downtime hot-fix reliability across international timezones.</p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c4_m1_val">$100M+ Pipeline</span>
+                <span class="cm-lbl" data-i18n="track_record.c4_m1_lbl">Deal Transaction Data Engines</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c4_m2_val">Zero Downtime</span>
+                <span class="cm-lbl" data-i18n="track_record.c4_m2_lbl">Real-Time Global Hot-Fix Reliability</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag">ReactJS</span>
+              <span class="tech-tag">Azure Cloud</span>
+              <span class="tech-tag">Splunk Core</span>
+              <span class="tech-tag">Aspose Middleware</span>
+            </div>
+          </div>
+
+          <!-- Case 5: Global Biotech Diagnostic Machinery -->
+          <div class="case-card" data-domains="biotech">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c5_client">Global Biotech Leader</span>
+              <span class="case-domain-tag" data-i18n="track_record.c5_domain">Biotech Instrumentation</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c5_title">Medical Analysis Probe Classification Machine</h3>
+            <p class="case-desc" data-i18n="track_record.c5_desc">Formulated the architectural redesign and codebase decomposition blueprint for legacy telemetry loops driving automated clinical analysis machinery. Remediated hidden software race states and asynchronous sorting logic errors into isolated operational modules.</p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c5_m1_val">100% Compliance</span>
+                <span class="cm-lbl" data-i18n="track_record.c5_m1_lbl">Strict Biomedical Diagnostic Standards</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c5_m2_val">Zero Race States</span>
+                <span class="cm-lbl" data-i18n="track_record.c5_m2_lbl">Decoupled Telemetry Modules</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag">C / C++</span>
+              <span class="tech-tag">UML Architecture</span>
+              <span class="tech-tag">Medical Device Firmware</span>
+            </div>
+          </div>
+
+          <!-- Case 6: Global Programmatic Recruitment SaaS -->
+          <div class="case-card" data-domains="saas">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c6_client">Programmatic Marketing SaaS</span>
+              <span class="case-domain-tag" data-i18n="track_record.c6_domain">Recruitment & Ad Engines</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c6_title">Modular ATS & Automated Social Advertisement Engine</h3>
+            <p class="case-desc" data-i18n="track_record.c6_desc">Supervised frontend architecture to modernize a legacy platform into a high-performance workspace combining automated social advertisement engines with modular Applicant Tracking Systems (ATS).</p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c6_m1_val">High Velocity</span>
+                <span class="cm-lbl" data-i18n="track_record.c6_m1_lbl">International Engineering Squad</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c6_m2_val">Full-Stack REST</span>
+                <span class="cm-lbl" data-i18n="track_record.c6_m2_lbl">Ad Engine Interfaces</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag">ReactJS</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Azure Platform</span>
+            </div>
+          </div>
+
+          <!-- Case 7: National Energy Grid Operator - GIS & Utility Platforms -->
+          <div class="case-card" data-domains="industry">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c7_client">National Energy Grid Operator</span>
+              <span class="case-domain-tag" data-i18n="track_record.c7_domain">Energy &amp; Geospatial Systems</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c7_title">Distributed GIS Transaction Queue Engine</h3>
+            <p class="case-desc" data-i18n="track_record.c7_desc">Engineered an enterprise transaction queuing engine for a national power grid operator, resolving database conflict isolation inside distributed multi-user GIS databases. Designed SOAP/SOA integration patterns across WebSphere nodes to sequence heavy data commits, and delivered regulated energy-sector blueprints under strict industry compliance.</p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c7_m1_val">Zero Conflicts</span>
+                <span class="cm-lbl" data-i18n="track_record.c7_m1_lbl">Multi-User Spatial Commit Isolation</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c7_m2_val">Regulated Delivery</span>
+                <span class="cm-lbl" data-i18n="track_record.c7_m2_lbl">Polish Energy Sector Compliance</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag">Java EE</span>
+              <span class="tech-tag">Oracle</span>
+              <span class="tech-tag">ESRI / ArcGIS</span>
+              <span class="tech-tag">Smallworld</span>
+              <span class="tech-tag">BPMN / BPEL</span>
+              <span class="tech-tag">SOAP</span>
+            </div>
+          </div>
+
+          <!-- Case 8: Tier-1 European Insurance Group - Monolith to Microservices -->
+          <div class="case-card" data-domains="finance">
+            <div class="case-card-top">
+              <span class="case-client-badge" data-i18n="track_record.c8_client">Tier-1 European Insurance Group</span>
+              <span class="case-domain-tag" data-i18n="track_record.c8_domain">Insurance Platform Modernization</span>
+            </div>
+            <h3 class="case-title" data-i18n="track_record.c8_title">Monolith-to-Microservices Platform Migration</h3>
+            <p class="case-desc" data-i18n="track_record.c8_desc">Solution Architect driving the decomposition of a legacy insurance monolith into a domain-aligned microservice landscape. Defining service boundaries, integration contracts and migration sequencing, while steering Java, Node.js and ReactJS delivery streams inside a strictly governed, regulated enterprise environment.</p>
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c8_m1_val">Monolith &rarr; Microservices</span>
+                <span class="cm-lbl" data-i18n="track_record.c8_m1_lbl">Domain-Aligned Service Decomposition</span>
+              </div>
+              <div class="case-metric-box">
+                <span class="cm-val" data-i18n="track_record.c8_m2_val">Incremental Cutover</span>
+                <span class="cm-lbl" data-i18n="track_record.c8_m2_lbl">Strangler-Fig Migration Pattern</span>
+              </div>
+            </div>
+            <div class="service-tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">ReactJS</span>
+              <span class="tech-tag">Microservices</span>
+              <span class="tech-tag">C4</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-cta-band">
+          <div class="cta-band-copy">
+            <h3 class="cta-band-title" data-i18n="track_record.cta_title">Recognise your problem in one of these?</h3>
+            <p class="cta-band-desc" data-i18n="track_record.cta_desc">Book a 45-minute architecture review. You leave with a written assessment of your delivery risk — no obligation, no sales deck.</p>
+          </div>
+          <div class="cta-band-actions">
+            <a href="#contact" class="btn btn-primary" data-i18n="track_record.cta_primary">Book Architecture Review</a>
+            <a href="#engagement" class="btn btn-secondary" data-i18n="track_record.cta_secondary">See Engagement Models</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CORE SERVICES & ARCHITECTURAL SOLUTIONS
+         ======================================================================= -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="services.tag">Capabilities</span>
+          <h2 class="section-title" data-i18n="services.title">End-to-End Architectural Solutions</h2>
+          <p class="section-subtitle" data-i18n="services.subtitle">
+            From strategic technical blueprints to autonomous agent swarms and high-load telemetry backends.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3 class="service-title" data-i18n="services.s1_title">Fully Agentic Application Development</h3>
+            <p class="service-desc" data-i18n="services.s1_desc">Complete end-to-end software development executed by coordinated multi-agent swarms with autonomous self-healing test loops.</p>
+            <ul class="service-deliverables">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d1">Autonomous Feature Synthesis Swarms</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d2">Self-Debugging & Automated CI Repair</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d3">Deterministic Tool & API Contracts</span></li>
+            </ul>
+            <div class="service-tech-tags">
+              <span class="tech-tag">Agentic Swarms</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Antigravity</span>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="21 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3 class="service-title" data-i18n="services.s2_title">Spec-Kit AI & Agentic Workflows</h3>
+            <p class="service-desc" data-i18n="services.s2_desc">Architecting deterministic AI pipelines, custom graph workflows (ComfyUI / LangGraph), tool-calling agents, and enterprise RAG.</p>
+            <ul class="service-deliverables">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d1">Formal Spec-Kit Domain Modeling</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d2">Deterministic RAG with Source Citations</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d3">Computer Vision (Ultralytics) Integration</span></li>
+            </ul>
+            <div class="service-tech-tags">
+              <span class="tech-tag">Spec-Kit</span>
+              <span class="tech-tag">ComfyUI</span>
+              <span class="tech-tag">LangGraph</span>
+              <span class="tech-tag">Computer Vision</span>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <h3 class="service-title" data-i18n="services.s3_title">Enterprise Software Architecture</h3>
+            <p class="service-desc" data-i18n="services.s3_desc">Designing resilient, high-throughput microservices, CQRS data patterns, and cloud infrastructures for regulated financial & industrial sectors.</p>
+            <ul class="service-deliverables">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d1">Java 21 / Spring Boot & Symfony 8 Core</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d2">Azure Infrastructure as Code (Bicep/YAML)</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d3">C4 System Blueprints & Decoupling</span></li>
+            </ul>
+            <div class="service-tech-tags">
+              <span class="tech-tag">Java 21</span>
+              <span class="tech-tag">Symfony 8</span>
+              <span class="tech-tag">Azure Bicep</span>
+              <span class="tech-tag">Microservices</span>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            </div>
+            <h3 class="service-title" data-i18n="services.s4_title">High-Load Telemetry & Spatial Systems</h3>
+            <p class="service-desc" data-i18n="services.s4_desc">Constructing recursive multi-tenant asset management engines and geospatial data integrations (ESRI, Smallworld GIS).</p>
+            <ul class="service-deliverables">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d1">Industrial Machinery Telemetry Engines</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d2">Databricks & Azure Data Factory ETL</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d3">Geospatial GIS (Smallworld, ESRI, PostGIS)</span></li>
+            </ul>
+            <div class="service-tech-tags">
+              <span class="tech-tag">Databricks</span>
+              <span class="tech-tag">Azure Data Factory</span>
+              <span class="tech-tag">IoT Telemetry</span>
+              <span class="tech-tag">GIS</span>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            </div>
+            <h3 class="service-title" data-i18n="services.s5_title">Spec-Kit AI Team Enablement</h3>
+            <p class="service-desc" data-i18n="services.s5_desc">Transforming engineering organizations from chaotic AI chat usage into disciplined, deterministic Spec-Driven AI workflows.</p>
+            <ul class="service-deliverables">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d1">Spec-Kit SDLC Guidelines & Tooling</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d2">AI Velocity & Code Consistency Audits</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d3">Hands-On Senior Engineering Workshops</span></li>
+            </ul>
+            <div class="service-tech-tags">
+              <span class="tech-tag">AI SDLC</span>
+              <span class="tech-tag">Team Upskilling</span>
+              <span class="tech-tag">Velocity Engineering</span>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="service-title" data-i18n="services.s6_title">Strategic Architecture Audit & Blueprint</h3>
+            <p class="service-desc" data-i18n="services.s6_desc">A deep-dive technical health check of your codebases, microservice boundaries, security policies, and AI readiness.</p>
+            <ul class="service-deliverables">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d1">10-Day Comprehensive Architecture Audit</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d2">C4 Container & Component Schemas</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d3">Executive Modernization Roadmap</span></li>
+            </ul>
+            <div class="service-tech-tags">
+              <span class="tech-tag">C4 Architecture</span>
+              <span class="tech-tag">Security Audit</span>
+              <span class="tech-tag">Modernization</span>
             </div>
           </div>
 
@@ -418,143 +1112,6 @@
     </section>
 
     <!-- =======================================================================
-         CORE SERVICES & ARCHITECTURAL SOLUTIONS
-         ======================================================================= -->
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag" data-i18n="services.tag">Capabilities</span>
-          <h2 class="section-title" data-i18n="services.title">End-to-End Architectural Solutions</h2>
-          <p class="section-subtitle" data-i18n="services.subtitle">
-            From strategic technical blueprints to autonomous agent swarms and high-load telemetry backends.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          
-          <!-- Service 1 -->
-          <div class="service-card">
-            <div class="service-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-            </div>
-            <h3 class="service-title" data-i18n="services.s1_title">Fully Agentic Application Development</h3>
-            <p class="service-desc" data-i18n="services.s1_desc">Complete end-to-end software development executed by coordinated multi-agent swarms with autonomous self-healing test loops.</p>
-            <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d1">Autonomous Feature Synthesis Swarms</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d2">Self-Debugging & Automated CI Repair</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d3">Deterministic Tool & API Contracts</span></li>
-            </ul>
-            <div class="service-tech-tags">
-              <span class="tech-tag">Agentic Swarms</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Antigravity</span>
-            </div>
-          </div>
-
-          <!-- Service 2 -->
-          <div class="service-card">
-            <div class="service-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="21 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3 class="service-title" data-i18n="services.s2_title">Spec-Kit AI & Agentic Workflows</h3>
-            <p class="service-desc" data-i18n="services.s2_desc">Architecting deterministic AI pipelines, custom graph workflows (ComfyUI / LangGraph), tool-calling agents, and enterprise RAG.</p>
-            <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d1">Formal Spec-Kit Domain Modeling</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d2">Deterministic RAG with Source Citations</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d3">Computer Vision (Ultralytics) Integration</span></li>
-            </ul>
-            <div class="service-tech-tags">
-              <span class="tech-tag">Spec-Kit</span>
-              <span class="tech-tag">ComfyUI</span>
-              <span class="tech-tag">LangGraph</span>
-              <span class="tech-tag">Computer Vision</span>
-            </div>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="service-card">
-            <div class="service-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-            </div>
-            <h3 class="service-title" data-i18n="services.s3_title">Enterprise Software Architecture</h3>
-            <p class="service-desc" data-i18n="services.s3_desc">Designing resilient, high-throughput microservices, CQRS data patterns, and cloud infrastructures for regulated financial & industrial sectors.</p>
-            <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d1">Java 21 / Spring Boot & Symfony 8 Core</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d2">Azure Infrastructure as Code (Bicep/YAML)</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s3_d3">C4 System Blueprints & Decoupling</span></li>
-            </ul>
-            <div class="service-tech-tags">
-              <span class="tech-tag">Java 21</span>
-              <span class="tech-tag">Symfony 8</span>
-              <span class="tech-tag">Azure Bicep</span>
-              <span class="tech-tag">Microservices</span>
-            </div>
-          </div>
-
-          <!-- Service 4 -->
-          <div class="service-card">
-            <div class="service-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-            </div>
-            <h3 class="service-title" data-i18n="services.s4_title">High-Load Telemetry & Spatial Systems</h3>
-            <p class="service-desc" data-i18n="services.s4_desc">Constructing recursive multi-tenant asset management engines and geospatial data integrations (ESRI, Smallworld GIS).</p>
-            <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d1">Industrial Machinery Telemetry Engines</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d2">Databricks & Azure Data Factory ETL</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s4_d3">Geospatial GIS (Smallworld, ESRI, PostGIS)</span></li>
-            </ul>
-            <div class="service-tech-tags">
-              <span class="tech-tag">Databricks</span>
-              <span class="tech-tag">Azure Data Factory</span>
-              <span class="tech-tag">IoT Telemetry</span>
-              <span class="tech-tag">GIS</span>
-            </div>
-          </div>
-
-          <!-- Service 5 -->
-          <div class="service-card">
-            <div class="service-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-            </div>
-            <h3 class="service-title" data-i18n="services.s5_title">Spec-Kit AI Team Enablement</h3>
-            <p class="service-desc" data-i18n="services.s5_desc">Transforming engineering organizations from chaotic AI chat usage into disciplined, deterministic Spec-Driven AI workflows.</p>
-            <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d1">Spec-Kit SDLC Guidelines & Tooling</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d2">AI Velocity & Code Consistency Audits</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d3">Hands-On Senior Engineering Workshops</span></li>
-            </ul>
-            <div class="service-tech-tags">
-              <span class="tech-tag">AI SDLC</span>
-              <span class="tech-tag">Team Upskilling</span>
-              <span class="tech-tag">Velocity Engineering</span>
-            </div>
-          </div>
-
-          <!-- Service 6 -->
-          <div class="service-card">
-            <div class="service-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            </div>
-            <h3 class="service-title" data-i18n="services.s6_title">Strategic Architecture Audit & Blueprint</h3>
-            <p class="service-desc" data-i18n="services.s6_desc">A deep-dive technical health check of your codebases, microservice boundaries, security policies, and AI readiness.</p>
-            <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d1">10-Day Comprehensive Architecture Audit</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d2">C4 Container & Component Schemas</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d3">Executive Modernization Roadmap</span></li>
-            </ul>
-            <div class="service-tech-tags">
-              <span class="tech-tag">C4 Architecture</span>
-              <span class="tech-tag">Security Audit</span>
-              <span class="tech-tag">Modernization</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =======================================================================
          STRUCTURED ENGAGEMENT MODELS
          ======================================================================= -->
     <section class="section" id="engagement">
@@ -630,240 +1187,6 @@
             </ul>
 
             <a href="#contact" class="btn btn-secondary" data-i18n="engagement.m3_btn">Inquire About Retainer</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         ANONYMIZED VERIFIABLE CASE STUDIES (NDA COMPLIANT)
-         ======================================================================= -->
-    <section class="section" id="track-record">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag" data-i18n="track_record.tag">Track Record (NDA Compliant)</span>
-          <h2 class="section-title" data-i18n="track_record.title">Verifiable Enterprise Experience</h2>
-          <p class="section-subtitle" data-i18n="track_record.subtitle">
-            19+ years delivering mission-critical platforms across institutional finance, insurance, biomedical instruments, and heavy industry IoT.
-          </p>
-        </div>
-
-        <div class="case-studies-grid">
-          
-          <!-- Case 1: Tier-1 European Commercial & Investment Bank -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c1_client">Tier-1 European Bank</span>
-              <span class="case-domain-tag" data-i18n="track_record.c1_domain">Institutional Finance</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c1_title">Cloud-Native Financial Transaction Management Platform</h3>
-            <p class="case-desc" data-i18n="track_record.c1_desc">Architected enterprise cloud-native transaction management utilities for a leading European financial institution. Drove infrastructural stabilization, continuous deployment engineering, and service decoupling in strictly regulated banking.</p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c1_m1_val">-40% Cycle Time</span>
-                <span class="cm-lbl" data-i18n="track_record.c1_m1_lbl">Release Velocity Acceleration</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c1_m2_val">Zero Disruption</span>
-                <span class="cm-lbl" data-i18n="track_record.c1_m2_lbl">100% Declarative IaC for Settlements</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag">Java 21</span>
-              <span class="tech-tag">Spring Boot</span>
-              <span class="tech-tag">Azure SQL</span>
-              <span class="tech-tag">BICEP</span>
-              <span class="tech-tag">Databricks</span>
-              <span class="tech-tag">Karate</span>
-            </div>
-          </div>
-
-          <!-- Case 2: Enterprise Asset Management & Maintenance Engine -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c2_client">Heavy Industry / Oil & Drilling</span>
-              <span class="case-domain-tag" data-i18n="track_record.c2_domain">Industrial IoT & Asset ERP</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c2_title">Preventative Maintenance & Telemetry Asset Engine</h3>
-            <p class="case-desc" data-i18n="track_record.c2_desc">Principal architect and developer for a multi-tenant telemetry and preventative maintenance platform deployed across distributed drilling rigs and heavy machinery. Engineered recursive tree models mapping operational days, metric drilled meters, engine hours, and automatic threshold overrides.</p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c2_m1_val">99.99% Reliability</span>
-                <span class="cm-lbl" data-i18n="track_record.c2_m1_lbl">Asset Telemetry & Anomaly Tracking</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c2_m2_val">Zero Downtime</span>
-                <span class="cm-lbl" data-i18n="track_record.c2_m2_lbl">Preventative Incident Automation</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag">PHP 8.2</span>
-              <span class="tech-tag">Symfony</span>
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Spring Engine</span>
-              <span class="tech-tag">SQL Multi-Tenant</span>
-            </div>
-          </div>
-
-          <!-- Case 3: Autonomous AI B2B SaaS -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c3_client">Autonomous AI B2B SaaS</span>
-              <span class="case-domain-tag" data-i18n="track_record.c3_domain">100% Agentic Development</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c3_title">AI Reputation Engine & Multi-Tenant Agentic Triage</h3>
-            <p class="case-desc" data-i18n-html="track_record.c3_desc_html">Architected an enterprise multi-tenant B2B reputation engine featuring a 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. <strong>100% Autonomous Multi-Agent Synthesis: The entire production codebase, migrations, and test suites were synthesized autonomously by AI agents under formal architectural direction and deterministic CI contract gates — zero human manual coding.</strong></p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c3_m1_val">3 Mos → 2 Wks</span>
-                <span class="cm-lbl" data-i18n="track_record.c3_m1_lbl">Time-to-Market Acceleration</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c3_m2_val">100% AI Synthesized</span>
-                <span class="cm-lbl" data-i18n="track_record.c3_m2_lbl">0 Manual Developers / 100% CI Contract Gates</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag" style="color: var(--accent-emerald); font-weight: 700;">100% Agentic AI</span>
-              <span class="tech-tag">Symfony 8</span>
-              <span class="tech-tag">React / MUI v6</span>
-              <span class="tech-tag">Doctrine TenantFilter</span>
-              <span class="tech-tag">Swappable LLMs</span>
-              <span class="tech-tag">Mercure SSE</span>
-              <span class="tech-tag">Spec-Kit</span>
-            </div>
-          </div>
-
-          <!-- Case 4: Big-Four Professional Services Firm -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c4_client">Big-Four Consulting Firm</span>
-              <span class="case-domain-tag" data-i18n="track_record.c4_domain">M&A Analytics Platform</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c4_title">Corporate Deal Analytics & Interactive Visualizers</h3>
-            <p class="case-desc" data-i18n="track_record.c4_desc">Engineered frontend data layers for a global professional services firm's high-availability corporate analytics platform, supporting multi-million dollar M&A deal pipelines with interactive data-visualization matrices and zero-downtime hot-fix reliability across international timezones.</p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c4_m1_val">$100M+ Pipeline</span>
-                <span class="cm-lbl" data-i18n="track_record.c4_m1_lbl">Deal Transaction Data Engines</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c4_m2_val">Zero Downtime</span>
-                <span class="cm-lbl" data-i18n="track_record.c4_m2_lbl">Real-Time Global Hot-Fix Reliability</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag">ReactJS</span>
-              <span class="tech-tag">Azure Cloud</span>
-              <span class="tech-tag">Splunk Core</span>
-              <span class="tech-tag">Aspose Middleware</span>
-            </div>
-          </div>
-
-          <!-- Case 5: Global Biotech Diagnostic Machinery -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c5_client">Global Biotech Leader</span>
-              <span class="case-domain-tag" data-i18n="track_record.c5_domain">Biotech Instrumentation</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c5_title">Medical Analysis Probe Classification Machine</h3>
-            <p class="case-desc" data-i18n="track_record.c5_desc">Formulated the architectural redesign and codebase decomposition blueprint for legacy telemetry loops driving automated clinical analysis machinery. Remediated hidden software race states and asynchronous sorting logic errors into isolated operational modules.</p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c5_m1_val">100% Compliance</span>
-                <span class="cm-lbl" data-i18n="track_record.c5_m1_lbl">Strict Biomedical Diagnostic Standards</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c5_m2_val">Zero Race States</span>
-                <span class="cm-lbl" data-i18n="track_record.c5_m2_lbl">Decoupled Telemetry Modules</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag">C / C++</span>
-              <span class="tech-tag">UML Architecture</span>
-              <span class="tech-tag">Medical Device Firmware</span>
-            </div>
-          </div>
-
-          <!-- Case 6: Global Programmatic Recruitment SaaS -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c6_client">Programmatic Marketing SaaS</span>
-              <span class="case-domain-tag" data-i18n="track_record.c6_domain">Recruitment & Ad Engines</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c6_title">Modular ATS & Automated Social Advertisement Engine</h3>
-            <p class="case-desc" data-i18n="track_record.c6_desc">Supervised frontend architecture to modernize a legacy platform into a high-performance workspace combining automated social advertisement engines with modular Applicant Tracking Systems (ATS).</p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c6_m1_val">High Velocity</span>
-                <span class="cm-lbl" data-i18n="track_record.c6_m1_lbl">International Engineering Squad</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c6_m2_val">Full-Stack REST</span>
-                <span class="cm-lbl" data-i18n="track_record.c6_m2_lbl">Ad Engine Interfaces</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag">ReactJS</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Azure Platform</span>
-            </div>
-          </div>
-
-          <!-- Case 7: National Energy Grid Operator - GIS & Utility Platforms -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c7_client">National Energy Grid Operator</span>
-              <span class="case-domain-tag" data-i18n="track_record.c7_domain">Energy &amp; Geospatial Systems</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c7_title">Distributed GIS Transaction Queue Engine</h3>
-            <p class="case-desc" data-i18n="track_record.c7_desc">Engineered an enterprise transaction queuing engine for a national power grid operator, resolving database conflict isolation inside distributed multi-user GIS databases. Designed SOAP/SOA integration patterns across WebSphere nodes to sequence heavy data commits, and delivered regulated energy-sector blueprints under strict industry compliance.</p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c7_m1_val">Zero Conflicts</span>
-                <span class="cm-lbl" data-i18n="track_record.c7_m1_lbl">Multi-User Spatial Commit Isolation</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c7_m2_val">Regulated Delivery</span>
-                <span class="cm-lbl" data-i18n="track_record.c7_m2_lbl">Polish Energy Sector Compliance</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag">Java EE</span>
-              <span class="tech-tag">Oracle</span>
-              <span class="tech-tag">ESRI / ArcGIS</span>
-              <span class="tech-tag">Smallworld</span>
-              <span class="tech-tag">BPMN / BPEL</span>
-              <span class="tech-tag">SOAP</span>
-            </div>
-          </div>
-
-          <!-- Case 8: Tier-1 European Insurance Group - Monolith to Microservices -->
-          <div class="case-card">
-            <div class="case-card-top">
-              <span class="case-client-badge" data-i18n="track_record.c8_client">Tier-1 European Insurance Group</span>
-              <span class="case-domain-tag" data-i18n="track_record.c8_domain">Insurance Platform Modernization</span>
-            </div>
-            <h3 class="case-title" data-i18n="track_record.c8_title">Monolith-to-Microservices Platform Migration</h3>
-            <p class="case-desc" data-i18n="track_record.c8_desc">Solution Architect driving the decomposition of a legacy insurance monolith into a domain-aligned microservice landscape. Defining service boundaries, integration contracts and migration sequencing, while steering Java, Node.js and ReactJS delivery streams inside a strictly governed, regulated enterprise environment.</p>
-            <div class="case-metrics-grid">
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c8_m1_val">Monolith &rarr; Microservices</span>
-                <span class="cm-lbl" data-i18n="track_record.c8_m1_lbl">Domain-Aligned Service Decomposition</span>
-              </div>
-              <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c8_m2_val">Incremental Cutover</span>
-                <span class="cm-lbl" data-i18n="track_record.c8_m2_lbl">Strangler-Fig Migration Pattern</span>
-              </div>
-            </div>
-            <div class="service-tech-tags">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">ReactJS</span>
-              <span class="tech-tag">Microservices</span>
-              <span class="tech-tag">C4</span>
-            </div>
           </div>
 
         </div>
@@ -1221,6 +1544,7 @@
         <div>
           <h4 class="footer-col-title" data-i18n="footer.col1_title">Methodology & Tech</h4>
           <ul class="footer-links">
+            <li><a href="#governance" data-i18n="governance.footer_link">Agent Governance Layer</a></li>
             <li><a href="#speckit" data-i18n="nav.speckit">Spec-Kit AI Workflow</a></li>
             <li><a href="#agentic-dev" data-i18n="nav.agentic">Fully Agentic Dev</a></li>
             <li><a href="#engagement" data-i18n="nav.engagement">Engagement Models</a></li>

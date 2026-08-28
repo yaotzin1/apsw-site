@@ -146,7 +146,74 @@ curl -s https://apsw.pl/agent.json | jq .services
     });
   });
 
-  // 6. Copy to Clipboard Functionality
+  // 6. Track Record Domain Filter Chips
+  const filterBar = document.querySelector('.case-filter-bar');
+  const caseGrid = document.querySelector('.case-studies-grid');
+
+  if (filterBar && caseGrid) {
+    const chips = Array.from(filterBar.querySelectorAll('.filter-chip'));
+    const cards = Array.from(caseGrid.querySelectorAll('.case-card'));
+
+    const matches = (card, filter) =>
+      filter === 'all' || (card.dataset.domains || '').split(/\s+/).includes(filter);
+
+    // Counts are derived from the markup, so they stay correct in both languages.
+    chips.forEach(chip => {
+      const filter = chip.getAttribute('data-filter');
+      const countEl = chip.querySelector('.chip-count');
+      if (countEl) countEl.textContent = cards.filter(c => matches(c, filter)).length;
+    });
+
+    const applyFilter = (filter) => {
+      cards.forEach(card => { card.hidden = !matches(card, filter); });
+      chips.forEach(chip => {
+        const isActive = chip.getAttribute('data-filter') === filter;
+        chip.classList.toggle('active', isActive);
+        chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    };
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => applyFilter(chip.getAttribute('data-filter')));
+    });
+  }
+
+  // 7. Governance Layer Document Tabs
+  // Enhancement only. The .js class on <html> is what hides the inactive
+  // panels; without it every document stays in the flow and readable.
+  const govTree = document.querySelector('.gov-tree');
+
+  if (govTree) {
+    const govTabs = Array.from(govTree.querySelectorAll('button.gov-file'));
+
+    const showDoc = (key, moveFocus) => {
+      govTabs.forEach(tab => {
+        const isActive = tab.dataset.file === key;
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        tab.tabIndex = isActive ? 0 : -1;
+        const panel = document.getElementById('gov-panel-' + tab.dataset.file);
+        if (panel) panel.classList.toggle('is-active', isActive);
+        if (isActive && moveFocus) tab.focus();
+      });
+    };
+
+    govTabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => showDoc(tab.dataset.file));
+      tab.addEventListener('keydown', (e) => {
+        // Vertical rail on desktop, horizontal chip row on mobile: accept both axes.
+        let next = null;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') next = (i + 1) % govTabs.length;
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') next = (i - 1 + govTabs.length) % govTabs.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = govTabs.length - 1;
+        if (next === null) return;
+        e.preventDefault();
+        showDoc(govTabs[next].dataset.file, true);
+      });
+    });
+  }
+
+  // 8. Copy to Clipboard Functionality
   window.copyToClipboard = function(text, btnElement) {
     navigator.clipboard.writeText(text).then(() => {
       const originalText = btnElement.innerHTML;
@@ -162,7 +229,7 @@ curl -s https://apsw.pl/agent.json | jq .services
     });
   };
 
-  // 7. Contact Form Submission with Anti-Bot Time-Trap & Rate Limiting
+  // 9. Contact Form Submission with Anti-Bot Time-Trap & Rate Limiting
   const contactForm = document.getElementById('apsw-contact-form');
   const formFeedback = document.getElementById('form-feedback');
 

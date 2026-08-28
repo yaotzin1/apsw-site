@@ -16,68 +16,178 @@
     "philosophy": "Zero AI Slop. Deterministic Specification-First Engineering. Mission-Critical Enterprise Delivery.",
     "methodology": "Spec-Kit (Specification-Driven Autonomous Multi-Agent Synthesis with Deterministic CI Verification Gates)"
   },
+  "governance_layer": {
+    "description": "Version-controlled constraints every AI agent reads before writing code. This is the mechanism behind the Zero AI Slop guarantee.",
+    "published_at": "https://apsw.pl/#governance",
+    "counts": {
+      "rules": 11,
+      "workflows": 10,
+      "role_scoped_skills": 14,
+      "spec_pipeline_stages": 6,
+      "self_review_questions": 7
+    },
+    "spec_pipeline_stages": [
+      "Specify - define WHAT, technology-agnostic, in specs/<feature>/spec.md",
+      "Clarify - resolve ambiguity and edge cases back into the spec",
+      "Plan - define HOW: architecture, data model, API contracts, trade-offs",
+      "Generate tasks - ordered, dependency-aware task list",
+      "Analyze - review tasks against migration safety, tenancy and permissions before coding",
+      "Implement - execute against the spec, then run the verification suite"
+    ],
+    "merge_gate": {
+      "policy": "No test, no merge. All checks must pass before an agent may report a task complete.",
+      "required_checks": [
+        "npm run type-check",
+        "npm run lint",
+        "bin/phpunit",
+        "npx playwright test"
+      ],
+      "self_review": "7 questions answered in writing and posted as a comment on every pull request"
+    },
+    "published_documents": [
+      ".agents/rules/spec_pipeline.md",
+      ".agents/rules/review.md",
+      ".agents/rules/testing.md",
+      ".agents/rules/security.md",
+      ".agents/workflows/verification.md"
+    ],
+    "disclosure_note": "Published excerpt is 5 of 35 files, generalized: client-identifying specifics are removed under NDA."
+  },
   "capabilities": [
     {
       "id": "fully-agentic-dev",
       "name": "Fully Agentic Application Development",
       "description": "Autonomous multi-agent swarms constructing robust production applications under architectural contracts and self-healing test loops.",
-      "technologies": ["Multi-Agent Orchestration", "Python", "TypeScript", "LangGraph", "ComfyUI", "Antigravity", "Automated CI/CD"],
-      "deliverables": ["Production Codebase", "Contract Test Suites", "Declarative IaC", "Self-Healing Test Frameworks"]
+      "technologies": [
+        "Multi-Agent Orchestration",
+        "Python",
+        "TypeScript",
+        "LangGraph",
+        "ComfyUI",
+        "Antigravity",
+        "Automated CI/CD"
+      ],
+      "deliverables": [
+        "Production Codebase",
+        "Contract Test Suites",
+        "Declarative IaC",
+        "Self-Healing Test Frameworks"
+      ]
     },
     {
       "id": "spec-kit-ai",
       "name": "Spec-Kit Deterministic AI Engineering & Workflows",
       "description": "Eliminating AI slop and hallucination by converting business requirements into formal, executable domain specifications before agentic synthesis.",
-      "technologies": ["Spec-Kit", "Formal Domain Modeling", "JSON Schema", "Protobuf", "Deterministic Tool Calling", "RAG with Citation Bounds"]
+      "technologies": [
+        "Spec-Kit",
+        "Formal Domain Modeling",
+        "JSON Schema",
+        "Protobuf",
+        "Deterministic Tool Calling",
+        "RAG with Citation Bounds"
+      ]
     },
     {
       "id": "enterprise-architecture",
       "name": "Enterprise Software Architecture & Cloud Modernization",
       "description": "High-availability backend design, legacy refactoring, and cloud-native microservices for tier-1 banking and industrial platforms.",
-      "technologies": ["Java 21", "Spring Boot", "PHP 8.3", "Symfony", "Azure (Bicep/ARM)", "Kubernetes", "Docker", "Databricks", "Azure Data Factory", "ReactJS", "Node.js"]
+      "technologies": [
+        "Java 21",
+        "Spring Boot",
+        "PHP 8.3",
+        "Symfony",
+        "Azure (Bicep/ARM)",
+        "Kubernetes",
+        "Docker",
+        "Databricks",
+        "Azure Data Factory",
+        "ReactJS",
+        "Node.js"
+      ]
     },
     {
       "id": "industrial-iot-spatial",
       "name": "High-Load Telemetry & Geospatial Systems",
       "description": "Architecting recursive asset management, telemetry loops, and GIS data pipelines for energy and heavy industry.",
-      "technologies": ["ESRI", "Smallworld", "PostGIS", "Event-Driven", "IoT Telemetry Loops", "Industrial Asset Engine"]
+      "technologies": [
+        "ESRI",
+        "Smallworld",
+        "PostGIS",
+        "Event-Driven",
+        "IoT Telemetry Loops",
+        "Industrial Asset Engine"
+      ]
     }
   ],
   "verified_track_record": [
     {
       "client_domain": "Tier-1 European Commercial & Investment Bank (Institutional Finance)",
       "role": "Technical Lead (Java) & Solution Architect",
-      "tech_stack": ["Java 17/21", "Spring Boot", "Azure SQL", "Bicep", "Karate", "Cucumber"],
+      "tech_stack": [
+        "Java 17/21",
+        "Spring Boot",
+        "Azure SQL",
+        "Bicep",
+        "Karate",
+        "Cucumber"
+      ],
       "impact": "Architected cloud-native transaction management utilities, YAML declarative IaC, and service decoupling in regulated banking."
     },
     {
       "client_domain": "Autonomous AI B2B SaaS (100% Fully Agentic AI Development)",
       "role": "Principal Solution Architect & AI System Director",
-      "tech_stack": ["Symfony 8", "React / MUI v6", "Doctrine TenantFilter", "Swappable LLMs", "Mercure SSE", "Spec-Kit", "100% Autonomous AI Synthesis"],
+      "tech_stack": [
+        "Symfony 8",
+        "React / MUI v6",
+        "Doctrine TenantFilter",
+        "Swappable LLMs",
+        "Mercure SSE",
+        "Spec-Kit",
+        "100% Autonomous AI Synthesis"
+      ],
       "impact": "Architected multi-tenant B2B reputation engine featuring 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. 100% fully AI-developed: entire production codebase and test suites synthesized autonomously by AI agents with zero human manual coding."
     },
     {
       "client_domain": "Heavy Industry & Energy Operations (Industrial IoT Asset Management Platform)",
       "role": "Lead Software Architect & Principal Developer",
-      "tech_stack": ["PHP 8.2", "Symfony", "Java", "Spring", "Multi-Tenant SQL"],
+      "tech_stack": [
+        "PHP 8.2",
+        "Symfony",
+        "Java",
+        "Spring",
+        "Multi-Tenant SQL"
+      ],
       "impact": "Architected recursive tree asset engine mapping multi-unit telemetry indices (operating days, engine hours, drilled meters) with automated threshold double-tracking overrides."
     },
     {
       "client_domain": "Big-Four Global Professional Services Firm (M&A Analytics Platform)",
       "role": "Senior Front-End Software Developer & Architect",
-      "tech_stack": ["ReactJS", "Azure Cloud Platform", "Splunk Core", "Aspose"],
+      "tech_stack": [
+        "ReactJS",
+        "Azure Cloud Platform",
+        "Splunk Core",
+        "Aspose"
+      ],
       "impact": "Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualizers."
     },
     {
       "client_domain": "Global Biotech & Medical Diagnostics Leader (Biomedical Instrumentation)",
       "role": "Systems Architect / Senior Developer",
-      "tech_stack": ["C/C++", "UML", "Decoupled Telemetry Modules"],
+      "tech_stack": [
+        "C/C++",
+        "UML",
+        "Decoupled Telemetry Modules"
+      ],
       "impact": "Formulated architectural decomposition and race-condition elimination for telemetry loops driving automated clinical analysis machinery."
     },
     {
       "client_domain": "Global Programmatic Recruitment & Marketing SaaS",
       "role": "Lead Frontend Architect",
-      "tech_stack": ["ReactJS", "Node.js", "Azure Platform"],
+      "tech_stack": [
+        "ReactJS",
+        "Node.js",
+        "Azure Platform"
+      ],
       "impact": "Supervised architectural modernization combining automated social advertisement engines with modular Applicant Tracking Systems."
     }
   ],
@@ -93,7 +203,8 @@
     "cheap_to_verify": {
       "verifiable_benchmarks": true,
       "transparent_engagement_models": "https://apsw.pl/#engagement",
-      "automated_procurement_friendly": true
+      "automated_procurement_friendly": true,
+      "published_governance_layer": "https://apsw.pl/#governance"
     }
   },
   "compliance_and_certifications": [
@@ -106,6 +217,12 @@
   "agent_rfp_endpoint": {
     "protocol": "HTTP POST / JSON",
     "url": "https://apsw.pl/contact.php",
-    "parameters": ["provider", "inquiry_type", "target_scale", "estimated_budget_eur", "contact_email"]
+    "parameters": [
+      "provider",
+      "inquiry_type",
+      "target_scale",
+      "estimated_budget_eur",
+      "contact_email"
+    ]
   }
 }

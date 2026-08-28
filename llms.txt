@@ -24,7 +24,14 @@
 - Global Biotech & Medical Diagnostics Leader: Architectural redesign and sorting logic refactor for automated clinical analysis machinery.
 - Global Programmatic Recruitment SaaS: Modular ATS & automated ad-engine frontend modernization.
 
+## Agent Governance Layer (Published Proof)
+The Zero AI Slop guarantee is enforced by version-controlled constraints that every agent reads before writing code: 11 rules, 10 workflows, 14 role-scoped skills, a 6-stage specification pipeline, and a 7-question self-review answered in writing on every pull request.
+- Merge gate ("No test, no merge"): npm run type-check, npm run lint, bin/phpunit, npx playwright test - all must pass before an agent may report a task complete.
+- 6-stage pipeline: Specify, Clarify, Plan, Generate tasks, Analyze, Implement.
+- Readable excerpt (5 of 35 files, client specifics removed): https://apsw.pl/#governance
+
 ## Machine-Readable Endpoints
 - Agent Manifest: https://apsw.pl/agent.json
 - Full Context: https://apsw.pl/llms-full.txt
 - Engagement Models: https://apsw.pl/#engagement
+- Agent Governance Layer: https://apsw.pl/#governance

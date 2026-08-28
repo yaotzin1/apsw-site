@@ -101,7 +101,84 @@
 
   .hero-metrics-bar {
     grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-rows: none;
+    row-gap: 16px;
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .metric-value, .metric-label {
+    grid-row: auto;
+  }
+
+  .metric-label {
+    margin-top: 6px;
+  }
+
+  /* Six wrapping chips stack five rows deep on a phone; scroll them instead. */
+  .case-filter-bar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-chip {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  /* Governance: the file rail becomes a scrolling chip row above the document. */
+  .gov-body {
+    grid-template-columns: 1fr;
+  }
+
+  .gov-tree {
+    display: flex;
+    gap: 4px;
+    padding: 10px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    overflow-x: auto;
+  }
+
+  .gov-tree-group,
+  .gov-file-dim,
+  .gov-doc-rule {
+    display: none;
+  }
+
+  .gov-file {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 6px 12px;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: var(--radius-sm);
+  }
+
+  .gov-file[aria-selected="true"] {
+    border-bottom-color: var(--brand-teal-dark);
+  }
+
+  .gov-gate-note {
+    margin-left: 0;
+  }
+
+  .section-cta-band {
+    padding: 24px;
+  }
+
+  .cta-band-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .spec-kit-card-grid {
