@@ -20,7 +20,7 @@
    - **Structured Engagement Models**: 3 fixed-scope transparent engagement cards (10-Day Strategic Architecture Audit, Production Delivery Sprint, Fractional Principal Architect Retainer).
    - **Enterprise Case Studies (NDA Compliant)**: Tier-1 Commercial & Investment Banking, Autonomous AI B2B SaaS (100% AI-developed), Industrial IoT Asset Management, Big-Four M&A Analytics, and Biotech Clinical Instrumentation.
    - **Principal Architect Profile & Credentials**: Piotr Solarz-Wnęk (19+ yrs, MSc, Azure AZ-900, DNA Architect, ITIL, EU GDPR compliant).
-   - **Contact Flow & Anti-Spam Bot Defense**: 3-step SLA (24h review, 15m qualification call, C4 proposal), 1-click Mutual NDA request (`oneNDA` standard), dual hidden honeypots, 2-second time-trap defense, CSRF token validation, and IP rate limiting.
+   - **Contact Flow & Anti-Spam Bot Defense**: 3-step SLA (24h review, 15m qualification call, C4 proposal), 1-click Mutual NDA request (`oneNDA` standard), dual hidden honeypots, an HMAC-signed server-issued form token with a 2-second time-trap, and IP rate limiting.
 
 3. **Machine-Readable AI Discovery Endpoints**:
    - `/agent.json`: Agent / AI procurement discovery manifest.
@@ -33,7 +33,7 @@
 ## 🛠 Tech Stack
 
 - **Frontend**: HTML5, Vanilla CSS3 (Custom Properties & Design System), Vanilla Modern ES6+ JavaScript.
-- **Backend (Contact API)**: PHP 8.2+ (`contact.php`) with JSON response protocol, dual-honeypot bot defense, CSRF protection, and audit logging.
+- **Backend (Contact API)**: PHP 8.2+ (`contact.php` + `form-token.php`) with JSON response protocol, machine-readable error codes, dual-honeypot bot defense, signed form tokens, and audit logging with rotation.
 - **Fonts**: Inter & JetBrains Mono (Google Fonts).
 - **Containerization**: Docker / Apache / FrankenPHP.
 
@@ -81,10 +81,12 @@ open http://localhost:8088/
 
 ## 🔒 Security & Privacy
 
-- Dual-honeypot trap fields (`website_hp` and `company_url_hp`) to catch automated spambots silently.
-- 2-second timestamp threshold to block sub-second automated headless form submissions.
-- Session-backed CSRF tokens with rate limiting per client IP address.
-- Strict input sanitization and email header injection protection in `contact.php`.
+- Dual-honeypot trap fields (`website_hp` and `form_verify_token_dummy`) to catch automated spambots silently.
+- HMAC-signed render token issued by `form-token.php` and verified in `contact.php`: it cannot be forged, backdated, or omitted. A submission arriving under 2 seconds after issue is treated as a bot.
+- Rate limiting (4 per 10 minutes) keyed on `REMOTE_ADDR`. `X-Forwarded-For` / `CF-Connecting-IP` are ignored unless `APSW_TRUSTED_PROXY` is enabled in `.security/form_guard.php`, because on shared hosting those headers are supplied by the client.
+- Strict, length-bounded input validation; CR/LF stripped from every value reaching a mail header, and headers passed to `mail()` as an array so PHP applies its own validation.
+- Honeypot hits, sub-2-second submissions and keyword matches all return a normal success response, so a bot never learns which layer stopped it.
+- `.security/` and `.logs/` are denied over HTTP; the generated HMAC key is stored as a `.php` file that emits nothing even if a server ignores `.htaccess`.
 - Full compliance with EU GDPR data privacy regulations.
 
 ---

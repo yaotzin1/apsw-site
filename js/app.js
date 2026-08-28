@@ -48,11 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Set Anti-Bot Form Timestamp
-  const renderTimeInput = document.getElementById('form-rendered-at');
-  if (renderTimeInput) {
-    renderTimeInput.value = Math.floor(Date.now() / 1000).toString();
-  }
+  // 2. Fetch the signed anti-bot form token
+  // The render time is issued and signed by the server, so it cannot be forged,
+  // backdated, or simply omitted the way a client-side timestamp could be.
+  const formTokenInput = document.getElementById('form-token');
+
+  const fetchFormToken = async () => {
+    if (!formTokenInput) return;
+    try {
+      const res = await fetch('form-token.php', { cache: 'no-store' });
+      const data = await res.json();
+      if (data && data.token) formTokenInput.value = data.token;
+    } catch (err) {
+      // Leave it empty: the server rejects the submission with a code the
+      // form handler below turns into a translated message.
+    }
+  };
+
+  fetchFormToken();
 
   // 3. Navigation Scroll Effect
   const header = document.querySelector('.site-header');
@@ -180,8 +193,17 @@ curl -s https://apsw.pl/agent.json | jq .services
             </div>
           `;
           contactForm.reset();
+          fetchFormToken();
         } else {
-          const errorMsg = result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_error')) || 'An error occurred. Please reach out directly to piotr.solarz-wnek@apsw.pl';
+          // Prefer the translated copy for a known reason code, fall back to the
+          // server's own message.
+          const coded = result.code && window.APSW_I18N
+            ? window.APSW_I18N.t('contact.err_' + result.code)
+            : null;
+          const translated = (coded && coded !== 'contact.err_' + result.code) ? coded : null;
+          const errorMsg = translated || result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_error')) || 'An error occurred. Please reach out directly to piotr.solarz-wnek@apsw.pl';
+          // A stale or missing token is recoverable: get a fresh one for the retry.
+          if (result.code && result.code.indexOf('form_token') === 0) fetchFormToken();
           formFeedback.innerHTML = `
             <div style="padding: 14px; background: var(--accent-coral-bg); border: 1px solid var(--accent-coral); border-radius: var(--radius-md); color: var(--accent-coral); margin-bottom: 16px; font-weight: 500;">
               ⚠ ${errorMsg}
