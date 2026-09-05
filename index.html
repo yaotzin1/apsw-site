@@ -192,17 +192,85 @@
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu">
-          <li><a href="#architecture" class="nav-link" data-i18n="nav.architecture">C4 Blueprints</a></li>
-          <li><a href="#roi-modeler" class="nav-link" data-i18n="nav.roi_modeler">ROI Modeler</a></li>
-          <li><a href="#anti-slop" class="nav-link" data-i18n="nav.anti_slop">Anti-Slop Triage</a></li>
-          <li><a href="#governance" class="nav-link" data-i18n="nav.governance">Governance</a></li>
-          <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
-          <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
-          <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
+          <!-- Dropdown 1: Solutions -->
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span data-i18n="nav.solutions_group">Solutions</span>
+              <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#architecture" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.architecture">C4 Blueprints</span>
+                <span class="nd-desc">4 verified production topologies</span>
+              </a>
+              <a href="#services" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.services">Capabilities</span>
+                <span class="nd-desc">End-to-end architectural solutions</span>
+              </a>
+              <a href="#agentic-dev" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.agentic_dev">Agentic Dev</span>
+                <span class="nd-desc">Autonomous multi-agent swarms</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Dropdown 2: Methodology -->
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span data-i18n="nav.methodology_group">Methodology</span>
+              <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#anti-slop" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.anti_slop">Anti-Slop Triage</span>
+                <span class="nd-desc">Human-in-the-loop review defense</span>
+              </a>
+              <a href="#speckit" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.speckit">Spec-Kit AI</span>
+                <span class="nd-desc">Deterministic contract gates</span>
+              </a>
+              <a href="#governance" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.governance">Governance</span>
+                <span class="nd-desc">The rules agents cannot break</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Dropdown 3: Track Record -->
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span data-i18n="nav.proof_group">Track Record</span>
+              <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#track-record" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.track_record">Case Studies (NDA)</span>
+                <span class="nd-desc">19+ yrs across Banking & IoT</span>
+              </a>
+              <a href="#roi-modeler" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.roi_modeler">ROI Modeler</span>
+                <span class="nd-desc">Interactive delivery cost simulator</span>
+              </a>
+              <a href="#career" class="nav-dropdown-link">
+                <span class="nd-title" data-i18n="nav.career">Career Chronology</span>
+                <span class="nd-desc">2007–2026+ verified path</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Direct Link 4: Engagements -->
           <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
-          <li><a href="#career" class="nav-link" data-i18n="nav.career">Career</a></li>
+
+          <!-- Direct Link 5: NDA Protocol -->
+          <li>
+            <a href="#nda-protocol" class="nav-link nav-nda-link">
+              <span class="nda-lock-dot"></span>
+              <span data-i18n="nav.nda_protocol">NDA Protocol</span>
+            </a>
+          </li>
+
+          <!-- Direct Link 6: About -->
           <li><a href="#architect" class="nav-link" data-i18n="nav.about">About</a></li>
-          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
 
@@ -824,6 +892,20 @@
           <p class="section-subtitle" data-i18n="track_record.subtitle">
             19+ years delivering mission-critical platforms across institutional finance, insurance, biomedical instruments, and heavy industry IoT.
           </p>
+        </div>
+
+        <!-- NDA Confidentiality Notice Banner -->
+        <div class="nda-disclosure-banner" style="margin-bottom: 28px; background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-emerald); padding: 14px 20px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 6px; background: var(--accent-emerald-bg); color: var(--accent-emerald); flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </span>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--text-primary);" data-i18n="track_record.nda_notice_title">Confidentiality Guarantee:</strong> 
+              <span data-i18n="track_record.nda_notice_body">Client names, internal codebases, and infrastructure endpoints are sanitized under active bilateral NDAs. Verifiable metrics, tech stacks, and architectural designs reflect real production outcomes.</span>
+            </div>
+          </div>
+          <a href="#nda-protocol" class="btn btn-outline btn-sm" style="white-space: nowrap; font-size: 0.8rem; padding: 6px 14px;" data-i18n="track_record.nda_notice_link">Read NDA Protocol →</a>
         </div>
 
         <div class="case-filter-bar" role="group" data-i18n-aria="track_record.filter_aria" aria-label="Filter case studies by domain">
@@ -1668,6 +1750,74 @@
     </section>
 
     <!-- =======================================================================
+         BILATERAL NDA PROTOCOL & IP PROTECTION
+         ======================================================================= -->
+    <section class="section" id="nda-protocol">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag emerald" data-i18n="nda_protocol.tag">Confidentiality &amp; Compliance</span>
+          <h2 class="section-title" data-i18n="nda_protocol.title">Bilateral NDA Protocol &amp; IP Protection</h2>
+          <p class="section-subtitle" data-i18n="nda_protocol.subtitle">
+            How APSW guarantees 100% trade secret isolation, oneNDA standard compliance, and zero AI data leakage.
+          </p>
+        </div>
+
+        <div class="nda-protocol-shell">
+          <div class="nda-protocol-grid">
+            <!-- Pillar 1 -->
+            <div class="nda-pillar-card">
+              <div class="nda-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <h3 class="nda-pillar-title" data-i18n="nda_protocol.p1_title">1. Bilateral oneNDA Standard</h3>
+              <p class="nda-pillar-desc" data-i18n="nda_protocol.p1_desc">
+                We operate under the globally recognized oneNDA framework. Zero legal friction, standardized mutual terms, and instant electronic execution before any code review or architecture deep-dive.
+              </p>
+              <div class="nda-pill-tag">oneNDA Verified</div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="nda-pillar-card">
+              <div class="nda-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </div>
+              <h3 class="nda-pillar-title" data-i18n="nda_protocol.p2_title">2. Rigorous Sanitization &amp; Anonymization</h3>
+              <p class="nda-pillar-desc" data-i18n="nda_protocol.p2_desc">
+                Every system architecture, case study, and telemetry dataset on this site is legally sanitized under active non-disclosure agreements. Verifiable technical metrics are shared; client trade secrets are safeguarded.
+              </p>
+              <div class="nda-pill-tag">Redacted Invariants</div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="nda-pillar-card">
+              <div class="nda-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h3 class="nda-pillar-title" data-i18n="nda_protocol.p3_title">3. Zero IP Contamination (Private Sandboxes)</h3>
+              <p class="nda-pillar-desc" data-i18n="nda_protocol.p3_desc">
+                Your source code, data models, and business logic are never ingested to train external foundation models. All agentic synthesis executes within private, ephemeral client sandboxes with strict egress rules.
+              </p>
+              <div class="nda-pill-tag">Zero Retention LLM</div>
+            </div>
+          </div>
+
+          <!-- SLA Banner -->
+          <div class="nda-sla-banner">
+            <div class="nda-sla-copy">
+              <h4 class="nda-sla-title" data-i18n="nda_protocol.sla_title">Mutual NDA SLA Commitment</h4>
+              <p class="nda-sla-desc" data-i18n="nda_protocol.sla_desc">
+                Need to execute a mutual NDA before our technical alignment call? We provide a countersigned oneNDA agreement within 2 business hours.
+              </p>
+            </div>
+            <button type="button" id="btn-request-onenda" class="btn btn-emerald" data-i18n="nda_protocol.btn_request">
+              Request Bilateral oneNDA Execution
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
          CONTACT & INQUIRY FORM
          ======================================================================= -->
     <section class="section" id="contact">
@@ -1831,6 +1981,7 @@
             <li><a href="#anti-slop" data-i18n="nav.anti_slop">Anti-Slop Triage</a></li>
             <li><a href="#governance" data-i18n="governance.footer_link">Agent Governance Layer</a></li>
             <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
+            <li><a href="#nda-protocol" data-i18n="nav.nda_protocol">NDA Protocol &amp; IP Protection</a></li>
           </ul>
         </div>
 

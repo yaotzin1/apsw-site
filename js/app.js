@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Mobile Menu Toggle
+  // 4. Mobile Menu & Navigation Dropdowns
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
   if (mobileToggle && navMenu) {
@@ -89,13 +89,61 @@ document.addEventListener('DOMContentLoaded', () => {
         : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
     });
 
-    // Close on nav link click
-    document.querySelectorAll('.nav-link').forEach(link => {
+    // Close on nav link or dropdown link click
+    document.querySelectorAll('.nav-link, .nav-dropdown-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('mobile-open');
+        document.querySelectorAll('.nav-item-dropdown.is-open').forEach(d => {
+          d.classList.remove('is-open');
+          const toggle = d.querySelector('.nav-dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
       });
     });
   }
+
+  // Navigation Dropdown Toggle (Supports Click on Mobile & Touch)
+  const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      const parent = toggle.closest('.nav-item-dropdown');
+      if (!parent) return;
+      const willOpen = !parent.classList.contains('is-open');
+      
+      // Close other open dropdowns
+      document.querySelectorAll('.nav-item-dropdown.is-open').forEach(d => {
+        if (d !== parent) {
+          d.classList.remove('is-open');
+          const t = d.querySelector('.nav-dropdown-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      parent.classList.toggle('is-open', willOpen);
+      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // Close dropdowns on click outside or Escape
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item-dropdown')) {
+      document.querySelectorAll('.nav-item-dropdown.is-open').forEach(d => {
+        d.classList.remove('is-open');
+        const toggle = d.querySelector('.nav-dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-item-dropdown.is-open').forEach(d => {
+        d.classList.remove('is-open');
+        const toggle = d.querySelector('.nav-dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
 
   // 5. Hero Dual-Mode Terminal Switcher (Human Summary vs Agent JSON vs Spec-Kit Contract)
   const heroTabs = document.querySelectorAll('.terminal-tabs .term-tab');
@@ -290,4 +338,32 @@ curl -s https://apsw.pl/agent.json | jq .services
       }
     });
   }
+
+  // 10. oneNDA Protocol CTA Handler
+  const btnRequestOneNda = document.getElementById('btn-request-onenda');
+  if (btnRequestOneNda) {
+    btnRequestOneNda.addEventListener('click', () => {
+      const contactSection = document.getElementById('contact');
+      const formNda = document.getElementById('form-nda');
+      const formMsg = document.getElementById('form-message');
+      
+      if (formNda) {
+        formNda.checked = true;
+      }
+      if (formMsg && !formMsg.value.trim()) {
+        const lang = (window.APSW_I18N && window.APSW_I18N.getLanguage()) || 'en';
+        formMsg.value = lang === 'pl' 
+          ? "Chcę przeprowadzić przegląd architektury z podpisaniem bilateralnej umowy oneNDA." 
+          : "I would like to schedule an architecture review under the bilateral oneNDA standard.";
+      }
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      const nameInput = document.getElementById('form-name');
+      if (nameInput) {
+        setTimeout(() => nameInput.focus(), 500);
+      }
+    });
+  }
 });
+

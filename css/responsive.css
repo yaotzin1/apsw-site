@@ -47,6 +47,43 @@
     display: flex;
   }
 
+  .nav-item-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    padding: 8px 0;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-item-dropdown.is-open .nav-dropdown-menu {
+    display: flex;
+  }
+
+  .nav-item-dropdown.is-open .dropdown-chevron {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+
   .mobile-toggle {
     display: block;
   }
