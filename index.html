@@ -192,6 +192,9 @@
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu">
+          <li><a href="#architecture" class="nav-link" data-i18n="nav.architecture">C4 Blueprints</a></li>
+          <li><a href="#roi-modeler" class="nav-link" data-i18n="nav.roi_modeler">ROI Modeler</a></li>
+          <li><a href="#anti-slop" class="nav-link" data-i18n="nav.anti_slop">Anti-Slop Triage</a></li>
           <li><a href="#governance" class="nav-link" data-i18n="nav.governance">Governance</a></li>
           <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
@@ -247,13 +250,13 @@
           </p>
 
           <div class="hero-cta-group">
-            <a href="#speckit" class="btn btn-emerald" data-i18n="hero.cta_speckit">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              Explore Spec-Kit Workflow
+            <a href="#roi-modeler" class="btn btn-emerald">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Calculate Delivery ROI & Risk
             </a>
-            <a href="#engagement" class="btn btn-secondary" data-i18n="hero.cta_engagement">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-              Engagement Models
+            <a href="#architecture" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="21 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Inspect C4 Topologies
             </a>
           </div>
 
@@ -278,6 +281,285 @@
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         EXECUTIVE ROI & DELIVERY RISK MODELER
+         ======================================================================= -->
+    <section class="section" id="roi-modeler">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag emerald" data-i18n="roi_modeler.tag">Executive Value Modeler</span>
+          <h2 class="section-title" data-i18n="roi_modeler.title">Calculate Your Delivery Velocity & Risk Elimination</h2>
+          <p class="section-subtitle" data-i18n="roi_modeler.subtitle">
+            Interactive simulation comparing traditional dev agency burn against APSW's Spec-Kit & Fully Agentic architecture.
+          </p>
+        </div>
+
+        <div class="roi-shell">
+          <div class="roi-grid">
+            
+            <!-- Controls Column -->
+            <div class="roi-controls-col">
+              <div class="roi-selector-block">
+                <span class="roi-section-title" data-i18n="roi_modeler.domain_title">1. Select Primary Architectural Challenge</span>
+                <div class="roi-btn-grid">
+                  <button type="button" class="roi-toggle-btn roi-domain-btn active" data-domain="monolith">
+                    <span class="roi-btn-title">Monolith Modernization</span>
+                    <span class="roi-btn-sub">Regulated Banking / Insurance</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-domain-btn" data-domain="agentic_saas">
+                    <span class="roi-btn-title">Autonomous B2B SaaS</span>
+                    <span class="roi-btn-sub">Idumela Multi-Tenant Model</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-domain-btn" data-domain="telemetry_iot">
+                    <span class="roi-btn-title">Industrial IoT & Telemetry</span>
+                    <span class="roi-btn-sub">Drilling Rigs (JO) & Fleets</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-domain-btn" data-domain="cloud_microservices">
+                    <span class="roi-btn-title">Cloud & Microservices</span>
+                    <span class="roi-btn-sub">Java 21 / Spring / Azure IaC</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="roi-selector-block">
+                <span class="roi-section-title" data-i18n="roi_modeler.bottleneck_title">2. Identify Current Core Bottleneck</span>
+                <div class="roi-btn-grid">
+                  <button type="button" class="roi-toggle-btn roi-bottleneck-btn active" data-bottleneck="slow_releases">
+                    <span class="roi-btn-title">Slow Release Cycles</span>
+                    <span class="roi-btn-sub">6+ weeks deploy / monolith fear</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-bottleneck-btn" data-bottleneck="ai_slop">
+                    <span class="roi-btn-title">AI Prototype Fragility</span>
+                    <span class="roi-btn-sub">Prompt drift & hallucination leakage</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-bottleneck-btn" data-bottleneck="dev_burn">
+                    <span class="roi-btn-title">Bloated Headcount</span>
+                    <span class="roi-btn-sub">Agency burn with slow velocity</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-bottleneck-btn" data-bottleneck="data_leak">
+                    <span class="roi-btn-title">Tenant Security Risk</span>
+                    <span class="roi-btn-sub">Multi-tenant data isolation</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="roi-selector-block" style="margin-bottom: 0;">
+                <span class="roi-section-title" data-i18n="roi_modeler.scale_title">3. Scope & Organizational Complexity</span>
+                <div class="roi-btn-grid" style="grid-template-columns: repeat(3, 1fr);">
+                  <button type="button" class="roi-toggle-btn roi-scale-btn" data-scale="small">
+                    <span class="roi-btn-title">Focused Sprint</span>
+                    <span class="roi-btn-sub">1–4 Services / MVP</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-scale-btn active" data-scale="mid">
+                    <span class="roi-btn-title">Mid-Market</span>
+                    <span class="roi-btn-sub">5–12 Core Services</span>
+                  </button>
+                  <button type="button" class="roi-toggle-btn roi-scale-btn" data-scale="enterprise">
+                    <span class="roi-btn-title">Enterprise</span>
+                    <span class="roi-btn-sub">Regulated Platform</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Results Column -->
+            <div class="roi-results-board">
+              <div class="roi-metrics-trio">
+                <div class="roi-metric-box">
+                  <span class="roi-metric-lbl">Traditional Path</span>
+                  <span class="roi-metric-val" id="roi-trad-weeks">28 Weeks</span>
+                  <span class="roi-metric-sub" id="roi-trad-cost">€140,000</span>
+                </div>
+                <div class="roi-metric-box">
+                  <span class="roi-metric-lbl">APSW Spec-Kit Path</span>
+                  <span class="roi-metric-val emerald" id="roi-apsw-weeks">8 Weeks</span>
+                  <span class="roi-metric-sub" id="roi-apsw-cost">€38,400</span>
+                </div>
+                <div class="roi-metric-box full-width">
+                  <span class="roi-metric-lbl">Velocity Multiplier & Savings</span>
+                  <span class="roi-metric-val emerald" id="roi-saved-time">20 Weeks Faster (3.5x Velocity)</span>
+                  <span class="roi-metric-sub" id="roi-saved-cost">€101,600 Capital Saved</span>
+                </div>
+              </div>
+
+              <div class="roi-strategy-box">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="roi-strategy-lbl" data-i18n="roi_modeler.recommended_lbl">Recommended Architecture Moat</span>
+                  <span class="step-output-tag" id="roi-risk-badge" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.25);">94% Risk Elimination</span>
+                </div>
+                <p class="roi-strategy-text" id="roi-strategy-text">
+                  Strangler-fig incremental decoupling with domain-aligned Java 21 / Node.js microservices under shared C4 contracts. Zero downtime cutover with full compliance.
+                </p>
+              </div>
+
+              <div class="roi-actions">
+                <button type="button" class="btn btn-emerald" id="roi-apply-scope-btn" data-i18n="roi_modeler.btn_apply">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  Apply This Scope to Architecture Review
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" id="roi-copy-rfp-btn" data-i18n="roi_modeler.btn_copy_rfp">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Copy Scoped Executive Spec (JSON)
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         C4 SYSTEM ARCHITECTURE COMMAND CENTER
+         ======================================================================= -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="architecture.tag">C4 System Blueprints</span>
+          <h2 class="section-title" data-i18n="architecture.title">Battle-Tested Production System Topologies</h2>
+          <p class="section-subtitle" data-i18n="architecture.subtitle">
+            Interactive inspection of mission-critical platforms designed and maintained by Piotr Solarz-Wnęk across institutional banking, insurance monolith modernization, autonomous SaaS, and heavy industrial IoT.
+          </p>
+        </div>
+
+        <div class="arch-command-shell">
+          <!-- Archetype Nav Tabs -->
+          <div class="arch-archetype-nav" role="tablist">
+            <button type="button" class="arch-archetype-btn active" data-arch="bank_core" data-i18n="architecture.nav_bank">Tier-1 Bank Transaction Core</button>
+            <button type="button" class="arch-archetype-btn" data-arch="agentic_saas" data-i18n="architecture.nav_saas">Autonomous B2B SaaS (Idumela)</button>
+            <button type="button" class="arch-archetype-btn" data-arch="insurance_monolith" data-i18n="architecture.nav_insurance">Insurance Monolith Strangler-Fig</button>
+            <button type="button" class="arch-archetype-btn" data-arch="industrial_telemetry" data-i18n="architecture.nav_iot">Industrial Telemetry Tree</button>
+          </div>
+
+          <!-- Overview Bar -->
+          <div class="arch-overview-bar">
+            <div>
+              <h3 class="arch-detail-title" id="arch-detail-title">Tier-1 Bank Transaction Core (ABN AMRO / CRCA / CRAS)</h3>
+              <p class="arch-detail-overview" id="arch-detail-overview">Cloud-native transaction management and decoupled microservices engineered for strict zero-downtime banking compliance. High-throughput ETL moving 10 GB daily with declarative YAML and Bicep IaC.</p>
+            </div>
+            <span class="step-output-tag" id="arch-detail-badge" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.25);">Institutional Finance & Compliance</span>
+          </div>
+
+          <!-- Interactive Pipeline Layout -->
+          <div class="arch-pipeline-layout">
+            <div class="arch-nodes-grid" id="arch-nodes-grid">
+              <!-- Populated by architecture-matrix.js -->
+            </div>
+
+            <div class="arch-inspector-card" id="arch-inspector-card">
+              <!-- Populated by architecture-matrix.js -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         ANTI-AI-SLOP HUMAN-IN-THE-LOOP TRIAGE SIMULATOR
+         ======================================================================= -->
+    <section class="section" id="anti-slop">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag emerald" data-i18n="anti_slop.tag">The Anti-AI-Slop Doctrine</span>
+          <h2 class="section-title" data-i18n="anti_slop.title">Human-in-the-Loop Reputation Defense (Idumela Engine)</h2>
+          <p class="section-subtitle" data-i18n="anti_slop.subtitle">
+            Why 90% of AI prototypes fail in production: Unconstrained prompts hallucinate false promises and damage brand trust. APSW replaces prompt chaos with calibrated tone embeddings and a 45-second daily triage conveyor belt.
+          </p>
+        </div>
+
+        <div class="triage-shell">
+          <!-- Top Bar -->
+          <div class="triage-topbar">
+            <div class="triage-scenarios-nav">
+              <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted); display: flex; align-items: center; margin-right: 6px;" data-i18n="anti_slop.scenarios_label">Select Scenario:</span>
+              <button type="button" class="triage-scenario-btn active" data-scenario="critical_review" data-i18n="anti_slop.sc_critical">1-Star Critical Review</button>
+              <button type="button" class="triage-scenario-btn" data-scenario="delivery_delay" data-i18n="anti_slop.sc_delay">3-Star Delayed Delivery</button>
+              <button type="button" class="triage-scenario-btn" data-scenario="vip_praise" data-i18n="anti_slop.sc_vip">5-Star Corporate Client</button>
+            </div>
+            <div class="triage-routine-counter" id="triage-routine-counter">
+              Triaged in <strong>0.8s</strong> • <strong>44.2s</strong> remaining in 45-second daily routine
+            </div>
+          </div>
+
+          <!-- Triage Conveyor Card -->
+          <div class="triage-card" id="triage-conveyor-card">
+            <div class="triage-review-head">
+              <div class="triage-author-box">
+                <span class="triage-author-name" id="triage-review-author">Marek Jankowski (Google Local Guide)</span>
+                <span class="triage-review-time" id="triage-review-time">22 minutes ago</span>
+              </div>
+              <span class="triage-review-stars" id="triage-review-stars">★☆☆☆☆</span>
+            </div>
+
+            <div class="triage-review-text" id="triage-review-text">
+              Worst experience ever. Waited 45 minutes for my order, staff was arrogant, and the manager refused to speak with me. Never coming back!
+            </div>
+
+            <!-- Comparison Grid -->
+            <div class="triage-split-grid">
+              
+              <!-- Slop Column -->
+              <div class="triage-col slop">
+                <div class="triage-col-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span id="triage-slop-title" data-i18n="anti_slop.badge_slop">Generic AI Slop (Uncontrolled LLM)</span>
+                </div>
+                <p class="triage-col-text" id="triage-slop-text">
+                  Dear valued customer! We are so, so incredibly sorry for this terrible experience! We always strive for 100% perfection! Please accept our deepest heartfelt apologies. Please email our CEO directly at ceo@company.com and use code SORRY50 for a free 50% discount on your next 5 orders! ✨🙏
+                </p>
+                <ul class="triage-checklist" id="triage-slop-defects">
+                  <li><span class="cross-icon">✕</span> Hallucinates unapproved 50% discounts & codes</li>
+                  <li><span class="cross-icon">✕</span> Exposes fake CEO email address</li>
+                  <li><span class="cross-icon">✕</span> Sycophantic, robotic corporate apology</li>
+                </ul>
+              </div>
+
+              <!-- Calibrated Column -->
+              <div class="triage-col calibrated">
+                <div class="triage-col-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <span id="triage-apsw-title" data-i18n="anti_slop.badge_calibrated">APSW Calibrated Brand Voice (Idumela)</span>
+                </div>
+                <p class="triage-col-text" id="triage-apsw-text">
+                  Panie Marku, dziękujemy za bezpośrednią informację. Czas oczekiwania powyżej 20 minut jest niezgodny z naszym standardem operacyjnym. Sprawdziliśmy zapis bonu z godziny 19:15 i wyciągamy wnioski na zmianie kuchennej. Zapraszamy do kontaktu przez oficjalny formularz reklamacyjny, abyśmy mogli osobiście wyjaśnić tę sytuację.
+                </p>
+                <ul class="triage-checklist" id="triage-apsw-guarantees">
+                  <li><span class="check-icon">✓</span> Strict 3-sentence concise structure</li>
+                  <li><span class="check-icon">✓</span> Top-k semantic tone match against brand history</li>
+                  <li><span class="check-icon">✓</span> Zero hallucination policy (0 unapproved promises)</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="triage-actions-bar">
+              <button type="button" class="btn btn-secondary btn-sm" id="triage-reject-btn" data-i18n="anti_slop.btn_reject">
+                Reject / Re-Calibrate
+              </button>
+              <button type="button" class="btn btn-emerald" id="triage-approve-btn" data-i18n="anti_slop.btn_approve">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Approve & Publish (Optimistic UI)
+              </button>
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <div style="text-align: center; margin-top: 16px;">
+            <button type="button" class="btn btn-secondary btn-sm" id="triage-reset-btn" style="display: none;" data-i18n="anti_slop.btn_reset">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              Reset Review Card
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Floating Mercure SSE Toast -->
+        <div class="triage-toast" id="triage-toast"></div>
       </div>
     </section>
 
@@ -1544,10 +1826,10 @@
         <div>
           <h4 class="footer-col-title" data-i18n="footer.col1_title">Methodology & Tech</h4>
           <ul class="footer-links">
+            <li><a href="#architecture" data-i18n="nav.architecture">C4 Blueprints</a></li>
+            <li><a href="#roi-modeler" data-i18n="nav.roi_modeler">ROI Modeler</a></li>
+            <li><a href="#anti-slop" data-i18n="nav.anti_slop">Anti-Slop Triage</a></li>
             <li><a href="#governance" data-i18n="governance.footer_link">Agent Governance Layer</a></li>
-            <li><a href="#speckit" data-i18n="nav.speckit">Spec-Kit AI Workflow</a></li>
-            <li><a href="#agentic-dev" data-i18n="nav.agentic">Fully Agentic Dev</a></li>
-            <li><a href="#engagement" data-i18n="nav.engagement">Engagement Models</a></li>
             <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
           </ul>
         </div>
@@ -1589,5 +1871,8 @@
   <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
   <script src="js/spec-kit-flow.js"></script>
+  <script src="js/roi-modeler.js"></script>
+  <script src="js/architecture-matrix.js"></script>
+  <script src="js/anti-slop-triage.js"></script>
 </body>
 </html>

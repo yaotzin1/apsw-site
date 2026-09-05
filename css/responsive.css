@@ -3,15 +3,14 @@
    Mobile-First & Fluid Layout Optimizations
    ========================================================================== */
 
-/* Desktop nav carries 7 items; tighten spacing before the mobile menu kicks in
-   at 768px so labels never wrap or collide with the nav actions. */
-@media (min-width: 769px) and (max-width: 1180px) {
+/* Desktop nav carries rich executive links; clean spacing across desktop sizes. */
+@media (min-width: 1025px) and (max-width: 1280px) {
   .nav-menu {
-    gap: 16px;
+    gap: 12px;
   }
 
   .nav-link {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
 
   .nav-actions {
@@ -23,17 +22,35 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 900px) {
-  .nav-menu {
-    gap: 11px;
-  }
-
-  .nav-link {
-    font-size: 0.76rem;
-  }
-}
-
 @media (max-width: 1024px) {
+  .site-header {
+    height: 68px;
+  }
+
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    background: var(--bg-surface-1);
+    border-bottom: 1px solid var(--border-medium);
+    flex-direction: column;
+    padding: 24px;
+    gap: 18px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-menu.mobile-open {
+    display: flex;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -68,30 +85,9 @@
 }
 
 @media (max-width: 768px) {
-  .site-header {
-    height: 68px;
-  }
-
-  .nav-menu {
-    display: none;
-    position: fixed;
-    top: 68px;
-    left: 0;
-    width: 100%;
-    background: var(--bg-surface-1);
-    border-bottom: 1px solid var(--border-medium);
-    flex-direction: column;
-    padding: 24px;
-    gap: 18px;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .nav-menu.mobile-open {
-    display: flex;
-  }
-
-  .mobile-toggle {
-    display: block;
+  .roi-shell, .arch-command-shell, .triage-shell {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
   }
 
   .hero-section {
