@@ -50,7 +50,7 @@ const APSW_TRANSLATIONS = {
       title: "Battle-Tested Production System Topologies",
       subtitle: "Interactive inspection of mission-critical platforms designed and maintained by Piotr Solarz-Wnęk across institutional banking, insurance monolith modernization, autonomous SaaS, and heavy industrial IoT.",
       nav_bank: "Tier-1 Bank Transaction Core",
-      nav_saas: "Autonomous B2B SaaS (Idumela)",
+      nav_saas: "Autonomous B2B SaaS",
       nav_insurance: "Insurance Monolith Strangler-Fig",
       nav_iot: "Industrial Telemetry Tree",
       invariant_label: "Architectural Invariant",
@@ -73,7 +73,7 @@ const APSW_TRANSLATIONS = {
     },
     anti_slop: {
       tag: "The Anti-AI-Slop Doctrine",
-      title: "Human-in-the-Loop Reputation Defense (Idumela Engine)",
+      title: "Human-in-the-Loop Reputation Defense",
       subtitle: "Why 90% of AI prototypes fail in production: Unconstrained prompts hallucinate false promises and damage brand trust. APSW replaces prompt chaos with calibrated tone embeddings and a 45-second daily triage conveyor belt.",
       scenarios_label: "Select Test Scenario:",
       sc_critical: "1-Star Critical Review",
@@ -83,7 +83,7 @@ const APSW_TRANSLATIONS = {
       btn_reject: "Reject / Re-Calibrate",
       btn_reset: "Reset Review Card",
       badge_slop: "Generic AI Slop (Uncontrolled LLM)",
-      badge_calibrated: "APSW Calibrated Brand Voice (Idumela)"
+      badge_calibrated: "APSW Calibrated Brand Voice"
     },
     hero: {
       status_badge: "● Available for Strategic AI & Enterprise Architecture Engagements",
@@ -487,7 +487,7 @@ const APSW_TRANSLATIONS = {
       title: "Sprawdzone na Produkcji Topologie Systemowe",
       subtitle: "Interaktywny wgląd w architekturę systemów krytycznych zaprojektowanych i prowadzonych przez Piotra Solarza-Wnęka w bankowości, ubezpieczeniach, SaaS i przemyśle ciężkim.",
       nav_bank: "Rdzeń Transakcyjny Banku Tier-1",
-      nav_saas: "Autonomiczny B2B SaaS (Idumela)",
+      nav_saas: "Autonomiczny B2B SaaS",
       nav_insurance: "Monolit Ubezpieczeniowy Strangler-Fig",
       nav_iot: "Przemysłowe Drzewo Telemetrii",
       invariant_label: "Reguła Architektoniczna",
@@ -510,7 +510,7 @@ const APSW_TRANSLATIONS = {
     },
     anti_slop: {
       tag: "Doktryna Przeciwko AI Slop",
-      title: "Obrona Reputacji Human-in-the-Loop (Silnik Idumela)",
+      title: "Obrona Reputacji Human-in-the-Loop",
       subtitle: "Dlaczego 90% prototypów AI zawodzi na produkcji: Niekontrolowane prompty halucynują fałszywe obietnice niszcząc markę. APSW zastępuje chaos kalibracją wektorową i 45-sekundowym triażem dziennym.",
       scenarios_label: "Wybierz Scenariusz Testowy:",
       sc_critical: "1-Gwiazdkowa Krytyka",
@@ -520,7 +520,7 @@ const APSW_TRANSLATIONS = {
       btn_reject: "Odrzuć / Rekalibruj",
       btn_reset: "Przywróć Kartę Triażu",
       badge_slop: "Typowy AI Slop (Niekontrolowany LLM)",
-      badge_calibrated: "Skalibrowany Głos Marki APSW (Idumela)"
+      badge_calibrated: "Skalibrowany Głos Marki APSW"
     },
     hero: {
       status_badge: "● Dostępny dla projektów strategicznych AI i architektury enterprise",

@@ -26,14 +26,16 @@
   box-shadow: var(--shadow-sm);
 }
 
-.nav-container {
+.site-header .nav-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  /* The container is capped at 1200px, so the header crowds on ANY viewport
-     width. Keep a hard minimum between brand / menu / actions. */
-  gap: 22px;
+  gap: 16px;
 }
 
 .nav-brand {
@@ -41,6 +43,7 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-logo {
@@ -91,31 +94,39 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 20px;
+  height: 100%;
+  gap: 10px;
   list-style: none;
   flex-wrap: nowrap;
 }
 
 .nav-menu > li {
   flex: 0 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: color var(--transition-fast);
-  padding: 4px 0;
+  transition: all var(--transition-fast);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--brand-teal-dark);
-  font-weight: 600;
+  background: var(--bg-surface-2);
 }
 
 [data-theme="dark"] .nav-link:hover, [data-theme="dark"] .nav-link.active {
   color: var(--text-cyan);
+  background: var(--bg-surface-2);
 }
 
 .nav-actions {
@@ -1720,6 +1731,20 @@
   gap: 6px;
 }
 
+.roi-risk-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  white-space: nowrap;
+}
+
 .roi-strategy-lbl {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -1816,6 +1841,22 @@
   color: var(--text-secondary);
   line-height: 1.55;
   max-width: 800px;
+}
+
+.arch-detail-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
 }
 
 .arch-pipeline-layout {
@@ -2300,29 +2341,34 @@
 .nav-item-dropdown {
   position: relative;
   list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav-dropdown-toggle {
   background: transparent;
   border: none;
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
   cursor: pointer;
-  padding: 6px 0;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
   white-space: nowrap;
 }
 
 .nav-dropdown-toggle:hover,
 .nav-item-dropdown:hover .nav-dropdown-toggle,
-.nav-item-dropdown:focus-within .nav-dropdown-toggle {
+.nav-item-dropdown:focus-within .nav-dropdown-toggle,
+.nav-item-dropdown.is-open .nav-dropdown-toggle {
   color: var(--text-primary);
-  font-weight: 600;
+  background: var(--bg-surface-2);
 }
 
 .dropdown-chevron {
@@ -2331,19 +2377,20 @@
 }
 
 .nav-item-dropdown:hover .dropdown-chevron,
-.nav-item-dropdown:focus-within .dropdown-chevron {
+.nav-item-dropdown:focus-within .dropdown-chevron,
+.nav-item-dropdown.is-open .dropdown-chevron {
   transform: rotate(180deg);
   opacity: 1;
 }
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 10px);
-  left: -12px;
+  top: 100%;
+  left: 0;
   min-width: 260px;
   background: var(--bg-surface-1);
   border: 1px solid var(--border-medium);
-  border-radius: var(--radius-lg);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
   box-shadow: var(--shadow-lg);
   padding: 8px;
   display: flex;
@@ -2351,11 +2398,21 @@
   gap: 2px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(6px);
+  transform: translateY(4px);
   transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
   z-index: 1100;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+}
+
+/* Seamless hover bridge */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
 }
 
 .nav-item-dropdown:hover .nav-dropdown-menu,

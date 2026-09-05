@@ -1,7 +1,7 @@
 /**
  * APSW Platform - "Anti-AI-Slop" Human-in-the-Loop Triage Simulator
  * Live simulation demonstrating why raw ChatGPT/LLM prompts produce brand-damaging "AI Slop"
- * versus APSW's Spec-Kit Calibrated Brand Voice (Idumela Architecture).
+ * versus APSW's Spec-Kit Calibrated Brand Voice (Autonomous SaaS Architecture).
  * Features sub-50ms optimistic UI conveyor-belt animation and Mercure SSE toast simulation.
  */
 
@@ -34,8 +34,8 @@
         'Sztuczne, służalcze formułki robotyczne',
         'Łamie politykę finansową i odpowiedzialność marki'
       ],
-      apswTitleEn: 'APSW Calibrated Brand Voice (Idumela Spec-Kit Engine)',
-      apswTitlePl: 'Skalibrowany Głos Marki APSW (Architektura Idumela)',
+      apswTitleEn: 'APSW Calibrated Brand Voice (Spec-Kit SDD Engine)',
+      apswTitlePl: 'Skalibrowany Głos Marki APSW (Architektura Spec-Kit)',
       apswResponseEn: 'Panie Marku, dziękujemy za bezpośrednią informację. Czas oczekiwania powyżej 20 minut jest niezgodny z naszym standardem operacyjnym. Sprawdziliśmy zapis bonu z godziny 19:15 i wyciągamy wnioski na zmianie kuchennej. Zapraszamy do kontaktu przez oficjalny formularz reklamacyjny, abyśmy mogli osobiście wyjaśnić tę sytuację.',
       apswResponsePl: 'Panie Marku, dziękujemy za bezpośrednią informację. Czas oczekiwania powyżej 20 minut jest niezgodny z naszym standardem operacyjnym. Sprawdziliśmy zapis bonu z godziny 19:15 i wyciągamy wnioski na zmianie kuchennej. Zapraszamy do kontaktu przez oficjalny formularz reklamacyjny, abyśmy mogli osobiście wyjaśnić tę sytuację.',
       apswGuaranteesEn: [
@@ -75,8 +75,8 @@
         'Żenujące emotikony i tandetna "magia AI"',
         'Brak faktycznego połączenia z logistyką'
       ],
-      apswTitleEn: 'APSW Calibrated Brand Voice (Idumela Spec-Kit Engine)',
-      apswTitlePl: 'Skalibrowany Głos Marki APSW (Architektura Idumela)',
+      apswTitleEn: 'APSW Calibrated Brand Voice (Spec-Kit SDD Engine)',
+      apswTitlePl: 'Skalibrowany Głos Marki APSW (Architektura Spec-Kit)',
       apswResponseEn: 'Pani Karolino, dziękujemy za opinię. Cieszymy się, że produkt spełnia oczekiwania, jednak opóźnienie w doręczeniu przez przewoźnika jest niedopuszczalne. Zgłosiliśmy reklamację do firmy kurierskiej i wdrożyliśmy automatyczny monitoring statusów przesyłek.',
       apswResponsePl: 'Pani Karolino, dziękujemy za opinię. Cieszymy się, że produkt spełnia oczekiwania, jednak opóźnienie w doręczeniu przez przewoźnika jest niedopuszczalne. Zgłosiliśmy reklamację do firmy kurierskiej i wdrożyliśmy automatyczny monitoring statusów przesyłek.',
       apswGuaranteesEn: [
@@ -114,8 +114,8 @@
         'Infantylny ton nieprzystający do relacji B2B',
         'Zero powagi biznesowej'
       ],
-      apswTitleEn: 'APSW Calibrated Brand Voice (Idumela Spec-Kit Engine)',
-      apswTitlePl: 'Skalibrowany Głos Marki APSW (Architektura Idumela)',
+      apswTitleEn: 'APSW Calibrated Brand Voice (Spec-Kit SDD Engine)',
+      apswTitlePl: 'Skalibrowany Głos Marki APSW (Architektura Spec-Kit)',
       apswResponseEn: 'Panie Tomaszu, dziękujemy za zaufanie. Płynna migracja bez przestojów produkcyjnych to fundament naszych standardów architektonicznych. Cieszymy się ze stabilności nowego środowiska i pozostajemy do dyspozycji przy kolejnych etapach rozwoju platformy.',
       apswResponsePl: 'Panie Tomaszu, dziękujemy za zaufanie. Płynna migracja bez przestojów produkcyjnych to fundament naszych standardów architektonicznych. Cieszymy się ze stabilności nowego środowiska i pozostajemy do dyspozycji przy kolejnych etapach rozwoju platformy.',
       apswGuaranteesEn: [

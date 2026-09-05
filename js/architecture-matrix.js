@@ -1,9 +1,9 @@
 /**
  * APSW Platform - C4 System Architecture Command Center
  * Interactive System Topology Inspector showing real-world production architectures:
- * 1. Tier-1 Bank Financial Transaction Platform (ABN AMRO / CRCA / CRAS)
- * 2. Autonomous Multi-Tenant B2B SaaS (Idumela / Brandmonitor Architecture)
- * 3. Insurance Monolith Strangler-Fig Decoupling (EMAGINE / Tier-1 European Insurer)
+ * 1. Tier-1 Bank Financial Transaction Platform (Institutional Banking)
+ * 2. Autonomous Multi-Tenant B2B SaaS (AI Reputation Platform Architecture)
+ * 3. Insurance Monolith Strangler-Fig Decoupling (Tier-1 European Insurer)
  * 4. Heavy Industrial Asset Telemetry Tree (APSW Drilling Rigs & Fleets)
  */
 
@@ -13,8 +13,8 @@
   const ARCHITECTURES = {
     bank_core: {
       id: 'bank_core',
-      titleEn: 'Tier-1 Bank Transaction Core (ABN AMRO / CRCA / CRAS)',
-      titlePl: 'Rdzeń Transakcyjny Banku Tier-1 (ABN AMRO / CRCA / CRAS)',
+      titleEn: 'Tier-1 Bank Transaction Core',
+      titlePl: 'Rdzeń Transakcyjny Banku Tier-1',
       badgeEn: 'Institutional Finance & Compliance',
       badgePl: 'Finanse Instytucjonalne i Zgodność',
       overviewEn: 'Cloud-native transaction management and decoupled microservices engineered for strict zero-downtime banking compliance. High-throughput ETL moving 10 GB daily with declarative YAML and Bicep IaC.',
@@ -33,7 +33,7 @@
           code: `targetScope = 'resourceGroup'
 
 resource sqlServer 'Microsoft.Sql/servers@2023-05-01-preview' = {
-  name: 'abn-crca-sql-prod'
+  name: 'bank-core-sql-prod'
   location: resourceGroup().location
   properties: {
     minimalTlsVersion: '1.2'
@@ -91,21 +91,21 @@ public SettlementResult executeSettlement(SettlementOrderCommand cmd) {
           riskPl: 'Chroni przed regresjami API w bramkach rozliczeniowych dostępnych dla klientów banku.',
           code: `Feature: Interbank Transaction Settlement Verification
 
-Scenario: Idempotent replay of high-value settlement
-  Given path '/api/v1/settlements'
-  And header X-Idempotency-Key = 'CRC-992-TX'
-  And request { accountId: 'NL91ABNA0412345678', amount: 5000000.00 }
-  When method post
-  Then status 200
-  And match response.status == 'SETTLED'`
+  Scenario: Idempotent replay of high-value settlement
+    Given path '/api/v1/settlements'
+    And header X-Idempotency-Key = 'CRC-992-TX'
+    And request { accountId: 'NL88BANK0412345678', amount: 5000000.00 }
+    When method post
+    Then status 200
+    And match response.status == 'SETTLED'`
         }
       ]
     },
 
     agentic_saas: {
       id: 'agentic_saas',
-      titleEn: 'Autonomous Multi-Tenant B2B SaaS (Idumela / Brandmonitor)',
-      titlePl: 'Autonomiczny Multi-Tenant B2B SaaS (Idumela / Brandmonitor)',
+      titleEn: 'Autonomous Multi-Tenant B2B SaaS (AI Reputation Platform)',
+      titlePl: 'Autonomiczny Multi-Tenant B2B SaaS (Platforma Reputacji AI)',
       badgeEn: '100% Agentic Synthesis & Spec-Kit SDD',
       badgePl: '100% Synteza Wieloagentowa i Spec-Kit',
       overviewEn: 'High-speed reputation and automated lead-gen engine. Built on Symfony 8.1 / PHP 8.5 running in FrankenPHP worker mode, pgvector semantic tone calibration, and native Mercure SSE real-time push.',
@@ -186,8 +186,8 @@ $hub->publish(new Update(
 
     insurance_monolith: {
       id: 'insurance_monolith',
-      titleEn: 'Tier-1 European Insurance Monolith Modernization (EMAGINE)',
-      titlePl: 'Modernizacja Monolitu Ubezpieczeniowego Tier-1 (EMAGINE)',
+      titleEn: 'Tier-1 European Insurance Monolith Modernization',
+      titlePl: 'Modernizacja Monolitu Ubezpieczeniowego Tier-1',
       badgeEn: 'Strangler-Fig Microservices & C4 Delivery',
       badgePl: 'Wzorzec Strangler-Fig i Architektura C4',
       overviewEn: 'Decomposition of a massive legacy insurance platform into domain-aligned Java, Node.js, and ReactJS microservices within a strictly governed, regulated enterprise environment.',
