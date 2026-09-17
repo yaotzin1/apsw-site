@@ -1,12 +1,24 @@
 <?php
 /**
  * APSW - Hardened Anti-Bot Contact & Architecture Inquiry Handler
- * Multi-layer Bot Protection (Honeypot + Time-Trap + Rate-Limiter + Content Filtering + CSRF Nonce)
+ * Multi-layer Bot Protection (Honeypot + Time-Trap + Rate-Limiter + Content Filtering)
  * Compatible with Cyber_Folks (cPanel / Apache / LiteSpeed / PHP) & Hetzner (Nginx / PHP-FPM)
  */
 
 declare(strict_types=1);
 session_start();
+
+/**
+ * Strip CR/LF and other control characters from any value that will be placed
+ * into a mail header. Without this, a newline in a user-supplied field lets an
+ * attacker append arbitrary headers (Bcc:, Content-Type:, ...) and use the form
+ * as an open relay.
+ */
+function apsw_header_safe(string $value): string
+{
+    $collapsed = preg_replace('/[[:cntrl:]]+/u', ' ', $value) ?? '';
+    return trim(preg_replace('/\s{2,}/u', ' ', $collapsed) ?? '');
+}
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
@@ -23,14 +35,25 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 2. IP Retrieval & Rate Limiting
-$clientIp = $_SERVER['HTTP_CF_CONNECTING_IP'] 
-    ?? $_SERVER['HTTP_X_FORWARDED_FOR'] 
-    ?? $_SERVER['REMOTE_ADDR'] 
-    ?? '127.0.0.1';
+// Proxy headers are attacker-controlled unless the request really arrives via a
+// trusted reverse proxy, so only honour them for peers on this allow-list.
+// Set APSW_TRUSTED_PROXIES (comma-separated) in the server environment when
+// running behind Cloudflare, Traefik, Nginx, etc.
+$peerIp = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
+$trustedProxies = array_filter(array_map('trim', explode(',', (string)getenv('APSW_TRUSTED_PROXIES'))));
+$clientIp = $peerIp;
 
-// Normalize IP in case of comma-separated proxy list
-if (strpos($clientIp, ',') !== false) {
-    $clientIp = trim(explode(',', $clientIp)[0]);
+if (in_array($peerIp, $trustedProxies, true)) {
+    $forwarded = $_SERVER['HTTP_CF_CONNECTING_IP']
+        ?? $_SERVER['HTTP_X_FORWARDED_FOR']
+        ?? $peerIp;
+    // Normalize IP in case of comma-separated proxy list
+    if (strpos($forwarded, ',') !== false) {
+        $forwarded = trim(explode(',', $forwarded)[0]);
+    }
+    if (filter_var($forwarded, FILTER_VALIDATE_IP)) {
+        $clientIp = $forwarded;
+    }
 }
 
 $rateLimitDir = sys_get_temp_dir() . '/apsw_rate_limits';
@@ -92,9 +115,9 @@ if ($formRenderTime > 0) {
 }
 
 // 5. Input Sanitization & Validation
-$name         = isset($_POST['name']) ? trim(strip_tags((string)$_POST['name'])) : '';
+$name         = isset($_POST['name']) ? apsw_header_safe(strip_tags((string)$_POST['name'])) : '';
 $email        = isset($_POST['email']) ? filter_var(trim((string)$_POST['email']), FILTER_VALIDATE_EMAIL) : false;
-$serviceType  = isset($_POST['service_type']) ? trim(strip_tags((string)$_POST['service_type'])) : 'General Architecture Inquiry';
+$serviceType  = isset($_POST['service_type']) ? apsw_header_safe(strip_tags((string)$_POST['service_type'])) : 'General Architecture Inquiry';
 $message      = isset($_POST['message']) ? trim(strip_tags((string)$_POST['message'])) : '';
 $ndaRequested = (isset($_POST['nda_requested']) && $_POST['nda_requested'] === 'yes') ? 'YES (Execute Bilateral NDA prior to call)' : 'No';
 $rfpJson      = isset($_POST['rfp_data']) ? trim((string)$_POST['rfp_data']) : '';
@@ -158,7 +181,7 @@ $bodyContent .= "======================================================\n";
 // Headers
 $headers = [
     'From: APSW Notification <noreply@apsw.pl>',
-    'Reply-To: ' . $name . ' <' . $email . '>',
+    'Reply-To: ' . mb_encode_mimeheader($name, 'UTF-8') . ' <' . $email . '>',
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'X-Mailer: APSW-SecureMailer/2.0'
