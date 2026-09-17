@@ -8,18 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const htmlElement = document.documentElement;
 
-  // Retrieve stored theme or default to 'light'
-  const savedTheme = localStorage.getItem('apsw_theme') || 'light';
-  htmlElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+  // The inline script in <head> already applied the theme; just sync the icon.
+  updateThemeIcon(htmlElement.getAttribute('data-theme') || 'light');
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
       const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       htmlElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('apsw_theme', newTheme);
+      try { localStorage.setItem('apsw_theme', newTheme); } catch (e) { /* private mode */ }
       updateThemeIcon(newTheme);
+      themeToggleBtn.setAttribute('aria-pressed', String(newTheme === 'dark'));
     });
   }
 
@@ -54,84 +53,60 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTimeInput.value = Math.floor(Date.now() / 1000).toString();
   }
 
-  // 3. Navigation Scroll Effect
+  // 3. Navigation Scroll Effect (rAF-throttled, passive)
   const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  if (header) {
+    let scrollQueued = false;
+    const syncHeader = () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+      scrollQueued = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollQueued) {
+        scrollQueued = true;
+        requestAnimationFrame(syncHeader);
+      }
+    }, { passive: true });
+    syncHeader();
+  }
 
   // 4. Mobile Menu Toggle
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('mobile-open');
-      const isOpen = navMenu.classList.contains('mobile-open');
-      mobileToggle.innerHTML = isOpen 
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.setAttribute('aria-controls', 'primary-nav-menu');
+
+    const setMenu = (open) => {
+      navMenu.classList.toggle('mobile-open', open);
+      mobileToggle.setAttribute('aria-expanded', String(open));
+      mobileToggle.innerHTML = open 
         ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
         : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+    };
+
+    mobileToggle.addEventListener('click', () => {
+      setMenu(!navMenu.classList.contains('mobile-open'));
     });
 
     // Close on nav link click
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('mobile-open');
-      });
+      link.addEventListener('click', () => setMenu(false));
     });
-  }
 
-  // 5. Hero Dual-Mode Terminal Switcher (Human Summary vs Agent JSON vs Spec-Kit Contract)
-  const heroTabs = document.querySelectorAll('.terminal-tabs .term-tab');
-  const terminalContent = document.getElementById('terminal-live-code');
-
-  const previews = {
-    agent: `{
-  <span class="code-property">"provider"</span>: <span class="code-string">"APSW (Piotr Solarz-Wnek)"</span>,
-  <span class="code-property">"role"</span>: <span class="code-string">"AI Native Developer & Solution Architect"</span>,
-  <span class="code-property">"experience_years"</span>: <span class="code-number">19</span>,
-  <span class="code-property">"capabilities"</span>: [
-    <span class="code-string">"Fully Agentic Application Development"</span>,
-    <span class="code-string">"Spec-Kit Deterministic AI Engineering"</span>,
-    <span class="code-string">"Enterprise Microservices (Java 21 / Spring, PHP 8 / Symfony)"</span>,
-    <span class="code-string">"High-Load Spatial & Telemetry Engines (Databricks, Azure)"</span>
-  ],
-  <span class="code-property">"anti_slop_guarantee"</span>: <span class="code-keyword">true</span>,
-  <span class="code-property">"endpoints"</span>: {
-    <span class="code-property">"manifest"</span>: <span class="code-string">"https://apsw.pl/agent.json"</span>,
-    <span class="code-property">"context"</span>: <span class="code-string">"https://apsw.pl/llms.txt"</span>
-  }
-}`,
-    speckit: `<span class="code-comment"># Spec-Kit Deterministic Contract Example</span>
-<span class="code-keyword">feature_specification</span>:
-  <span class="code-property">id</span>: <span class="code-string">"SPEC-AI-CORE-01"</span>
-  <span class="code-property">domain</span>: <span class="code-string">"Multi-Agent Settlement Engine"</span>
-  <span class="code-property">deterministic_contract</span>:
-    <span class="code-property">input_schema</span>: <span class="code-string">"OrderBatchPayload.json"</span>
-    <span class="code-property">verification_rules</span>:
-      - <span class="code-string">"Zero Hallucination Gate: STRICT"</span>
-      - <span class="code-string">"Automated Contract Test Suite: 100% PASS"</span>
-      - <span class="code-string">"P99 Latency SLA: < 120ms"</span>
-  <span class="code-property">agentic_execution_mode</span>: <span class="code-string">"Planner-Worker-Verifier Swarm"</span>`,
-    curl: `<span class="code-comment"># Query APSW Agent Manifest Directly via cURL</span>
-curl -s https://apsw.pl/agent.json | jq .services
-
-<span class="code-comment"># Response: Returns machine-verifiable service tiers, SLAs, and pricing models</span>`
-  };
-
-  heroTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      heroTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const target = tab.getAttribute('data-target');
-      if (terminalContent && previews[target]) {
-        terminalContent.innerHTML = previews[target];
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
+        setMenu(false);
+        mobileToggle.focus();
       }
     });
-  });
+  }
+
+  // 5. Footer copyright year
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+  }
 
   // 6. Copy to Clipboard Functionality
   window.copyToClipboard = function(text, btnElement) {
@@ -153,51 +128,49 @@ curl -s https://apsw.pl/agent.json | jq .services
   const contactForm = document.getElementById('apsw-contact-form');
   const formFeedback = document.getElementById('form-feedback');
 
+  const showFeedback = (tone, html) => {
+    if (!formFeedback) return;
+    formFeedback.className = 'form-feedback form-feedback-' + tone;
+    formFeedback.innerHTML = html;
+    formFeedback.hidden = false;
+  };
+
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = (window.APSW_I18N && window.APSW_I18N.t('contact.sending_inquiry')) || 'Sending Inquiry...';
+      const originalBtnHtml = submitBtn.innerHTML;
 
-      const formData = new FormData(contactForm);
+      submitBtn.disabled = true;
+      submitBtn.textContent = (window.APSW_I18N && window.APSW_I18N.t('contact.sending_inquiry')) || 'Sending inquiry…';
 
       try {
         const response = await fetch('contact.php', {
           method: 'POST',
-          body: formData
+          body: new FormData(contactForm)
         });
 
         const result = await response.json();
 
         if (result.success) {
-          const successMsg = result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_success')) || 'Thank you! Your message has been sent successfully.';
-          formFeedback.innerHTML = `
-            <div style="padding: 14px; background: var(--accent-emerald-bg); border: 1px solid var(--accent-emerald-border); border-radius: var(--radius-md); color: var(--accent-emerald); margin-bottom: 16px; font-weight: 500;">
-              ✓ ${successMsg}
-            </div>
-          `;
+          showFeedback('success', result.message ||
+            (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_success')) ||
+            'Thank you. Your inquiry has been received.');
           contactForm.reset();
         } else {
-          const errorMsg = result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_error')) || 'An error occurred. Please reach out directly to piotr.solarz-wnek@apsw.pl';
-          formFeedback.innerHTML = `
-            <div style="padding: 14px; background: var(--accent-coral-bg); border: 1px solid var(--accent-coral); border-radius: var(--radius-md); color: var(--accent-coral); margin-bottom: 16px; font-weight: 500;">
-              ⚠ ${errorMsg}
-            </div>
-          `;
+          showFeedback('error', result.message ||
+            (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_error')) ||
+            'That inquiry could not be sent.');
         }
       } catch (err) {
-        const fallbackMsg = (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_fallback_html')) || '✓ Inquiry recorded. You can also contact directly at <a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-brand); text-decoration: underline; font-weight: 600;">piotr.solarz-wnek@apsw.pl</a>';
-        formFeedback.innerHTML = `
-          <div style="padding: 14px; background: var(--accent-emerald-bg); border: 1px solid var(--accent-emerald-border); border-radius: var(--radius-md); color: var(--accent-emerald); margin-bottom: 16px; font-weight: 500;">
-            ${fallbackMsg}
-          </div>
-        `;
+        // The request never completed, so nothing was recorded. Telling the
+        // visitor it succeeded would lose their inquiry silently.
+        showFeedback('error',
+          (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_offline_html')) ||
+          'The form could not reach the server, so this inquiry was not sent. Please email <a href="mailto:piotr.solarz-wnek@apsw.pl">piotr.solarz-wnek@apsw.pl</a> directly.');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
+        submitBtn.innerHTML = originalBtnHtml;
       }
     });
   }

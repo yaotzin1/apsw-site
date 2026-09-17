@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +33,20 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/brand/apsw-logo-color.svg">
+
+  <!-- Resolve the theme before first paint: applying it from app.js on
+       DOMContentLoaded flashes a white page at dark-mode visitors. -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('apsw_theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/design-system.css">
@@ -132,6 +146,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip_link">Skip to content</a>
+
   <!-- Subtle Architectural Grid Texture -->
   <div class="architectural-bg-pattern" aria-hidden="true"></div>
 
@@ -150,7 +166,7 @@
       </a>
 
       <nav aria-label="Primary Navigation">
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="primary-nav-menu">
           <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
           <li><a href="#agentic-dev" class="nav-link" data-i18n="nav.agentic">Agentic Dev</a></li>
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
@@ -175,7 +191,7 @@
           </svg>
         </button>
 
-        <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.book_review">Book Review</a>
+        <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.book_review">Book a review</a>
         <button class="mobile-toggle" aria-label="Toggle navigation menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
@@ -183,7 +199,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <!-- =======================================================================
          HERO SECTION (EXECUTIVE SINGLE-COLUMN)
          ======================================================================= -->
@@ -196,8 +212,8 @@
           </div>
 
           <h1 class="hero-title" data-i18n-html="hero.title_html">
-            Move Beyond Fragile AI Prototypes. <br>
-            <span class="title-accent">Build Reliable, Production-Ready Systems.</span>
+            Move beyond fragile AI prototypes.<br>
+            Build systems that survive production.
           </h1>
 
           <p class="hero-description" data-i18n-html="hero.description_html">
@@ -205,33 +221,33 @@
           </p>
 
           <div class="hero-cta-group">
-            <a href="#speckit" class="btn btn-emerald" data-i18n="hero.cta_speckit">
+            <a href="#speckit" class="btn btn-emerald">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              Explore Spec-Kit Workflow
+              <span data-i18n="hero.cta_speckit">Explore Spec-Kit Workflow</span>
             </a>
-            <a href="#engagement" class="btn btn-secondary" data-i18n="hero.cta_engagement">
+            <a href="#engagement" class="btn btn-secondary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-              Engagement Models
+              <span data-i18n="hero.cta_engagement">Engagement Models</span>
             </a>
           </div>
 
           <!-- Trust Bar / Metrics Grid -->
           <div class="hero-metrics-bar">
             <div class="metric-item">
-              <span class="metric-value" data-i18n="hero.metric_years_val">19+ Years</span>
-              <span class="metric-label" data-i18n="hero.metric_years_lbl">Enterprise Architecture Track Record</span>
+              <span class="metric-value" data-i18n="hero.metric_years_val">19+ years</span>
+              <span class="metric-label" data-i18n="hero.metric_years_lbl">Enterprise architecture, from Tier-1 banking to industrial IoT</span>
             </div>
             <div class="metric-item">
-              <span class="metric-value" data-i18n="hero.metric_velocity_val">5x Velocity</span>
-              <span class="metric-label" data-i18n="hero.metric_velocity_lbl">Fully Agentic Multi-Agent Delivery</span>
+              <span class="metric-value" data-i18n="hero.metric_velocity_val">30+ engineers</span>
+              <span class="metric-label" data-i18n="hero.metric_velocity_lbl">Engineering unit built and led across Java, PHP and mobile</span>
             </div>
             <div class="metric-item">
-              <span class="metric-value" data-i18n="hero.metric_regulated_val">Tier-1 Regulated</span>
-              <span class="metric-label" data-i18n="hero.metric_regulated_lbl">Institutional Finance & Biotech Proven</span>
+              <span class="metric-value" data-i18n="hero.metric_regulated_val">Regulated sectors</span>
+              <span class="metric-label" data-i18n="hero.metric_regulated_lbl">Institutional finance, biotech instrumentation, heavy industry</span>
             </div>
             <div class="metric-item">
-              <span class="metric-value" data-i18n="hero.metric_anti_slop_val">Zero AI Slop</span>
-              <span class="metric-label" data-i18n="hero.metric_anti_slop_lbl">Deterministic Spec-Kit CI Gates</span>
+              <span class="metric-value" data-i18n="hero.metric_anti_slop_val">Spec-gated</span>
+              <span class="metric-label" data-i18n="hero.metric_anti_slop_lbl">Every merge checked against an executable contract in CI</span>
             </div>
           </div>
 
@@ -261,7 +277,7 @@
             </div>
             <h3 class="step-title" data-i18n="speckit.stage1_title">Formal Domain Specification</h3>
             <p class="step-desc" data-i18n="speckit.stage1_desc">Drafting machine-readable schemas, strict invariant boundaries, and edge-case contracts before writing code.</p>
-            <span class="step-output-tag" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2);" data-i18n="speckit.stage1_guarantee">GUARANTEE: Zero Scope Creep</span>
+            <span class="step-output-tag" data-i18n="speckit.stage1_guarantee">Produces: a signed-off, machine-readable domain contract</span>
           </div>
 
           <div class="pipeline-step-card" data-step="2" role="button" tabindex="0">
@@ -271,7 +287,7 @@
             </div>
             <h3 class="step-title" data-i18n="speckit.stage2_title">Architectural Guardrails</h3>
             <p class="step-desc" data-i18n="speckit.stage2_desc">Injecting C4 boundaries, security compliance (GDPR/PCI-DSS), database isolation levels, and non-blocking asynchronous patterns.</p>
-            <span class="step-output-tag" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2);" data-i18n="speckit.stage2_guarantee">GUARANTEE: 100% Security & Isolation</span>
+            <span class="step-output-tag" data-i18n="speckit.stage2_guarantee">Produces: C4 boundaries and security policy the agents must obey</span>
           </div>
 
           <div class="pipeline-step-card" data-step="3" role="button" tabindex="0">
@@ -281,7 +297,7 @@
             </div>
             <h3 class="step-title" data-i18n="speckit.stage3_title">Autonomous Code Synthesis</h3>
             <p class="step-desc" data-i18n="speckit.stage3_desc">Multi-agent swarms (Planner-Executor-Critic) generate clean, context-isolated code and 100% test suites against the spec.</p>
-            <span class="step-output-tag" style="background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.2);" data-i18n="speckit.stage3_guarantee">GUARANTEE: 5x Time-to-Market Velocity</span>
+            <span class="step-output-tag" data-i18n="speckit.stage3_guarantee">Produces: implementation plus the test suite that proves it</span>
           </div>
 
           <div class="pipeline-step-card" data-step="4" role="button" tabindex="0">
@@ -291,18 +307,18 @@
             </div>
             <h3 class="step-title" data-i18n="speckit.stage4_title">Deterministic CI Quality Gate</h3>
             <p class="step-desc" data-i18n="speckit.stage4_desc">Continuous automated contract testing, static analysis, performance benchmarks, and strict zero-hallucination gates.</p>
-            <span class="step-output-tag" style="background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.2);" data-i18n="speckit.stage4_guarantee">GUARANTEE: Zero Production Regressions</span>
+            <span class="step-output-tag" data-i18n="speckit.stage4_guarantee">Produces: contract, static-analysis and benchmark results per merge</span>
           </div>
         </div>
 
         <!-- Stage Live Breakdown Box -->
-        <div class="card-clean" style="margin-top: 24px; padding: 28px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center;">
+        <div class="card-clean stage-detail-card" aria-live="polite">
+          <div class="stage-detail-grid">
             <div>
-              <h4 id="speckit-stage-title" style="color: var(--brand-teal-dark); margin-bottom: 10px;">Stage 01: Formal Domain & Specification Drafting</h4>
-              <p id="speckit-stage-desc" class="lead" style="font-size: 1rem;">Instead of conversational prompt rambling, the architect defines deterministic domain schemas, strict input/output contracts, business invariants, and edge case matrices in human and machine-readable format.</p>
+              <h4 id="speckit-stage-title">Stage 01: Formal Domain &amp; Specification Drafting</h4>
+              <p id="speckit-stage-desc">Instead of conversational prompt rambling, the architect defines deterministic domain schemas, strict input/output contracts, business invariants, and edge case matrices in human and machine-readable format.</p>
             </div>
-            <div style="background: var(--bg-code); border: 1px solid #1e293b; border-radius: var(--radius-md); padding: 16px; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.5; color: #cbd5e1; max-height: 200px; overflow-y: auto;">
+            <div class="stage-detail-code">
               <pre id="speckit-stage-code"><span class="code-comment"># SPEC-KIT STAGE 1: Formal Domain Specification</span>
 <span class="code-keyword">spec_definition</span>:
   <span class="code-property">feature</span>: <span class="code-string">"Autonomous Telemetry Incident Ingestion"</span>
@@ -316,33 +332,64 @@
           </div>
         </div>
 
-        <!-- Comparison Table: Prompting vs Spec-Kit -->
-        <div class="comparison-container">
-          <div class="comparison-header">
-            <span data-i18n="speckit.comp_dim">Engineering Dimension</span>
-            <span style="color: var(--accent-coral);" data-i18n="speckit.comp_slop_header">Standard AI Chat / Prompting ("AI Slop")</span>
-            <span style="color: var(--accent-emerald);" data-i18n="speckit.comp_speckit_header">APSW Spec-Kit Methodology</span>
-          </div>
-          <div class="comparison-row">
-            <span class="col-feature" data-i18n="speckit.comp_dim_1">Output Determinism</span>
-            <span class="col-slop" data-i18n="speckit.comp_slop_1">✕ Non-deterministic, probabilistic drifts</span>
-            <span class="col-speckit" data-i18n="speckit.comp_speckit_1">✓ 100% Deterministic against schema contracts</span>
-          </div>
-          <div class="comparison-row">
-            <span class="col-feature" data-i18n="speckit.comp_dim_2">Architectural Control</span>
-            <span class="col-slop" data-i18n="speckit.comp_slop_2">✕ Uncontrolled spaghetti code & hallucinations</span>
-            <span class="col-speckit" data-i18n="speckit.comp_speckit_2">✓ Strict C4 boundary enforcement & clean domain logic</span>
-          </div>
-          <div class="comparison-row">
-            <span class="col-feature" data-i18n="speckit.comp_dim_3">Enterprise Verification</span>
-            <span class="col-slop" data-i18n="speckit.comp_slop_3">✕ "Looks good to me" manual inspection</span>
-            <span class="col-speckit" data-i18n="speckit.comp_speckit_3">✓ Automated contract tests & CI gating ("Cheap to Verify")</span>
-          </div>
-          <div class="comparison-row">
-            <span class="col-feature" data-i18n="speckit.comp_dim_4">Regulated Compliance</span>
-            <span class="col-slop" data-i18n="speckit.comp_slop_4">✕ High risk of security & data leakage</span>
-            <span class="col-speckit" data-i18n="speckit.comp_speckit_4">✓ Zero-leakage sandboxes & GDPR / PCI-DSS compliance</span>
-          </div>
+        <!-- Prompting vs Spec-Kit, as a real table so the row/column relationship
+             survives a screen reader and a stacked phone layout. -->
+        <table class="comparison-table">
+          <caption class="visually-hidden" data-i18n="speckit.comp_caption">Standard AI prompting compared with the APSW Spec-Kit methodology, across four engineering dimensions.</caption>
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="speckit.comp_dim">Engineering Dimension</th>
+              <th scope="col" class="th-slop" data-i18n="speckit.comp_slop_header">Standard AI Chat / Prompting ("AI Slop")</th>
+              <th scope="col" class="th-speckit" data-i18n="speckit.comp_speckit_header">APSW Spec-Kit Methodology</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="col-feature" data-i18n="speckit.comp_dim_1">Output Determinism</th>
+              <td class="col-slop">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_slop_header_short">Prompting</span>
+                <span data-i18n="speckit.comp_slop_1">✕ Non-deterministic, probabilistic drifts</span>
+              </td>
+              <td class="col-speckit">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_speckit_header_short">Spec-Kit</span>
+                <span data-i18n="speckit.comp_speckit_1">✓ 100% Deterministic against schema contracts</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="col-feature" data-i18n="speckit.comp_dim_2">Architectural Control</th>
+              <td class="col-slop">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_slop_header_short">Prompting</span>
+                <span data-i18n="speckit.comp_slop_2">✕ Uncontrolled spaghetti code &amp; hallucinations</span>
+              </td>
+              <td class="col-speckit">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_speckit_header_short">Spec-Kit</span>
+                <span data-i18n="speckit.comp_speckit_2">✓ Strict C4 boundary enforcement &amp; clean domain logic</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="col-feature" data-i18n="speckit.comp_dim_3">Enterprise Verification</th>
+              <td class="col-slop">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_slop_header_short">Prompting</span>
+                <span data-i18n="speckit.comp_slop_3">✕ "Looks good to me" manual inspection</span>
+              </td>
+              <td class="col-speckit">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_speckit_header_short">Spec-Kit</span>
+                <span data-i18n="speckit.comp_speckit_3">✓ Automated contract tests &amp; CI gating ("Cheap to Verify")</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="col-feature" data-i18n="speckit.comp_dim_4">Regulated Compliance</th>
+              <td class="col-slop">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_slop_header_short">Prompting</span>
+                <span data-i18n="speckit.comp_slop_4">✕ High risk of security &amp; data leakage</span>
+              </td>
+              <td class="col-speckit">
+                <span class="cell-label" aria-hidden="true" data-i18n="speckit.comp_speckit_header_short">Spec-Kit</span>
+                <span data-i18n="speckit.comp_speckit_4">✓ Zero-leakage sandboxes &amp; GDPR / PCI-DSS compliance</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         </div>
 
       </div>
@@ -397,11 +444,11 @@
 
           <!-- Visual Multi-Agent Architecture Card -->
           <div class="agentic-visual-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #1e293b;">
-              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: #38bdf8;">AGENTIC_SWARM_ORCHESTRATION.log</span>
+            <div class="agentic-log-header">
+              <span class="agentic-log-name">AGENTIC_SWARM_ORCHESTRATION.log</span>
               <span class="step-output-tag" data-i18n="agentic.swarm_badge">ACTIVE SWARM</span>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.55; color: #94a3b8;">
+            <div class="agentic-log-body">
               <p data-i18n-html="agentic.swarm_log1_html"><span style="color: #a855f7;">[ARCHITECT_AGENT]</span> Loaded Spec: <span style="color: #38bdf8;">SPEC-FINANCIAL-TRANSACTIONS-V3</span></p>
               <p data-i18n-html="agentic.swarm_log2_html"><span style="color: #a855f7;">[ARCHITECT_AGENT]</span> Enforcing C4 Guardrails & Spring Boot 3.3 / Java 21 Aggregate Rules</p>
               <p data-i18n-html="agentic.swarm_log3_html"><span style="color: #38bdf8;">[PLANNER_AGENT]</span> Decomposed into 3 Parallel Subtasks (Entity, Controller, Karate Suite)</p>
@@ -824,7 +871,7 @@
           <div class="architect-bio-card">
             <span class="section-tag emerald" data-i18n="architect.tag">Principal Architect</span>
             <h2 style="font-size: 2.2rem; margin-bottom: 6px;" data-i18n="architect.name">Piotr Solarz-Wnęk</h2>
-            <div style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--brand-teal-dark); margin-bottom: 16px; font-weight: 600;" data-i18n="architect.subtitle">
+            <div style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--text-brand); margin-bottom: 16px; font-weight: 600;" data-i18n="architect.subtitle">
               MSc Informatic Industrial Systems | 19+ Years Experience
             </div>
             <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 16px;" data-i18n-html="architect.bio_p1_html">
@@ -835,14 +882,14 @@
             </p>
 
             <div class="social-links-row">
-              <a href="https://www.linkedin.com/in/piotrsolarzwnek/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" data-i18n="architect.linkedin_btn">
+              <a href="https://www.linkedin.com/in/piotrsolarzwnek/" target="_blank" rel="noopener noreferrer" class="social-icon-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                LinkedIn Profile
-              </a>
-              <a href="mailto:piotr.solarz-wnek@apsw.pl" class="social-icon-btn" data-i18n="architect.email_btn">
+              <span data-i18n="architect.linkedin_btn">LinkedIn Profile</span>
+            </a>
+              <a href="mailto:piotr.solarz-wnek@apsw.pl" class="social-icon-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                Direct Email
-              </a>
+              <span data-i18n="architect.email_btn">Direct Email</span>
+            </a>
             </div>
           </div>
 
@@ -909,7 +956,7 @@
               </div>
               <div>
                 <h3 style="font-size: 1.05rem; margin-bottom: 2px;" data-i18n="contact.direct_email_title">Direct Email</h3>
-                <p style="margin-bottom: 2px;"><a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--brand-teal-dark); font-weight: 600;">piotr.solarz-wnek@apsw.pl</a></p>
+                <p style="margin-bottom: 2px;"><a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-brand); font-weight: 600;">piotr.solarz-wnek@apsw.pl</a></p>
                 <span style="font-size: 0.78rem; color: var(--text-muted);" data-i18n="contact.response_time">Average response time: &lt; 4 business hours</span>
               </div>
             </div>
@@ -920,7 +967,7 @@
               </div>
               <div>
                 <h3 style="font-size: 1.05rem; margin-bottom: 2px;" data-i18n="contact.phone_title">Direct Phone / WhatsApp</h3>
-                <p style="margin-bottom: 2px;"><a href="tel:+48666522923" style="color: var(--brand-teal-dark); font-weight: 600;">+48 666 522 923</a></p>
+                <p style="margin-bottom: 2px;"><a href="tel:+48666522923" style="color: var(--text-brand); font-weight: 600;">+48 666 522 923</a></p>
                 <span style="font-size: 0.78rem; color: var(--text-muted);" data-i18n="contact.timezone">Europe / Warsaw (UTC+1 / UTC+2)</span>
               </div>
             </div>
@@ -937,29 +984,27 @@
             </div>
 
             <!-- What Happens Next: 3-Step Engagement SLA -->
-            <div class="contact-card-item" style="background: var(--bg-surface-2); border-color: var(--border-medium);">
-              <div style="width: 100%;">
-                <div style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--accent-emerald); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;" data-i18n="contact.sla_title">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                  What Happens Next (Direct SLA)
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                  <div style="display: flex; gap: 10px; align-items: flex-start;">
-                    <span style="background: var(--bg-surface-1); border: 1px solid var(--border-medium); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; color: var(--brand-teal-dark);">1</span>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;" data-i18n-html="contact.sla_step1_html"><strong style="color: var(--text-primary);">Stack Review (&lt; 4h):</strong> Piotr personally reviews your requirements under mutual NDA.</div>
-                  </div>
-                  <div style="display: flex; gap: 10px; align-items: flex-start;">
-                    <span style="background: var(--bg-surface-1); border: 1px solid var(--border-medium); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; color: var(--brand-teal-dark);">2</span>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;" data-i18n-html="contact.sla_step2_html"><strong style="color: var(--text-primary);">Technical Alignment:</strong> Direct 30-min call with the Principal Architect. Zero sales pitch.</div>
-                  </div>
-                  <div style="display: flex; gap: 10px; align-items: flex-start;">
-                    <span style="background: var(--bg-surface-1); border: 1px solid var(--border-medium); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; color: var(--brand-teal-dark);">3</span>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;" data-i18n-html="contact.sla_step3_html"><strong style="color: var(--text-primary);">Actionable Scope (24h):</strong> Concrete 10-Day Audit or Core Delivery Sprint roadmap.</div>
-                  </div>
-                </div>
+            <div class="contact-card-item sla-card">
+              <div class="sla-body">
+                <h3 class="sla-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <span data-i18n="contact.sla_title">What happens next</span>
+                </h3>
+                <ol class="sla-steps">
+                  <li>
+                    <span class="sla-step-num" aria-hidden="true">1</span>
+                    <span data-i18n-html="contact.sla_step1_html"><strong>Stack Review (&lt; 4h):</strong> Piotr personally reviews your requirements under mutual NDA.</span>
+                  </li>
+                  <li>
+                    <span class="sla-step-num" aria-hidden="true">2</span>
+                    <span data-i18n-html="contact.sla_step2_html"><strong>Technical Alignment:</strong> Direct 30-min call with the Principal Architect. Zero sales pitch.</span>
+                  </li>
+                  <li>
+                    <span class="sla-step-num" aria-hidden="true">3</span>
+                    <span data-i18n-html="contact.sla_step3_html"><strong>Actionable Scope (24h):</strong> Concrete 10-Day Audit or Core Delivery Sprint roadmap.</span>
+                  </li>
+                </ol>
               </div>
-            </div>
-
           </div>
 
           <!-- Contact Form Card with Multi-Layer Anti-Bot Security -->
@@ -1006,10 +1051,10 @@
                 </label>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.form_submit_btn">
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                Send Architecture Inquiry
-              </button>
+              <span data-i18n="contact.form_submit_btn">Send Architecture Inquiry</span>
+            </button>
             </form>
           </div>
 
@@ -1037,9 +1082,7 @@
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 14px;" data-i18n="footer.footer_desc">
             APSW — AI-Native Solution Architecture & Enterprise Engineering by Piotr Solarz-Wnęk. Zero AI Slop. Deterministic systems engineered for high-availability production.
           </p>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-brand);" data-i18n="footer.footer_deploy">
-            Deployment Ready: Cyber_Folks / Hetzner
-          </div>
+
         </div>
 
         <div>
@@ -1075,7 +1118,7 @@
       </div>
 
       <div class="footer-bottom">
-        <div data-i18n="footer.rights">&copy; 2026 APSW — Piotr Solarz-Wnęk. All rights reserved.</div>
+        <div>&copy;&nbsp;<span id="footer-year">2026</span> <span data-i18n="footer.rights">APSW — Piotr Solarz-Wnęk. All rights reserved.</span></div>
         <div style="display: flex; gap: 16px;">
           <a href="https://www.linkedin.com/in/piotrsolarzwnek/" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">LinkedIn</a>
           <a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-muted);">piotr.solarz-wnek@apsw.pl</a>

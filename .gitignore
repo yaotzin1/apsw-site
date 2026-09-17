@@ -16,3 +16,11 @@ ehthumbs.db
 # Temp files
 *.tmp
 *.bak
+
+# Application secrets — never commit
+.security/
+*.key.php
+secret.key*
+
+# Rate-limit scratch state
+apsw_rate_limits/

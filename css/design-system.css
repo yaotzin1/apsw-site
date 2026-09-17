@@ -14,13 +14,13 @@
   --brand-teal-glow: rgba(4, 66, 89, 0.12);
   
   /* Semantic Status & Accents */
-  --accent-emerald: #059669;
+  --accent-emerald: #047857;
   --accent-emerald-light: #10b981;
   --accent-emerald-bg: #ecfdf5;
   --accent-emerald-border: #a7f3d0;
-  --accent-amber: #d97706;
+  --accent-amber: #b45309;
   --accent-amber-bg: #fffbeb;
-  --accent-coral: #dc2626;
+  --accent-coral: #c11f1f;
   --accent-coral-bg: #fef2f2;
 
   /* Executive Editorial Light Theme (DEFAULT) */
@@ -45,11 +45,11 @@
   /* Text Colors */
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-muted: #64748b;
+  --text-muted: #5a6a7d;
   --text-inverse: #ffffff;
   --text-brand: #044259;
   --text-cyan: #0284c7;
-  --text-emerald: #059669;
+  --text-emerald: #047857;
 
   /* Typography */
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -97,13 +97,17 @@
   --border-emerald: rgba(16, 185, 129, 0.3);
 
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-secondary: #b6c2d2;
+  --text-muted: #a6b4c6;
   --text-inverse: #090d14;
   --text-brand: #38bdf8;
   --text-cyan: #38bdf8;
   --text-emerald: #34d399;
 
+  --accent-emerald: #34d399;
+  --accent-emerald-border: rgba(52, 211, 153, 0.35);
+  --accent-amber: #fbbf24;
+  --accent-coral: #f87171;
   --accent-emerald-bg: rgba(16, 185, 129, 0.12);
   --accent-amber-bg: rgba(245, 158, 11, 0.12);
   --accent-coral-bg: rgba(239, 68, 68, 0.12);
@@ -218,41 +222,47 @@ code, pre, .font-mono {
 }
 
 .section-header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 52px auto;
+  max-width: 720px;
+  margin: 0 0 48px 0;
 }
 
 .section-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  background: var(--bg-surface-2);
-  border: 1px solid var(--border-medium);
-  color: var(--text-brand);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--border-medium);
 }
 
 .section-tag.emerald {
-  background: var(--accent-emerald-bg);
-  border-color: var(--accent-emerald-border);
   color: var(--accent-emerald);
+}
+
+.section-tag.emerald::before {
+  background: currentColor;
 }
 
 .section-title {
   margin-bottom: 14px;
+  text-wrap: balance;
 }
 
 .section-subtitle {
-  font-size: 1.12rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
   color: var(--text-secondary);
+  max-width: 62ch;
 }
 
 /* Card Primitive */
