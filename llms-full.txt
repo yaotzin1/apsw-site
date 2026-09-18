@@ -67,6 +67,14 @@ C. ENTERPRISE SOFTWARE ARCHITECTURE
 - Azure Cloud Infrastructure as Code (Bicep, ARM, YAML Pipelines).
 - High-throughput CQRS, Event-Driven Architectures, and Multi-Tenant database isolation.
 
+D. OPEN SOURCE & DEVELOPER TOOLING
+- apsw-gridwright: Deterministic, headless React Data Grid engine engineered for AI coding agents and enterprise applications. Available to everyone on npm (npm i apsw-gridwright).
+  - npm Package: https://www.npmjs.com/package/apsw-gridwright
+  - GitHub Repository: https://github.com/yaotzin1/apsw-gridwright
+  - Interactive Live Playground & Canonical Agent Recipes: https://apsw.pl/gridwright-examples.html
+  - Live REST Wire Protocol Backend: https://apsw.pl/api/people
+  - Key Capabilities: Virtual scrolling (100k+ rows), live REST wire protocol, inline cell editing, strict keyboard navigation, ARIA accessibility, zero runtime bloat.
+
 =============================================================================
 4. HOW TO ENGAGE APSW
 =============================================================================

@@ -172,6 +172,7 @@
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
           <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
           <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
+          <li><a href="gridwright-examples.html" class="nav-link" data-i18n="nav.gridwright">Gridwright Showcase</a></li>
           <li><a href="#architect" class="nav-link" data-i18n="nav.about">About</a></li>
           <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
         </ul>
@@ -862,6 +863,75 @@
     </section>
 
     <!-- =======================================================================
+         OPEN SOURCE & PUBLIC ARTIFACTS SHOWCASE (APSW-GRIDWRIGHT)
+         ======================================================================= -->
+    <section class="section" id="gridwright-showcase" style="padding-top: 10px;">
+      <div class="container">
+        <div class="gridwright-feature-card">
+          <div class="gw-card-glow" aria-hidden="true"></div>
+          
+          <div class="gw-card-content">
+            <div class="gw-card-header">
+              <div class="gw-badges-row">
+                <span class="section-tag emerald" data-i18n="gridwright_showcase.tag">Public NPM Package & Open Source</span>
+                <span class="gw-npm-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color: #cb3837;"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
+                  <span data-i18n="gridwright_showcase.badge">AVAILABLE ON NPM</span>
+                </span>
+              </div>
+              <h2 class="gw-card-title" data-i18n="gridwright_showcase.title">apsw-gridwright — Enterprise React Data Grid Engine</h2>
+              <p class="gw-card-subtitle" data-i18n="gridwright_showcase.subtitle">
+                Headless, deterministic table architecture built for AI agents and high-throughput React applications. Available to everyone on npm.
+              </p>
+            </div>
+
+            <p class="gw-card-desc" data-i18n="gridwright_showcase.desc">
+              Designed to eliminate table bloat and AI agent hallucinations. Features virtual scrolling (100k+ rows), live REST wire protocol data sources, inline cell editing, strict keyboard navigation, and full ARIA accessibility.
+            </p>
+
+            <!-- Install & Feature Highlights -->
+            <div class="gw-highlight-row">
+              <div class="gw-install-box">
+                <span class="gw-install-label">Terminal / Shell</span>
+                <div class="gw-install-command">
+                  <code>npm i apsw-gridwright</code>
+                  <button class="gw-copy-btn" id="gw-copy-install" aria-label="Copy npm install command" title="Copy command" onclick="window.copyToClipboard('npm i apsw-gridwright', this)">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="gw-features-list">
+                <span class="tech-tag" style="color: var(--accent-emerald); font-weight: 700;" data-i18n="gridwright_showcase.pill_npm">npm: apsw-gridwright</span>
+                <span class="tech-tag" data-i18n="gridwright_showcase.pill_virtual">Virtual Rows (100k+)</span>
+                <span class="tech-tag" data-i18n="gridwright_showcase.pill_rest">Live REST Wire Protocol</span>
+                <span class="tech-tag" data-i18n="gridwright_showcase.pill_editing">Inline Cell Editing</span>
+                <span class="tech-tag" data-i18n="gridwright_showcase.pill_aria">Strict ARIA & Keyboard Nav</span>
+                <span class="tech-tag" data-i18n="gridwright_showcase.pill_ts">TypeScript Native</span>
+              </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="gw-card-actions">
+              <a href="gridwright-examples.html" class="btn btn-emerald" style="display:inline-flex; align-items:center; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                <span data-i18n="gridwright_showcase.btn_playground">Interactive Live Playground</span>
+              </a>
+              <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #cb3837;"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
+                <span data-i18n="gridwright_showcase.btn_npm">View on npm</span>
+              </a>
+              <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span data-i18n="gridwright_showcase.btn_github">GitHub Repository</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
          ABOUT THE ARCHITECT & CREDENTIALS
          ======================================================================= -->
     <section class="section" id="architect">
@@ -1092,6 +1162,7 @@
             <li><a href="#agentic-dev" data-i18n="nav.agentic">Fully Agentic Dev</a></li>
             <li><a href="#engagement" data-i18n="nav.engagement">Engagement Models</a></li>
             <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
+            <li><a href="gridwright-examples.html" data-i18n="footer.gridwright_link">Gridwright Data Grid (npm)</a></li>
           </ul>
         </div>
 
@@ -1119,7 +1190,9 @@
 
       <div class="footer-bottom">
         <div>&copy;&nbsp;<span id="footer-year">2026</span> <span data-i18n="footer.rights">APSW — Piotr Solarz-Wnęk. All rights reserved.</span></div>
-        <div style="display: flex; gap: 16px;">
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">npm: apsw-gridwright</a>
+          <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">GitHub</a>
           <a href="https://www.linkedin.com/in/piotrsolarzwnek/" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">LinkedIn</a>
           <a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-muted);">piotr.solarz-wnek@apsw.pl</a>
         </div>

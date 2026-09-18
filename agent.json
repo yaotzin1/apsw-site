@@ -103,6 +103,18 @@
     "MSc Informatic Industrial Systems",
     "GDPR / EU Data Protection Compliant"
   ],
+  "public_packages": [
+    {
+      "name": "apsw-gridwright",
+      "type": "npm package / React Data Grid Engine",
+      "npm": "https://www.npmjs.com/package/apsw-gridwright",
+      "github": "https://github.com/yaotzin1/apsw-gridwright",
+      "interactive_playground": "https://apsw.pl/gridwright-examples.html",
+      "rest_wire_protocol": "https://apsw.pl/api/people",
+      "install_command": "npm i apsw-gridwright",
+      "description": "Deterministic, headless React Data Grid engine engineered for AI coding agents and high-performance enterprise applications. Features virtual rows, REST data source protocol, inline editing, and zero runtime bloat."
+    }
+  ],
   "agent_rfp_endpoint": {
     "protocol": "HTTP POST / JSON",
     "url": "https://apsw.pl/contact.php",

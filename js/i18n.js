@@ -17,6 +17,7 @@ const APSW_TRANSLATIONS = {
       services: "Services",
       engagement: "Engagements",
       track_record: "Case Studies",
+      gridwright: "Gridwright Showcase",
       about: "About",
       contact: "Contact",
       book_review: "Book a review",
@@ -274,7 +275,25 @@ const APSW_TRANSLATIONS = {
       col1_title: "Methodology & Tech",
       col2_title: "Services",
       col3_title: "Availability & Office",
-      rights: "APSW — Piotr Solarz-Wnęk. All rights reserved."
+      rights: "APSW — Piotr Solarz-Wnęk. All rights reserved.",
+      gridwright_link: "Gridwright Data Grid (npm)"
+    },
+    gridwright_showcase: {
+      tag: "Public NPM Package & Open Source",
+      badge: "AVAILABLE ON NPM",
+      title: "apsw-gridwright — Enterprise React Data Grid Engine",
+      subtitle: "Headless, deterministic table architecture built for AI agents and high-throughput React applications. Available to everyone on npm.",
+      desc: "Designed to eliminate table bloat and AI agent hallucinations. Features virtual scrolling (100k+ rows), live REST wire protocol data sources, inline cell editing, strict keyboard navigation, and full ARIA accessibility.",
+      install_cmd: "npm i apsw-gridwright",
+      pill_npm: "npm: apsw-gridwright",
+      pill_virtual: "Virtual Rows (100k+)",
+      pill_rest: "Live REST Wire Protocol",
+      pill_editing: "Inline Cell Editing",
+      pill_aria: "Strict ARIA & Keyboard Nav",
+      pill_ts: "TypeScript Native",
+      btn_playground: "Interactive Live Playground",
+      btn_npm: "View on npm",
+      btn_github: "GitHub Repository"
     },
     stages: {
       1: {
@@ -308,6 +327,7 @@ const APSW_TRANSLATIONS = {
       services: "Usługi",
       engagement: "Współpraca",
       track_record: "Projekty",
+      gridwright: "Showcase Data Grid",
       about: "O mnie",
       contact: "Kontakt",
       book_review: "Umów przegląd",
@@ -565,7 +585,25 @@ const APSW_TRANSLATIONS = {
       col1_title: "Metodyka & Technologie",
       col2_title: "Usługi",
       col3_title: "Dostępność i Biuro",
-      rights: "APSW — Piotr Solarz-Wnęk. Wszelkie prawa zastrzeżone."
+      rights: "APSW — Piotr Solarz-Wnęk. Wszelkie prawa zastrzeżone.",
+      gridwright_link: "Gridwright Data Grid (npm)"
+    },
+    gridwright_showcase: {
+      tag: "Publiczny Pakiet NPM & Open Source",
+      badge: "DOSTĘPNY W NPM",
+      title: "apsw-gridwright — Silnik Enterprise Data Grid dla Reacta",
+      subtitle: "Architektura headless i deterministyczna tabela danych stworzona dla agentów AI i wydajnych aplikacji React. Dostępna dla każdego w rejestrze npm.",
+      desc: "Stworzona w celu wyeliminowania narzutu i halucynacji agentów AI. Oferuje wirtualne przewijanie (ponad 100k wierszy), protokół REST wire protocol, edycję komórek in-line, ścisłą nawigację klawiaturą i pełną dostępność ARIA.",
+      install_cmd: "npm i apsw-gridwright",
+      pill_npm: "npm: apsw-gridwright",
+      pill_virtual: "Wirtualne wiersze (100k+)",
+      pill_rest: "Protokół REST Wire Protocol",
+      pill_editing: "Edycja komórek in-line",
+      pill_aria: "Dostępność ARIA & Klawiatura",
+      pill_ts: "Natywny TypeScript",
+      btn_playground: "Interaktywny Poligon Live",
+      btn_npm: "Zobacz na npm",
+      btn_github: "Repozytorium GitHub"
     },
     stages: {
       1: {
