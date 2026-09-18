@@ -17,6 +17,12 @@
     # 3. Block access to hidden files and directories (except .well-known for SSL)
     RewriteCond %{REQUEST_URI} "!(^|/)\.well-known([^./]+)?/" [NC]
     RewriteRule "(^|/)\." - [F]
+
+    # 4. REST API Routing for apsw-gridwright
+    RewriteRule ^api/people(?:/(.*))?$ api/people.php/$1 [QSA,L]
+
+    # 5. Clean URLs for Gridwright Examples & Agent Playbook
+    RewriteRule ^(?:examples|gridwright-examples)/?$ gridwright-examples.html [L]
 </IfModule>
 
 # ==============================================================================

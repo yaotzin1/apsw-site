@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>apsw-gridwright Examples & AI Agent Playbook | APSW</title>
+  <meta name="title" content="apsw-gridwright Examples & AI Agent Playbook | APSW">
+  <meta name="description" content="Canonical code recipes, strict architectural contracts, and live interactive REST playground for AI coding agents and frontend architects integrating apsw-gridwright.">
+  <meta name="keywords" content="apsw-gridwright, React Data Grid, AI Coding Agent Playbook, TypeScript Data Table, Virtual Rows, Headless Grid Engine, Piotr Solarz-Wnek, APSW">
+  <meta name="author" content="Piotr Solarz-Wnęk - APSW">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://apsw.pl/gridwright-examples.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apsw.pl/gridwright-examples.html">
+  <meta property="og:title" content="apsw-gridwright Examples & AI Agent Playbook | APSW">
+  <meta property="og:description" content="Canonical code recipes, strict architectural contracts, and live interactive REST playground for AI coding agents and frontend architects integrating apsw-gridwright.">
+  <meta property="og:image" content="https://apsw.pl/assets/brand/apsw-logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/brand/apsw-logo-color.svg">
+
+  <!-- Theme Initialization (prevents flash of wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('apsw_theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/gridwright-examples.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip_link">Skip to content</a>
+
+  <!-- Subtle Architectural Grid Texture -->
+  <div class="architectural-bg-pattern" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="gridwright-examples.html" class="nav-brand" aria-label="apsw-gridwright Playbook">
+        <img src="assets/brand/apsw-logo-color.svg" alt="APSW Logo" class="nav-logo nav-logo-light" width="38" height="38">
+        <img src="assets/brand/apsw-logo-white.svg" alt="APSW Logo" class="nav-logo nav-logo-dark" width="38" height="38">
+        <div class="brand-text-block">
+          <span class="brand-title">apsw-gridwright</span>
+          <span class="brand-sub" data-i18n="brandSub">AGENT PLAYBOOK &amp; CANONICAL RECIPES</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu" id="primary-nav-menu">
+          <li><a href="index.html" class="nav-link" style="color: var(--brand-teal-light); font-weight: 600;" data-i18n="backToSite">← Back to apsw.pl</a></li>
+          <li><a href="#rules" class="nav-link" data-i18n="gw_nav.rules">Playbook Rules</a></li>
+          <li><a href="#decision-matrix" class="nav-link" data-i18n="gw_nav.matrix">Decision Matrix</a></li>
+          <li><a href="#playground" class="nav-link" data-i18n="gw_nav.playground">Live REST Harness</a></li>
+          <li><a href="#snippets" class="nav-link" data-i18n="gw_nav.snippets">Canonical Snippets</a></li>
+          <li><a href="#checklist" class="nav-link" data-i18n="gw_nav.checklist">Audit Checklist</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher (EN / PL) -->
+        <div class="lang-switcher-group" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button class="lang-btn" data-lang="pl" aria-pressed="false">PL</button>
+        </div>
+
+        <!-- Light / Dark Theme Switcher -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span data-i18n="gw_nav.github">GitHub</span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <!-- =======================================================================
+         HERO SECTION
+         ======================================================================= -->
+    <section class="section gw-hero">
+      <div class="container">
+        <div class="gw-hero-header">
+          <div class="gw-hero-badge">
+            <span data-i18n="gw_hero.badge">APSW-GRIDWRIGHT REFERENCE & AGENT PLAYBOOK</span>
+          </div>
+
+          <h1 class="gw-hero-title" data-i18n-html="gw_hero.title_html">
+            Deterministic React Data Grid Architecture
+          </h1>
+
+          <p class="gw-hero-desc" data-i18n-html="gw_hero.desc_html">
+            Rules, canonical code snippets, and live interactive REST harness for AI coding agents and enterprise engineers integrating <code>apsw-gridwright</code> into production React applications. Zero narrative, maximum deterministic precision.
+          </p>
+
+          <div class="gw-hero-actions">
+            <a href="#playground" class="btn btn-emerald">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <span data-i18n="gw_hero.btn_playground">Test Live REST Harness</span>
+            </a>
+            <a href="#snippets" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span data-i18n="gw_hero.btn_snippets">Browse Snippets</span>
+            </a>
+            <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span data-i18n="gw_hero.btn_repo">GitHub Repository</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Spec Bar -->
+        <div class="gw-spec-bar">
+          <div class="gw-spec-card">
+            <span class="gw-spec-label">Peer Dependencies</span>
+            <span class="gw-spec-val">React 18 or React 19</span>
+          </div>
+          <div class="gw-spec-card">
+            <span class="gw-spec-label">Runtime Dependencies</span>
+            <span class="gw-spec-val" style="color: var(--accent-emerald);">0 (Zero)</span>
+          </div>
+          <div class="gw-spec-card">
+            <span class="gw-spec-label">Wire Protocols</span>
+            <span class="gw-spec-val">REST, Windowed, GraphQL, SDK</span>
+          </div>
+          <div class="gw-spec-card">
+            <span class="gw-spec-label">Accessible Role Contract</span>
+            <span class="gw-spec-val">WAI-ARIA 1.2 Compliant</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 1: THE CORE CONTRACT (ALWAYS & NEVER)
+         ======================================================================= -->
+    <section class="section" id="rules" style="background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header" style="text-align: left;">
+          <div class="section-tag" data-i18n="gw_rules.tag">ARCHITECTURAL GUARDRAILS</div>
+          <h2 class="section-title" data-i18n="gw_rules.title">Strict Agent Rules: Always vs Never</h2>
+          <p class="section-subtitle" data-i18n="gw_rules.subtitle">
+            AI coding agents writing apsw-gridwright code MUST follow these foundational rules without deviation.
+          </p>
+        </div>
+
+        <div class="gw-rules-grid">
+          <!-- ALWAYS COLUMN -->
+          <div class="gw-rule-column always">
+            <div class="gw-rule-header">
+              <div class="gw-rule-heading">
+                <span style="color: var(--accent-emerald); font-size: 1.4rem;">✔</span>
+                <span data-i18n="gw_rules.always_title">Always</span>
+              </div>
+              <span class="gw-rule-tag always" data-i18n="gw_rules.always_badge">MANDATORY</span>
+            </div>
+            <ul class="gw-rule-list">
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Give every grid an <code>aria-label</code> or a <code>caption</code> for accessibility.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Build a data source in <code>useMemo</code> (deps = what it reads) or at module scope. <strong>Never inline in JSX.</strong></span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Declare <code>capabilities</code> truthfully. Unstated facets default to all-true for remote sources.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Use <code>formatValue</code> when the cell's answer is text; <code>cell</code> only for real React nodes.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Pass <code>signal</code> from the fetcher directly into <code>fetch</code> for cancellation.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Pass <code>getRowId</code> whenever row records do not have an <code>id</code> property.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Put features in <code>addons={[...]}</code>; put per-column configuration directly on the column definition.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Keep <code>virtualRows({ rowHeight })</code> strictly equal to the CSS property <code>--gw-row-height</code>.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon always">✓</span>
+                <span>Let <code>inlineEditing</code>'s <code>commit</code> throw an Error to reject an edit. Do not mutate local state manually.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- NEVER COLUMN -->
+          <div class="gw-rule-column never">
+            <div class="gw-rule-header">
+              <div class="gw-rule-heading">
+                <span style="color: var(--accent-coral); font-size: 1.4rem;">✖</span>
+                <span data-i18n="gw_rules.never_title">Never</span>
+              </div>
+              <span class="gw-rule-tag never" data-i18n="gw_rules.never_badge">FORBIDDEN</span>
+            </div>
+            <ul class="gw-rule-list">
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never compute or fake a total the source did not supply. No <code>totalRows</code> means the grid says "of many", and that is correct.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never claim a capability the backend endpoint does not implement.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never list <code>rowDetail()</code> together with <code>virtualRows()</code> — it throws by design.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never give an add-on's extra <code>&lt;tr&gt;</code> <code>role="row"</code>; use <code>role="presentation"</code> with a labelled <code>role="region"</code> inside.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never assert on class names or DOM structure in tests. Query strictly by ARIA role and accessible name.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never add a runtime dependency to make a recipe or feature work.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never render a visible string as a JSX literal inside an add-on; use <code>messages</code> / <code>labels</code>.</span>
+              </li>
+              <li class="gw-rule-item">
+                <span class="gw-rule-icon never">✗</span>
+                <span>Never reach into the grid's DOM to attach behaviour. Use the formal add-on contract.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 2: DECISION RULES MATRIX
+         ======================================================================= -->
+    <section class="section" id="decision-matrix">
+      <div class="container">
+        <div class="section-header" style="text-align: left;">
+          <div class="section-tag" data-i18n="gw_matrix.tag">ARCHITECTURE SELECTION</div>
+          <h2 class="section-title" data-i18n="gw_matrix.title">Decision Rules Matrix</h2>
+          <p class="section-subtitle" data-i18n="gw_matrix.subtitle">
+            Match your application requirement to the canonical apsw-gridwright pattern.
+          </p>
+        </div>
+
+        <div class="gw-table-wrap">
+          <table class="gw-matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 45%;">Application Requirement / Scenario</th>
+                <th style="width: 55%;">Canonical Gridwright Pattern</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rows come from an in-memory array</td>
+                <td><code class="gw-matrix-code">data={rows}</code></td>
+              </tr>
+              <tr>
+                <td>Rows come from a REST endpoint</td>
+                <td><code class="gw-matrix-code">createRestDataSource({ url })</code></td>
+              </tr>
+              <tr>
+                <td>Rows come from GraphQL / SDK / tRPC</td>
+                <td><code class="gw-matrix-code">createRemoteDataSource({ fetcher })</code></td>
+              </tr>
+              <tr>
+                <td>Server accepts only page + pageSize</td>
+                <td><code class="gw-matrix-code">capabilities: { paginate: true, sort: false, filter: false, search: false }</code></td>
+              </tr>
+              <tr>
+                <td>&gt; ~10,000 rows rendered at once in DOM</td>
+                <td><code class="gw-matrix-code">addons={[virtualRows()]}</code></td>
+              </tr>
+              <tr>
+                <td>Result set too large to hold in memory</td>
+                <td><code class="gw-matrix-code">createWindowedDataSource({ blockSize, fetchRange })</code></td>
+              </tr>
+              <tr>
+                <td>Both huge dataset &amp; &gt; 10k rows rendered</td>
+                <td><code class="gw-matrix-code">createWindowedDataSource + virtualRows()</code></td>
+              </tr>
+              <tr>
+                <td>An expandable panel under a row</td>
+                <td><code class="gw-matrix-code">rowDetail({ hasDetail, render })</code></td>
+              </tr>
+              <tr>
+                <td>Nested rows of the same shape</td>
+                <td><code class="gw-matrix-code">treeData()</code></td>
+              </tr>
+              <tr>
+                <td>A feature that does not exist in core</td>
+                <td><code class="gw-matrix-code">a GridAddon of your own</code></td>
+              </tr>
+              <tr>
+                <td>A row transformation for both local and remote</td>
+                <td><code class="gw-matrix-code">an engine plugin (registerStage)</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: LIVE REST API & DATA GRID PLAYGROUND
+         ======================================================================= -->
+    <section class="section" id="playground" style="background: var(--bg-surface-2); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header" style="text-align: left;">
+          <div class="section-tag" data-i18n="gw_play.tag">LIVE REST WIRE HARNESS</div>
+          <h2 class="section-title" data-i18n="gw_play.title">Interactive PHP REST Playground</h2>
+          <p class="section-subtitle" data-i18n="gw_play.subtitle">
+            This live interactive workbench is connected directly to our hardened backend at <code>/api/people.php</code>. Test sorting, filtering, pagination, master-detail order expansion, and inline cell editing with real-time HTTP wire telemetry.
+          </p>
+        </div>
+
+        <div class="gw-playground">
+          <!-- Toolbar -->
+          <div class="gw-pg-toolbar">
+            <div class="gw-pg-controls">
+              <!-- Search -->
+              <div class="gw-pg-search-wrap">
+                <svg class="gw-pg-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="gw-search-input" class="gw-pg-input" placeholder="Search name, role, dept..." aria-label="Search records">
+              </div>
+
+              <!-- Department Filter -->
+              <select id="gw-dept-select" class="gw-pg-select" aria-label="Filter by department">
+                <option value="">All Departments</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Security">Security</option>
+                <option value="Data & AI">Data &amp; AI</option>
+                <option value="Product">Product</option>
+                <option value="Infrastructure">Infrastructure</option>
+              </select>
+
+              <!-- Sort Selector -->
+              <select id="gw-sort-select" class="gw-pg-select" aria-label="Sort by column">
+                <option value="salary:desc">Salary (High to Low)</option>
+                <option value="salary:asc">Salary (Low to High)</option>
+                <option value="name:asc">Name (A-Z)</option>
+                <option value="rating:desc">Rating (High to Low)</option>
+                <option value="startDate:desc">Newest Hires</option>
+              </select>
+
+              <!-- Page Size -->
+              <select id="gw-page-size-select" class="gw-pg-select" aria-label="Page size">
+                <option value="5">5 rows</option>
+                <option value="10" selected>10 rows</option>
+                <option value="25">25 rows</option>
+              </select>
+            </div>
+
+            <div class="gw-pg-status-bar">
+              <span class="gw-pg-badge live" id="gw-live-count">100 records live</span>
+              <button id="gw-reset-btn" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 0.8rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                <span>Reset Seed</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="gw-table-container">
+            <table class="gw-live-grid" aria-label="Enterprise personnel directory with live REST backend">
+              <thead>
+                <tr>
+                  <th style="width: 40px;">
+                    <input type="checkbox" id="gw-select-all" aria-label="Select all rows on this page">
+                  </th>
+                  <th class="sortable" data-col="id">ID</th>
+                  <th class="sortable" data-col="name">Person</th>
+                  <th class="sortable" data-col="department">Department</th>
+                  <th class="sortable" data-col="role">Role</th>
+                  <th class="sortable sorted-desc" data-col="salary">Salary (Editable)</th>
+                  <th class="sortable" data-col="rating">Rating</th>
+                  <th class="sortable" data-col="status">Status</th>
+                  <th>Detail</th>
+                </tr>
+              </thead>
+              <tbody id="gw-grid-tbody">
+                <!-- Dynamically populated by js/gridwright-examples.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination Footer -->
+          <div class="gw-pg-footer">
+            <div class="gw-pg-page-info" id="gw-page-info">
+              Loading data...
+            </div>
+            <div class="gw-pg-nav-btns">
+              <button id="gw-prev-page" class="btn btn-secondary btn-sm" disabled>Previous</button>
+              <button id="gw-next-page" class="btn btn-secondary btn-sm">Next</button>
+            </div>
+          </div>
+
+          <!-- Live Wire Protocol Inspector -->
+          <div class="gw-inspector">
+            <div class="gw-inspector-header">
+              <div class="gw-inspector-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <span>Live Wire Contract Telemetry</span>
+              </div>
+              <div class="gw-inspector-badges">
+                <span class="gw-badge-chip status-200" id="gw-inspector-status">200 OK</span>
+                <span class="gw-badge-chip latency" id="gw-inspector-latency">-- ms</span>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 10px; font-size: 0.78rem; color: #38bdf8;">
+              <span style="color: #64748b;">Endpoint:</span> <code id="gw-inspector-url">GET /api/people.php?page=1&amp;pageSize=10</code>
+            </div>
+
+            <div class="gw-inspector-body">
+              <div class="gw-inspector-pane">
+                <div class="gw-inspector-pane-title">HTTP Response Headers</div>
+                <pre id="gw-inspector-headers">{ "Content-Type": "application/json", "X-Total-Count": "100" }</pre>
+              </div>
+              <div class="gw-inspector-pane">
+                <div class="gw-inspector-pane-title">Response JSON Body (Wire Payload)</div>
+                <pre id="gw-inspector-payload">Loading...</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: CANONICAL SNIPPETS LIBRARY
+         ======================================================================= -->
+    <section class="section" id="snippets">
+      <div class="container">
+        <div class="section-header" style="text-align: left;">
+          <div class="section-tag" data-i18n="gw_snip.tag">PLAYBOOK RECIPES</div>
+          <h2 class="section-title" data-i18n="gw_snip.title">Canonical Code Snippets Library</h2>
+          <p class="section-subtitle" data-i18n="gw_snip.subtitle">
+            Zero-narrative, battle-tested code snippets directly from the agent playbook. Click any copy button to drop directly into your application.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="gw-snippets-tabs">
+          <button class="gw-tab-btn active" data-tab="all">All Snippets (13)</button>
+          <button class="gw-tab-btn" data-tab="fundamentals">Fundamentals</button>
+          <button class="gw-tab-btn" data-tab="remote">REST &amp; Remote</button>
+          <button class="gw-tab-btn" data-tab="addons">Add-ons &amp; Editing</button>
+          <button class="gw-tab-btn" data-tab="enterprise">State, Theming &amp; Tests</button>
+        </div>
+
+        <!-- SNIPPET 1: Imports -->
+        <div class="gw-snippet-card" data-category="fundamentals">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>1. Standard Package Imports</h3>
+              <p>Entry imports and module boundaries. Peer dependencies: React 18 or 19. Zero runtime dependencies.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-1"><span class="c-kw">import</span> { Gridwright, <span class="c-com">/* add-ons, hooks, parts */</span> } <span class="c-kw">from</span> <span class="c-str">'apsw-gridwright/react'</span>; <span class="c-com">// build with this</span>
+<span class="c-kw">import</span> { createRestDataSource, <span class="c-com">/* engine, sources */</span> } <span class="c-kw">from</span> <span class="c-str">'apsw-gridwright'</span>;   <span class="c-com">// headless engine</span>
+<span class="c-kw">import</span> { pl } <span class="c-kw">from</span> <span class="c-str">'apsw-gridwright/locales'</span>;                                    <span class="c-com">// translations</span>
+<span class="c-kw">import</span> <span class="c-str">'apsw-gridwright/styles.css'</span>;                                             <span class="c-com">// once, at the entry</span></pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 2: Array Grid -->
+        <div class="gw-snippet-card" data-category="fundamentals">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>2. Grid over an Array</h3>
+              <p>Simple typed columns over in-memory client data. Always declare formatValue for text.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-2"><span class="c-kw">const</span> columns: GridwrightColumn&lt;<span class="c-typ">Person</span>&gt;[] = [
+    { id: <span class="c-str">'name'</span>, header: <span class="c-str">'Name'</span> },
+    { id: <span class="c-str">'salary'</span>, header: <span class="c-str">'Salary'</span>, align: <span class="c-str">'end'</span>, formatValue: (v) =&gt; money.format(Number(v)) },
+];
+
+&lt;<span class="c-typ">Gridwright</span>&lt;<span class="c-typ">Person</span>&gt; columns={columns} data={people} pageSize={<span class="c-num">25</span>} aria-label=<span class="c-str">"People"</span> /&gt;;</pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 3: REST Grid -->
+        <div class="gw-snippet-card" data-category="remote">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>3. Grid over REST (Wire Format)</h3>
+              <p>Connected to backend endpoints like <code>/api/people</code>. Data source must be built in useMemo.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-3"><span class="c-kw">const</span> source = useMemo(() =&gt; createRestDataSource&lt;<span class="c-typ">Person</span>&gt;({ url: <span class="c-str">'/api/people'</span> }), []);
+
+&lt;<span class="c-typ">Gridwright</span>&lt;<span class="c-typ">Person</span>&gt; columns={columns} dataSource={source} pageSize={<span class="c-num">25</span>} aria-label=<span class="c-str">"People"</span> addons={[search()]} /&gt;;</pre>
+          </div>
+          <div class="gw-snippet-notes">
+            <strong>Wire format sent:</strong> <code>page</code> (one-based), <code>pageSize</code>, <code>sort=col:asc,other:desc</code>, <code>search</code>, <code>filters</code> (JSON array of <code>{ columnId, operator, value }</code>).<br>
+            <strong>Accepted back:</strong> an array, <code>{ data, total }</code>, <code>{ items, count }</code>, <code>meta.total</code>, or an <code>X-Total-Count</code> header. Override with <code>buildParams</code> / <code>parseResponse</code>.
+          </div>
+        </div>
+
+        <!-- SNIPPET 4: Async Remote Grid -->
+        <div class="gw-snippet-card" data-category="remote">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>4. Grid over Async (GraphQL / SDK / tRPC)</h3>
+              <p>Custom async fetcher with declared capabilities and abort signal forwarding.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-4"><span class="c-kw">const</span> source = useMemo(
+    () =&gt;
+        createRemoteDataSource&lt;<span class="c-typ">Person</span>&gt;({
+            capabilities: { paginate: <span class="c-kw">true</span>, sort: <span class="c-kw">false</span>, filter: <span class="c-kw">false</span>, search: <span class="c-kw">false</span> },
+            fetcher: <span class="c-kw">async</span> ({ query, signal }) =&gt; {
+                <span class="c-kw">const</span> { pageIndex, pageSize } = query.pagination;
+                <span class="c-kw">const</span> body = <span class="c-kw">await</span> client.people.list({ page: pageIndex + <span class="c-num">1</span>, size: pageSize }, { signal });
+                <span class="c-kw">return</span> body.total === <span class="c-kw">undefined</span> ? { rows: body.rows } : { rows: body.rows, totalRows: body.total };
+            },
+        }),
+    [client],
+);</pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 5: Add-ons Ecosystem -->
+        <div class="gw-snippet-card" data-category="addons">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>5. Add-ons Ecosystem &amp; Core Add-ons</h3>
+              <p>Configuring add-ons. Core four (sorting, selection, pagination, staleNotice) are on by default.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-5"><span class="c-com">// Explicit feature add-ons</span>
+addons={[search(), columnFilters(), exportMenu({ filename: <span class="c-str">'people'</span> }), rowActions({ items })]}
+
+<span class="c-com">// Configuring default core add-ons</span>
+coreAddons={coreAddons&lt;<span class="c-typ">Person</span>&gt;({
+    selection: { checkboxes: <span class="c-kw">false</span> },
+    pagination: { pageSizeOptions: [<span class="c-num">10</span>, <span class="c-num">50</span>] }
+})}
+
+<span class="c-com">// Or remove all core add-ons:</span>
+coreAddons={<span class="c-kw">false</span>}</pre>
+          </div>
+          <div class="gw-snippet-notes">
+            Changing which add-on <strong>names</strong> are listed remounts the grid. This is by design; it resets the page.
+          </div>
+        </div>
+
+        <!-- SNIPPET 6: Selection -->
+        <div class="gw-snippet-card" data-category="addons">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>6. Selection &amp; Engine State</h3>
+              <p>Selection is engine state. Provide getRowId when rows lack a default id property.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-6">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-6">&lt;<span class="c-typ">Gridwright</span>&lt;<span class="c-typ">Person</span>&gt;
+    selectionMode=<span class="c-str">"multiple"</span>
+    onSelectionChange={(ids, rows) =&gt; setSelected(rows)}
+    getRowId={(row) =&gt; row.uuid}
+/&gt;</pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 7: Editable Cells -->
+        <div class="gw-snippet-card" data-category="addons">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>7. Editable Cells &amp; Inline Commit (with Throw Revert)</h3>
+              <p>Throwing an error in commit rejects the edit and reverts the cell automatically.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-7">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-7"><span class="c-com">// 1. Column Definition</span>
+{ id: <span class="c-str">'salary'</span>, header: <span class="c-str">'Salary'</span>, edit: { inputType: <span class="c-str">'number'</span>, editable: (row) =&gt; row.canEditPay } }
+
+<span class="c-com">// 2. Add-on Configuration</span>
+inlineEditing({
+    commit: <span class="c-kw">async</span> (rowId, columnId, value) =&gt; {
+        <span class="c-kw">const</span> response = <span class="c-kw">await</span> fetch(<span class="c-str">`/api/people/${rowId}`</span>, {
+            method: <span class="c-str">'PATCH'</span>,
+            headers: { <span class="c-str">'Content-Type'</span>: <span class="c-str">'application/json'</span> },
+            body: JSON.stringify({ [columnId]: value }),
+        });
+        <span class="c-kw">if</span> (!response.ok) <span class="c-kw">throw new</span> Error(<span class="c-kw">await</span> response.text()); <span class="c-com">// throwing reverts the cell!</span>
+        source.invalidate();
+    },
+})</pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 8: Expandable Rows -->
+        <div class="gw-snippet-card" data-category="addons">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>8. Expandable Rows / Master–Detail</h3>
+              <p>Render runs only while open; unmounted collapsed panels provide automatic lazy loading.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-8">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-8">rowDetail&lt;<span class="c-typ">Order</span>&gt;({
+    hasDetail: (row) =&gt; row.data.lineCount &gt; <span class="c-num">0</span>,
+    render: ({ data, close }) =&gt; &lt;<span class="c-typ">OrderLines</span> orderId={data.id} /&gt;,
+})</pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 9: Huge Datasets -->
+        <div class="gw-snippet-card" data-category="enterprise">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>9. Huge Datasets (Windowed Data Source + Virtual Rows)</h3>
+              <p>Combines block windowing with DOM row virtualization. Total rows is required here.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-9">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-9"><span class="c-kw">const</span> source = useMemo(
+    () =&gt;
+        createWindowedDataSource&lt;<span class="c-typ">Person</span>&gt;({
+            blockSize: <span class="c-num">200</span>,
+            maxBlocks: <span class="c-num">12</span>,
+            fetchRange: <span class="c-kw">async</span> ({ offset, limit, query, signal }) =&gt; {
+                <span class="c-kw">const</span> body = <span class="c-kw">await</span> api.people({ offset, limit }, { signal });
+                <span class="c-kw">return</span> { rows: body.rows, totalRows: body.total }; <span class="c-com">// totalRows is REQUIRED here</span>
+            },
+        }),
+    [api],
+);
+
+&lt;<span class="c-typ">Gridwright</span>&lt;<span class="c-typ">Person</span>&gt; columns={columns} dataSource={source} pageSize={<span class="c-num">100</span>} aria-label=<span class="c-str">"People"</span> addons={[virtualRows({ rowHeight: <span class="c-num">40</span>, height: <span class="c-num">600</span> })]} /&gt;;</pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 10: Persisting State -->
+        <div class="gw-snippet-card" data-category="enterprise">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>10. Persisting State &amp; URL Sync</h3>
+              <p>Preserves queries, widths, pinning, and expanded panels without overwriting on mount.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-10">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-10">initialQuery={saved}                                            <span class="c-com">// read once, at engine creation</span>
+onQueryChange={(q) =&gt; save(q)}                                  <span class="c-com">// sort, filters, search, page</span>
+columnLayout({ initial, onChange })                             <span class="c-com">// widths, pinning, visibility, order</span>
+rowDetail({ initialExpanded, onExpandedChange })                <span class="c-com">// open panels</span></pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 11: An Add-on of Your Own -->
+        <div class="gw-snippet-card" data-category="addons">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>11. Custom Add-on Architecture</h3>
+              <p>Strict allowlist attributes and presentational row expansion. Zero direct DOM reaching.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-11">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-11"><span class="c-kw">const</span> highlight = (): GridAddon&lt;<span class="c-typ">Row</span>&gt; =&gt; ({
+    name: <span class="c-str">'acme:highlight'</span>,                    <span class="c-com">// namespaced; also the messages namespace</span>
+    setup: <span class="c-kw">function</span> <span class="c-fn">useHighlight</span>() {           <span class="c-com">// may call hooks; name it use* for lint</span>
+        <span class="c-kw">return</span> {
+            cellAttributes: (row, column) =&gt; (column.id === <span class="c-str">'due'</span> &amp;&amp; row.data.overdue ? { className: <span class="c-str">'is-overdue'</span> } : {}),
+            toolbar: () =&gt; &lt;<span class="c-typ">MyButton</span> /&gt;,       <span class="c-com">// slot functions must NOT call hooks</span>
+            messages: { en: { label: <span class="c-str">'Overdue'</span> } },
+        };
+    },
+});</pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 12: Testing Contract -->
+        <div class="gw-snippet-card" data-category="enterprise">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>12. Accessible Testing Patterns</h3>
+              <p>Query strictly by WAI-ARIA role and name. No arbitrary sleep timers or class-name queries.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-12">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-12">screen.getAllByRole(<span class="c-str">'row'</span>)                                   <span class="c-com">// [0] is the header</span>
+within(row).getAllByRole(<span class="c-str">'cell'</span>)
+screen.getByRole(<span class="c-str">'button'</span>, { name: <span class="c-str">/Salary/</span> })               <span class="c-com">// the sort control</span>
+screen.getByRole(<span class="c-str">'columnheader'</span>, { name: <span class="c-str">/Salary/</span> })         <span class="c-com">// carries aria-sort</span>
+screen.getByRole(<span class="c-str">'status'</span>)                                   <span class="c-com">// the live region</span>
+screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="c-str">'Select row'</span> })
+<span class="c-kw">await</span> waitFor(() =&gt; expect(screen.getAllByRole(<span class="c-str">'row'</span>)).toHaveLength(<span class="c-num">1</span> + <span class="c-num">25</span>));  <span class="c-com">// no arbitrary timers</span></pre>
+          </div>
+        </div>
+
+        <!-- SNIPPET 13: Theming & Translation -->
+        <div class="gw-snippet-card" data-category="enterprise">
+          <div class="gw-snippet-header">
+            <div class="gw-snippet-meta">
+              <h3>13. Theming &amp; Translations</h3>
+              <p>Override custom properties on any ancestor without forking styles. First-class i18n locales.</p>
+            </div>
+            <button class="gw-copy-btn" data-target="code-snippet-13">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="gw-snippet-code">
+            <pre id="code-snippet-13"><span class="c-com">/* CSS custom property tokens: */</span>
+--gw-font-size, --gw-line-height, --gw-row-height, --gw-cell-padding-x,
+--gw-cell-padding-y, --gw-radius, --gw-gap, --gw-surface, --gw-surface-muted,
+--gw-surface-hover, --gw-surface-selected, --gw-text, --gw-text-muted, --gw-border,
+--gw-border-strong, --gw-accent, --gw-accent-contrast, --gw-danger, --gw-focus-ring.
+
+<span class="c-com">// JSX Localization:</span>
+&lt;<span class="c-typ">Gridwright</span> locale={pl} <span class="c-com">/* or */</span> translate={(key, values) =&gt; t(key, values)} <span class="c-com">/* or */</span> messages={{ <span class="c-str">'status.empty'</span>: <span class="c-str">'Brak danych'</span> }} /&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: PRE-FLIGHT AUDIT CHECKLIST
+         ======================================================================= -->
+    <section class="section" id="checklist" style="background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header" style="text-align: left;">
+          <div class="section-tag" data-i18n="gw_check.tag">CI VERIFICATION GATES</div>
+          <h2 class="section-title" data-i18n="gw_check.title">AI Agent Pre-Flight Audit Checklist</h2>
+          <p class="section-subtitle" data-i18n="gw_check.subtitle">
+            AI coding agents and reviewers must execute this verification checklist before reporting any task complete.
+          </p>
+        </div>
+
+        <div class="gw-table-wrap">
+          <table class="gw-checklist-table">
+            <thead>
+              <tr>
+                <th style="width: 50%;">Audit Check</th>
+                <th style="width: 50%;">Failure Consequence (Why It Fails CI)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Is every data source inside <code>useMemo</code> or at module scope?</strong></td>
+                <td>An inline data source recreates on every paint and refetches indefinitely.</td>
+              </tr>
+              <tr>
+                <td><strong>Do <code>capabilities</code> match what the endpoint implements?</strong></td>
+                <td>Silent no-op sorting and filtering on the server.</td>
+              </tr>
+              <tr>
+                <td><strong>Does every grid have an <code>aria-label</code> or <code>caption</code>?</strong></td>
+                <td>Screen readers announce only an anonymous "table".</td>
+              </tr>
+              <tr>
+                <td><strong>Is <code>apsw-gridwright/styles.css</code> imported once at entry?</strong></td>
+                <td>Grid renders completely unstyled with zero layout rules.</td>
+              </tr>
+              <tr>
+                <td><strong>Do rows have stable IDs (or a custom <code>getRowId</code>)?</strong></td>
+                <td>Selection state and expandable panels lose their keys across updates.</td>
+              </tr>
+              <tr>
+                <td><strong>Does <code>virtualRows({ rowHeight })</code> match <code>--gw-row-height</code>?</strong></td>
+                <td>Rendered rows drift away from the scrollbar during fast scrolling.</td>
+              </tr>
+              <tr>
+                <td><strong>Is any total count being computed client-side?</strong></td>
+                <td>Strict violation. Never compute or fake totals not provided by the source.</td>
+              </tr>
+              <tr>
+                <td><strong>Are automated tests querying by role rather than class names?</strong></td>
+                <td>Class names are internal styles, not public architectural contracts.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: ESCALATION BOUNDARIES
+         ======================================================================= -->
+    <section class="section" id="escalation">
+      <div class="container">
+        <div class="section-header" style="text-align: left;">
+          <div class="section-tag">ENGINEERING PROTOCOL</div>
+          <h2 class="section-title">Escalate to User, Do Not Guess</h2>
+          <p class="section-subtitle">
+            Definitive boundaries where an autonomous AI agent must pause and ask the human architect instead of making assumptions.
+          </p>
+        </div>
+
+        <div class="gw-rules-grid">
+          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+            <div class="gw-rule-header">
+              <div class="gw-rule-heading">
+                <span style="color: var(--accent-amber);">⚠</span>
+                <span>Unknown Endpoint Paging Contract</span>
+              </div>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              If the endpoint's paging contract is unknown (zero- vs one-based, custom parameter names like <code>offset</code> vs <code>page</code>), pause and confirm with the user rather than guessing wire formats.
+            </p>
+          </div>
+
+          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+            <div class="gw-rule-header">
+              <div class="gw-rule-heading">
+                <span style="color: var(--accent-amber);">⚠</span>
+                <span>Unavailable Total Row Count</span>
+              </div>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              If the endpoint cannot return a total and the user asked for an exact page count, inform them that the grid will say "of many", and why. Never fake client-side totals.
+            </p>
+          </div>
+
+          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+            <div class="gw-rule-header">
+              <div class="gw-rule-heading">
+                <span style="color: var(--accent-amber);">⚠</span>
+                <span>Deliberately Closed Features</span>
+              </div>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              If a requirement demands a feature the package refuses on purpose (e.g. expandable rows combined with windowing, external runtime dependencies), name the architectural refusal and offer the nearest clean alternative.
+            </p>
+          </div>
+
+          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+            <div class="gw-rule-header">
+              <div class="gw-rule-heading">
+                <span style="color: var(--accent-amber);">⚠</span>
+                <span>Missing Add-on Extension Seam</span>
+              </div>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              If a required seam does not exist in the add-on contract, that is a gap in the package. Never reach into the grid's internal DOM.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-brand">
+          <img src="assets/brand/apsw-logo-white.svg" alt="APSW Logo" class="footer-logo" width="32" height="32">
+          <span class="footer-title">APSW</span>
+        </a>
+        <p class="footer-tagline" data-i18n="footer.tagline">
+          AI-Native Solution Architecture &amp; Deterministic Enterprise Engineering.
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-nav">
+          <li><a href="index.html">APSW Home</a></li>
+          <li><a href="index.html#speckit">Spec-Kit AI</a></li>
+          <li><a href="index.html#agentic-dev">Agentic Dev</a></li>
+          <li><a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener">GitHub: apsw-gridwright</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h3 class="footer-heading">Author &amp; Architecture</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">
+          Piotr Solarz-Wnęk (19+ years experience)<br>
+          Zielona Góra, Poland
+        </p>
+        <a href="mailto:piotr.solarz-wnek@apsw.pl" class="footer-email">piotr.solarz-wnek@apsw.pl</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="copyright">&copy; 2026 APSW - Piotr Solarz-Wnęk. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="gw-toast" class="gw-toast" role="status" aria-live="polite"></div>
+
+  <!-- Standalone Controller (Theme, Language, Table & REST telemetry) -->
+  <script src="js/gridwright-examples.js"></script>
+</body>
+</html>

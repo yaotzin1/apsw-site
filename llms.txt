@@ -24,7 +24,9 @@
 - Global Biotech & Medical Diagnostics Leader: Architectural redesign and sorting logic refactor for automated clinical analysis machinery.
 - Global Programmatic Recruitment SaaS: Modular ATS & automated ad-engine frontend modernization.
 
-## Machine-Readable Endpoints
+## Machine-Readable Endpoints & Developer Resources
 - Agent Manifest: https://apsw.pl/agent.json
 - Full Context: https://apsw.pl/llms-full.txt
 - Engagement Models: https://apsw.pl/#engagement
+- Gridwright AI Agent Playbook & Canonical Recipes: https://apsw.pl/gridwright-examples.html
+- Gridwright Live REST API Wire Protocol: https://apsw.pl/api/people
