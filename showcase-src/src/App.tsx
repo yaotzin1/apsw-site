@@ -9,6 +9,7 @@ import { TreeSection } from './sections/TreeSection';
 import { DetailSection } from './sections/DetailSection';
 import { ActionsSection } from './sections/ActionsSection';
 import { LayoutSection } from './sections/LayoutSection';
+import { ResponsiveSection } from './sections/ResponsiveSection';
 import { LanguagesSection } from './sections/LanguagesSection';
 import { MuiDashboardSection } from './sections/MuiDashboardSection';
 import { MuiSection } from './sections/MuiSection';
@@ -38,6 +39,7 @@ export function App() {
                     <DetailSection />
                     <ActionsSection />
                     <LayoutSection />
+                    <ResponsiveSection />
                     <LanguagesSection />
                     <MuiDashboardSection />
                     <MuiSection />
