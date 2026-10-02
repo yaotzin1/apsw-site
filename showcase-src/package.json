@@ -15,8 +15,8 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.11",
     "@mui/material": "^7.3.11",
-    "apsw-gridwright": "^0.13.0",
-    "apsw-gridwright-mui": "^0.2.0",
+    "apsw-gridwright": "^0.14.0",
+    "apsw-gridwright-mui": "^0.3.0",
     "apsw-mui-excel-filter": "^1.0.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
