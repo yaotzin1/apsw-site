@@ -8,8 +8,9 @@
 ## 🌟 Key Architecture & Highlights
 
 1. **Design System & Aesthetics**:
-   - **Anti-AI-Slop Visual Doctrine**: No generic templates. Built with a bespoke design token system (Dark slate navy `#0c2333`, vibrant cyan/teal `#00a8cc`, pure white, glowing cyan accents `#00e5ff`).
-   - **Dual-Theme Support**: Instant Light/Dark mode switching with `[data-theme="dark"]` CSS variables and local storage persistence.
+   - **Anti-AI-Slop Visual Doctrine**: No generic templates. Built with a bespoke design token system (`css/design-system.css`).
+   - **Dual-Theme Support**: first visit follows the OS (`prefers-color-scheme`); the header toggle is remembered in local storage (`apsw_theme`).
+   - **"Blueprint & Instruments" layer** (`css/instrument.css`, both themes): the architect's own tools as the visual reference — a drafting sheet with major/minor lines behind the hero, corner registration marks, a dimension line under the headline, mono instrument readouts for measured values, `[ bracketed ]` section tags. Dark is a navy control room (never black); light is paper with blueprint hairlines. One accent (brand cyan); status colours stay semantic (emerald passing, amber pending, red error only). No motion.
    - **Dynamic Dual-Theme Vector Logos**: Responsive SVGs (`apsw-logo-color.svg` and `apsw-logo-white.svg`) with vector scaling and crisp typography.
 
 2. **Core Sections**:
@@ -22,7 +23,12 @@
    - **Principal Architect Profile & Credentials**: Piotr Solarz-Wnęk (19+ yrs, MSc, Azure AZ-900, DNA Architect, ITIL, EU GDPR compliant).
    - **Contact Flow & Anti-Spam Bot Defense**: 3-step SLA (4h review, 30m technical call, 24h scope), 1-click Mutual NDA request (`oneNDA` standard), dual hidden honeypots, 2-second time-trap defense, mail-header-injection sanitisation, and IP rate limiting.
 
-3. **Machine-Readable AI Discovery Endpoints**:
+3. **Open-Source Showcase (`/showcase/`)**:
+   - A small Vite + React + MUI app (source in `showcase-src/`, built output committed to `showcase/`) running the real npm packages `apsw-gridwright`, `apsw-gridwright-mui` and `apsw-mui-excel-filter`: three Excel-style filter dropdowns driving a 300-row grid, a feature grid (multi-sort, typed column filters, search, pagination, inline editing with rejection, CSV/Excel export), the same grid with MUI controls and theme via `coreAddons={muiAddons()}`, and a remote grid on `createRestDataSource` against `api/people.php` (live PATCH edits).
+   - Rebuild after changing the demos: `cd showcase-src && npm install && npm run build`.
+   - `gridwright-examples.html` stays as the agent playbook: rules, decision matrix, vanilla REST harness and canonical snippets.
+
+4. **Machine-Readable AI Discovery Endpoints**:
    - `/agent.json`: Agent / AI procurement discovery manifest.
    - `/llms.txt` & `/llms-full.txt`: Curated semantic context for LLMs, Claude, ChatGPT, and automated research bots.
    - `/robots.txt`: Search crawler directives explicitly welcoming GPTBot, ClaudeBot, PerplexityBot, and Google-Extended.
@@ -32,7 +38,7 @@
 
 ## 🛠 Tech Stack
 
-- **Frontend**: HTML5, Vanilla CSS3 (Custom Properties & Design System), Vanilla Modern ES6+ JavaScript.
+- **Frontend**: HTML5, Vanilla CSS3 (Custom Properties & Design System), Vanilla Modern ES6+ JavaScript. `/showcase/` only: Vite, React 19, MUI 7, TypeScript.
 - **Backend (Contact API)**: PHP 8.2+ (`contact.php`) with JSON response protocol, dual-honeypot bot defense, header-injection sanitisation, and audit logging.
 - **Fonts**: Inter & JetBrains Mono (Google Fonts).
 - **Containerization**: Docker / Apache / FrankenPHP.
@@ -61,21 +67,59 @@ open http://localhost:8088/
 
 ---
 
-## 🌐 Production Deployment
+## 🌐 Deployment
 
-### Option A: Cyber_Folks / cPanel (Shared Hosting)
-1. Upload all workspace files directly to `public_html/`.
-2. Ensure `.logs/` directory has write permissions (`chmod 770 .logs`).
-3. Configure PHP version to **PHP 8.2, 8.3, 8.4 or 8.5** in cPanel / Cyber_Folks.
-4. Test contact form submission at `https://apsw.pl/#contact`.
+Two targets: **production** is the Cyber_Folks shared host behind `apsw.pl` (files uploaded, no containers); **staging** is a VPS running the Docker stack behind a subdomain. Both serve the same tree — the `.htaccess` works under LiteSpeed and under Apache in the container.
 
-### Option B: Hetzner Cloud / Docker PaaS (Coolify / Portainer)
-1. Build and run using the included `Dockerfile` and `docker-compose.yml`:
-   ```bash
-   docker build -t apsw-site:latest .
-   docker run -d --name apsw-site -p 80:80 --restart unless-stopped apsw-site:latest
-   ```
-2. Configure reverse proxy (Nginx / Caddy / Traefik) with SSL certificate via Let's Encrypt.
+### Production: Cyber_Folks (Shared Hosting, DirectAdmin)
+1. Build the upload set: `./deploy/package-cyberfolks.sh` (Git Bash or Linux). It writes `dist/upload/` and `dist/apsw-site-<sha>.zip` containing only what production serves — the HTML, `css/`, `js/`, `assets/`, `api/`, `contact.php`, the built `showcase/`, `.htaccess`, `robots.txt`, `sitemap.xml`, `agent.json`, `llms*.txt` — and nothing from `showcase-src/`, `deploy/`, `docker/`, `branding_raw/` or `.git`. Run `cd showcase-src && npm run build` first if the demos changed.
+2. Upload the **contents** of `dist/upload/` into `public_html/`, replacing what is there. Fastest routes, in order of preference:
+   - **SSH + rsync** (if the plan has SSH enabled in DirectAdmin): `rsync -avz --delete --exclude '.logs/*.log' dist/upload/ user@host:domains/apsw.pl/public_html/`
+   - **SFTP** with WinSCP/FileZilla: synchronise `dist/upload/` → `public_html/`, delete orphans, keep `.logs/*.log`.
+   - **DirectAdmin File Manager**: upload the zip into `public_html/`, extract, delete the zip.
+3. Ensure `.logs/` is writable (`chmod 770 .logs`) — the package ships the folder with its `Deny from all` `.htaccess`.
+4. PHP version **8.2–8.5** in DirectAdmin → PHP Settings (unchanged from before).
+5. Check: `https://apsw.pl/` (theme follows the OS, toggle works), `/showcase/`, `/gridwright-examples.html`, `/api/people?page=1`, `/agent.json`, `/sitemap.xml`; send one inquiry from `#contact` and confirm it arrives. CSS/JS links carry `?v=<date>` so the one-week browser cache from `.htaccess` does not serve stale styles — bump the value in both HTML files when you change CSS/JS.
+
+### Staging: fresh VPS (Ubuntu/Debian) with Docker + Caddy
+
+Files involved: `Dockerfile` (PHP 8.2 + Apache + msmtp), `docker/entrypoint.sh` (writes the msmtp config from env), `docker-compose.staging.yml` (Caddy + site), `deploy/Caddyfile`, `.env.example`, `deploy/deploy.sh`, `.github/workflows/deploy-staging.yml`.
+
+**1. DNS** — add an `A` record (and `AAAA` if the VPS has IPv6) for `staging.apsw.pl` → VPS IP. Caddy cannot obtain a certificate until this resolves.
+
+**2. One-time server setup** (as root, once):
+```bash
+apt-get update && apt-get -y upgrade
+apt-get -y install ca-certificates curl git ufw
+curl -fsSL https://get.docker.com | sh              # Docker Engine + compose plugin
+
+ufw allow OpenSSH && ufw allow 80/tcp && ufw allow 443/tcp && ufw allow 443/udp
+ufw --force enable
+
+adduser --disabled-password --gecos "" deploy
+usermod -aG docker deploy
+mkdir -p /opt/apsw-site && chown deploy:deploy /opt/apsw-site
+# put the deploy user's public key (and yours) in /home/deploy/.ssh/authorized_keys
+```
+Then, as `deploy`:
+```bash
+git clone https://github.com/yaotzin1/apsw-site.git /opt/apsw-site
+cd /opt/apsw-site
+cp .env.example .env && nano .env                    # SITE_HOST, ACME_EMAIL, SMTP_*
+./deploy/deploy.sh main                              # first build + start
+```
+`deploy.sh` fetches the branch, rebuilds the image, restarts the stack, waits for the container health check and prunes old images. Re-run it with a branch name to put any branch on staging: `./deploy/deploy.sh fix/site-hardening`.
+
+**3. Check** — `https://staging.apsw.pl/` (certificate issued by Let's Encrypt within a minute), `/showcase/`, `/api/people?page=1`, then send a test inquiry from `#contact`. `docker compose -f docker-compose.staging.yml logs -f apsw-site` shows PHP errors and the msmtp transcript; `docker compose -f docker-compose.staging.yml logs caddy` shows certificate issuance.
+
+**4. Automatic deploys** — `.github/workflows/deploy-staging.yml` SSHes to the VPS and runs `deploy.sh` on every push to `main` (or by hand for any branch from the Actions tab). Add three repository secrets: `STAGING_HOST`, `STAGING_USER` (`deploy`), `STAGING_SSH_KEY` (the deploy user's private key; generate a dedicated one with `ssh-keygen -t ed25519 -C github-actions`).
+
+**How the pieces fit**
+- Caddy terminates TLS and proxies to Apache on the internal network with `X-Forwarded-Proto: https`; `.htaccess` only forces HTTPS when that header is absent, so there is no redirect loop.
+- Caddy has a fixed address (`172.28.0.10`) and `APSW_TRUSTED_PROXIES` is set to it, so the contact form rate limiter sees real visitor IPs instead of the proxy.
+- `mail()` goes through `msmtp -t` to the SMTP relay in `.env` (a Cyber_Folks mailbox works). With `SMTP_HOST` empty the site runs but the form only logs; the entrypoint says so at start.
+- `.logs/` is a named volume (`apsw_logs`), so inquiries survive rebuilds. Read them with `docker exec apsw-site cat .logs/inquiries_secure.log`.
+- Rate-limit scratch files live in the container's `/tmp` and are lost on restart, which is fine.
 
 ---
 

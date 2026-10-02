@@ -39,6 +39,7 @@
   <script>
     (function () {
       try {
+        // First visit follows the OS; the header toggle is remembered after that.
         var stored = localStorage.getItem('apsw_theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
@@ -49,9 +50,10 @@
   </script>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/design-system.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/design-system.css?v=20260925">
+  <link rel="stylesheet" href="css/components.css?v=20260925">
+  <link rel="stylesheet" href="css/responsive.css?v=20260925">
+  <link rel="stylesheet" href="css/instrument.css?v=20260925">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -77,11 +79,18 @@
           "@type": "Person",
           "@id": "https://apsw.pl/#founder",
           "name": "Piotr Solarz-Wnęk",
-          "jobTitle": "Senior Fullstack Developer | Enterprise Solution Architect",
+          "jobTitle": "Principal Solution Architect | AI-Native Engineer",
           "sameAs": [
-            "https://www.linkedin.com/in/piotrsolarzwnek/"
+            "https://www.linkedin.com/in/piotrsolarzwnek/",
+            "https://github.com/yaotzin1",
+            "https://www.npmjs.com/~yaotzin1"
           ]
         },
+        "owns": [
+          { "@id": "https://apsw.pl/#apsw-gridwright" },
+          { "@id": "https://apsw.pl/#apsw-gridwright-mui" },
+          { "@id": "https://apsw.pl/#apsw-mui-excel-filter" }
+        ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "APSW Architecture & AI Engineering Services",
@@ -112,6 +121,52 @@
             }
           ]
         }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://apsw.pl/#website",
+        "url": "https://apsw.pl/",
+        "name": "APSW",
+        "publisher": { "@id": "https://apsw.pl/#organization" },
+        "inLanguage": ["en", "pl"],
+        "hasPart": [
+          { "@type": "WebPage", "@id": "https://apsw.pl/showcase/", "url": "https://apsw.pl/showcase/", "name": "Open-source showcase: apsw-gridwright and apsw-mui-excel-filter live demos" },
+          { "@type": "WebPage", "@id": "https://apsw.pl/gridwright-examples.html", "url": "https://apsw.pl/gridwright-examples.html", "name": "apsw-gridwright AI agent playbook, canonical recipes and REST harness" }
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://apsw.pl/#apsw-gridwright",
+        "name": "apsw-gridwright",
+        "description": "React data grid for TypeScript on a headless engine: local and REST data sources, sorting, typed filters, virtual rows, inline editing, tree data, WAI-ARIA grid semantics. MIT, on npm.",
+        "programmingLanguage": "TypeScript",
+        "codeRepository": "https://github.com/yaotzin1/apsw-gridwright",
+        "installUrl": "https://www.npmjs.com/package/apsw-gridwright",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@id": "https://apsw.pl/#founder" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://apsw.pl/#apsw-gridwright-mui",
+        "name": "apsw-gridwright-mui",
+        "description": "MUI views for apsw-gridwright: sort, selection and pagination as TableSortLabel, Checkbox and TablePagination; colours, type and spacing from the Material UI theme, dark mode included. Requires apsw-gridwright 0.12+. MIT, on npm.",
+        "programmingLanguage": "TypeScript",
+        "codeRepository": "https://github.com/yaotzin1/apsw-gridwright/tree/main/packages/mui",
+        "installUrl": "https://www.npmjs.com/package/apsw-gridwright-mui",
+        "license": "https://opensource.org/licenses/MIT",
+        "isPartOf": { "@id": "https://apsw.pl/#apsw-gridwright" },
+        "author": { "@id": "https://apsw.pl/#founder" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://apsw.pl/#apsw-mui-excel-filter",
+        "name": "apsw-mui-excel-filter",
+        "description": "Excel-style AutoFilter dropdown for Material UI 5-7 and React 17-19: typing selects, select-all, staged selection applied on OK. MIT, on npm.",
+        "programmingLanguage": "TypeScript",
+        "codeRepository": "https://github.com/yaotzin1/apsw-mui-excel-filter",
+        "installUrl": "https://www.npmjs.com/package/apsw-mui-excel-filter",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@id": "https://apsw.pl/#founder" }
       },
       {
         "@type": "HowTo",
@@ -172,7 +227,7 @@
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
           <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
           <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
-          <li><a href="gridwright-examples.html" class="nav-link" data-i18n="nav.gridwright">Gridwright Showcase</a></li>
+          <li><a href="showcase/" class="nav-link" data-i18n="nav.showcase">Showcase</a></li>
           <li><a href="#architect" class="nav-link" data-i18n="nav.about">About</a></li>
           <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
         </ul>
@@ -903,6 +958,7 @@
 
               <div class="gw-features-list">
                 <span class="tech-tag" style="color: var(--accent-emerald); font-weight: 700;" data-i18n="gridwright_showcase.pill_npm">npm: apsw-gridwright</span>
+                <a class="tech-tag" href="https://www.npmjs.com/package/apsw-gridwright-mui" target="_blank" rel="noopener noreferrer" data-i18n="gridwright_showcase.pill_mui">MUI views: apsw-gridwright-mui</a>
                 <span class="tech-tag" data-i18n="gridwright_showcase.pill_virtual">Virtual Rows (100k+)</span>
                 <span class="tech-tag" data-i18n="gridwright_showcase.pill_rest">Live REST Wire Protocol</span>
                 <span class="tech-tag" data-i18n="gridwright_showcase.pill_editing">Inline Cell Editing</span>
@@ -913,9 +969,13 @@
 
             <!-- Action CTAs -->
             <div class="gw-card-actions">
-              <a href="gridwright-examples.html" class="btn btn-emerald" style="display:inline-flex; align-items:center; gap:8px;">
+              <a href="showcase/" class="btn btn-emerald">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                <span data-i18n="gridwright_showcase.btn_playground">Interactive Live Playground</span>
+                <span data-i18n="gridwright_showcase.btn_showcase">Live React Showcase</span>
+              </a>
+              <a href="gridwright-examples.html" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span data-i18n="gridwright_showcase.btn_playground">Agent Playbook & REST Harness</span>
               </a>
               <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #cb3837;"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
@@ -1162,6 +1222,7 @@
             <li><a href="#agentic-dev" data-i18n="nav.agentic">Fully Agentic Dev</a></li>
             <li><a href="#engagement" data-i18n="nav.engagement">Engagement Models</a></li>
             <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
+            <li><a href="showcase/" data-i18n="footer.showcase_link">Live component showcase</a></li>
             <li><a href="gridwright-examples.html" data-i18n="footer.gridwright_link">Gridwright Data Grid (npm)</a></li>
           </ul>
         </div>
@@ -1201,8 +1262,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/i18n.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/spec-kit-flow.js"></script>
+  <script src="js/i18n.js?v=20260925"></script>
+  <script src="js/app.js?v=20260925"></script>
+  <script src="js/spec-kit-flow.js?v=20260925"></script>
 </body>
 </html>

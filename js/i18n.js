@@ -17,7 +17,8 @@ const APSW_TRANSLATIONS = {
       services: "Services",
       engagement: "Engagements",
       track_record: "Case Studies",
-      gridwright: "Gridwright Showcase",
+      showcase: "Showcase",
+      gridwright: "Gridwright Playbook",
       about: "About",
       contact: "Contact",
       book_review: "Book a review",
@@ -276,6 +277,7 @@ const APSW_TRANSLATIONS = {
       col2_title: "Services",
       col3_title: "Availability & Office",
       rights: "APSW — Piotr Solarz-Wnęk. All rights reserved.",
+      showcase_link: "Live component showcase",
       gridwright_link: "Gridwright Data Grid (npm)"
     },
     gridwright_showcase: {
@@ -291,7 +293,9 @@ const APSW_TRANSLATIONS = {
       pill_editing: "Inline Cell Editing",
       pill_aria: "Strict ARIA & Keyboard Nav",
       pill_ts: "TypeScript Native",
-      btn_playground: "Interactive Live Playground",
+      pill_mui: "MUI views: apsw-gridwright-mui",
+      btn_showcase: "Live React Showcase",
+      btn_playground: "Agent Playbook & REST Harness",
       btn_npm: "View on npm",
       btn_github: "GitHub Repository"
     },
@@ -327,7 +331,8 @@ const APSW_TRANSLATIONS = {
       services: "Usługi",
       engagement: "Współpraca",
       track_record: "Projekty",
-      gridwright: "Showcase Data Grid",
+      showcase: "Showcase",
+      gridwright: "Playbook Gridwright",
       about: "O mnie",
       contact: "Kontakt",
       book_review: "Umów przegląd",
@@ -586,6 +591,7 @@ const APSW_TRANSLATIONS = {
       col2_title: "Usługi",
       col3_title: "Dostępność i Biuro",
       rights: "APSW — Piotr Solarz-Wnęk. Wszelkie prawa zastrzeżone.",
+      showcase_link: "Demo komponentów na żywo",
       gridwright_link: "Gridwright Data Grid (npm)"
     },
     gridwright_showcase: {
@@ -601,7 +607,9 @@ const APSW_TRANSLATIONS = {
       pill_editing: "Edycja komórek in-line",
       pill_aria: "Dostępność ARIA & Klawiatura",
       pill_ts: "Natywny TypeScript",
-      btn_playground: "Interaktywny Poligon Live",
+      pill_mui: "Widoki MUI: apsw-gridwright-mui",
+      btn_showcase: "Demo React na żywo",
+      btn_playground: "Playbook Agenta i Poligon REST",
       btn_npm: "Zobacz na npm",
       btn_github: "Repozytorium GitHub"
     },

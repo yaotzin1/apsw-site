@@ -7,7 +7,11 @@
     RewriteBase /
 
     # 1. Force HTTPS (Auto-redirect all HTTP traffic to HTTPS)
+    #    Behind a TLS-terminating proxy (Caddy on the VPS) the request reaches
+    #    Apache as plain HTTP with X-Forwarded-Proto: https; without the second
+    #    condition that would redirect forever.
     RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # 2. Canonical Domain (Optional: redirect www to non-www)

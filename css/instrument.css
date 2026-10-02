@@ -1,0 +1,426 @@
+/* ==========================================================================
+   APSW INSTRUMENT LAYER — "Blueprint & Instruments"
+   The architect's own tools are the visual reference: a drafting sheet
+   behind the hero, instrument-style readouts for anything measured, one cyan
+   accent. Status colours stay semantic (emerald = passing / available, amber
+   = pending, red = error only). Both themes share the motifs: the dark theme
+   is a navy control room, the light theme is paper with blueprint hairlines.
+   Nothing here changes layout, copy or section order.
+   ========================================================================== */
+
+:root {
+  --instrument-line: rgba(10, 130, 176, 0.10);
+  --instrument-line-strong: rgba(10, 130, 176, 0.24);
+  --instrument-rule: rgba(10, 130, 176, 0.7);
+  --instrument-readout: #044259;
+  --instrument-bracket: #0a82b0;
+}
+
+/* Dark: navy, never black. Black is what reads "hacker". */
+[data-theme="dark"] {
+  --bg-canvas: #0b1220;
+  --bg-surface-1: #111a2b;
+  --bg-surface-2: #172236;
+  --bg-surface-3: #1e2b44;
+  --bg-card: #111a2b;
+  --bg-card-hover: #172236;
+  --bg-glass: rgba(11, 18, 32, 0.84);
+  --bg-glass-modal: rgba(11, 18, 32, 0.96);
+  --bg-code: #070c16;
+  --bg-code-header: #0f1727;
+
+  --border-subtle: rgba(56, 189, 248, 0.13);
+  --border-medium: rgba(56, 189, 248, 0.26);
+  --border-brand: rgba(56, 189, 248, 0.4);
+
+  /* Squarer corners: instruments, not a SaaS card kit. */
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 14px 34px rgba(0, 0, 0, 0.55);
+  --shadow-code: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(56, 189, 248, 0.08);
+
+  --instrument-line: rgba(56, 189, 248, 0.09);
+  --instrument-line-strong: rgba(56, 189, 248, 0.2);
+  --instrument-rule: rgba(125, 211, 252, 0.75);
+  --instrument-readout: #7dd3fc;
+  --instrument-bracket: #38bdf8;
+}
+
+/* --------------------------------------------------------------------------
+   CANVAS
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] body {
+  background-image:
+    radial-gradient(ellipse 70% 40% at 50% -5%, rgba(56, 189, 248, 0.09), transparent 70%);
+  background-repeat: no-repeat;
+}
+
+[data-theme="dark"] .architectural-bg-pattern {
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+}
+
+[data-theme="dark"] ::selection {
+  background: #38bdf8;
+  color: #06111f;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .site-header {
+  border-bottom-color: rgba(56, 189, 248, 0.16);
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background: rgba(11, 18, 32, 0.94);
+  border-bottom-color: rgba(56, 189, 248, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   HERO: a drafting sheet, corner registration marks, one dimension line
+   -------------------------------------------------------------------------- */
+.hero-section {
+  overflow: hidden;
+}
+
+/* Minor lines every 32px, major lines every 160px, fading out to the left
+   and bottom so the sheet never sits under the copy at full strength. */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--instrument-line-strong) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--instrument-line-strong) 1px, transparent 1px),
+    linear-gradient(to right, var(--instrument-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--instrument-line) 1px, transparent 1px);
+  background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+  background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 75% 25%, rgba(0, 0, 0, 1) 25%, transparent 78%);
+  mask-image: radial-gradient(ellipse 85% 75% at 75% 25%, rgba(0, 0, 0, 1) 25%, transparent 78%);
+}
+
+.hero-single-column {
+  position: relative;
+}
+
+.hero-single-column::before,
+.hero-single-column::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--instrument-line-strong);
+  pointer-events: none;
+}
+
+.hero-single-column::before {
+  top: -26px;
+  left: -26px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.hero-single-column::after {
+  right: -26px;
+  bottom: -26px;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* Dimension line under the headline: a rule with end ticks. */
+.hero-title::after {
+  content: '';
+  display: block;
+  width: 160px;
+  height: 7px;
+  margin-top: 18px;
+  color: var(--instrument-rule);
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat;
+}
+
+.hero-status-badge {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .hero-status-badge {
+  background: rgba(11, 18, 32, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Metrics become readouts. */
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 1.45vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--instrument-readout);
+}
+
+[data-theme="dark"] .metric-value {
+  color: var(--instrument-readout);
+}
+
+.hero-metrics-bar {
+  border-top-color: var(--instrument-line-strong);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION TAGS: spec-notation brackets instead of the editorial dash
+   -------------------------------------------------------------------------- */
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+.section-tag::before,
+.section-tag::after {
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--instrument-bracket);
+  font-weight: 500;
+}
+
+.section-tag::before { content: '['; }
+.section-tag::after  { content: ']'; }
+
+.section-tag.emerald::before,
+.section-tag.emerald::after {
+  color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   BUTTONS (dark): the accent is the action
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .btn-emerald {
+  background: #38bdf8;
+  border-color: #38bdf8;
+  color: #06111f;
+}
+
+[data-theme="dark"] .btn-emerald:hover,
+[data-theme="dark"] .btn-emerald:focus-visible {
+  background: #7dd3fc;
+  border-color: #7dd3fc;
+  color: #06111f;
+}
+
+[data-theme="dark"] .btn-primary {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #9adcfb;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background: #38bdf8;
+  border-color: #38bdf8;
+  color: #06111f;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background: rgba(17, 26, 43, 0.7);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  border-color: rgba(56, 189, 248, 0.6);
+  color: #9adcfb;
+}
+
+[data-theme="dark"] .skip-link {
+  background: #38bdf8;
+  color: #06111f;
+}
+
+/* --------------------------------------------------------------------------
+   SURFACES (dark): cyan edge on hover, nothing at rest
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] :is(.card-clean, .service-card, .case-card, .engagement-card,
+  .pipeline-step-card, .agentic-feature-item, .gridwright-feature-card,
+  .contact-card-item, .contact-form-card):hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.1), 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .pipeline-step-card.active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.18);
+}
+
+[data-theme="dark"] .tech-tag,
+[data-theme="dark"] .cert-pill,
+[data-theme="dark"] .case-client-badge,
+[data-theme="dark"] .engagement-badge {
+  border-radius: 3px;
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-textarea:focus,
+[data-theme="dark"] .form-select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.14);
+}
+
+[data-theme="dark"] .site-footer {
+  border-top-color: rgba(56, 189, 248, 0.16);
+  background: #070c16;
+}
+
+[data-theme="dark"] a:hover {
+  color: #7dd3fc;
+}
+
+/* --------------------------------------------------------------------------
+   HOVER: motion that answers the cursor, in the drafting vocabulary
+   -------------------------------------------------------------------------- */
+
+/* Cards draw registration marks in two corners while pointed at. The active
+   pipeline card keeps them, so the marks also say "selected". */
+.service-card,
+.case-card,
+.engagement-card,
+.pipeline-step-card,
+.agentic-feature-item,
+.contact-card-item {
+  position: relative;
+}
+
+.service-card::before, .service-card::after,
+.case-card::before, .case-card::after,
+.engagement-card::before, .engagement-card::after,
+.pipeline-step-card::before, .pipeline-step-card::after,
+.agentic-feature-item::before, .agentic-feature-item::after,
+.contact-card-item::before, .contact-card-item::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--instrument-bracket);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.service-card::before,
+.case-card::before,
+.engagement-card::before,
+.pipeline-step-card::before,
+.agentic-feature-item::before,
+.contact-card-item::before {
+  top: 8px;
+  left: 8px;
+  border-right: 0;
+  border-bottom: 0;
+  transform-origin: top left;
+}
+
+.service-card::after,
+.case-card::after,
+.engagement-card::after,
+.pipeline-step-card::after,
+.agentic-feature-item::after,
+.contact-card-item::after {
+  right: 8px;
+  bottom: 8px;
+  border-left: 0;
+  border-top: 0;
+  transform-origin: bottom right;
+}
+
+:is(.service-card, .case-card, .engagement-card, .pipeline-step-card,
+  .agentic-feature-item, .contact-card-item):hover::before,
+:is(.service-card, .case-card, .engagement-card, .pipeline-step-card,
+  .agentic-feature-item, .contact-card-item):hover::after,
+.pipeline-step-card.active::before,
+.pipeline-step-card.active::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* Nav links: a hairline draws in from the left. Replaces the bold-on-hover,
+   which shifted the neighbouring links. */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--instrument-bracket);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  font-weight: 500;
+}
+
+.nav-menu.mobile-open .nav-link::after {
+  display: none;
+}
+
+/* Buttons rise a pixel and show an accent ring; tags sharpen their edge. */
+.btn-emerald:hover,
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(10, 130, 176, 0.16), 0 4px 12px rgba(4, 66, 89, 0.18);
+}
+
+[data-theme="dark"] .btn-emerald:hover,
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22), 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.tech-tag,
+.cert-pill {
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.tech-tag:hover,
+.cert-pill:hover {
+  border-color: var(--instrument-bracket);
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-emerald:hover,
+  .btn-primary:hover {
+    transform: none;
+  }
+}
+
+/* The hero marks sit outside the column; on a phone that is off the screen. */
+@media (max-width: 768px) {
+  .hero-single-column::before,
+  .hero-single-column::after {
+    display: none;
+  }
+}

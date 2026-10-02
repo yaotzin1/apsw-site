@@ -8,3 +8,5 @@ branding_raw/
 pureCV.tex
 projectlist.tex
 LICENSE
+# Showcase sources: only the built showcase/ folder is served
+showcase-src/

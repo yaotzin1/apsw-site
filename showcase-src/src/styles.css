@@ -1,0 +1,413 @@
+/* Page-level rules only. Colours and fonts are decided in src/theme.ts; this file mirrors the
+   ones the vanilla grid stylesheet needs as CSS variables, keyed on <html data-theme>. */
+
+:root {
+    --sc-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sc-max-width: 1200px;
+    --sc-gutter: 16px;
+}
+
+.sc-page {
+    max-width: var(--sc-max-width);
+    margin: 0 auto;
+    padding: 0 var(--sc-gutter) 64px;
+}
+
+/* Header strip ------------------------------------------------------------------------------ */
+
+.sc-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px 0;
+}
+
+.sc-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.sc-header__logo {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+}
+
+:root[data-theme='dark'] .sc-header__logo--light { display: none; }
+:root:not([data-theme='dark']) .sc-header__logo--dark { display: none; }
+
+.sc-header__links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+/* Sections ---------------------------------------------------------------------------------- */
+
+.sc-section {
+    margin-top: 40px;
+}
+
+.sc-section__lead {
+    max-width: 72ch;
+}
+
+.sc-filters {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.sc-filters > * {
+    flex: 1 1 200px;
+    max-width: 320px;
+    min-width: 0;
+}
+
+.sc-mono {
+    font-family: var(--sc-font-mono);
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin: 0;
+}
+
+/* The grid container may be wider than a phone; it scrolls instead of breaking the page. */
+.sc-grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sc-grid .gw-root {
+    min-width: 640px;
+}
+
+@media (max-width: 600px) {
+    .sc-filters {
+        flex-direction: column;
+    }
+    /* In a column the 200px flex-basis would become a 200px height per field. */
+    .sc-filters > * {
+        flex: 0 0 auto;
+        max-width: none;
+        width: 100%;
+    }
+    .sc-header__links {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* apsw-gridwright follows the page theme rather than the OS preference --------------------- */
+
+:root:not([data-theme='dark']) .gw-root {
+    --gw-surface: #ffffff;
+    --gw-surface-muted: #f1f5f9;
+    --gw-surface-hover: #f1f5f9;
+    --gw-surface-selected: #e0f2fe;
+    --gw-text: #0f172a;
+    --gw-text-muted: #64748b;
+    --gw-border: #e2e8f0;
+    --gw-border-strong: #cbd5e1;
+    --gw-accent: #044259;
+    --gw-accent-contrast: #ffffff;
+    --gw-danger: #b91c1c;
+}
+
+:root[data-theme='dark'] .gw-root {
+    --gw-surface: #111a2b;
+    --gw-surface-muted: #172236;
+    --gw-surface-hover: #172236;
+    --gw-surface-selected: rgba(56, 189, 248, 0.14);
+    --gw-text: #e6edf5;
+    --gw-text-muted: #9fb0c3;
+    --gw-border: rgba(56, 189, 248, 0.14);
+    --gw-border-strong: rgba(56, 189, 248, 0.3);
+    --gw-accent: #38bdf8;
+    --gw-accent-contrast: #06111f;
+    --gw-danger: #fca5a5;
+}
+
+/* Same navy control-room canvas as the site's dark theme (css/instrument.css). */
+:root[data-theme='dark'] body {
+    background-image: radial-gradient(ellipse 70% 40% at 50% -5%, rgba(56, 189, 248, 0.09), transparent 70%);
+    background-repeat: no-repeat;
+}
+
+/* Package and symbol names quoted in prose stay on one line ("apsw-" / "gridwright" reads as
+   two words). Code blocks (.sc-mono) keep their own wrapping. */
+.sc-page code,
+.sc-nowrap {
+    white-space: nowrap;
+}
+
+/* Request panels read as instrument output. */
+.sc-mono {
+    color: #044259;
+}
+
+:root[data-theme='dark'] .sc-mono {
+    color: #7dd3fc;
+}
+
+:root[data-theme='dark'] ::selection {
+    background: #38bdf8;
+    color: #06111f;
+}
+
+.gw-root {
+    --gw-font-size: 14px;
+}
+
+/* Sticky section navigation ---------------------------------------------------------------- */
+
+.sc-nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin: 0 calc(-1 * var(--sc-gutter));
+    padding: 8px var(--sc-gutter);
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+:root[data-theme='dark'] .sc-nav {
+    background: rgba(11, 18, 32, 0.92);
+    border-bottom-color: rgba(56, 189, 248, 0.14);
+}
+
+.sc-nav__inner {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding-bottom: 2px;
+}
+
+.sc-nav__inner > * {
+    flex: 0 0 auto;
+}
+
+/* Bracketed labels: spec notation, as on the rest of apsw.pl. */
+.sc-tag {
+    display: inline-block;
+    font-family: var(--sc-font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: #475569;
+    margin-bottom: 4px;
+}
+
+.sc-tag::before { content: '[ '; color: #0a82b0; }
+.sc-tag::after { content: ' ]'; color: #0a82b0; }
+
+:root[data-theme='dark'] .sc-tag { color: #9fb0c3; }
+:root[data-theme='dark'] .sc-tag::before,
+:root[data-theme='dark'] .sc-tag::after { color: #38bdf8; }
+
+/* Package overview cards ------------------------------------------------------------------- */
+
+.sc-section--first {
+    margin-top: 24px;
+}
+
+.sc-packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.sc-package {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.sc-chip-mono .MuiChip-label {
+    font-family: var(--sc-font-mono);
+    font-size: 12px;
+}
+
+/* Readouts: instrument panels of bracketed label + mono value ------------------------------ */
+
+.sc-readout__rows {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 16px;
+    row-gap: 4px;
+}
+
+.sc-readout__row {
+    display: contents;
+}
+
+.sc-readout__row dt {
+    margin: 0;
+    padding-top: 2px;
+}
+
+.sc-readout__row dd {
+    margin: 0;
+    min-width: 0;
+}
+
+@media (max-width: 480px) {
+    .sc-readout__rows {
+        grid-template-columns: 1fr;
+    }
+    .sc-readout__row dd {
+        margin-bottom: 6px;
+    }
+}
+
+/* Two-column walkthroughs (steps beside a readout) ---------------------------------------- */
+
+.sc-walkthrough {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 16px;
+    align-items: start;
+}
+
+@media (max-width: 800px) {
+    .sc-walkthrough {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sc-steps {
+    margin: 16px 0 0;
+    padding-left: 20px;
+}
+
+.sc-steps li + li {
+    margin-top: 8px;
+}
+
+.sc-kbd {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+
+.sc-kbd th,
+.sc-kbd td {
+    text-align: left;
+    vertical-align: top;
+    padding: 4px 8px 4px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+:root[data-theme='dark'] .sc-kbd th,
+:root[data-theme='dark'] .sc-kbd td {
+    border-bottom-color: rgba(56, 189, 248, 0.14);
+}
+
+.sc-kbd kbd {
+    font-family: var(--sc-font-mono);
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 1px 6px;
+    border: 1px solid #cbd5e1;
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+:root[data-theme='dark'] .sc-kbd kbd {
+    border-color: rgba(56, 189, 248, 0.3);
+    background: #0b1220;
+    color: #e6edf5;
+}
+
+/* The master-detail panel ------------------------------------------------------------------ */
+
+.sc-detail {
+    padding: 12px 16px;
+}
+
+.sc-detail__profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin: 0 0 12px;
+}
+
+.sc-detail__profile > div {
+    min-width: 0;
+}
+
+.sc-detail__profile dd {
+    margin: 0;
+}
+
+.sc-detail .gw-root {
+    min-width: 0;
+}
+
+/* MUI dashboard strip and theme presets ---------------------------------------------------- */
+
+.sc-dashboard__bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.sc-dashboard__bar > .sc-dashboard__field {
+    flex: 1 1 180px;
+    max-width: 260px;
+    min-width: 0;
+}
+
+@media (max-width: 600px) {
+    .sc-dashboard__bar > .sc-dashboard__field {
+        flex-basis: 100%;
+        max-width: none;
+    }
+}
+
+.sc-tokens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.sc-tokens__list {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+}
+
+.sc-tokens__list dt,
+.sc-tokens__list dd {
+    margin: 0;
+    min-width: 0;
+}
+
+.sc-swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+/* A grid whose container is a flex or grid item must be allowed to shrink (see column-layout docs). */
+.sc-grid {
+    min-width: 0;
+}

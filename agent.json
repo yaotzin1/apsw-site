@@ -109,10 +109,31 @@
       "type": "npm package / React Data Grid Engine",
       "npm": "https://www.npmjs.com/package/apsw-gridwright",
       "github": "https://github.com/yaotzin1/apsw-gridwright",
+      "live_showcase": "https://apsw.pl/showcase/",
+      "agent_playbook": "https://apsw.pl/gridwright-examples.html",
       "interactive_playground": "https://apsw.pl/gridwright-examples.html",
       "rest_wire_protocol": "https://apsw.pl/api/people",
       "install_command": "npm i apsw-gridwright",
       "description": "Deterministic, headless React Data Grid engine engineered for AI coding agents and high-performance enterprise applications. Features virtual rows, REST data source protocol, inline editing, and zero runtime bloat."
+    },
+    {
+      "name": "apsw-gridwright-mui",
+      "type": "npm package / Material UI views for apsw-gridwright",
+      "npm": "https://www.npmjs.com/package/apsw-gridwright-mui",
+      "github": "https://github.com/yaotzin1/apsw-gridwright/tree/main/packages/mui",
+      "live_showcase": "https://apsw.pl/showcase/#mui",
+      "install_command": "npm i apsw-gridwright apsw-gridwright-mui",
+      "requires": "apsw-gridwright >= 0.12, @mui/material 7 or 9, React 18 or 19",
+      "description": "The apsw-gridwright grid with Material UI controls (TableSortLabel, Checkbox, TablePagination) and colours, type and spacing from the MUI theme, dark mode included. One prop, same markup and accessibility."
+    },
+    {
+      "name": "apsw-mui-excel-filter",
+      "type": "npm package / Material UI filter dropdown",
+      "npm": "https://www.npmjs.com/package/apsw-mui-excel-filter",
+      "github": "https://github.com/yaotzin1/apsw-mui-excel-filter",
+      "live_showcase": "https://apsw.pl/showcase/",
+      "install_command": "npm i apsw-mui-excel-filter",
+      "description": "Excel-style AutoFilter dropdown for MUI 5-7 and React 17-19: typing selects, select-all, staged selection applied on OK, empty array means no filter."
     }
   ],
   "agent_rfp_endpoint": {

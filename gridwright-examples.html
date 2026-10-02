@@ -27,6 +27,7 @@
   <script>
     (function () {
       try {
+        // First visit follows the OS; the header toggle is remembered after that.
         var stored = localStorage.getItem('apsw_theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
@@ -36,11 +37,30 @@
     })();
   </script>
 
+  <!-- Structured data for search engines and AI agents -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://apsw.pl/gridwright-examples.html",
+    "url": "https://apsw.pl/gridwright-examples.html",
+    "headline": "apsw-gridwright: AI agent playbook, canonical recipes and live REST harness",
+    "description": "Rules, decision matrix, canonical TypeScript snippets, pre-flight audit checklist and a live REST playground for AI coding agents and engineers integrating the apsw-gridwright React data grid.",
+    "proficiencyLevel": "Expert",
+    "inLanguage": ["en", "pl"],
+    "isPartOf": { "@id": "https://apsw.pl/#website" },
+    "about": { "@id": "https://apsw.pl/#apsw-gridwright" },
+    "author": { "@id": "https://apsw.pl/#founder" },
+    "publisher": { "@id": "https://apsw.pl/#organization" }
+  }
+  </script>
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/design-system.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/gridwright-examples.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/design-system.css?v=20260925">
+  <link rel="stylesheet" href="css/components.css?v=20260925">
+  <link rel="stylesheet" href="css/gridwright-examples.css?v=20260925">
+  <link rel="stylesheet" href="css/responsive.css?v=20260925">
+  <link rel="stylesheet" href="css/instrument.css?v=20260925">
 </head>
 <body>
 
@@ -88,11 +108,11 @@
           </svg>
         </button>
 
-        <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+        <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color: #cb3837;"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
           <span>npm</span>
         </a>
-        <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+        <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           <span data-i18n="gw_nav.github">GitHub</span>
         </a>
@@ -513,6 +533,7 @@
             <pre id="code-snippet-1"><span class="c-kw">import</span> { Gridwright, <span class="c-com">/* add-ons, hooks, parts */</span> } <span class="c-kw">from</span> <span class="c-str">'apsw-gridwright/react'</span>; <span class="c-com">// build with this</span>
 <span class="c-kw">import</span> { createRestDataSource, <span class="c-com">/* engine, sources */</span> } <span class="c-kw">from</span> <span class="c-str">'apsw-gridwright'</span>;   <span class="c-com">// headless engine</span>
 <span class="c-kw">import</span> { pl } <span class="c-kw">from</span> <span class="c-str">'apsw-gridwright/locales'</span>;                                    <span class="c-com">// translations</span>
+<span class="c-kw">import</span> { muiAddons } <span class="c-kw">from</span> <span class="c-str">'apsw-gridwright-mui'</span>;                                <span class="c-com">// optional: MUI views (coreAddons={muiAddons()})</span>
 <span class="c-kw">import</span> <span class="c-str">'apsw-gridwright/styles.css'</span>;                                             <span class="c-com">// once, at the entry</span></pre>
           </div>
         </div>
@@ -965,8 +986,10 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
           <li><a href="index.html">APSW Home</a></li>
           <li><a href="index.html#speckit">Spec-Kit AI</a></li>
           <li><a href="index.html#agentic-dev">Agentic Dev</a></li>
+          <li><a href="showcase/">Live React showcase</a></li>
           <li><a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener">npm: apsw-gridwright</a></li>
           <li><a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener">GitHub: apsw-gridwright</a></li>
+          <li><a href="https://www.npmjs.com/package/apsw-gridwright-mui" target="_blank" rel="noopener">npm: apsw-gridwright-mui (MUI views)</a></li>
         </ul>
       </div>
 
@@ -989,6 +1012,6 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
   <div id="gw-toast" class="gw-toast" role="status" aria-live="polite"></div>
 
   <!-- Standalone Controller (Theme, Language, Table & REST telemetry) -->
-  <script src="js/gridwright-examples.js"></script>
+  <script src="js/gridwright-examples.js?v=20260925"></script>
 </body>
 </html>

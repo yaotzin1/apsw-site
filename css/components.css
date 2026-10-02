@@ -71,6 +71,15 @@
   letter-spacing: -0.02em;
   color: var(--brand-teal-dark);
   line-height: 1.1;
+  /* "apsw-gridwright" would otherwise break at the hyphen on a 360px phone. */
+  white-space: nowrap;
+}
+
+/* Package and symbol names quoted in prose stay on one line; a hyphenated
+   name split as "apsw-" / "gridwright" reads as two words. */
+p > code,
+li > code {
+  white-space: nowrap;
 }
 
 [data-theme="dark"] .brand-title {
@@ -88,7 +97,7 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 22px;
   list-style: none;
 }
 
@@ -98,6 +107,7 @@
   color: var(--text-secondary);
   transition: color var(--transition-fast);
   padding: 4px 0;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {

@@ -1,0 +1,64 @@
+# VPS staging stack: Caddy terminates TLS (Let's Encrypt, automatic) and proxies
+# to the Apache/PHP container. No bind mounts — the image is the deployment.
+#
+#   cp .env.example .env && edit it
+#   docker compose -f docker-compose.staging.yml up -d --build
+#
+# Caddy gets a fixed address on the internal network so contact.php can trust
+# its X-Forwarded-For header (APSW_TRUSTED_PROXIES in .env must match it).
+
+services:
+  caddy:
+    image: caddy:2
+    container_name: apsw-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      - SITE_HOST=${SITE_HOST:?set SITE_HOST in .env}
+      - ACME_EMAIL=${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      edge:
+        ipv4_address: 172.28.0.10
+    depends_on:
+      apsw-site:
+        condition: service_healthy
+
+  apsw-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: apsw-site:staging
+    container_name: apsw-site
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - APSW_TRUSTED_PROXIES=172.28.0.10
+    volumes:
+      # Inquiry log survives rebuilds.
+      - apsw_logs:/var/www/html/.logs
+    networks:
+      - edge
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost/ -o /dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  edge:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24
+
+volumes:
+  caddy_data:
+  caddy_config:
+  apsw_logs:

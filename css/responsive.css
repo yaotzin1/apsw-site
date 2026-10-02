@@ -49,6 +49,23 @@ textarea:focus-visible,
 }
 
 /* --------------------------------------------------------------------------
+   ≤ 1100px — eight nav links no longer fit on one line beside the actions
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .nav-menu {
+    gap: 14px;
+  }
+
+  .nav-link {
+    font-size: 0.84rem;
+  }
+
+  .nav-actions > .btn {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
    ≤ 1024px — tablet landscape
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
@@ -100,27 +117,18 @@ textarea:focus-visible,
 /* --------------------------------------------------------------------------
    ≤ 768px — phone / small tablet
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  .section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-
-  .section-header {
-    margin-bottom: 36px;
-  }
-
-  .site-header {
-    height: 64px;
-  }
-
+/* --------------------------------------------------------------------------
+   ≤ 900px — the eight nav links no longer fit beside the brand and actions
+   even at the reduced size, so the menu collapses behind the toggle here.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
   .nav-menu {
     display: none;
     position: fixed;
-    top: 64px;
+    top: var(--nav-height);
     left: 0;
     width: 100%;
-    max-height: calc(100vh - 64px);
+    max-height: calc(100vh - var(--nav-height));
     overflow-y: auto;
     background: var(--bg-surface-1);
     border-bottom: 1px solid var(--border-medium);
@@ -143,6 +151,30 @@ textarea:focus-visible,
      row has to hold brand + language + theme + menu already. */
   .nav-actions > .btn {
     display: none;
+  }
+
+  /* The brand strapline wraps under the logo once the row is this narrow;
+     the logo and title identify the page on their own. */
+  .brand-sub {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ≤ 768px — phone / small tablet
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
   }
 
   .hero-section {
@@ -223,6 +255,21 @@ textarea:focus-visible,
 @media (max-width: 400px) {
   .nav-actions {
     gap: 6px;
+  }
+
+  /* Brand + language + theme + menu must share 360px; the logo and the
+     longest brand title ("apsw-gridwright") give up a little size. */
+  .nav-logo {
+    height: 30px;
+    width: 30px;
+  }
+
+  .nav-brand {
+    gap: 8px;
+  }
+
+  .brand-title {
+    font-size: 1rem;
   }
 
   .lang-btn {

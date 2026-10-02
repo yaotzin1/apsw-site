@@ -1,0 +1,32 @@
+{
+  "name": "apsw-showcase",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Live showcase of apsw-gridwright and apsw-mui-excel-filter, served at https://apsw.pl/showcase/",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.11",
+    "@mui/material": "^7.3.11",
+    "apsw-gridwright": "^0.12.0",
+    "apsw-gridwright-mui": "^0.1.0",
+    "apsw-mui-excel-filter": "^1.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.1"
+  }
+}

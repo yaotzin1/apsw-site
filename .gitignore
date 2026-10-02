@@ -24,3 +24,12 @@ secret.key*
 
 # Rate-limit scratch state
 apsw_rate_limits/
+
+# Showcase app dependencies (showcase/ build output IS committed)
+showcase-src/node_modules/
+
+# Server environment (docker-compose.staging.yml)
+.env
+
+# Cyber_Folks upload package (deploy/package-cyberfolks.sh)
+dist/

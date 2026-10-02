@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Open-source showcase: apsw-gridwright, apsw-gridwright-mui and apsw-mui-excel-filter | APSW</title>
+  <meta name="description" content="Live demo of apsw-gridwright (React data grid on a headless engine), apsw-gridwright-mui (its MUI views) and apsw-mui-excel-filter (Excel-style filter dropdown for MUI), three open-source packages by APSW.">
+  <meta name="author" content="Piotr Solarz-Wnęk - APSW">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://apsw.pl/showcase/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apsw.pl/showcase/">
+  <meta property="og:title" content="Open-source showcase | APSW">
+  <meta property="og:description" content="Live demo of apsw-gridwright, apsw-gridwright-mui and apsw-mui-excel-filter.">
+  <meta property="og:image" content="https://apsw.pl/assets/brand/apsw-logo.png">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/apsw-logo-color.svg">
+
+  <!-- Theme Initialization (same convention as the rest of apsw.pl: <html data-theme>, localStorage apsw_theme) -->
+  <script>
+    (function () {
+      try {
+        // First visit follows the OS; the header toggle is remembered after that.
+        var stored = localStorage.getItem('apsw_theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@600;700;800&display=swap">
+
+  <!-- Structured data for search engines and AI agents. The demos below are
+       rendered by React; this block and the <noscript> body carry the same
+       facts for crawlers that do not execute JavaScript. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://apsw.pl/showcase/",
+        "url": "https://apsw.pl/showcase/",
+        "name": "Open-source showcase: apsw-gridwright, apsw-gridwright-mui and apsw-mui-excel-filter",
+        "description": "Live, in-browser demo of three open-source React packages by APSW: apsw-gridwright (data grid on a headless engine with local and REST data sources: 100,000 virtualised rows, tree data, expandable row detail, row action menus, column resize/reorder/pin with the view synced to the URL, five locale packs with RTL, keyboard cell navigation with a mirrored live region), apsw-gridwright-mui (the same grid with Material UI controls, theme presets, component overrides and muiTokens) and apsw-mui-excel-filter (Excel-style filter dropdown for Material UI, including the two-term 'add current selection' flow).",
+        "isPartOf": { "@id": "https://apsw.pl/#website" },
+        "author": { "@id": "https://apsw.pl/#founder" },
+        "publisher": { "@id": "https://apsw.pl/#organization" },
+        "about": [
+          { "@id": "https://apsw.pl/#apsw-gridwright" },
+          { "@id": "https://apsw.pl/#apsw-gridwright-mui" },
+          { "@id": "https://apsw.pl/#apsw-mui-excel-filter" }
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://apsw.pl/#apsw-gridwright-mui",
+        "name": "apsw-gridwright-mui",
+        "description": "MUI views for apsw-gridwright: the grid takes colours, typography, radius and spacing from the Material UI theme in context (including dark mode), and its sort, selection and pagination controls are TableSortLabel, Checkbox and TablePagination. Same markup and accessibility as the native grid.",
+        "programmingLanguage": ["TypeScript", "JavaScript"],
+        "runtimePlatform": "React 18 / 19 with Material UI 7 or 9 and apsw-gridwright 0.12+",
+        "codeRepository": "https://github.com/yaotzin1/apsw-gridwright/tree/main/packages/mui",
+        "license": "https://opensource.org/licenses/MIT",
+        "installUrl": "https://www.npmjs.com/package/apsw-gridwright-mui",
+        "isPartOf": { "@id": "https://apsw.pl/#apsw-gridwright" },
+        "author": { "@id": "https://apsw.pl/#founder" },
+        "sameAs": ["https://www.npmjs.com/package/apsw-gridwright-mui"]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://apsw.pl/#apsw-gridwright",
+        "name": "apsw-gridwright",
+        "description": "React data grid for TypeScript, built on a headless engine. One pipeline for local and remote data, negotiated through data-source capabilities: sorting, typed column filters, search, pagination, virtual rows, inline editing, tree data, export, WAI-ARIA grid semantics.",
+        "programmingLanguage": ["TypeScript", "JavaScript"],
+        "runtimePlatform": "React 18 / React 19",
+        "codeRepository": "https://github.com/yaotzin1/apsw-gridwright",
+        "license": "https://opensource.org/licenses/MIT",
+        "installUrl": "https://www.npmjs.com/package/apsw-gridwright",
+        "author": { "@id": "https://apsw.pl/#founder" },
+        "sameAs": ["https://www.npmjs.com/package/apsw-gridwright"]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://apsw.pl/#apsw-mui-excel-filter",
+        "name": "apsw-mui-excel-filter",
+        "description": "Excel-style AutoFilter dropdown for Material UI 5-7 and React 17-19: typing selects, select-all, a staged selection applied on OK; an unfiltered field emits an empty array so the parameter leaves the query string.",
+        "programmingLanguage": ["TypeScript", "JavaScript"],
+        "runtimePlatform": "React 17 / 18 / 19 with Material UI",
+        "codeRepository": "https://github.com/yaotzin1/apsw-mui-excel-filter",
+        "license": "https://opensource.org/licenses/MIT",
+        "installUrl": "https://www.npmjs.com/package/apsw-mui-excel-filter",
+        "author": { "@id": "https://apsw.pl/#founder" },
+        "sameAs": ["https://www.npmjs.com/package/apsw-mui-excel-filter"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>
+    <main style="max-width: 72ch; margin: 40px auto; padding: 0 16px; font-family: Inter, system-ui, sans-serif; line-height: 1.6;">
+      <h1>Open-source showcase by APSW (Piotr Solarz-Wnęk)</h1>
+      <p>This page runs live demos of two MIT-licensed React packages published on npm by APSW. The demos need JavaScript; the facts below do not.</p>
+      <h2>apsw-gridwright — React data grid on a headless engine</h2>
+      <p>One pipeline for local and remote data, negotiated through data-source capabilities. Demonstrated here: multi-column sorting, typed column filters, search, pagination, inline editing with server-side rejection, CSV/Excel export, 100,000 rows windowed by <code>virtualRows()</code>, an org chart on <code>treeData()</code>, expandable row detail with a nested grid (<code>rowDetail()</code>), a row action menu (<code>rowActions()</code>), column resize, reorder and pinning with the sort, filter and page state kept in the URL (<code>columnLayout()</code>, <code>urlSync()</code>), the five bundled locale packs with a right-to-left switch, keyboard cell navigation with the grid's live region mirrored on screen, and a remote grid on <code>createRestDataSource</code> against a PHP REST backend (<a href="https://apsw.pl/api/people">/api/people</a>).</p>
+      <pre>npm install apsw-gridwright</pre>
+      <p><a href="https://www.npmjs.com/package/apsw-gridwright">npm</a> · <a href="https://github.com/yaotzin1/apsw-gridwright">GitHub</a> · <a href="https://apsw.pl/gridwright-examples.html">AI agent playbook and canonical recipes</a></p>
+      <h2>apsw-gridwright-mui — the same grid with Material UI controls</h2>
+      <p>One prop (<code>coreAddons={muiAddons()}</code>) swaps the grid's sort, selection and paging controls for MUI's TableSortLabel, Checkbox and TablePagination, and the grid takes colours, typography, radius and spacing from the MUI theme in context, dark mode included. Demonstrated here: a dashboard strip of Excel-style filters over a MUI grid, three <code>createTheme</code> presets switched live (one with <code>components</code> style overrides on the pager, checkbox and sort label), a single MUI view mixed into the native set (<code>muiSorting()</code>), and the <code>muiTokens(theme)</code> values printed for reuse in your own CSS. Requires apsw-gridwright 0.12+, MUI 7 or 9, React 18 or 19.</p>
+      <pre>npm install apsw-gridwright apsw-gridwright-mui</pre>
+      <p><a href="https://www.npmjs.com/package/apsw-gridwright-mui">npm</a> · <a href="https://github.com/yaotzin1/apsw-gridwright/tree/main/packages/mui">GitHub</a></p>
+      <h2>apsw-mui-excel-filter — Excel-style filter dropdown for Material UI</h2>
+      <p>Type to narrow the list, untick what you want gone, confirm with OK. Filtering is subtractive; an unfiltered field emits an empty array, so its parameter leaves the query string. Works with MUI 5, 6 and 7 and React 17, 18 and 19. Demonstrated here as three dropdowns filtering a 300-row apsw-gridwright grid.</p>
+      <pre>npm install apsw-mui-excel-filter</pre>
+      <p><a href="https://www.npmjs.com/package/apsw-mui-excel-filter">npm</a> · <a href="https://github.com/yaotzin1/apsw-mui-excel-filter">GitHub</a></p>
+      <h2>Author</h2>
+      <p>Piotr Solarz-Wnęk, principal solution architect and AI-native engineer, 19+ years in enterprise software (Tier-1 banking, industrial IoT, biotech instrumentation). Engagements: <a href="https://apsw.pl/#engagement">https://apsw.pl/#engagement</a>. Contact: <a href="mailto:piotr.solarz-wnek@apsw.pl">piotr.solarz-wnek@apsw.pl</a>. Machine-readable profile: <a href="https://apsw.pl/agent.json">agent.json</a>, <a href="https://apsw.pl/llms.txt">llms.txt</a>.</p>
+    </main>
+  </noscript>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

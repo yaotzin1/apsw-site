@@ -1,0 +1,7 @@
+# Scripts and configs that Linux containers execute must keep LF endings even
+# when checked out on Windows with core.autocrlf=true.
+*.sh            text eol=lf
+Caddyfile       text eol=lf
+Dockerfile      text eol=lf
+.env.example    text eol=lf
+*.yml           text eol=lf

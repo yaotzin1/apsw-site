@@ -28,5 +28,7 @@
 - Agent Manifest: https://apsw.pl/agent.json
 - Full Context: https://apsw.pl/llms-full.txt
 - Engagement Models: https://apsw.pl/#engagement
+- Live React Showcase (apsw-gridwright, apsw-gridwright-mui and apsw-mui-excel-filter running in the browser): https://apsw.pl/showcase/
+- npm packages: apsw-gridwright (React data grid, headless engine), apsw-gridwright-mui (its Material UI views), apsw-mui-excel-filter (Excel-style filter dropdown for MUI) — all MIT, by Piotr Solarz-Wnęk
 - Gridwright AI Agent Playbook & Canonical Recipes: https://apsw.pl/gridwright-examples.html
 - Gridwright Live REST API Wire Protocol: https://apsw.pl/api/people
