@@ -58,7 +58,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/design-system.css?v=20260925">
   <link rel="stylesheet" href="css/components.css?v=20260925">
-  <link rel="stylesheet" href="css/gridwright-examples.css?v=20260925">
+  <link rel="stylesheet" href="css/gridwright-examples.css?v=20261002">
   <link rel="stylesheet" href="css/responsive.css?v=20260925">
   <link rel="stylesheet" href="css/instrument.css?v=20260925">
 </head>
@@ -88,6 +88,7 @@
           <li><a href="index.html" class="nav-link" style="color: var(--brand-teal-light); font-weight: 600;" data-i18n="backToSite">← Back to apsw.pl</a></li>
           <li><a href="#rules" class="nav-link" data-i18n="gw_nav.rules">Playbook Rules</a></li>
           <li><a href="#decision-matrix" class="nav-link" data-i18n="gw_nav.matrix">Decision Matrix</a></li>
+          <li><a href="#add-ons" class="nav-link" data-i18n="gw_nav.addons">Add-ons</a></li>
           <li><a href="#playground" class="nav-link" data-i18n="gw_nav.playground">Live REST Harness</a></li>
           <li><a href="#snippets" class="nav-link" data-i18n="gw_nav.snippets">Canonical Snippets</a></li>
           <li><a href="#checklist" class="nav-link" data-i18n="gw_nav.checklist">Audit Checklist</a></li>
@@ -369,7 +370,108 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 3: LIVE REST API & DATA GRID PLAYGROUND
+         SECTION 3: ADD-ONS CATALOGUE
+         ======================================================================= -->
+    <section class="section" id="add-ons" style="background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header" style="text-align: left;">
+          <div class="section-tag" data-i18n="gw_addons.tag">COMPOSABLE OPTIONS</div>
+          <h2 class="section-title" data-i18n="gw_addons.title">Add-ons Showcase: Pick the Grid Behaviours You Need</h2>
+          <p class="section-subtitle" data-i18n-html="gw_addons.subtitle">
+            The React showcase at <code>/showcase/</code> demonstrates these options with the published npm packages. This page keeps the same set visible for architects and agents choosing a grid configuration.
+          </p>
+        </div>
+
+        <div class="gw-addon-grid" aria-label="apsw-gridwright add-on options">
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Discover</div>
+            <h3><code>search()</code></h3>
+            <p>Global search across searchable columns, local or delegated to a remote data source through declared capabilities.</p>
+            <a href="showcase/#features" class="gw-addon-link">Feature grid</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Filter</div>
+            <h3><code>columnFilters()</code></h3>
+            <p>Typed column filters for text, number, date and select fields, with operators matched to what the endpoint supports.</p>
+            <a href="showcase/#remote" class="gw-addon-link">Remote filters</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Export</div>
+            <h3><code>exportMenu()</code></h3>
+            <p>CSV, Excel, Markdown or print output from the reader's current visible view, including formatting rules.</p>
+            <a href="showcase/#features" class="gw-addon-link">CSV/Excel/print</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Act</div>
+            <h3><code>rowActions()</code></h3>
+            <p>Per-row action menus for operational commands, including hover and context-menu interaction patterns.</p>
+            <a href="showcase/#actions" class="gw-addon-link">Row actions</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Edit</div>
+            <h3><code>inlineEditing()</code></h3>
+            <p>In-cell editing where the commit function accepts or throws; rejected edits revert and show the reason.</p>
+            <a href="showcase/#remote" class="gw-addon-link">PATCH edits</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Layout</div>
+            <h3><code>columnLayout()</code></h3>
+            <p>Column resize, reorder, hide and pin controls with a plain JSON state surface for storage.</p>
+            <a href="showcase/#layout" class="gw-addon-link">Layout + URL</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Keyboard</div>
+            <h3><code>cellNavigation()</code></h3>
+            <p>One Tab stop into the grid, spreadsheet-style arrow movement and clipboard copy from focused cells.</p>
+            <a href="showcase/#a11y" class="gw-addon-link">Accessibility</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Hierarchy</div>
+            <h3><code>treeData()</code></h3>
+            <p>Nested rows of the same shape, exposed as a real treegrid with expansion state and sibling sorting.</p>
+            <a href="showcase/#tree" class="gw-addon-link">Tree data</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Detail</div>
+            <h3><code>rowDetail()</code></h3>
+            <p>Expandable panels under rows for nested grids, forms, charts or secondary record fields.</p>
+            <a href="showcase/#detail" class="gw-addon-link">Master-detail</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Scale</div>
+            <h3><code>virtualRows()</code></h3>
+            <p>DOM row virtualization for large visible sets; keep the configured row height aligned with <code>--gw-row-height</code>.</p>
+            <a href="showcase/#virtual" class="gw-addon-link">100k rows</a>
+          </article>
+
+          <article class="gw-addon-card">
+            <div class="gw-addon-kicker">Share</div>
+            <h3><code>urlSync()</code></h3>
+            <p>Search, sort, filters and page in the address bar so reloads and shared links reopen the same view.</p>
+            <a href="showcase/#layout" class="gw-addon-link">Synced state</a>
+          </article>
+
+          <article class="gw-addon-card featured">
+            <div class="gw-addon-kicker">MUI</div>
+            <h3><code>muiAddons()</code></h3>
+            <p>Swap the core sort, selection and pagination views for Material UI controls while the grid keeps the same engine and semantics.</p>
+            <a href="showcase/#mui-dashboard" class="gw-addon-link">MUI dashboard</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: LIVE REST API & DATA GRID PLAYGROUND
          ======================================================================= -->
     <section class="section" id="playground" style="background: var(--bg-surface-2); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
       <div class="container">
@@ -496,7 +598,7 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 4: CANONICAL SNIPPETS LIBRARY
+         SECTION 5: CANONICAL SNIPPETS LIBRARY
          ======================================================================= -->
     <section class="section" id="snippets">
       <div class="container">
@@ -1012,6 +1114,6 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
   <div id="gw-toast" class="gw-toast" role="status" aria-live="polite"></div>
 
   <!-- Standalone Controller (Theme, Language, Table & REST telemetry) -->
-  <script src="js/gridwright-examples.js?v=20260925"></script>
+  <script src="js/gridwright-examples.js?v=20261002"></script>
 </body>
 </html>

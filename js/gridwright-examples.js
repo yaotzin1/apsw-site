@@ -23,6 +23,7 @@
       gw_nav: {
         rules: "Playbook Rules",
         matrix: "Decision Matrix",
+        addons: "Add-ons",
         playground: "Live REST Harness",
         snippets: "Canonical Snippets",
         checklist: "Audit Checklist",
@@ -49,6 +50,11 @@
         tag: "ARCHITECTURE SELECTION",
         title: "Decision Rules Matrix",
         subtitle: "Match your application requirement to the canonical apsw-gridwright pattern."
+      },
+      gw_addons: {
+        tag: "COMPOSABLE OPTIONS",
+        title: "Add-ons Showcase: Pick the Grid Behaviours You Need",
+        subtitle: "The React showcase at <code>/showcase/</code> demonstrates these options with the published npm packages. This page keeps the same set visible for architects and agents choosing a grid configuration."
       },
       gw_play: {
         tag: "LIVE REST WIRE HARNESS",
@@ -79,6 +85,7 @@
       gw_nav: {
         rules: "Zasady Playbooka",
         matrix: "Matryca Decyzji",
+        addons: "Add-ony",
         playground: "Test REST na żywo",
         snippets: "Kanoniczne Snippety",
         checklist: "Lista Audytowa",
@@ -105,6 +112,11 @@
         tag: "DOBÓR ARCHITEKTURY",
         title: "Matryca Zasad Decyzyjnych",
         subtitle: "Dopasuj wymagania aplikacji do kanonicznego wzorca apsw-gridwright."
+      },
+      gw_addons: {
+        tag: "OPCJE KOMPOZYCYJNE",
+        title: "Showcase add-onów: wybierz zachowania tabeli, których potrzebujesz",
+        subtitle: "Reactowy showcase pod <code>/showcase/</code> pokazuje te opcje na opublikowanych pakietach npm. Ta strona trzyma ten sam zestaw pod ręką dla architektów i agentów wybierających konfigurację tabeli."
       },
       gw_play: {
         tag: "HARNESS REST NA ŻYWO",

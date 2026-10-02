@@ -282,7 +282,93 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. LIVE INTERACTIVE PLAYGROUND WORKBENCH
+   4. ADD-ONS SHOWCASE
+   -------------------------------------------------------------------------- */
+.gw-addon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.gw-addon-card {
+  min-height: 220px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.gw-addon-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.gw-addon-card.featured {
+  border-top: 4px solid var(--brand-teal-light);
+}
+
+.gw-addon-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.gw-addon-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.gw-addon-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.gw-addon-card code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 2px 6px;
+}
+
+.gw-addon-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brand-teal-light);
+  text-decoration: none;
+}
+
+.gw-addon-link::after {
+  content: ' ->';
+}
+
+.gw-addon-link:hover {
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   5. LIVE INTERACTIVE PLAYGROUND WORKBENCH
    -------------------------------------------------------------------------- */
 .gw-playground {
   background: var(--bg-surface-1);

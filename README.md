@@ -24,7 +24,11 @@
    - **Contact Flow & Anti-Spam Bot Defense**: 3-step SLA (4h review, 30m technical call, 24h scope), 1-click Mutual NDA request (`oneNDA` standard), dual hidden honeypots, 2-second time-trap defense, mail-header-injection sanitisation, and IP rate limiting.
 
 3. **Open-Source Showcase (`/showcase/`)**:
-   - A small Vite + React + MUI app (source in `showcase-src/`, built output committed to `showcase/`) running the real npm packages `apsw-gridwright`, `apsw-gridwright-mui` and `apsw-mui-excel-filter`: three Excel-style filter dropdowns driving a 300-row grid, a feature grid (multi-sort, typed column filters, search, pagination, inline editing with rejection, CSV/Excel export), the same grid with MUI controls and theme via `coreAddons={muiAddons()}`, and a remote grid on `createRestDataSource` against `api/people.php` (live PATCH edits).
+   - A small Vite + React + MUI app (source in `showcase-src/`, built output committed to `showcase/`) running the real npm packages `apsw-gridwright`, `apsw-gridwright-mui` and `apsw-mui-excel-filter`.
+   - It shows `apsw-gridwright` as a composable add-on system, following the package's Add-ons model: `search()`, `columnFilters()`, `exportMenu()`, `rowActions()`, `inlineEditing()`, `columnLayout()`, `cellNavigation()`, `treeData()`, `rowDetail()`, `virtualRows()` and `urlSync()`.
+   - The live demos cover three Excel-style filter dropdowns driving a 300-row grid, a feature grid (multi-sort, typed column filters, search, pagination, inline editing with rejection, CSV/Excel/print export), 100,000 virtualised rows, tree data, master-detail rows with a nested grid, row action menus, column resize/reorder/pin with URL-synced view state, five locale packs with RTL, keyboard cell navigation and the accessibility live region.
+   - MUI options are shown with the same grid using Material UI controls and theme values via `coreAddons={muiAddons()}`, three live `createTheme` presets, a single MUI sort view mixed into native controls, reusable `muiTokens(theme)`, and an `ExcelFilterSelect` dashboard strip over the grid.
+   - The remote grid uses `createRestDataSource` against `api/people.php`, including server-side sorting, filtering, search, pagination and live PATCH edits with server-side rejection messages.
    - Rebuild after changing the demos: `cd showcase-src && npm install && npm run build`.
    - `gridwright-examples.html` stays as the agent playbook: rules, decision matrix, vanilla REST harness and canonical snippets.
 
