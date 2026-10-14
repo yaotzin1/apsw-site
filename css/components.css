@@ -1532,3 +1532,258 @@ li > code {
   font-size: inherit;
   color: inherit;
 }
+
+/* ==========================================================================
+   ASSURANCE SECTION (problems, litmus table, offer strip)
+   ========================================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.assurance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.assurance-card {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.assurance-tag {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--instrument-bracket, var(--brand-teal-dark));
+}
+
+.assurance-title {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.assurance-desc,
+.assurance-proof {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.assurance-proof {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.82rem;
+  color: var(--instrument-readout, var(--text-primary));
+  border-left: 2px solid var(--instrument-rule, var(--brand-teal-dark));
+  padding-left: 12px;
+}
+
+.assurance-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.assurance-litmus-title {
+  margin: 56px 0 16px;
+  font-size: 1.35rem;
+}
+
+.assurance-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+}
+
+.assurance-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.assurance-table th,
+.assurance-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  line-height: 1.5;
+}
+
+.assurance-table thead th {
+  background: var(--bg-surface-2);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.assurance-table tbody th {
+  width: 18%;
+  font-weight: 600;
+}
+
+.assurance-table tbody td:nth-child(2) {
+  color: var(--text-secondary);
+  width: 36%;
+}
+
+.assurance-table tbody td:nth-child(3) {
+  background: var(--bg-surface-1);
+  border-left: 2px solid var(--instrument-rule, var(--brand-teal-dark));
+}
+
+.assurance-table tbody tr:last-child th,
+.assurance-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.assurance-note {
+  margin: 16px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 78ch;
+}
+
+.assurance-offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  padding: 28px 30px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-medium, var(--border-subtle));
+  border-radius: var(--radius-xl);
+}
+
+.assurance-offer-text {
+  flex: 1 1 420px;
+}
+
+.assurance-offer-text h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.assurance-offer-text p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.assurance-offer-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  .assurance-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Agentic proof: link the illustrative log to the real open-source engine */
+.agentic-proof {
+  margin-top: 36px;
+  padding: 26px 28px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-left: 2px solid var(--instrument-rule, var(--brand-teal-dark));
+  border-radius: var(--radius-xl);
+}
+.agentic-proof-title { margin: 0 0 8px; font-size: 1.2rem; }
+.agentic-proof-desc { margin: 0 0 18px; max-width: 80ch; color: var(--text-secondary); line-height: 1.6; }
+.agentic-proof-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Assurance: scale-of-work readouts */
+.assurance-scale .assurance-litmus-title { margin-top: 56px; }
+.assurance-readouts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+.assurance-readout {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+}
+.assurance-readout dt {
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary);
+}
+.assurance-readout dd {
+  margin: 0;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--instrument-readout, var(--text-primary));
+}
+.assurance-scale .assurance-note { margin-top: 14px; }
+@media (max-width: 960px) {
+  .assurance-readouts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Assurance: real code snippets */
+.assurance-code .assurance-litmus-title { margin-top: 56px; }
+.assurance-code-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+  align-items: start;
+}
+.assurance-code-card {
+  margin: 0;
+  min-width: 0;
+  background: #0b1220;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.assurance-code-card figcaption {
+  padding: 10px 16px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: #7dd3fc;
+  background: #0f1727;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.22);
+}
+.assurance-code-card pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  tab-size: 4;
+}
+@media (max-width: 960px) {
+  .assurance-code-grid { grid-template-columns: minmax(0, 1fr); }
+}

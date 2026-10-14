@@ -125,6 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // 7. Contact Form Submission with Anti-Bot Time-Trap & Rate Limiting
+  // Buttons elsewhere on the page can preselect the service in the contact form.
+  document.querySelectorAll('[data-service]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const select = document.getElementById('form-service');
+      const value = el.getAttribute('data-service');
+      if (select && [...select.options].some((o) => o.value === value)) select.value = value;
+    });
+  });
+
   const contactForm = document.getElementById('apsw-contact-form');
   const formFeedback = document.getElementById('form-feedback');
 

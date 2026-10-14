@@ -14,7 +14,8 @@
   "positioning": {
     "headline": "AI-Native Solution Developer & Enterprise Solution Architect",
     "philosophy": "Zero AI Slop. Deterministic Specification-First Engineering. Mission-Critical Enterprise Delivery.",
-    "methodology": "Spec-Kit (Specification-Driven Autonomous Multi-Agent Synthesis with Deterministic CI Verification Gates)"
+    "methodology": "Spec-Kit (Specification-Driven Autonomous Multi-Agent Synthesis with Deterministic CI Verification Gates)",
+    "commercial_focus": "Engineering-risk elimination in the AI era: EU Accessibility Act / WCAG 2.2 AA readiness, supply-chain and DORA-sensitive zero-dependency delivery, and performance and architecture rescue of AI-generated codebases. Fixed price, fixed scope, delivered with test evidence."
   },
   "capabilities": [
     {
@@ -32,7 +33,7 @@
     },
     {
       "id": "enterprise-architecture",
-      "name": "Enterprise Software Architecture & Cloud Modernization",
+      "name": "Enterprise Software Architecture & Cloud Modernisation",
       "description": "High-availability backend design, legacy refactoring, and cloud-native microservices for tier-1 banking and industrial platforms.",
       "technologies": ["Java 21", "Spring Boot", "PHP 8.3", "Symfony", "Azure (Bicep/ARM)", "Kubernetes", "Docker", "Databricks", "Azure Data Factory", "ReactJS", "Node.js"]
     },
@@ -66,7 +67,7 @@
       "client_domain": "Big-Four Global Professional Services Firm (M&A Analytics Platform)",
       "role": "Senior Front-End Software Developer & Architect",
       "tech_stack": ["ReactJS", "Azure Cloud Platform", "Splunk Core", "Aspose"],
-      "impact": "Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualizers."
+      "impact": "Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualisers."
     },
     {
       "client_domain": "Global Biotech & Medical Diagnostics Leader (Biomedical Instrumentation)",
@@ -78,7 +79,7 @@
       "client_domain": "Global Programmatic Recruitment & Marketing SaaS",
       "role": "Lead Frontend Architect",
       "tech_stack": ["ReactJS", "Node.js", "Azure Platform"],
-      "impact": "Supervised architectural modernization combining automated social advertisement engines with modular Applicant Tracking Systems."
+      "impact": "Supervised architectural modernisation combining automated social advertisement engines with modular Applicant Tracking Systems."
     }
   ],
   "pricing_and_engagement_models": {
@@ -90,6 +91,7 @@
     ],
     "standard_weekly_rate_range": "3,200 - 4,800 EUR / week",
     "architecture_review_fixed": "4,500 EUR (10-day comprehensive audit with C4 blueprint)",
+    "pricing_note": "Amounts are estimates based on market data for comparable senior engineering work, not a binding offer; the final price is fixed in a written scope after a technical call.",
     "cheap_to_verify": {
       "verifiable_benchmarks": true,
       "transparent_engagement_models": "https://apsw.pl/#engagement",
@@ -100,7 +102,7 @@
     "Microsoft Certified: Azure Fundamentals (AZ-900)",
     "ITIL Foundation Certified",
     "Droga Nowoczesnego Architekta (DNA)",
-    "MSc Informatic Industrial Systems",
+    "MSc in Industrial Informatics",
     "GDPR / EU Data Protection Compliant"
   ],
   "public_packages": [
@@ -140,5 +142,56 @@
     "protocol": "HTTP POST / JSON",
     "url": "https://apsw.pl/contact.php",
     "parameters": ["provider", "inquiry_type", "target_scale", "estimated_budget_eur", "contact_email"]
+  },
+  "commercial_offers": [
+    {
+      "id": "accessibility-review",
+      "name": "Accessibility (EAA / WCAG 2.2 AA) engineering review",
+      "contact": "https://apsw.pl/#contact"
+    },
+    {
+      "id": "dependency-security-audit",
+      "name": "Dependency, supply-chain and formula-injection audit",
+      "contact": "https://apsw.pl/#contact"
+    },
+    {
+      "id": "ai-codebase-rescue-sprint",
+      "name": "Rescue sprint for AI-generated codebases (performance, architecture, guardrails)",
+      "contact": "https://apsw.pl/#contact"
+    },
+    {
+      "id": "agent-ready-design-system",
+      "name": "Agent-ready design system and playbook (agent-playbook.md) for in-house component libraries",
+      "contact": "https://apsw.pl/#contact"
+    }
+  ],
+  "proof_of_work": {
+    "summary": "apsw-gridwright is a public MIT React data grid used as evidence of the engineering standard: zero runtime dependencies, windowing to ten million rows, axe-core over 24 grid states, a commit-time security gate. Accessibility results are test results, not a legal conformance statement.",
+    "npm": "https://www.npmjs.com/package/apsw-gridwright",
+    "github": "https://github.com/yaotzin1/apsw-gridwright",
+    "live_showcase": "https://apsw.pl/showcase/",
+    "live_playground": "https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html",
+    "agent_playbook": "https://apsw.pl/gridwright-examples.html",
+    "scale_of_work": {
+      "developers": 1,
+      "method": "one developer working with AI agents under the Spec-Kit and Indaba process",
+      "lines": {
+        "source": 19000,
+        "tests": 18000,
+        "documentation": 9000
+      },
+      "days_first_commit_to_v0_17": 34,
+      "note": "First commit (2026-09-10) already held about 16,600 lines, so real working time is somewhat longer.",
+      "by_hand_estimate_person_years": "1.5-3 (estimate: about 37k lines of code and tests at 50-100 tested lines per senior-developer day; not a measurement)",
+      "not_included": [
+        "pivot engine",
+        "spreadsheet-style range selection"
+      ]
+    },
+    "indaba": {
+      "description": "Open-source deterministic orchestration, cross-examination and observability engine for AI agents: DAG workflow.ai.yml, git worktree isolation, OpenTelemetry GenAI traces. Alpha preview 0.1.0-alpha.0, MIT.",
+      "github": "https://github.com/yaotzin1/indaba",
+      "npm": "https://www.npmjs.com/package/@indaba/engine"
+    }
   }
 }

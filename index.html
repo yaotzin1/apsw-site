@@ -51,7 +51,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/design-system.css?v=20260925">
-  <link rel="stylesheet" href="css/components.css?v=20260925">
+  <link rel="stylesheet" href="css/components.css?v=20261015">
   <link rel="stylesheet" href="css/responsive.css?v=20260925">
   <link rel="stylesheet" href="css/instrument.css?v=20260925">
 
@@ -89,7 +89,8 @@
         "owns": [
           { "@id": "https://apsw.pl/#apsw-gridwright" },
           { "@id": "https://apsw.pl/#apsw-gridwright-mui" },
-          { "@id": "https://apsw.pl/#apsw-mui-excel-filter" }
+          { "@id": "https://apsw.pl/#apsw-mui-excel-filter" },
+          { "@id": "https://apsw.pl/#indaba" }
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -115,7 +116,7 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Enterprise Software Architecture & Modernization",
+                "name": "Enterprise Software Architecture & Modernisation",
                 "description": "High-throughput Java 21, Spring Boot, Symfony 8 microservices and Azure Cloud IaC."
               }
             }
@@ -133,6 +134,17 @@
           { "@type": "WebPage", "@id": "https://apsw.pl/showcase/", "url": "https://apsw.pl/showcase/", "name": "Open-source showcase: apsw-gridwright and apsw-mui-excel-filter live demos" },
           { "@type": "WebPage", "@id": "https://apsw.pl/gridwright-examples.html", "url": "https://apsw.pl/gridwright-examples.html", "name": "apsw-gridwright AI agent playbook, canonical recipes and REST harness" }
         ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://apsw.pl/#indaba",
+        "name": "Indaba",
+        "description": "Open-source deterministic orchestration, cross-examination and observability engine for AI agents: DAG workflows in workflow.ai.yml, git worktree isolation, OpenTelemetry GenAI traces. Alpha preview.",
+        "programmingLanguage": "TypeScript",
+        "codeRepository": "https://github.com/yaotzin1/indaba",
+        "installUrl": "https://www.npmjs.com/package/@indaba/engine",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@id": "https://apsw.pl/#founder" }
       },
       {
         "@type": "SoftwareSourceCode",
@@ -186,7 +198,7 @@
           {
             "@type": "HowToStep",
             "name": "Fully Agentic Code Synthesis",
-            "text": "Autonomous specialized agents synthesize clean code, migration scripts, and full test suites verified against the contract."
+            "text": "Autonomous specialised agents synthesize clean code, migration scripts, and full test suites verified against the contract."
           },
           {
             "@type": "HowToStep",
@@ -222,6 +234,7 @@
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu" id="primary-nav-menu">
+          <li><a href="#assurance" class="nav-link" data-i18n="nav.assurance">Assurance</a></li>
           <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
           <li><a href="#agentic-dev" class="nav-link" data-i18n="nav.agentic">Agentic Dev</a></li>
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
@@ -268,22 +281,22 @@
           </div>
 
           <h1 class="hero-title" data-i18n-html="hero.title_html">
-            Move beyond fragile AI prototypes.<br>
-            Build systems that survive production.
+            AI writes the prototype in five minutes.<br>
+            We build what survives the audit.
           </h1>
 
           <p class="hero-description" data-i18n-html="hero.description_html">
-            Building AI into enterprise software is easy to prototype, but notoriously hard to run reliably in production. Backed by 19+ years of architecture experience across Tier-1 Banking and Industrial IoT, APSW delivers <strong>deterministic, fully agentic applications</strong> governed by formal contracts and zero AI slop.
+            AI-generated code is cheap. AI-generated risk is not: accessibility failures, supply-chain exposure, silent data errors and UIs that freeze at scale. With 19+ years of architecture across Tier-1 banking and industrial IoT, APSW builds and rescues systems to a <strong>verifiable standard</strong>, and proves it in public with an open-source grid that has zero runtime dependencies.
           </p>
 
           <div class="hero-cta-group">
-            <a href="#speckit" class="btn btn-emerald">
+            <a href="#assurance" class="btn btn-emerald">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              <span data-i18n="hero.cta_speckit">Explore Spec-Kit Workflow</span>
+              <span data-i18n="hero.cta_speckit">See the proof</span>
             </a>
-            <a href="#engagement" class="btn btn-secondary">
+            <a href="#contact" class="btn btn-secondary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-              <span data-i18n="hero.cta_engagement">Engagement Models</span>
+              <span data-i18n="hero.cta_engagement">Book an architecture review</span>
             </a>
           </div>
 
@@ -307,6 +320,162 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         ASSURANCE: WHAT AI CANNOT GENERATE IN 5 MINUTES (PROOF = GRIDWRIGHT)
+         ======================================================================= -->
+    <section class="section" id="assurance">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag emerald" data-i18n="assurance.tag">High-Assurance Engineering</span>
+          <h2 class="section-title" data-i18n="assurance.title">AI writes the happy path in five minutes. We engineer the edges.</h2>
+          <p class="section-subtitle" data-i18n="assurance.subtitle">
+            A generated data table works on 100 rows on the developer's laptop. What fails an audit, a regulator or a Monday-morning release is everything around it. These are the cases we build for, and they are in a public open-source package you can read.
+          </p>
+        </div>
+
+        <!-- Three problems, each with a priced entry point -->
+        <div class="assurance-grid">
+          <article class="assurance-card">
+            <span class="assurance-tag" data-i18n="assurance.p1_tag">EU ACCESSIBILITY ACT</span>
+            <h3 class="assurance-title" data-i18n="assurance.p1_title">Your tables fail accessibility audits</h3>
+            <p class="assurance-desc" data-i18n="assurance.p1_desc">Since June 2025 banks, telecoms, e-commerce and transport in the EU owe WCAG-level accessibility. Generated UI loses focus on disabled pagination, ignores forced colours and misses touch targets.</p>
+            <p class="assurance-proof" data-i18n="assurance.p1_proof">Proof: focus stays inside the grid, axe-core runs over 24 grid states with zero violations, opt-in WCAG 2.2 AA sizing and colours.</p>
+            <a href="#contact" class="btn btn-secondary" data-service="EAA / WCAG 2.2 Accessibility &amp; Supply-Chain Security Audit" data-i18n="assurance.p1_btn">Book an accessibility review</a>
+          </article>
+
+          <article class="assurance-card">
+            <span class="assurance-tag" data-i18n="assurance.p2_tag">SUPPLY CHAIN &amp; DORA</span>
+            <h3 class="assurance-title" data-i18n="assurance.p2_title">AI-assisted code pulls in dozens of packages</h3>
+            <p class="assurance-desc" data-i18n="assurance.p2_desc">In finance, medtech and defence every extra dependency is a supply-chain risk, and a copied cell is a formula-injection vector. Assistants add both without asking.</p>
+            <p class="assurance-proof" data-i18n="assurance.p2_proof">Proof: zero runtime dependencies, no install scripts, a commit gate that rejects HTML and script sinks, guarded CSV and clipboard output.</p>
+            <a href="#contact" class="btn btn-secondary" data-service="EAA / WCAG 2.2 Accessibility &amp; Supply-Chain Security Audit" data-i18n="assurance.p2_btn">Request a dependency &amp; security audit</a>
+          </article>
+
+          <article class="assurance-card">
+            <span class="assurance-tag" data-i18n="assurance.p3_tag">AFTER VIBE CODING</span>
+            <h3 class="assurance-title" data-i18n="assurance.p3_title">The prototype froze at 50,000 rows</h3>
+            <p class="assurance-desc" data-i18n="assurance.p3_desc">Teams that shipped fast with agents now hit a wall: 100 columns, tens of thousands of rows, a UI that stutters on every scroll, and PRs of 3,000 lines nobody reads.</p>
+            <p class="assurance-proof" data-i18n="assurance.p3_proof">Proof: windowed rows and columns, honest totals, 2–3 ms of script per scrolled frame at 500 columns, all held by tests an agent cannot quietly break.</p>
+            <a href="#contact" class="btn btn-secondary" data-service="Post-Vibe-Coding Rescue &amp; Performance Sprint" data-i18n="assurance.p3_btn">Start a rescue sprint</a>
+          </article>
+        </div>
+
+        <!-- Litmus test -->
+        <h3 class="assurance-litmus-title" data-i18n="assurance.litmus_title">The litmus test: a quick prompt versus an engineered grid</h3>
+        <div class="assurance-table-wrap">
+          <table class="assurance-table">
+            <caption class="sr-only" data-i18n="assurance.litmus_caption">Comparison of a quickly generated data table with the APSW engineered approach</caption>
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="assurance.col_topic">Where it breaks</th>
+                <th scope="col" data-i18n="assurance.col_quick">Generated in five minutes</th>
+                <th scope="col" data-i18n="assurance.col_apsw">Engineered by APSW</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" data-i18n="assurance.r1_topic">Scroll performance</th>
+                <td data-i18n="assurance.r1_quick">Fine on 100 rows. At 500 columns it costs around 60 ms of script per frame.</td>
+                <td data-i18n="assurance.r1_apsw">About 2–3 ms per frame at 500 columns, and a windowed source that holds a few thousand rows whatever the total.</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="assurance.r2_topic">Export of "all rows"</th>
+                <td data-i18n="assurance.r2_quick">With server paging it silently saves page one as the full report.</td>
+                <td data-i18n="assurance.r2_apsw">The option is disabled until the server can answer it, and the totals read "1–25 of many" instead of an invented number.</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="assurance.r3_topic">Copy to Excel</th>
+                <td data-i18n-html="assurance.r3_quick">Guards the plain-text channel and forgets the HTML one, so a cell such as <code>=cmd|…</code> still runs.</td>
+                <td data-i18n="assurance.r3_apsw">Both clipboard formats are escaped, and the grid never reads the clipboard or copies without a user action.</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="assurance.r4_topic">Accessibility</th>
+                <td data-i18n="assurance.r4_quick">ARIA labels added for show; keyboard focus drops to the page body when a button disables.</td>
+                <td data-i18n="assurance.r4_apsw">Focus moves to the neighbouring control, one live region announces state, axe-core runs on 24 states.</td>
+              </tr>
+              <tr>
+                <th scope="row" data-i18n="assurance.r5_topic">Dependencies</th>
+                <td data-i18n="assurance.r5_quick">Dozens of transitive packages to audit and patch.</td>
+                <td data-i18n="assurance.r5_apsw">Zero runtime dependencies and no install scripts.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="assurance-note" data-i18n-html="assurance.note_html">
+          Everything in the right-hand column is in <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer">apsw-gridwright</a> (MIT) and runs in the <a href="showcase/">live showcase</a>. The accessibility results are test results, not a legal conformance statement; the package's own report says which criteria are still unevaluated. The same discipline, applied to your system, is what we sell.
+        </p>
+
+        <!-- Real code, copied from the package documentation -->
+        <div class="assurance-code">
+          <h3 class="assurance-litmus-title" data-i18n="assurance.code_title">The real code, not a mock-up</h3>
+          <p class="assurance-note" data-i18n="assurance.code_intro">Both snippets are copied unchanged from the apsw-gridwright documentation. Swapping an array for a server, or holding ten million rows, is a change to one prop, not a rewrite.</p>
+          <div class="assurance-code-grid">
+            <figure class="assurance-code-card">
+              <figcaption data-i18n="assurance.code_a_cap">Ten million rows: a source that holds a window, and virtual rows</figcaption>
+              <pre><code>const source = createWindowedDataSource({
+    blockSize: 200,
+    maxBlocks: 12,
+    fetchRange: ({ offset, limit, signal }) =&gt; api.people({ offset, limit, signal }),
+});
+
+&lt;Gridwright
+    columns={columns}
+    dataSource={source}
+    pageSize={200}
+    addons={[virtualRows({ rowHeight: 40, height: 480, renderSkeleton: (index) =&gt; &lt;Placeholder index={index} /&gt; })]}
+/&gt;;</code></pre>
+            </figure>
+            <figure class="assurance-code-card">
+              <figcaption data-i18n="assurance.code_b_cap">Array today, paginating API tomorrow, same columns and add-ons</figcaption>
+              <pre><code>&lt;Gridwright
+    columns={[{ id: 'name', header: 'Name' }, { id: 'salary', header: 'Salary', align: 'end' }]}
+    data={people} // or dataSource={createRestDataSource({ url: '/api/people' })}
+    addons={[search(), columnFilters(), exportMenu({ formats: ['csv', 'excel', 'print'] })]}
+/&gt;;</code></pre>
+            </figure>
+          </div>
+          <p class="assurance-note"><a href="https://github.com/yaotzin1/apsw-gridwright/blob/main/docs/tour.md" target="_blank" rel="noopener noreferrer" data-i18n="assurance.code_link">Read the full tour on GitHub</a></p>
+        </div>
+
+        <!-- Scale of the work: what this took, and what it normally costs -->
+        <div class="assurance-scale">
+          <h3 class="assurance-litmus-title" data-i18n="assurance.scale_title">What it takes to build this, and what it normally costs</h3>
+          <dl class="assurance-readouts">
+            <div class="assurance-readout">
+              <dt data-i18n="assurance.scale_dev_lbl">Developers</dt>
+              <dd data-i18n="assurance.scale_dev_val">1</dd>
+            </div>
+            <div class="assurance-readout">
+              <dt data-i18n="assurance.scale_loc_lbl">Source / tests / docs (lines)</dt>
+              <dd data-i18n="assurance.scale_loc_val">19k / 18k / 9k</dd>
+            </div>
+            <div class="assurance-readout">
+              <dt data-i18n="assurance.scale_days_lbl">First commit to v0.17</dt>
+              <dd data-i18n="assurance.scale_days_val">34 days</dd>
+            </div>
+            <div class="assurance-readout">
+              <dt data-i18n="assurance.scale_est_lbl">Same scope by hand (estimate)</dt>
+              <dd data-i18n="assurance.scale_est_val">1.5–3 person-years</dd>
+            </div>
+          </dl>
+          <p class="assurance-note" data-i18n="assurance.scale_note">One developer working with AI agents under the Spec-Kit and Indaba process. Line counts and dates come from the public git history (first commit 10 September 2026, which already held about 16,600 lines, so the real working time is a little longer than the 34 days shown). The by-hand figure is our estimate, not a measurement: roughly 37,000 lines of code and tests at 50 to 100 finished, tested lines per senior-developer day, before documentation.</p>
+          <p class="assurance-note" data-i18n="assurance.scale_enterprise">The feature set is the kind that is normally sold in commercial tiers, for example AG Grid Enterprise or MUI X Pro and Premium: row grouping with aggregation, Excel export, column pinning, tree data, windowing to ten million rows. Here it is MIT-licensed. What it deliberately does not have is a pivot engine or spreadsheet-style range selection; if you need those, pick a different tool or contact us and we will price adding them.</p>
+        </div>
+
+        <!-- Commercial entry points -->
+        <div class="assurance-offer">
+          <div class="assurance-offer-text">
+            <h3 data-i18n="assurance.offer_title">Fixed price, fixed scope, delivered with evidence</h3>
+            <p data-i18n="assurance.offer_desc">Rebuild or migrate a legacy panel, harden a codebase that agents wrote, or move your design system to an agent-ready standard. You get the code, the tests that guard it and the playbook your own agents follow.</p>
+          </div>
+          <div class="assurance-offer-actions">
+            <a href="#contact" class="btn btn-emerald" data-i18n="assurance.offer_cta">Discuss your case</a>
+            <a href="#engagement" class="btn btn-secondary" data-i18n="assurance.offer_models">See engagement models</a>
+          </div>
         </div>
       </div>
     </section>
@@ -446,7 +615,6 @@
             </tr>
           </tbody>
         </table>
-        </div>
 
       </div>
     </section>
@@ -473,7 +641,7 @@
               </div>
               <div>
                 <h3 class="step-title" data-i18n="agentic.feat1_title">Hierarchical Multi-Agent Swarms</h3>
-                <p class="step-desc" data-i18n="agentic.feat1_desc">Coordinating specialized Planner, Architect, Worker, and Critic subagents. Complex tasks are broken down into isolated, parallel execution threads with strict context boundaries.</p>
+                <p class="step-desc" data-i18n="agentic.feat1_desc">Coordinating specialised Planner, Architect, Worker, and Critic subagents. Complex tasks are broken down into isolated, parallel execution threads with strict context boundaries.</p>
               </div>
             </div>
 
@@ -516,6 +684,16 @@
           </div>
 
         </div>
+
+        <!-- Proof: the open-source engine behind the swarm -->
+        <div class="agentic-proof">
+          <h3 class="agentic-proof-title" data-i18n="agentic.proof_title">The engine behind it is open source: Indaba</h3>
+          <p class="agentic-proof-desc" data-i18n="agentic.proof_desc">The log above is an illustration. The orchestration is real and public: a declarative workflow file defines the steps as a DAG, the engine rather than a model decides what runs next, implementation runs in an ephemeral git worktree, roles built on different models cross-examine each other instead of grading their own work, and every step is traced with OpenTelemetry GenAI cost and token data. It is an alpha preview (0.1.0-alpha.0), MIT licensed.</p>
+          <div class="agentic-proof-links">
+            <a href="https://github.com/yaotzin1/indaba" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="agentic.proof_github">Indaba on GitHub</a>
+            <a href="https://www.npmjs.com/package/@indaba/engine" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="agentic.proof_npm">@indaba/engine on npm</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -547,6 +725,8 @@
               <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s1_d3">Deterministic Tool & API Contracts</span></li>
             </ul>
             <div class="service-tech-tags">
+              <span class="tech-tag">@indaba/engine</span>
+              <span class="tech-tag">workflow.ai.yml</span>
               <span class="tech-tag">Agentic Swarms</span>
               <span class="tech-tag">Python</span>
               <span class="tech-tag">TypeScript</span>
@@ -562,11 +742,12 @@
             <h3 class="service-title" data-i18n="services.s2_title">Spec-Kit AI & Agentic Workflows</h3>
             <p class="service-desc" data-i18n="services.s2_desc">Architecting deterministic AI pipelines, custom graph workflows (ComfyUI / LangGraph), tool-calling agents, and enterprise RAG.</p>
             <ul class="service-deliverables">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d1">Formal Spec-Kit Domain Modeling</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d1">Formal Spec-Kit Domain Modelling</span></li>
               <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d2">Deterministic RAG with Source Citations</span></li>
               <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s2_d3">Computer Vision (Ultralytics) Integration</span></li>
             </ul>
             <div class="service-tech-tags">
+              <span class="tech-tag">@indaba/engine</span>
               <span class="tech-tag">Spec-Kit</span>
               <span class="tech-tag">ComfyUI</span>
               <span class="tech-tag">LangGraph</span>
@@ -620,7 +801,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
             </div>
             <h3 class="service-title" data-i18n="services.s5_title">Spec-Kit AI Team Enablement</h3>
-            <p class="service-desc" data-i18n="services.s5_desc">Transforming engineering organizations from chaotic AI chat usage into disciplined, deterministic Spec-Driven AI workflows.</p>
+            <p class="service-desc" data-i18n="services.s5_desc">Transforming engineering organisations from chaotic AI chat usage into disciplined, deterministic Spec-Driven AI workflows.</p>
             <ul class="service-deliverables">
               <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d1">Spec-Kit SDLC Guidelines & Tooling</span></li>
               <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s5_d2">AI Velocity & Code Consistency Audits</span></li>
@@ -643,12 +824,12 @@
             <ul class="service-deliverables">
               <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d1">10-Day Comprehensive Architecture Audit</span></li>
               <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d2">C4 Container & Component Schemas</span></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d3">Executive Modernization Roadmap</span></li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="services.s6_d3">Executive Modernisation Roadmap</span></li>
             </ul>
             <div class="service-tech-tags">
               <span class="tech-tag">C4 Architecture</span>
               <span class="tech-tag">Security Audit</span>
-              <span class="tech-tag">Modernization</span>
+              <span class="tech-tag">Modernisation</span>
             </div>
           </div>
 
@@ -686,10 +867,10 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d1">Comprehensive Codebase & Technical Debt Audit</span></li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d2">C4 System Architecture & Component Blueprints</span></li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d3">Security, GDPR & Database Isolation Review</span></li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d4">Executive Modernization & AI Roadmap</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m1_d4">Executive Modernisation & AI Roadmap</span></li>
             </ul>
 
-            <a href="#contact" class="btn btn-secondary" data-i18n="engagement.m1_btn">Request Architecture Audit</a>
+            <a href="#contact" class="btn btn-secondary" data-service="Architecture Review Audit" data-i18n="engagement.m1_btn">Request Architecture Audit</a>
           </div>
 
           <!-- Model 2: Fully Agentic Delivery Sprint (Featured) -->
@@ -704,13 +885,13 @@
             </div>
 
             <ul class="engagement-deliverables">
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d1">Formal Spec-Kit Domain Contract & Invariant Modeling</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d1">Formal Spec-Kit Domain Contract & Invariant Modelling</span></li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d2">Autonomous Multi-Agent Synthesis (Zero AI Slop)</span></li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d3">100% Automated Contract Test Suites & CI Gates</span></li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m2_d4">Production Codebase & Docker / Cloud Deployment</span></li>
             </ul>
 
-            <a href="#contact" class="btn btn-emerald" data-i18n="engagement.m2_btn">Discuss Delivery Sprint</a>
+            <a href="#contact" class="btn btn-emerald" data-service="Fully Agentic Application Development" data-i18n="engagement.m2_btn">Discuss Delivery Sprint</a>
           </div>
 
           <!-- Model 3: Fractional Principal Architect -->
@@ -731,7 +912,7 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="engagement.m3_d4">Direct Async Access & Dedicated Standups</span></li>
             </ul>
 
-            <a href="#contact" class="btn btn-secondary" data-i18n="engagement.m3_btn">Inquire About Retainer</a>
+            <a href="#contact" class="btn btn-secondary" data-service="Enterprise Architecture &amp; Cloud Modernisation" data-i18n="engagement.m3_btn">Inquire About Retainer</a>
           </div>
 
         </div>
@@ -760,7 +941,7 @@
               <span class="case-domain-tag" data-i18n="track_record.c1_domain">Institutional Finance</span>
             </div>
             <h3 class="case-title" data-i18n="track_record.c1_title">Cloud-Native Financial Transaction Management Platform</h3>
-            <p class="case-desc" data-i18n="track_record.c1_desc">Architected enterprise cloud-native transaction management utilities for a leading European financial institution. Drove infrastructural stabilization, continuous deployment engineering, and service decoupling in strictly regulated banking.</p>
+            <p class="case-desc" data-i18n="track_record.c1_desc">Architected enterprise cloud-native transaction management utilities for a leading European financial institution. Drove infrastructural stabilisation, continuous deployment engineering, and service decoupling in strictly regulated banking.</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
                 <span class="cm-val" data-i18n="track_record.c1_m1_val">-40% Cycle Time</span>
@@ -815,14 +996,14 @@
               <span class="case-domain-tag" data-i18n="track_record.c3_domain">100% Agentic Development</span>
             </div>
             <h3 class="case-title" data-i18n="track_record.c3_title">AI Reputation Engine & Multi-Tenant Agentic Triage</h3>
-            <p class="case-desc" data-i18n-html="track_record.c3_desc_html">Architected an enterprise multi-tenant B2B reputation engine featuring a 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. <strong>100% Autonomous Multi-Agent Synthesis: The entire production codebase, migrations, and test suites were synthesized autonomously by AI agents under formal architectural direction and deterministic CI contract gates — zero human manual coding.</strong></p>
+            <p class="case-desc" data-i18n-html="track_record.c3_desc_html">Architected an enterprise multi-tenant B2B reputation engine featuring a 45-second conveyor-belt triage UX, swappable multi-LLM engine, token-credit ledger tracking, and tenant isolation shields. <strong>100% Autonomous Multi-Agent Synthesis: The entire production codebase, migrations, and test suites were synthesised autonomously by AI agents under formal architectural direction and deterministic CI contract gates — zero human manual coding.</strong></p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
                 <span class="cm-val" data-i18n="track_record.c3_m1_val">3 Mos → 2 Wks</span>
                 <span class="cm-lbl" data-i18n="track_record.c3_m1_lbl">Time-to-Market Acceleration</span>
               </div>
               <div class="case-metric-box">
-                <span class="cm-val" data-i18n="track_record.c3_m2_val">100% AI Synthesized</span>
+                <span class="cm-val" data-i18n="track_record.c3_m2_val">100% AI Synthesised</span>
                 <span class="cm-lbl" data-i18n="track_record.c3_m2_lbl">0 Manual Developers / 100% CI Contract Gates</span>
               </div>
             </div>
@@ -844,7 +1025,7 @@
               <span class="case-domain-tag" data-i18n="track_record.c4_domain">M&A Analytics Platform</span>
             </div>
             <h3 class="case-title" data-i18n="track_record.c4_title">Corporate Deal Analytics & Interactive Visualizers</h3>
-            <p class="case-desc" data-i18n="track_record.c4_desc">Engineered frontend data layers for a global professional services firm's high-availability corporate analytics platform, supporting multi-million dollar M&A deal pipelines with interactive data-visualization matrices and zero-downtime hot-fix reliability across international timezones.</p>
+            <p class="case-desc" data-i18n="track_record.c4_desc">Engineered frontend data layers for a global professional services firm's high-availability corporate analytics platform, supporting multi-million dollar M&A deal pipelines with interactive data-visualisation matrices and zero-downtime hot-fix reliability across international timezones.</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
                 <span class="cm-val" data-i18n="track_record.c4_m1_val">$100M+ Pipeline</span>
@@ -895,7 +1076,7 @@
               <span class="case-domain-tag" data-i18n="track_record.c6_domain">Recruitment & Ad Engines</span>
             </div>
             <h3 class="case-title" data-i18n="track_record.c6_title">Modular ATS & Automated Social Advertisement Engine</h3>
-            <p class="case-desc" data-i18n="track_record.c6_desc">Supervised frontend architecture to modernize a legacy platform into a high-performance workspace combining automated social advertisement engines with modular Applicant Tracking Systems (ATS).</p>
+            <p class="case-desc" data-i18n="track_record.c6_desc">Supervised frontend architecture to modernise a legacy platform into a high-performance workspace combining automated social advertisement engines with modular Applicant Tracking Systems (ATS).</p>
             <div class="case-metrics-grid">
               <div class="case-metric-box">
                 <span class="cm-val" data-i18n="track_record.c6_m1_val">High Velocity</span>
@@ -941,7 +1122,7 @@
             </div>
 
             <p class="gw-card-desc" data-i18n="gridwright_showcase.desc">
-              Designed to eliminate table bloat and AI agent hallucinations. Features virtual scrolling (100k+ rows), live REST wire protocol data sources, inline cell editing, strict keyboard navigation, and full ARIA accessibility.
+              The public proof of how APSW engineers. Zero runtime dependencies, windowing to ten million rows, grouping with aggregates, Excel export, tree data, a security gate on every commit and axe-core checks over 24 states. Every feature is MIT-licensed.
             </p>
 
             <!-- Install & Feature Highlights -->
@@ -959,7 +1140,7 @@
               <div class="gw-features-list">
                 <span class="tech-tag" style="color: var(--accent-emerald); font-weight: 700;" data-i18n="gridwright_showcase.pill_npm">npm: apsw-gridwright</span>
                 <a class="tech-tag" href="https://www.npmjs.com/package/apsw-gridwright-mui" target="_blank" rel="noopener noreferrer" data-i18n="gridwright_showcase.pill_mui">MUI views: apsw-gridwright-mui</a>
-                <span class="tech-tag" data-i18n="gridwright_showcase.pill_virtual">Virtual Rows (100k+)</span>
+                <span class="tech-tag" data-i18n="gridwright_showcase.pill_virtual">Windowed rows (10M)</span>
                 <span class="tech-tag" data-i18n="gridwright_showcase.pill_rest">Live REST Wire Protocol</span>
                 <span class="tech-tag" data-i18n="gridwright_showcase.pill_editing">Inline Cell Editing</span>
                 <span class="tech-tag" data-i18n="gridwright_showcase.pill_aria">Strict ARIA & Keyboard Nav</span>
@@ -972,6 +1153,10 @@
               <a href="showcase/" class="btn btn-emerald">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
                 <span data-i18n="gridwright_showcase.btn_showcase">Live React Showcase</span>
+              </a>
+              <a href="https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                <span data-i18n="gridwright_showcase.btn_live_playground">Live Playground</span>
               </a>
               <a href="gridwright-examples.html" class="btn btn-secondary">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
@@ -1002,10 +1187,10 @@
             <span class="section-tag emerald" data-i18n="architect.tag">Principal Architect</span>
             <h2 style="font-size: 2.2rem; margin-bottom: 6px;" data-i18n="architect.name">Piotr Solarz-Wnęk</h2>
             <div style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--text-brand); margin-bottom: 16px; font-weight: 600;" data-i18n="architect.subtitle">
-              MSc Informatic Industrial Systems | 19+ Years Experience
+              MSc in Industrial Informatics | 19+ Years of Experience
             </div>
             <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 16px;" data-i18n-html="architect.bio_p1_html">
-              Software Architect, AI-Native developer, and former Business Unit Head who expanded global engineering units to 30+ engineers across Banking, Energy, and Industry 4.0. Certified Azure Architect (AZ-900), ITIL Foundation, and alumni of <em>Droga Nowoczesnego Architekta</em>.
+              Software Architect, AI-Native developer, and former Business Unit Head who expanded global engineering units to 30+ engineers across Banking, Energy, and Industry 4.0. Azure certified (AZ-900), ITIL Foundation, and graduate of <em>Droga Nowoczesnego Architekta</em>.
             </p>
             <p style="color: var(--text-secondary); line-height: 1.68;" data-i18n-html="architect.bio_p2_html">
               Pioneering <strong>Spec-Kit</strong> and <strong>Fully Agentic Development</strong> to make AI-assisted engineering deterministic, safe, and free from AI slop.
@@ -1042,11 +1227,11 @@
               </span>
               <span class="cert-pill">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                MSc Informatic Industrial Systems
+                MSc in Industrial Informatics
               </span>
               <span class="cert-pill">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                BEng Electronics & Telecommunication
+                BEng in Electronics & Telecommunications
               </span>
             </div>
 
@@ -1072,7 +1257,7 @@
           <span class="section-tag emerald" data-i18n="contact.tag">Let's Connect</span>
           <h2 class="section-title" data-i18n="contact.title">Schedule an Architecture Review</h2>
           <p class="section-subtitle" data-i18n="contact.subtitle">
-            Whether you want to build a Fully Agentic Application, eliminate AI slop via Spec-Kit, or modernize legacy systems — let's engineer the right solution.
+            Whether you want to build a Fully Agentic Application, eliminate AI slop via Spec-Kit, or modernise legacy systems — let's engineer the right solution.
           </p>
         </div>
 
@@ -1135,6 +1320,7 @@
                   </li>
                 </ol>
               </div>
+            </div>
           </div>
 
           <!-- Contact Form Card with Multi-Layer Anti-Bot Security -->
@@ -1159,9 +1345,11 @@
               <div class="form-group">
                 <label class="form-label" for="form-service" data-i18n="contact.form_service_label">Primary Area of Interest</label>
                 <select id="form-service" name="service_type" class="form-select">
+                  <option value="Post-Vibe-Coding Rescue & Performance Sprint" data-i18n="contact.opt_rescue">Post-Vibe-Coding Rescue & Performance Sprint</option>
+                  <option value="EAA / WCAG 2.2 Accessibility & Supply-Chain Security Audit" data-i18n="contact.opt_a11y">EAA / WCAG 2.2 Accessibility & Supply-Chain Security Audit</option>
                   <option value="Fully Agentic Application Development" data-i18n="contact.opt_agentic">Fully Agentic Application Development</option>
                   <option value="Spec-Kit AI Deterministic Engineering" data-i18n="contact.opt_speckit">Spec-Kit AI & Agentic Systems</option>
-                  <option value="Enterprise Architecture & Cloud Modernization" data-i18n="contact.opt_enterprise">Enterprise Architecture & Cloud Modernization</option>
+                  <option value="Enterprise Architecture & Cloud Modernisation" data-i18n="contact.opt_enterprise">Enterprise Architecture & Cloud Modernisation</option>
                   <option value="Industrial IoT / Spatial Telemetry" data-i18n="contact.opt_iot">High-Load Telemetry / Spatial IoT Systems</option>
                   <option value="Engineering Team Enablement" data-i18n="contact.opt_enablement">Spec-Kit AI Team Enablement & Workshops</option>
                   <option value="Architecture Review Audit" data-i18n="contact.opt_audit">10-Day Comprehensive Architecture Audit</option>
@@ -1224,6 +1412,7 @@
             <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
             <li><a href="showcase/" data-i18n="footer.showcase_link">Live component showcase</a></li>
             <li><a href="gridwright-examples.html" data-i18n="footer.gridwright_link">Gridwright Data Grid (npm)</a></li>
+            <li><a href="https://github.com/yaotzin1/indaba" target="_blank" rel="noopener noreferrer" data-i18n="footer.indaba_link">Indaba orchestration engine (GitHub)</a></li>
           </ul>
         </div>
 
@@ -1262,8 +1451,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/i18n.js?v=20260925"></script>
-  <script src="js/app.js?v=20260925"></script>
-  <script src="js/spec-kit-flow.js?v=20260925"></script>
+  <script src="js/i18n.js?v=20261014"></script>
+  <script src="js/app.js?v=20261014"></script>
+  <script src="js/spec-kit-flow.js?v=20261014"></script>
 </body>
 </html>

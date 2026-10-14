@@ -10,6 +10,20 @@
 - LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
 - Machine-Readable Agent Manifest: https://apsw.pl/agent.json
 
+## Commercial Focus: Engineering Risk in the AI Era
+AI writes a data table in five minutes; APSW engineers what fails audits and production: edge cases, accessibility, security and scale.
+- EU Accessibility Act / WCAG 2.2 AA: accessibility engineering reviews for tables and data-heavy UI (focus management, forced colours, touch targets).
+- Supply chain and DORA: zero-runtime-dependency delivery, dependency and formula-injection audits.
+- Rescue of AI-generated codebases: performance (windowing, 500 columns at 2-3 ms of script per scrolled frame), honest totals/exports, architectural guardrails and cross-checked CI gates.
+- Agent-ready design systems: in-house component libraries rewritten with an agent-playbook.md so coding agents produce working CRUD views first time.
+- Commercial model: fixed price, fixed scope, delivered with test evidence. Contact: https://apsw.pl/#contact
+
+## Proof of Work (open source, MIT)
+- apsw-gridwright: React data grid, zero runtime dependencies, windowing to ten million rows, grouping with aggregates, tree data, Excel/CSV/Markdown/PDF export, axe-core over 24 states. Accessibility results are test results, not a legal conformance statement.
+- Live showcase: https://apsw.pl/showcase/
+- Live playground (same package, add-ons toggled live): https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
+- GitHub: https://github.com/yaotzin1/apsw-gridwright
+
 ## Core Services
 1. Fully Agentic Application Development: Autonomous multi-agent swarms constructing robust production applications under architectural contracts and self-healing test loops.
 2. Spec-Kit AI Systems & Workflows: Transforming enterprise requirements into formal, executable domain specifications before agentic synthesis.
@@ -19,10 +33,10 @@
 ## Track Record & Enterprise References (NDA Compliant)
 - Tier-1 European Commercial & Investment Bank: Technical Lead & Solution Architect (Java 17/21, Spring Boot, Azure SQL, YAML declarative CI/CD).
 - Autonomous AI B2B SaaS (100% Fully Agentic Development): Multi-tenant autonomous B2B reputation engine built on Symfony 8 & React with 45-second triage UX, swappable multi-LLM engine with context embeddings, token-credit ledger tracking, and Spec-Kit governance. 100% synthesized by AI agents with zero manual developer coding.
-- Big-Four Global Professional Services Firm: Deal analytics platform and high-availability corporate data visualizers.
+- Big-Four Global Professional Services Firm: Deal analytics platform and high-availability corporate data visualisers.
 - Heavy Industry & Energy Operations: Industrial recursive tree asset management engine mapping multi-unit telemetry indices with automated threshold overrides.
 - Global Biotech & Medical Diagnostics Leader: Architectural redesign and sorting logic refactor for automated clinical analysis machinery.
-- Global Programmatic Recruitment SaaS: Modular ATS & automated ad-engine frontend modernization.
+- Global Programmatic Recruitment SaaS: Modular ATS & automated ad-engine frontend modernisation.
 
 ## Machine-Readable Endpoints & Developer Resources
 - Agent Manifest: https://apsw.pl/agent.json
@@ -30,5 +44,9 @@
 - Engagement Models: https://apsw.pl/#engagement
 - Live React Showcase (apsw-gridwright, apsw-gridwright-mui and apsw-mui-excel-filter running in the browser): https://apsw.pl/showcase/
 - npm packages: apsw-gridwright (React data grid, headless engine), apsw-gridwright-mui (its Material UI views), apsw-mui-excel-filter (Excel-style filter dropdown for MUI) — all MIT, by Piotr Solarz-Wnęk
+- Indaba (open-source deterministic multi-agent orchestration engine: DAG workflow.ai.yml, git worktree isolation, cross-examination, OpenTelemetry GenAI traces; alpha 0.1.0-alpha.0, MIT): https://github.com/yaotzin1/indaba , npm @indaba/engine
+- Gridwright scale of work (public git history): 1 developer working with AI agents; about 19k lines of source, 18k of tests, 9k of documentation; 34 days from first commit (10 Sep 2026, already ~16.6k lines, so real time is somewhat longer) to v0.17. Same scope by hand: 1.5-3 person-years, an estimate (about 37k lines of code and tests at 50-100 tested lines per senior-developer day), not a measurement.
+- Gridwright feature set normally sold in commercial tiers elsewhere (e.g. AG Grid Enterprise, MUI X Pro/Premium): row grouping with aggregation, Excel export, column pinning, tree data, windowing to ten million rows; MIT here. Not included: pivot engine, spreadsheet-style range selection (APSW will price adding them on request).
+- Gridwright Live Playground: https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
 - Gridwright AI Agent Playbook & Canonical Recipes: https://apsw.pl/gridwright-examples.html
 - Gridwright Live REST API Wire Protocol: https://apsw.pl/api/people
