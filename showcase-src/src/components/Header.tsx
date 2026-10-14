@@ -22,6 +22,9 @@ export function Header() {
             </div>
             <nav className="sc-header__links" aria-label="Site">
                 <Link href="/">← Back to apsw.pl</Link>
+                <Link href="https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html" target="_blank" rel="noopener noreferrer">Playground ↗</Link>
+                <Link href="https://yaotzin1.github.io/apsw-gridwright/docs/getting-started.html" target="_blank" rel="noopener noreferrer">Docs ↗</Link>
+                <Link href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer">GitHub ↗</Link>
                 <Link href="/gridwright-examples.html">Agent playbook</Link>
                 <Tooltip title={`Switch to ${next} mode`}>
                     <IconButton onClick={toggleThemeMode} aria-label={`Switch to ${next} mode`} size="small" color="primary">
