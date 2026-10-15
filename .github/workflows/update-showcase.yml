@@ -1,0 +1,58 @@
+# Keeps /showcase/ on the latest published apsw-gridwright packages.
+#
+# The showcase is a committed Vite build (showcase/), pinned to npm versions in
+# showcase-src/package.json, so without this it goes stale after every release.
+# Weekly (and on demand) this bumps the three packages, rebuilds, and opens a pull
+# request. Nothing is deployed from here: merging the PR to main is what ships it.
+#
+# Repository setting required: Settings > Actions > General > "Allow GitHub Actions
+# to create and approve pull requests".
+
+name: Update showcase packages
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: showcase-src
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: showcase-src/package-lock.json
+
+      - name: Bump the apsw packages to their latest release
+        run: npm install apsw-gridwright@latest apsw-gridwright-mui@latest apsw-mui-excel-filter@latest
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build into showcase/
+        run: npm run build
+
+      - name: Open a pull request when anything changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/update-showcase-packages
+          delete-branch: true
+          commit-message: 'chore(showcase): update apsw packages and rebuild'
+          title: 'chore(showcase): update apsw packages and rebuild'
+          body: |
+            Automated bump of `apsw-gridwright`, `apsw-gridwright-mui` and `apsw-mui-excel-filter`
+            to their latest npm releases, with the committed `showcase/` build regenerated.
+
+            Typecheck and build passed. Open `/showcase/` from the preview before merging; merging to `main` deploys it.

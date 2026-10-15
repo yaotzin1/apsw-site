@@ -36,7 +36,7 @@ Key Differentiators:
 - Big-Four Global Professional Services Firm (M&A Analytics Platform):
   Role: Senior Frontend Software Developer & Architect.
   Tech Stack: ReactJS, Azure Cloud Platform, Splunk Core, Aspose Middleware.
-  Highlights: Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualizers.
+  Highlights: Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualisers.
 
 - Global Biotech & Medical Diagnostics Leader (Biomedical Instrumentation):
   Role: Systems Architect & Senior Developer.
@@ -46,7 +46,7 @@ Key Differentiators:
 - Global Programmatic Recruitment & Marketing SaaS:
   Role: Lead Frontend Architect.
   Tech Stack: ReactJS, Node.js, Azure Platform.
-  Highlights: Supervised architectural modernization combining automated social advertisement engines with modular Applicant Tracking Systems.
+  Highlights: Supervised architectural modernisation combining automated social advertisement engines with modular Applicant Tracking Systems.
 
 =============================================================================
 3. CORE CAPABILITIES & METHODOLOGIES
@@ -67,10 +67,45 @@ C. ENTERPRISE SOFTWARE ARCHITECTURE
 - Azure Cloud Infrastructure as Code (Bicep, ARM, YAML Pipelines).
 - High-throughput CQRS, Event-Driven Architectures, and Multi-Tenant database isolation.
 
+D. OPEN SOURCE & DEVELOPER TOOLING
+- apsw-gridwright: Deterministic, headless React Data Grid engine engineered for AI coding agents and enterprise applications. Available to everyone on npm (npm i apsw-gridwright).
+  - npm Package: https://www.npmjs.com/package/apsw-gridwright
+  - GitHub Repository: https://github.com/yaotzin1/apsw-gridwright
+  - Live React Showcase (real component running in the browser): https://apsw.pl/showcase/
+  - AI Agent Playbook & Canonical Agent Recipes: https://apsw.pl/gridwright-examples.html
+  - Live REST Wire Protocol Backend: https://apsw.pl/api/people
+  - Key Capabilities: Virtual scrolling (100k+ rows), live REST wire protocol, inline cell editing, strict keyboard navigation, ARIA accessibility, zero runtime bloat.
+- apsw-gridwright-mui: Material UI views for apsw-gridwright (same repository, packages/mui). The grid takes colours, typography, radius and spacing from the MUI theme in context, dark mode included; its sort, selection and pagination controls are TableSortLabel, Checkbox and TablePagination. One prop (coreAddons={muiAddons()}) is the whole change; the grid's accessibility suites run unchanged. Requires apsw-gridwright 0.12+, MUI 7 or 9, React 18 or 19. MIT (npm i apsw-gridwright-mui).
+  - npm Package: https://www.npmjs.com/package/apsw-gridwright-mui
+  - GitHub: https://github.com/yaotzin1/apsw-gridwright/tree/main/packages/mui
+  - Live React Showcase: https://apsw.pl/showcase/#mui
+- apsw-mui-excel-filter: Excel-style filter dropdown for Material UI. Search that drives the selection, select-all, a staged selection applied on OK; an unfiltered field emits an empty array so the parameter leaves the query string. Available on npm (npm i apsw-mui-excel-filter).
+  - npm Package: https://www.npmjs.com/package/apsw-mui-excel-filter
+  - GitHub Repository: https://github.com/yaotzin1/apsw-mui-excel-filter
+  - Live React Showcase (three fields filtering an apsw-gridwright grid): https://apsw.pl/showcase/
+
 =============================================================================
 4. HOW TO ENGAGE APSW
 =============================================================================
-- Architecture Reviews: 10-day comprehensive codebase audit and C4 modernization blueprint (€4,500 fixed).
+- Architecture Reviews: 10-day comprehensive codebase audit and C4 modernisation blueprint (€4,500 fixed).
 - Retainers & Sprint Deliveries: Weekly architect retainers ranging from €3,200 to €4,800 / week.
+- Price note: the amounts above are estimates based on market data for comparable senior engineering work, not a binding offer. The final price is fixed in a written scope after a short technical call.
 - Engagement Models: https://apsw.pl/#engagement
 - Direct Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
+
+## Commercial Focus: Engineering Risk in the AI Era
+AI writes a data table in five minutes; APSW engineers what fails audits and production: edge cases, accessibility, security and scale.
+- EU Accessibility Act / WCAG 2.2 AA: accessibility engineering reviews for tables and data-heavy UI (focus management, forced colours, touch targets).
+- Supply chain and DORA: zero-runtime-dependency delivery, dependency and formula-injection audits.
+- Rescue of AI-generated codebases: performance (windowing, 500 columns at 2-3 ms of script per scrolled frame), honest totals/exports, architectural guardrails and cross-checked CI gates.
+- Agent-ready design systems: in-house component libraries rewritten with an agent-playbook.md so coding agents produce working CRUD views first time.
+- Commercial model: fixed price, fixed scope, delivered with test evidence. Contact: https://apsw.pl/#contact
+
+## Proof of Work (open source, MIT)
+- apsw-gridwright: React data grid, zero runtime dependencies, windowing to ten million rows, grouping with aggregates, tree data, Excel/CSV/Markdown/PDF export, axe-core over 24 states. Accessibility results are test results, not a legal conformance statement.
+- Live showcase: https://apsw.pl/showcase/
+- Live playground (same package, add-ons toggled live): https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
+- GitHub: https://github.com/yaotzin1/apsw-gridwright
+- Indaba (open-source deterministic multi-agent orchestration engine: DAG workflow.ai.yml, git worktree isolation, cross-examination, OpenTelemetry GenAI traces; alpha 0.1.0-alpha.0, MIT): https://github.com/yaotzin1/indaba , npm @indaba/engine
+- Gridwright scale of work (public git history): 1 developer working with AI agents; about 19k lines of source, 18k of tests, 9k of documentation; 24 active days (days with a commit; 34 calendar days) from first commit (10 Sep 2026, already ~16.6k lines, so real time is somewhat longer) to v0.17. Same scope by hand: 1.5-3 person-years, an estimate (about 37k lines of code and tests at 50-100 tested lines per senior-developer day), not a measurement.
+- Gridwright feature set normally sold in commercial tiers elsewhere (e.g. AG Grid Enterprise, MUI X Pro/Premium): row grouping with aggregation, Excel export, column pinning, tree data, windowing to ten million rows; MIT here. Not included: pivot engine, spreadsheet-style range selection (APSW will price adding them on request).

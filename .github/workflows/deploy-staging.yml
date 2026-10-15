@@ -1,0 +1,37 @@
+# Deploys the pushed branch to the staging VPS over SSH.
+#
+# Repository secrets required (Settings → Secrets and variables → Actions):
+#   STAGING_HOST      VPS IP or hostname
+#   STAGING_USER      the deploy user created in the README (e.g. deploy)
+#   STAGING_SSH_KEY   that user's private key (ed25519), the public half is in
+#                     ~deploy/.ssh/authorized_keys on the VPS
+#
+# main deploys automatically; any other branch can be deployed by hand from the
+# Actions tab ("Run workflow") — useful for checking a feature branch on staging.
+
+name: Deploy to staging
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: staging-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          script_stop: true
+          script: |
+            cd /opt/apsw-site
+            ./deploy/deploy.sh "${{ github.ref_name }}"

@@ -61,14 +61,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function selectCard(card) {
+    const step = card.getAttribute('data-step') || '1';
+    stepCards.forEach(c => {
+      const isActive = c === card;
+      c.classList.toggle('active', isActive);
+      c.setAttribute('aria-pressed', String(isActive));
+    });
+    renderStage(step);
+  }
+
   stepCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const step = card.getAttribute('data-step') || '1';
-      stepCards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      renderStage(step);
+    card.setAttribute('aria-pressed', String(card.classList.contains('active')));
+    card.addEventListener('click', () => selectCard(card));
+    card.addEventListener('keydown', (e) => {
+      // role="button" has to answer Enter and Space the way a real button does.
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        selectCard(card);
+      }
     });
   });
+
+  // Paint stage 1 from the dictionary on load. Without this the panel keeps the
+  // English copy baked into the HTML until the visitor clicks a card.
+  renderStage(currentActiveStep);
 
   // Re-render current stage when language changes
   window.addEventListener('apsw:languageChanged', () => {

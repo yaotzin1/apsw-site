@@ -7,7 +7,11 @@
     RewriteBase /
 
     # 1. Force HTTPS (Auto-redirect all HTTP traffic to HTTPS)
+    #    Behind a TLS-terminating proxy (Caddy on the VPS) the request reaches
+    #    Apache as plain HTTP with X-Forwarded-Proto: https; without the second
+    #    condition that would redirect forever.
     RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # 2. Canonical Domain (Optional: redirect www to non-www)
@@ -17,6 +21,12 @@
     # 3. Block access to hidden files and directories (except .well-known for SSL)
     RewriteCond %{REQUEST_URI} "!(^|/)\.well-known([^./]+)?/" [NC]
     RewriteRule "(^|/)\." - [F]
+
+    # 4. REST API Routing for apsw-gridwright
+    RewriteRule ^api/people(?:/(.*))?$ api/people.php/$1 [QSA,L]
+
+    # 5. Clean URLs for Gridwright Examples & Agent Playbook
+    RewriteRule ^(?:examples|gridwright-examples)/?$ gridwright-examples.html [L]
 </IfModule>
 
 # ==============================================================================
