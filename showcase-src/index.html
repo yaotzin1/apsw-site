@@ -103,6 +103,18 @@
   </script>
 </head>
 <body>
+  <aside class="sc-banner" id="sc-banner" lang="pl">
+    <p>Ten komponent (37k linii kodu i testów, 0 zależności) zbudował 1 architekt do wersji v0.17 w 24 dni pracy przy użyciu silnika Indaba. Zobacz, jak wdrażamy ten standard w zespołach B2B → <a href="/#assurance">apsw.pl/#assurance</a></p>
+  </aside>
+  <script>
+    // The sticky section nav sits under the banner, so it needs the banner's height (it wraps on phones).
+    (function () {
+      var b = document.getElementById('sc-banner');
+      function sync() { document.documentElement.style.setProperty('--sc-banner-h', b.offsetHeight + 'px'); }
+      sync();
+      if (window.ResizeObserver) new ResizeObserver(sync).observe(b);
+    })();
+  </script>
   <div id="root"></div>
   <noscript>
     <main style="max-width: 72ch; margin: 40px auto; padding: 0 16px; font-family: Inter, system-ui, sans-serif; line-height: 1.6;">

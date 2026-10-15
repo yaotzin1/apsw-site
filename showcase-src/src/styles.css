@@ -13,6 +13,36 @@
     padding: 0 var(--sc-gutter) 64px;
 }
 
+/* Sticky pointer banner (static markup in index.html, so crawlers and agents see it too) ------- */
+
+.sc-banner {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 6px var(--sc-gutter);
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+    font: 12.5px/1.45 Inter, system-ui, sans-serif;
+    text-align: center;
+}
+
+.sc-banner p { margin: 0; }
+
+.sc-banner a {
+    color: #0369a1;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+:root[data-theme='dark'] .sc-banner {
+    background: #0b1220;
+    border-bottom-color: rgba(56, 189, 248, 0.14);
+    color: #94a3b8;
+}
+
+:root[data-theme='dark'] .sc-banner a { color: #38bdf8; }
+
 /* Header strip ------------------------------------------------------------------------------ */
 
 .sc-header {
@@ -170,7 +200,7 @@
 
 .sc-nav {
     position: sticky;
-    top: 0;
+    top: var(--sc-banner-h, 0px);
     z-index: 5;
     margin: 0 calc(-1 * var(--sc-gutter));
     padding: 8px var(--sc-gutter);

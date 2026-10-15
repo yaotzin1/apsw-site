@@ -20,6 +20,9 @@
       pageTitle: "apsw-gridwright: Canonical Code Examples & Agent Playbook",
       brandSub: "AGENT PLAYBOOK & CANONICAL RECIPES",
       backToSite: "← Back to apsw.pl",
+      gw_banner: {
+        html: 'This component (37k lines of code and tests, 0 dependencies) was built by 1 architect to v0.17 in 24 active days with the Indaba engine. See how we roll this standard out in B2B teams → <a href="index.html#assurance">apsw.pl/#assurance</a>'
+      },
       gw_nav: {
         rules: "Playbook Rules",
         matrix: "Decision Matrix",
@@ -82,6 +85,9 @@
       pageTitle: "apsw-gridwright: Kanoniczne Przykłady Kodu & Playbook Agenta",
       brandSub: "PLAYBOOK AGENTA & KANONICZNE RECEPTURY",
       backToSite: "← Powrót do apsw.pl",
+      gw_banner: {
+        html: 'Ten komponent (37k linii kodu i testów, 0 zależności) zbudował 1 architekt do wersji v0.17 w 24 dni pracy przy użyciu silnika Indaba. Zobacz, jak wdrażamy ten standard w zespołach B2B → <a href="index.html#assurance">apsw.pl/#assurance</a>'
+      },
       gw_nav: {
         rules: "Zasady Playbooka",
         matrix: "Matryca Decyzji",
@@ -262,9 +268,21 @@
     });
   }
 
+  // The banner is sticky above a fixed header; --banner-h tells the CSS how far to push the header down.
+  function syncBannerHeight() {
+    const banner = document.getElementById('gw-banner');
+    if (!banner) return;
+    document.documentElement.style.setProperty('--banner-h', banner.offsetHeight + 'px');
+    if (!banner._ro && 'ResizeObserver' in window) {
+      banner._ro = new ResizeObserver(syncBannerHeight);
+      banner._ro.observe(banner);
+    }
+  }
+
   function applyLanguage(lang) {
     const dict = I18N[lang] || I18N.en;
     document.documentElement.lang = lang;
+    syncBannerHeight();
     if (dict.pageTitle) {
       document.title = dict.pageTitle;
     }

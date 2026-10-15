@@ -954,3 +954,34 @@
 .gw-toast.error {
   border-left: 4px solid var(--accent-coral);
 }
+
+
+/* --------------------------------------------------------------------------
+   Sticky pointer banner: a quiet strip for readers who land here directly.
+   It sits above the fixed site header, so the header moves down by its height
+   (--banner-h is measured in gridwright-examples.js; 34px is the one-line fallback).
+   -------------------------------------------------------------------------- */
+.gw-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  padding: 6px 16px;
+  background: var(--bg-surface-1);
+  border-bottom: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.gw-banner p { margin: 0; }
+
+.gw-banner a {
+  color: var(--text-brand);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.site-header { top: var(--banner-h, 34px); }
+
+html { scroll-padding-top: var(--banner-h, 34px); }
