@@ -24,10 +24,11 @@ ZIP="dist/apsw-site-${SHA}.zip"
 rm -rf dist
 mkdir -p "${OUT}"
 
-# Tracked + untracked-but-not-ignored files, then drop what production does not serve.
+# Tracked + untracked-but-not-ignored files (existing on disk), then drop what production does not serve.
 git ls-files --cached --others --exclude-standard \
-    | grep -Ev '^(\.github|\.agents|\.logs|\.security|branding_raw|showcase-src|deploy|docker|dist)/' \
+    | grep -Ev '^(\.github|\.agents|\.logs|\.security|branding_raw|showcase-src|deploy|docker|dist|specs)/' \
     | grep -Ev '^(Dockerfile|docker-compose.*\.yml|\.dockerignore|\.gitignore|\.gitattributes|\.env|\.env\.example|LICENSE|README\.md|.*\.tex|.*\.log)$' \
+    | while IFS= read -r f; do [ -e "$f" ] && printf '%s\n' "$f"; done \
     > dist/filelist.txt
 
 tar -cf - -T dist/filelist.txt | tar -xf - -C "${OUT}"

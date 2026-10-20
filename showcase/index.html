@@ -101,17 +101,27 @@
     ]
   }
   </script>
-  <script type="module" crossorigin src="/showcase/assets/index-BU_VgynY.js"></script>
-  <link rel="stylesheet" crossorigin href="/showcase/assets/index-BJHcABvE.css">
+  <script type="module" crossorigin src="/showcase/assets/index-Bm_xU_7z.js"></script>
+  <link rel="stylesheet" crossorigin href="/showcase/assets/index-CPVY_ZRJ.css">
 </head>
 <body>
-  <aside class="sc-banner" id="sc-banner" lang="pl">
-    <p>Ten komponent (37k linii kodu i testów, 0 zależności) zbudował 1 architekt do wersji v0.17 w 24 dni pracy przy użyciu silnika Indaba. Zobacz, jak wdrażamy ten standard w zespołach B2B → <a href="/#assurance">apsw.pl/#assurance</a></p>
+  <aside class="sc-banner" id="sc-banner" lang="en">
+    <p id="sc-banner-text">This component (37k lines of code and tests, 0 dependencies) was built by 1 architect to v0.17 in 24 active days with the Indaba engine. See how we bring this standard to B2B teams → <a href="/#assurance">apsw.pl/#assurance</a></p>
   </aside>
   <script>
+    // Default the banner to English for international GitHub/npm/Reddit readers, switching to Polish when the visitor chose PL.
     // The sticky section nav sits under the banner, so it needs the banner's height (it wraps on phones).
     (function () {
       var b = document.getElementById('sc-banner');
+      var p = document.getElementById('sc-banner-text');
+      try {
+        var lang = localStorage.getItem('apsw_lang');
+        var isPl = lang === 'pl' || (!lang && /^pl\b/i.test(navigator.language || ''));
+        if (isPl && b && p) {
+          b.setAttribute('lang', 'pl');
+          p.innerHTML = 'Ten komponent (37k linii kodu i testów, 0 zależności) zbudował 1 architekt do wersji v0.17 w 24 dni pracy przy użyciu silnika Indaba. Zobacz, jak wdrażamy ten standard w zespołach B2B → <a href="/#assurance">apsw.pl/#assurance</a>';
+        }
+      } catch (e) {}
       function sync() { document.documentElement.style.setProperty('--sc-banner-h', b.offsetHeight + 'px'); }
       sync();
       if (window.ResizeObserver) new ResizeObserver(sync).observe(b);

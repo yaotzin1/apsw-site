@@ -61,11 +61,12 @@ export const PACKAGES: PackageInfo[] = [
         name: 'apsw-mui-excel-filter',
         version: excelFilterVersion,
         description:
-            "Excel-style AutoFilter dropdown for Material UI: type to narrow, untick what you want gone, confirm with OK. Subtractive filtering, an empty array for 'no filter', and a two-term selection flow.",
+            "Excel-style AutoFilter dropdown extracted from an industrial ERP and generalized for Material UI 5–7 and React 17–19: type to narrow, untick what you want gone, confirm with OK. Subtractive filtering, an empty array for 'no filter', two-term 'Add current selection to filter' flow, 47 tests at 100% coverage.",
         npm: 'https://www.npmjs.com/package/apsw-mui-excel-filter',
         github: GITHUB['apsw-mui-excel-filter'],
         demos: [
             { id: 'filters', label: 'Filters + grid' },
+            { id: 'mui-dashboard', label: 'MUI dashboard' },
             { id: 'excel', label: 'Two-term flow' },
         ],
     },

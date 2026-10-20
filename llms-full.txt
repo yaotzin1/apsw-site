@@ -79,10 +79,10 @@ D. OPEN SOURCE & DEVELOPER TOOLING
   - npm Package: https://www.npmjs.com/package/apsw-gridwright-mui
   - GitHub: https://github.com/yaotzin1/apsw-gridwright/tree/main/packages/mui
   - Live React Showcase: https://apsw.pl/showcase/#mui
-- apsw-mui-excel-filter: Excel-style filter dropdown for Material UI. Search that drives the selection, select-all, a staged selection applied on OK; an unfiltered field emits an empty array so the parameter leaves the query string. Available on npm (npm i apsw-mui-excel-filter).
+- apsw-mui-excel-filter: Excel-style AutoFilter dropdown extracted from a legacy industrial ERP using Claude Code and generalized for Material UI 5–7 and React 17–19. Search that drives the selection, select-all, two-term "Add current selection to filter" flow, staged selection applied on OK; an unfiltered field emits an empty array so the parameter leaves the query string. Verified by 47 unit tests at 100% coverage. Available on npm (npm i apsw-mui-excel-filter).
   - npm Package: https://www.npmjs.com/package/apsw-mui-excel-filter
   - GitHub Repository: https://github.com/yaotzin1/apsw-mui-excel-filter
-  - Live React Showcase (three fields filtering an apsw-gridwright grid): https://apsw.pl/showcase/
+  - Live React Showcase (three fields filtering an apsw-gridwright grid, plus two-term deep dive): https://apsw.pl/showcase/#excel
 
 =============================================================================
 4. HOW TO ENGAGE APSW

@@ -148,16 +148,28 @@
   background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat;
 }
 
-.hero-status-badge {
+.hero-status-badge,
+.gw-hero-badge {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 0.8rem;
   letter-spacing: 0.02em;
   border-radius: 4px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
 }
 
-[data-theme="dark"] .hero-status-badge {
-  background: rgba(11, 18, 32, 0.7);
+.hero-status-dot {
+  color: var(--accent-emerald);
+  margin-right: 4px;
+}
+
+[data-theme="dark"] .hero-status-badge,
+[data-theme="dark"] .gw-hero-badge {
+  background: rgba(17, 26, 43, 0.85);
+  border-color: var(--border-medium);
+  color: var(--text-secondary);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -182,14 +194,18 @@
 /* --------------------------------------------------------------------------
    SECTION TAGS: spec-notation brackets instead of the editorial dash
    -------------------------------------------------------------------------- */
-.section-tag {
+.section-tag,
+.section-tag.emerald {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   letter-spacing: 0.03em;
+  color: var(--text-muted);
 }
 
 .section-tag::before,
-.section-tag::after {
+.section-tag::after,
+.section-tag.emerald::before,
+.section-tag.emerald::after {
   width: auto;
   height: auto;
   background: none;
@@ -200,14 +216,22 @@
 .section-tag::before { content: '['; }
 .section-tag::after  { content: ']'; }
 
-.section-tag.emerald::before,
-.section-tag.emerald::after {
-  color: currentColor;
+/* --------------------------------------------------------------------------
+   BUTTONS: one brand accent (teal on paper, cyan in control room)
+   -------------------------------------------------------------------------- */
+.btn-emerald {
+  background: var(--brand-teal-dark);
+  border-color: var(--brand-teal-dark);
+  color: #ffffff;
 }
 
-/* --------------------------------------------------------------------------
-   BUTTONS (dark): the accent is the action
-   -------------------------------------------------------------------------- */
+.btn-emerald:hover,
+.btn-emerald:focus-visible {
+  background: var(--brand-teal-mid);
+  border-color: var(--brand-teal-mid);
+  color: #ffffff;
+}
+
 [data-theme="dark"] .btn-emerald {
   background: #38bdf8;
   border-color: #38bdf8;
@@ -249,8 +273,27 @@
 }
 
 /* --------------------------------------------------------------------------
-   SURFACES (dark): cyan edge on hover, nothing at rest
+   SURFACES: no glowing orbs or green card borders at rest
    -------------------------------------------------------------------------- */
+.gw-card-glow {
+  display: none;
+}
+
+.gridwright-feature-card:hover {
+  border-color: var(--brand-teal-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.engagement-card.featured {
+  border-color: var(--border-brand);
+}
+
+.engagement-badge.featured-tag {
+  background: var(--bg-surface-2);
+  border-color: var(--border-brand);
+  color: var(--text-brand);
+}
+
 [data-theme="dark"] :is(.card-clean, .service-card, .case-card, .engagement-card,
   .pipeline-step-card, .agentic-feature-item, .gridwright-feature-card,
   .contact-card-item, .contact-form-card):hover {
@@ -349,7 +392,9 @@
 :is(.service-card, .case-card, .engagement-card, .pipeline-step-card,
   .agentic-feature-item, .contact-card-item):hover::after,
 .pipeline-step-card.active::before,
-.pipeline-step-card.active::after {
+.pipeline-step-card.active::after,
+.engagement-card.featured::before,
+.engagement-card.featured::after {
   opacity: 1;
   transform: none;
 }
@@ -423,4 +468,202 @@
   .hero-single-column::after {
     display: none;
   }
+}
+
+/* --------------------------------------------------------------------------
+   SEMANTIC INSTRUMENT CLASSES (Zero Inline Style Hex Codes)
+   -------------------------------------------------------------------------- */
+.service-index-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--instrument-bracket);
+  margin-bottom: 12px;
+}
+
+.feature-index-tag {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--instrument-bracket);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Indaba workflow & trace syntax tokens (strictly cyan + semantic status, zero purple) */
+.indaba-key { color: #38bdf8; }
+.indaba-str { color: #7dd3fc; }
+.indaba-pass { color: #34d399; }
+.indaba-warn { color: #fbbf24; }
+.indaba-muted { color: #94a3b8; }
+.indaba-summary {
+  color: #34d399;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.tech-tag-highlight {
+  color: var(--instrument-readout);
+  border-color: var(--border-brand);
+  font-weight: 600;
+}
+
+.npm-icon {
+  color: #cb3837;
+}
+
+.btn-inline-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Architect & Contact semantic typography */
+.architect-heading {
+  font-size: 2.2rem;
+  margin-bottom: 6px;
+}
+
+.architect-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--text-brand);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.architect-bio-text {
+  color: var(--text-secondary);
+  line-height: 1.68;
+  margin-bottom: 16px;
+}
+
+.architect-bio-text:last-of-type {
+  margin-bottom: 0;
+}
+
+.architect-credentials-card {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.architect-credentials-title {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.architect-leadership-bar {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.architect-leadership-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.architect-leadership-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.contact-item-title {
+  font-size: 1.05rem;
+  margin-bottom: 2px;
+}
+
+.contact-item-line {
+  margin-bottom: 2px;
+}
+
+.contact-item-link {
+  color: var(--text-brand);
+  font-weight: 600;
+}
+
+.contact-item-val {
+  margin-bottom: 2px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.contact-item-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-nda-box {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.form-nda-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.form-nda-checkbox {
+  margin-top: 3px;
+  accent-color: var(--brand-teal-dark);
+}
+
+.form-nda-strong {
+  color: var(--text-primary);
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 13px;
+}
+
+.form-privacy-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 12px;
+}
+
+.footer-brand-wrap {
+  margin-bottom: 14px;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 320px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  color: var(--text-muted);
 }

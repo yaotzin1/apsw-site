@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Button, Chip, Paper, Stack, Typography } from '@mui/material';
 import { ExcelFilterSelect } from 'apsw-mui-excel-filter';
-import { Gridwright, type GridwrightColumn } from 'apsw-gridwright/react';
+import { Gridwright, responsive, type GridAddon, type GridwrightColumn } from 'apsw-gridwright/react';
 import { InstallBlock } from '../components/InstallBlock';
 import { Section } from '../components/Section';
 import { CITIES, DEPARTMENTS, PEOPLE, STATUSES, optionsOf, type Person } from '../data';
@@ -15,9 +15,9 @@ const money = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'EUR
 const columns: GridwrightColumn<Person>[] = [
     { id: 'name', header: 'Name' },
     { id: 'department', header: 'Department', formatValue: (v) => DEPARTMENTS[String(v)] ?? String(v) },
-    { id: 'city', header: 'City', formatValue: (v) => CITIES[String(v)] ?? String(v) },
-    { id: 'status', header: 'Status', formatValue: (v) => STATUSES[String(v)] ?? String(v) },
-    { id: 'role', header: 'Role' },
+    { id: 'city', header: 'City', formatValue: (v) => CITIES[String(v)] ?? String(v), responsive: { hideBelow: 560 } },
+    { id: 'status', header: 'Status', formatValue: (v) => STATUSES[String(v)] ?? String(v), responsive: { hideBelow: 460 } },
+    { id: 'role', header: 'Role', responsive: { hideBelow: 720 } },
     { id: 'salary', header: 'Salary', align: 'end', formatValue: (v) => money.format(Number(v)) },
 ];
 
@@ -44,6 +44,7 @@ export function FilterSection() {
             ),
         [departments, cities, statuses],
     );
+    const addons = useMemo((): GridAddon<Person>[] => [responsive<Person>({ stackBelow: 420 })], []);
 
     const filtered = departments.length > 0 || cities.length > 0 || statuses.length > 0;
     const query = toQueryString({ department: departments, city: cities, status: statuses });
@@ -93,7 +94,13 @@ export function FilterSection() {
             </Paper>
 
             <div className="sc-grid">
-                <Gridwright<Person> columns={columns} data={rows} pageSize={10} aria-label="People, narrowed by the three filters" />
+                <Gridwright<Person>
+                    columns={columns}
+                    data={rows}
+                    pageSize={10}
+                    addons={addons}
+                    aria-label="People, narrowed by the three filters"
+                />
             </div>
 
             <InstallBlock packages={['apsw-mui-excel-filter', 'apsw-gridwright']} />

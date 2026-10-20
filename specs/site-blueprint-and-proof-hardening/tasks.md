@@ -1,0 +1,22 @@
+# Tasks: APSW Site Blueprint Visual Hardening & Open-Source Trilogy Proof
+
+- [x] **Task 1: Update Agent Skills & Verification Workflow**
+  - [x] Update `.agents/skills/pixel/SKILL.md` with APSW "Blueprint & Instruments" & Anti-AI-Slop rules.
+  - [x] Update `.agents/skills/agency/SKILL.md` with APSW B2B conversion & open-source trilogy proof rules.
+  - [x] Update `.agents/workflows/verification.md` with APSW verification gates.
+- [x] **Task 2: Enforce Blueprint Colour & Anti-AI-Slop Rules in CSS**
+  - [x] Update `css/instrument.css`: single teal/cyan accent for CTAs and section tags across light & dark modes; semantic emerald strictly for status; squared `.hero-status-badge`; remove `.gw-card-glow` orb; replace `.engagement-card.featured` green border at rest with blueprint border + registration marks; add semantic classes to replace inline styles.
+  - [x] Update `css/gridwright-examples.css`: squared `.gw-hero-badge` instrument readout; semantic classes for inspector URL, section surfaces, table column widths, and escalation warning cards (no inline `#38bdf8` or `4px solid` borders).
+- [x] **Task 3: Upgrade `index.html`, `gridwright-examples.html`, and `js/i18n.js` (EN & PL)**
+  - [x] Remove all `#a855f7` purple and fake `AGENTIC_SWARM_ORCHESTRATION.log`; replace with real `Indaba` `workflow.ai.yml · @indaba/engine` + trace readout in `index.html` and `js/i18n.js`.
+  - [x] Remove decorative boxed SVG icons in `#speckit`, `#agentic-dev`, and `#services` in favor of monospace `[ 01 ]`–`[ 06 ]` tags.
+  - [x] Surface `apsw-mui-excel-filter` (and its legacy ERP extraction + 47-test 100%-coverage story) in `#gridwright-showcase` and `llms.txt` / `llms-full.txt`.
+  - [x] Deep-link `#assurance` proof note to `/showcase/#virtual`, `/showcase/#excel`, `/showcase/#a11y`, and `/showcase/#mui-dashboard`, and clarify 30-min mutual `oneNDA` scoping call → 24h written fixed-price proposal.
+  - [x] Eliminate inline `style="..."` attributes in `index.html` and `gridwright-examples.html` (preserving only anti-bot honeypots) and bump `?v=20261016` on all CSS/JS links.
+- [x] **Task 4: Fix `/showcase/` Banner Language & Filter Section Responsiveness**
+  - [x] Update `showcase-src/index.html` so `#sc-banner` defaults to English and switches to Polish when `apsw_lang === 'pl'` (or Polish browser locale when unset).
+  - [x] Add `responsive({ stackBelow: 420 })` add-on and column `hideBelow` rules to `FilterSection.tsx`, `MuiDashboardSection.tsx`, and `ExcelDeepDiveSection.tsx`, and scope `.sc-grid .gw-root:not([data-gw-responsive]) { min-width: 640px; }` in `showcase-src/src/styles.css`.
+  - [x] Rebuild `showcase/` via `npm --prefix showcase-src run build`.
+- [x] **Task 5: Full Verification Gate & Review Sign-Off**
+  - [x] Run JS syntax checks, 344-key EN/PL i18n parity check, JSON-LD validation, TypeScript + Vite build check, and Anti-AI-Slop regex audit.
+  - [x] Author `specs/site-blueprint-and-proof-hardening/review.md`.

@@ -20,9 +20,11 @@ AI writes a data table in five minutes; APSW engineers what fails audits and pro
 
 ## Proof of Work (open source, MIT)
 - apsw-gridwright: React data grid, zero runtime dependencies, windowing to ten million rows, grouping with aggregates, tree data, Excel/CSV/Markdown/PDF export, axe-core over 24 states. Accessibility results are test results, not a legal conformance statement.
+- apsw-mui-excel-filter: Excel-style AutoFilter dropdown extracted from a legacy industrial ERP and generalized for Material UI 5–7 and React 17–19. Subtractive filtering, two-term "Add current selection to filter" flow, empty-array emission for unfiltered state, 47 unit tests at 100% coverage.
+- Indaba (@indaba/engine): Deterministic multi-agent orchestration engine (DAG workflow.ai.yml, git worktree isolation, cross-model adversarial review, OpenTelemetry GenAI traces).
 - Live showcase: https://apsw.pl/showcase/
 - Live playground (same package, add-ons toggled live): https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
-- GitHub: https://github.com/yaotzin1/apsw-gridwright
+- GitHub: https://github.com/yaotzin1/apsw-gridwright , https://github.com/yaotzin1/apsw-mui-excel-filter , https://github.com/yaotzin1/indaba
 
 ## Core Services
 1. Fully Agentic Application Development: Autonomous multi-agent swarms constructing robust production applications under architectural contracts and self-healing test loops.

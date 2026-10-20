@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Button, Chip, Paper, Stack, Toolbar, Typography } from '@mui/material';
 import { ExcelFilterSelect } from 'apsw-mui-excel-filter';
-import { Gridwright, search, type GridAddon, type GridwrightColumn } from 'apsw-gridwright/react';
+import { Gridwright, responsive, search, type GridAddon, type GridwrightColumn } from 'apsw-gridwright/react';
 import { muiAddons } from 'apsw-gridwright-mui';
 import { InstallBlock } from '../components/InstallBlock';
 import { Section } from '../components/Section';
@@ -15,9 +15,9 @@ const STATUS_OPTIONS = optionsOf(STATUSES);
 const columns: GridwrightColumn<Person>[] = [
     personColumns.name,
     personColumns.department,
-    personColumns.city,
-    personColumns.status,
-    personColumns.role,
+    { ...personColumns.city, responsive: { hideBelow: 600 } },
+    { ...personColumns.status, responsive: { hideBelow: 480 } },
+    { ...personColumns.role, responsive: { hideBelow: 760 } },
     personColumns.salary,
 ];
 
@@ -45,7 +45,7 @@ export function MuiDashboardSection() {
         [filters],
     );
     const active = FACETS.flatMap((facet) => filters[facet.key].map((value) => ({ facet, value })));
-    const addons = useMemo((): GridAddon<Person>[] => [search<Person>()], []);
+    const addons = useMemo((): GridAddon<Person>[] => [search<Person>(), responsive<Person>({ stackBelow: 420 })], []);
 
     const set = (key: Facet['key'], next: string[]) => setFilters((current) => ({ ...current, [key]: next }));
     const remove = (key: Facet['key'], value: string) => set(key, filters[key].filter((v) => v !== value));

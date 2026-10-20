@@ -56,11 +56,11 @@
   </script>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/design-system.css?v=20260925">
-  <link rel="stylesheet" href="css/components.css?v=20260925">
-  <link rel="stylesheet" href="css/gridwright-examples.css?v=20261015">
-  <link rel="stylesheet" href="css/responsive.css?v=20260925">
-  <link rel="stylesheet" href="css/instrument.css?v=20260925">
+  <link rel="stylesheet" href="css/design-system.css?v=20261016">
+  <link rel="stylesheet" href="css/components.css?v=20261016">
+  <link rel="stylesheet" href="css/gridwright-examples.css?v=20261016">
+  <link rel="stylesheet" href="css/responsive.css?v=20261016">
+  <link rel="stylesheet" href="css/instrument.css?v=20261016">
 </head>
 <body>
 
@@ -89,7 +89,7 @@
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu" id="primary-nav-menu">
-          <li><a href="index.html" class="nav-link" style="color: var(--brand-teal-light); font-weight: 600;" data-i18n="backToSite">← Back to apsw.pl</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="backToSite">← Back to apsw.pl</a></li>
           <li><a href="#rules" class="nav-link" data-i18n="gw_nav.rules">Playbook Rules</a></li>
           <li><a href="#decision-matrix" class="nav-link" data-i18n="gw_nav.matrix">Decision Matrix</a></li>
           <li><a href="#add-ons" class="nav-link" data-i18n="gw_nav.addons">Add-ons</a></li>
@@ -114,7 +114,7 @@
         </button>
 
         <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color: #cb3837;"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="npm-icon"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
           <span>npm</span>
         </a>
         <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -153,8 +153,8 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
               <span data-i18n="gw_hero.btn_playground">Test Live REST Harness</span>
             </a>
-            <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #cb3837;"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
+            <a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-inline-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="npm-icon"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H4V9.334h2.666v4.664zM10.666 12H9.334V9.334h1.332V12zm6.668 2H14.67V9.334h2.664V14zm5.332-2h-1.332V9.334h1.332V12z"/></svg>
               <span>npm package</span>
             </a>
             <a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
@@ -176,7 +176,7 @@
           </div>
           <div class="gw-spec-card">
             <span class="gw-spec-label">Runtime Dependencies</span>
-            <span class="gw-spec-val" style="color: var(--accent-emerald);">0 (Zero)</span>
+            <span class="gw-spec-val gw-spec-val-emerald">0 (Zero)</span>
           </div>
           <div class="gw-spec-card">
             <span class="gw-spec-label">Wire Protocols</span>
@@ -193,9 +193,9 @@
     <!-- =======================================================================
          SECTION 1: THE CORE CONTRACT (ALWAYS & NEVER)
          ======================================================================= -->
-    <section class="section" id="rules" style="background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <section class="section gw-section-surface-1" id="rules">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <div class="section-tag" data-i18n="gw_rules.tag">ARCHITECTURAL GUARDRAILS</div>
           <h2 class="section-title" data-i18n="gw_rules.title">Strict Agent Rules: Always vs Never</h2>
           <p class="section-subtitle" data-i18n="gw_rules.subtitle">
@@ -208,7 +208,7 @@
           <div class="gw-rule-column always">
             <div class="gw-rule-header">
               <div class="gw-rule-heading">
-                <span style="color: var(--accent-emerald); font-size: 1.4rem;">✔</span>
+                <span class="gw-heading-icon-always">✔</span>
                 <span data-i18n="gw_rules.always_title">Always</span>
               </div>
               <span class="gw-rule-tag always" data-i18n="gw_rules.always_badge">MANDATORY</span>
@@ -257,7 +257,7 @@
           <div class="gw-rule-column never">
             <div class="gw-rule-header">
               <div class="gw-rule-heading">
-                <span style="color: var(--accent-coral); font-size: 1.4rem;">✖</span>
+                <span class="gw-heading-icon-never">✖</span>
                 <span data-i18n="gw_rules.never_title">Never</span>
               </div>
               <span class="gw-rule-tag never" data-i18n="gw_rules.never_badge">FORBIDDEN</span>
@@ -306,7 +306,7 @@
          ======================================================================= -->
     <section class="section" id="decision-matrix">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <div class="section-tag" data-i18n="gw_matrix.tag">ARCHITECTURE SELECTION</div>
           <h2 class="section-title" data-i18n="gw_matrix.title">Decision Rules Matrix</h2>
           <p class="section-subtitle" data-i18n="gw_matrix.subtitle">
@@ -318,8 +318,8 @@
           <table class="gw-matrix-table">
             <thead>
               <tr>
-                <th style="width: 45%;">Application Requirement / Scenario</th>
-                <th style="width: 55%;">Canonical Gridwright Pattern</th>
+                <th>Application Requirement / Scenario</th>
+                <th>Canonical Gridwright Pattern</th>
               </tr>
             </thead>
             <tbody>
@@ -376,9 +376,9 @@
     <!-- =======================================================================
          SECTION 3: ADD-ONS CATALOGUE
          ======================================================================= -->
-    <section class="section" id="add-ons" style="background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <section class="section gw-section-surface-1" id="add-ons">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <div class="section-tag" data-i18n="gw_addons.tag">COMPOSABLE OPTIONS</div>
           <h2 class="section-title" data-i18n="gw_addons.title">Add-ons Showcase: Pick the Grid Behaviours You Need</h2>
           <p class="section-subtitle" data-i18n-html="gw_addons.subtitle">
@@ -477,9 +477,9 @@
     <!-- =======================================================================
          SECTION 4: LIVE REST API & DATA GRID PLAYGROUND
          ======================================================================= -->
-    <section class="section" id="playground" style="background: var(--bg-surface-2); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <section class="section gw-section-surface-2" id="playground">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <div class="section-tag" data-i18n="gw_play.tag">LIVE REST WIRE HARNESS</div>
           <h2 class="section-title" data-i18n="gw_play.title">Interactive PHP REST Playground</h2>
           <p class="section-subtitle" data-i18n="gw_play.subtitle">
@@ -527,7 +527,7 @@
 
             <div class="gw-pg-status-bar">
               <span class="gw-pg-badge live" id="gw-live-count">100 records live</span>
-              <button id="gw-reset-btn" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 0.8rem;">
+              <button id="gw-reset-btn" class="btn btn-secondary btn-sm gw-reset-btn">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
                 <span>Reset Seed</span>
               </button>
@@ -539,7 +539,7 @@
             <table class="gw-live-grid" aria-label="Enterprise personnel directory with live REST backend">
               <thead>
                 <tr>
-                  <th style="width: 40px;">
+                  <th class="gw-col-select">
                     <input type="checkbox" id="gw-select-all" aria-label="Select all rows on this page">
                   </th>
                   <th class="sortable" data-col="id">ID</th>
@@ -582,8 +582,8 @@
               </div>
             </div>
 
-            <div style="margin-bottom: 10px; font-size: 0.78rem; color: #38bdf8;">
-              <span style="color: #64748b;">Endpoint:</span> <code id="gw-inspector-url">GET /api/people.php?page=1&amp;pageSize=10</code>
+            <div class="gw-inspector-meta">
+              <span class="gw-inspector-label">Endpoint:</span> <code id="gw-inspector-url">GET /api/people.php?page=1&amp;pageSize=10</code>
             </div>
 
             <div class="gw-inspector-body">
@@ -606,7 +606,7 @@
          ======================================================================= -->
     <section class="section" id="snippets">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <div class="section-tag" data-i18n="gw_snip.tag">PLAYBOOK RECIPES</div>
           <h2 class="section-title" data-i18n="gw_snip.title">Canonical Code Snippets Library</h2>
           <p class="section-subtitle" data-i18n="gw_snip.subtitle">
@@ -947,9 +947,9 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
     <!-- =======================================================================
          SECTION 5: PRE-FLIGHT AUDIT CHECKLIST
          ======================================================================= -->
-    <section class="section" id="checklist" style="background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <section class="section" id="checklist">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <div class="section-tag" data-i18n="gw_check.tag">CI VERIFICATION GATES</div>
           <h2 class="section-title" data-i18n="gw_check.title">AI Agent Pre-Flight Audit Checklist</h2>
           <p class="section-subtitle" data-i18n="gw_check.subtitle">
@@ -961,8 +961,8 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
           <table class="gw-checklist-table">
             <thead>
               <tr>
-                <th style="width: 50%;">Audit Check</th>
-                <th style="width: 50%;">Failure Consequence (Why It Fails CI)</th>
+                <th>Audit Check</th>
+                <th>Failure Consequence (Why It Fails CI)</th>
               </tr>
             </thead>
             <tbody>
@@ -1009,7 +1009,7 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
          ======================================================================= -->
     <section class="section" id="escalation">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <div class="section-tag">ENGINEERING PROTOCOL</div>
           <h2 class="section-title">Escalate to User, Do Not Guess</h2>
           <p class="section-subtitle">
@@ -1018,50 +1018,50 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
         </div>
 
         <div class="gw-rules-grid">
-          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+          <div class="gw-rule-column warning">
             <div class="gw-rule-header">
               <div class="gw-rule-heading">
-                <span style="color: var(--accent-amber);">⚠</span>
+                <span class="gw-warning-icon">⚠</span>
                 <span>Unknown Endpoint Paging Contract</span>
               </div>
             </div>
-            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+            <p class="gw-warning-desc">
               If the endpoint's paging contract is unknown (zero- vs one-based, custom parameter names like <code>offset</code> vs <code>page</code>), pause and confirm with the user rather than guessing wire formats.
             </p>
           </div>
 
-          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+          <div class="gw-rule-column warning">
             <div class="gw-rule-header">
               <div class="gw-rule-heading">
-                <span style="color: var(--accent-amber);">⚠</span>
+                <span class="gw-warning-icon">⚠</span>
                 <span>Unavailable Total Row Count</span>
               </div>
             </div>
-            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+            <p class="gw-warning-desc">
               If the endpoint cannot return a total and the user asked for an exact page count, inform them that the grid will say "of many", and why. Never fake client-side totals.
             </p>
           </div>
 
-          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+          <div class="gw-rule-column warning">
             <div class="gw-rule-header">
               <div class="gw-rule-heading">
-                <span style="color: var(--accent-amber);">⚠</span>
+                <span class="gw-warning-icon">⚠</span>
                 <span>Deliberately Closed Features</span>
               </div>
             </div>
-            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+            <p class="gw-warning-desc">
               If a requirement demands a feature the package refuses on purpose (e.g. expandable rows combined with windowing, external runtime dependencies), name the architectural refusal and offer the nearest clean alternative.
             </p>
           </div>
 
-          <div class="gw-rule-column" style="border-top: 4px solid var(--accent-amber);">
+          <div class="gw-rule-column warning">
             <div class="gw-rule-header">
               <div class="gw-rule-heading">
-                <span style="color: var(--accent-amber);">⚠</span>
+                <span class="gw-warning-icon">⚠</span>
                 <span>Missing Add-on Extension Seam</span>
               </div>
             </div>
-            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+            <p class="gw-warning-desc">
               If a required seam does not exist in the add-on contract, that is a gap in the package. Never reach into the grid's internal DOM.
             </p>
           </div>
@@ -1096,12 +1096,13 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
           <li><a href="https://www.npmjs.com/package/apsw-gridwright" target="_blank" rel="noopener">npm: apsw-gridwright</a></li>
           <li><a href="https://github.com/yaotzin1/apsw-gridwright" target="_blank" rel="noopener">GitHub: apsw-gridwright</a></li>
           <li><a href="https://www.npmjs.com/package/apsw-gridwright-mui" target="_blank" rel="noopener">npm: apsw-gridwright-mui (MUI views)</a></li>
+          <li><a href="https://www.npmjs.com/package/apsw-mui-excel-filter" target="_blank" rel="noopener">npm: apsw-mui-excel-filter (Excel AutoFilter)</a></li>
         </ul>
       </div>
 
       <div class="footer-contact-col">
         <h3 class="footer-heading">Author &amp; Architecture</h3>
-        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">
+        <p class="footer-office-item">
           Piotr Solarz-Wnęk (19+ years experience)<br>
           Zielona Góra, Poland
         </p>
@@ -1118,6 +1119,6 @@ screen.getAllByRole(<span class="c-str">'checkbox'</span>, { name: <span class="
   <div id="gw-toast" class="gw-toast" role="status" aria-live="polite"></div>
 
   <!-- Standalone Controller (Theme, Language, Table & REST telemetry) -->
-  <script src="js/gridwright-examples.js?v=20261002"></script>
+  <script src="js/gridwright-examples.js?v=20261016"></script>
 </body>
 </html>
