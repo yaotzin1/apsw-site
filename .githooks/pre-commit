@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# Runs the blocking gates from workflow.ai.yml before a commit is created.
+#
+# Install once per clone:  npm run hooks:install   (node scripts/install-hooks.mjs)
+#
+# Every gate is pure Node with no dependencies, so all of them always run. `npm run verify` runs the
+# same list, and CI runs it on every pull request and push to main.
+
+set -e
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+RESET='\033[0m'
+
+fail() {
+    printf "%b\n" "${RED}pre-commit: $1${RESET}"
+    printf "%b\n" "${RED}Commit refused. Fix it, or use --no-verify only if you can say why.${RESET}"
+    exit 1
+}
+
+pass() { printf "%b\n" "${GREEN}  ok${RESET}  $1"; }
+
+printf "%s\n" "pre-commit: blocking gates from workflow.ai.yml"
+
+node scripts/validate-skills.mjs >/dev/null 2>&1 \
+    || fail "skill validation failed -- run: node scripts/validate-skills.mjs"
+pass "skills valid"
+
+node scripts/sync-claude-skills.mjs --check >/dev/null 2>&1 \
+    || fail ".claude/skills is stale -- run: npm run sync"
+pass "claude skill pointers in sync"
+
+node scripts/sync-agent-docs.mjs --check >/dev/null 2>&1 \
+    || fail "AGENTS.md, GEMINI.md or the cycle file is stale -- run: npm run sync"
+pass "agent docs in sync"
+
+node scripts/check-workflow.mjs >/dev/null 2>&1 \
+    || fail "workflow.ai.yml claims something the repository does not do -- run: node scripts/check-workflow.mjs"
+pass "workflow claims match the repository"
+
+# Includes php -l contact.php when php is on PATH; CI always has it.
+node scripts/check-site.mjs >/dev/null 2>&1 \
+    || fail "site integrity check failed -- run: node scripts/check-site.mjs"
+pass "site integrity (i18n keys, anchors, JSON, sitemap, contact.php)"
+
+printf "%b\n" "${GREEN}pre-commit: gates passed${RESET}"

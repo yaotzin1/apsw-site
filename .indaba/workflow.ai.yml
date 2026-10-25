@@ -1,0 +1,24 @@
+version: "1.0"
+name: "apsw-site-smoke"
+
+# Indaba engine smoke workflow: the same gates as `npm run verify`, one step each, so a failure names
+# the gate. All pure Node; php -l runs inside check-site when php is on PATH.
+steps:
+  - id: "instructions"
+    runner: "shell"
+    commands:
+      - "node scripts/validate-skills.mjs"
+      - "node scripts/sync-claude-skills.mjs --check"
+      - "node scripts/sync-agent-docs.mjs --check"
+
+  - id: "workflow-claims"
+    runner: "shell"
+    depends_on: ["instructions"]
+    commands:
+      - "node scripts/check-workflow.mjs"
+
+  - id: "site"
+    runner: "shell"
+    depends_on: ["workflow-claims"]
+    commands:
+      - "node scripts/check-site.mjs"

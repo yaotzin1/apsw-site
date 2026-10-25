@@ -14,11 +14,9 @@
 
 ## 4. End-to-End QA Testing (Playwright)
 * Critical user journeys (agency onboarding, prospect claims, conveyor belt UX, dynamic role switching) MUST have end-to-end browser test coverage using **Playwright** under `web/e2e/*.spec.ts`.
-* See [`.agents/rules/qa.md`](file:///D:/projects/private/Brandmonitor/.agents/rules/qa.md) and [`.agents/workflows/qa_e2e.md`](file:///D:/projects/private/Brandmonitor/.agents/workflows/qa_e2e.md).
+* See `.agents/rules/qa.md` and `.agents/workflows/qa_e2e.md`.
 
 ## 5. Pre-Submission Verification Rule
 Before reporting any task completed, you MUST execute and verify:
-1. `npm run type-check` (in `/web`)
-2. `npm run lint` (in `/web`)
-3. `bin/phpunit` (in `/api` or Docker container)
-4. Playwright E2E specs for modified user flows (`npx playwright test` in `/web`)
+1. `npm run verify` (repository root)
+2. The manual checks in `.agents/workflows/verification.md` for the changed section

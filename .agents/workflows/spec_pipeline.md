@@ -41,5 +41,5 @@ Execute version-controlled, spec-driven development using the Spec-Kit 6-step li
 ### Step 6: `/speckit.implement`
 * Create a feature branch (`.agents/workflows/branching.md`).
 * Execute tasks from `tasks.md` sequentially.
-* Execute `.agents/workflows/verification.md` (`npm run type-check`, `npm run lint`, `bin/phpunit`).
+* Execute `.agents/workflows/verification.md` (`npm run verify`).
 * Merge branch into `main` (Trunk).

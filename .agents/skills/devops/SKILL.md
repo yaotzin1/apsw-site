@@ -16,6 +16,6 @@ Your mission is to maintain a zero-ops, highly cost-effective, zero-downtime pro
    - Configure FrankenPHP worker mode for high-throughput async I/O.
    - Post-deployment: execute `messenger:stop` to gracefully flush worker RAM without dropping queued jobs.
 3. **CI/CD Pipeline Security & Integrity:**
-   - Maintain GitHub Actions workflow ([`.github/workflows/deploy.yml`](file:///D:/projects/private/Brandmonitor/.github/workflows/deploy.yml)).
+   - Maintain GitHub Actions workflow (`.github/workflows/ci.yml`).
    - Ensure automated test setup runs `lexik:jwt:generate-keypair` and `doctrine:migrations:migrate -n --env=test` inside CI containers.
-4. **Off-Site Automated Backups:** Ensure daily PostgreSQL database backups run via [`scripts/backup-db.sh`](file:///D:/projects/private/Brandmonitor/scripts/backup-db.sh) with compressed storage and Healthchecks monitoring ping verification.
+4. **Off-Site Automated Backups:** Ensure daily PostgreSQL database backups run via `scripts/backup-db.sh` with compressed storage and Healthchecks monitoring ping verification.

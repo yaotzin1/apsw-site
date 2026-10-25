@@ -22,5 +22,5 @@ Your goal is to transform complex, monolithic, or duplicated code into clean, mo
    - Deconstruct monolithic React dashboard pages into focused functional sub-components under `web/src/components/`.
    - Standardize component styling using the global MUI Theme instead of scattered inline `sx` objects.
 5. **Safety Gate (Green Test Guarantee):**
-   - BEFORE refactoring: verify all tests are green (`bin/phpunit` and `npm run type-check`).
+   - BEFORE refactoring: verify all checks are green (`npm run verify`).
    - AFTER refactoring: execute verification commands to prove zero behavioral regressions.

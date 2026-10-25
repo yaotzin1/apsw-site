@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Everything `npm run verify` checks: the agent instruction set, the workflow's claims about the
+  # repository, and the site itself (i18n keys in both languages, anchors, agent.json, JSON-LD,
+  # sitemap.xml, contact.php defences). Nothing to install: the scripts are dependency-free.
+  verify:
+    name: Verify site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # contact.php runs on PHP 8.2 in production (Dockerfile). check-site.mjs runs php -l when php
+      # is on PATH; it is installed here so the lint never silently skips in CI.
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          tools: none
+          coverage: none
+
+      - name: php -l contact.php
+        run: php -l contact.php
+
+      - name: npm run verify
+        run: npm run verify
+
+  # Every commit in the pull request declares its track. The same script as the commit-msg hook, so
+  # a commit made with --no-verify fails here instead. Skipped on a push to main, where a squash has
+  # replaced the commits; a skipped required check counts as passing.
+  tracks:
+    name: Track declared
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Commits declare their track
+        run: node scripts/check-track.mjs --range ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}

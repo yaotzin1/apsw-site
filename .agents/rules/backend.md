@@ -1,5 +1,7 @@
 # Backend Guidelines (Symfony 8.1 & PHP 8.5.8+)
 
+> **Inherited from another project** (a Symfony + React + PostgreSQL application). Nothing in this file describes apsw-site, which has no `api/`, `web/`, database, PHPUnit or Playwright. It is kept for reference only; `workflow.ai.yml` and `npm run verify` govern this repository.
+
 ## 1. Symfony & PHP Requirements
 * Minimum PHP version: **8.5.8+**. Core Symfony packages: **8.1.***.
 * Use strict PHP features: `declare(strict_types=1);`, enums, typed properties, constructor promotion, readonly classes.
