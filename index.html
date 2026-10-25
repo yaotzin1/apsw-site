@@ -119,6 +119,24 @@
         "author": { "@id": "https://apsw.pl/#founder" }
       },
       {
+        "@type": "SoftwareApplication",
+        "@id": "https://apsw.pl/#indaba",
+        "name": "Indaba",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux (Node 22+)",
+        "softwareVersion": "0.1.0-alpha.2",
+        "license": "https://opensource.org/licenses/MIT",
+        "description": "Deterministic orchestration, debate and observability engine for AI agents: gated workflow DAGs, multi-agent cross-examination to consensus, git-worktree isolation and OpenTelemetry traces with token and cost accounting.",
+        "url": "https://yaotzin1.github.io/indaba/",
+        "codeRepository": "https://github.com/yaotzin1/indaba",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "author": { "@id": "https://apsw.pl/#founder" }
+      },
+      {
         "@type": "HowTo",
         "name": "Spec-Kit Methodology: Deterministic AI Software Engineering",
         "description": "A 4-stage specification-first workflow for building robust, enterprise-grade AI applications without AI slop.",
@@ -172,7 +190,7 @@
         <ul class="nav-menu">
           <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
           <li><a href="#agentic-dev" class="nav-link" data-i18n="nav.agentic">Agentic Dev</a></li>
-          <li><a href="#gridwright" class="nav-link" data-i18n="nav.gridwright">Gridwright</a></li>
+          <li><a href="#gridwright" class="nav-link" data-i18n="nav.labs">APSW Labs</a></li>
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
           <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
           <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
@@ -442,7 +460,7 @@
     <section class="section" id="gridwright">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag emerald" data-i18n="gridwright.tag">Open-Source Product</span>
+          <span class="section-tag emerald" data-i18n="gridwright.tag">APSW Labs · Open Source</span>
           <h2 class="section-title" data-i18n-html="gridwright.title_html">Gridwright: <br>the React data grid that does not care where your rows live</h2>
           <p class="section-subtitle" data-i18n-html="gridwright.subtitle_html">
             Hand it an array today and a paginating API tomorrow: swap <code>data</code> for <code>dataSource</code> and the columns and add-ons stay exactly as they were. Tree data, grouping, Excel export and ten million rows are in the free MIT package.
@@ -527,6 +545,65 @@
             <span class="engagement-badge featured-tag" data-i18n="gridwright.tier_pro_badge">PRO · COMING</span>
             <p data-i18n="gridwright.tier_pro_desc">Additional add-ons, priority support with a response commitment, and help moving an existing grid onto Gridwright. Not priced yet.</p>
             <a href="#contact" class="btn btn-primary btn-sm" data-i18n="gridwright.tier_pro_btn">Tell Me What You Need</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         APSW LABS PRODUCT: INDABA (multi-agent workflow engine)
+         ======================================================================= -->
+    <section class="section" id="indaba">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag emerald" data-i18n="indaba.tag">APSW Labs · Open Source</span>
+          <h2 class="section-title" data-i18n-html="indaba.title_html">Indaba: <br>let your agents argue, ship what they agree on</h2>
+          <p class="section-subtitle" data-i18n="indaba.subtitle">
+            A deterministic orchestration, debate and observability engine for AI agents. The engine, not a model, decides what runs next: a declared graph of steps behind quality gates, agents that cross-examine each other until they reach consensus, and a trace of what every step cost.
+          </p>
+        </div>
+
+        <div class="product-grid product-grid--reverse">
+          <a class="product-shot" href="https://yaotzin1.github.io/indaba/" target="_blank" rel="noopener noreferrer" data-i18n-aria="indaba.shot_aria" aria-label="Open the Indaba documentation">
+            <img src="assets/products/indaba/indaba-web-view-light.webp" class="product-shot-light" width="1108" height="744" loading="lazy" alt="Indaba web view of a finished run: four steps (rfc, code, verify, review) as a graph, with the retry path from verify back to code and a table of each step's tries and times." data-i18n-alt="indaba.shot_alt">
+            <img src="assets/products/indaba/indaba-web-view-dark.webp" class="product-shot-dark" width="1108" height="744" loading="lazy" alt="Indaba web view of a finished run: four steps (rfc, code, verify, review) as a graph, with the retry path from verify back to code and a table of each step's tries and times." data-i18n-alt="indaba.shot_alt">
+          </a>
+
+          <div class="product-copy">
+            <div class="product-release-row">
+              <img src="assets/products/indaba/indaba-mark.svg" alt="" width="40" height="40" class="product-mark">
+              <div>
+                <span class="product-name">indaba</span>
+                <span class="product-release" data-i18n="indaba.release">Preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+</span>
+              </div>
+            </div>
+
+            <pre class="product-install" aria-label="Run command"><code>npx indaba@next validate workflow.ai.yml</code></pre>
+
+            <ul class="product-points">
+              <li>
+                <strong data-i18n="indaba.p1_title">Deterministic, gated pipelines</strong>
+                <span data-i18n="indaba.p1_desc">A workflow file is a graph of steps with quality gates and filesystem guards. Verification is plain commands whose exit codes decide pass or fail, and a failed step is retried with only the latest failure.</span>
+              </li>
+              <li>
+                <strong data-i18n="indaba.p2_title">A council, not a single agent</strong>
+                <span data-i18n="indaba.p2_desc">Roles backed by different engines review the same work and answer each other until they reach consensus under quorum rules, or a human rules on the transcript.</span>
+              </li>
+              <li>
+                <strong data-i18n="indaba.p3_title">Any runner behind one contract</strong>
+                <span data-i18n="indaba.p3_desc">Claude Code, Codex, Gemini, Cursor, Antigravity, models over OpenRouter, or a shell command. Implementation runs in a disposable git worktree and leaves as a patch.</span>
+              </li>
+              <li>
+                <strong data-i18n="indaba.p4_title">Every step is a trace</strong>
+                <span data-i18n="indaba.p4_desc">OpenTelemetry GenAI spans with token counts and cost where the provider reports it, followed live in the terminal or in a local web view.</span>
+              </li>
+            </ul>
+
+            <div class="product-cta-group">
+              <a href="https://yaotzin1.github.io/indaba/" class="btn btn-emerald" target="_blank" rel="noopener noreferrer" data-i18n="indaba.cta_docs">Read the Documentation</a>
+              <a href="https://github.com/yaotzin1/indaba" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <p class="product-note" data-i18n="indaba.note">A preview: the API is not stable below 1.0. Gridwright is built with it.</p>
           </div>
         </div>
       </div>
@@ -1206,6 +1283,7 @@
             <li><a href="#engagement" data-i18n="nav.engagement">Engagement Models</a></li>
             <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
             <li><a href="#gridwright" data-i18n="nav.gridwright">Gridwright Data Grid</a></li>
+            <li><a href="#indaba" data-i18n="nav.indaba">Indaba Agent Engine</a></li>
             <li><a href="#assurance" data-i18n="assurance.tag">Delivery Assurance</a></li>
           </ul>
         </div>

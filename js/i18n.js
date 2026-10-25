@@ -13,7 +13,9 @@ const APSW_TRANSLATIONS = {
       brand_sub: "AI NATIVE ARCHITECTURE",
       speckit: "Spec-Kit AI",
       agentic: "Agentic Dev",
-      gridwright: "Gridwright",
+      gridwright: "Gridwright Data Grid",
+      indaba: "Indaba Agent Engine",
+      labs: "APSW Labs",
       services: "Services",
       engagement: "Engagements",
       track_record: "Case Studies",
@@ -94,7 +96,7 @@ const APSW_TRANSLATIONS = {
       swarm_log7_html: `✓ SYNTHESIS_COMPLETE: Production branch ready for pull request.`
     },
     gridwright: {
-      tag: "Open-Source Product",
+      tag: "APSW Labs · Open Source",
       title_html: `Gridwright: <br>the React data grid that does not care where your rows live`,
       subtitle_html: `Hand it an array today and a paginating API tomorrow: swap <code>data</code> for <code>dataSource</code> and the columns and add-ons stay exactly as they were. Tree data, grouping, Excel export and ten million rows are in the free MIT package.`,
       release: "Latest release: v0.22.1 · 24 Oct 2026",
@@ -122,6 +124,24 @@ const APSW_TRANSLATIONS = {
       tier_pro_badge: "PRO · COMING",
       tier_pro_desc: "Additional add-ons, priority support with a response commitment, and help moving an existing grid onto Gridwright. Not priced yet.",
       tier_pro_btn: "Tell Me What You Need"
+    },
+    indaba: {
+      tag: "APSW Labs · Open Source",
+      title_html: `Indaba: <br>let your agents argue, ship what they agree on`,
+      subtitle: "A deterministic orchestration, debate and observability engine for AI agents. The engine, not a model, decides what runs next: a declared graph of steps behind quality gates, agents that cross-examine each other until they reach consensus, and a trace of what every step cost.",
+      release: "Preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+",
+      p1_title: "Deterministic, gated pipelines",
+      p1_desc: "A workflow file is a graph of steps with quality gates and filesystem guards. Verification is plain commands whose exit codes decide pass or fail, and a failed step is retried with only the latest failure.",
+      p2_title: "A council, not a single agent",
+      p2_desc: "Roles backed by different engines review the same work and answer each other until they reach consensus under quorum rules, or a human rules on the transcript.",
+      p3_title: "Any runner behind one contract",
+      p3_desc: "Claude Code, Codex, Gemini, Cursor, Antigravity, models over OpenRouter, or a shell command. Implementation runs in a disposable git worktree and leaves as a patch.",
+      p4_title: "Every step is a trace",
+      p4_desc: "OpenTelemetry GenAI spans with token counts and cost where the provider reports it, followed live in the terminal or in a local web view.",
+      cta_docs: "Read the Documentation",
+      note: "A preview: the API is not stable below 1.0. Gridwright is built with it.",
+      shot_aria: "Open the Indaba documentation",
+      shot_alt: "Indaba web view of a finished run: four steps (rfc, code, verify, review) as a graph, with the retry path from verify back to code and a table of each step's tries and times."
     },
     assurance: {
       tag: "Delivery Assurance",
@@ -346,7 +366,9 @@ const APSW_TRANSLATIONS = {
       brand_sub: "ARCHITEKTURA AI-NATIVE",
       speckit: "Metodyka Spec-Kit",
       agentic: "Agentic Dev",
-      gridwright: "Gridwright",
+      gridwright: "Tabela danych Gridwright",
+      indaba: "Silnik agentów Indaba",
+      labs: "APSW Labs",
       services: "Usługi",
       engagement: "Współpraca",
       track_record: "Projekty",
@@ -427,7 +449,7 @@ const APSW_TRANSLATIONS = {
       swarm_log7_html: `✓ SYNTEZA_ZAKOŃCZONA: Gałąź produkcyjna gotowa do pull requesta.`
     },
     gridwright: {
-      tag: "Produkt Open Source",
+      tag: "APSW Labs · Open Source",
       title_html: `Gridwright: <br>tabela danych dla Reacta, której nie obchodzi, skąd pochodzą wiersze`,
       subtitle_html: `Dziś przekaż jej tablicę, jutro stronicowane API: zamień <code>data</code> na <code>dataSource</code>, a kolumny i dodatki zostają bez zmian. Dane drzewiaste, grupowanie, eksport do Excela i dziesięć milionów wierszy są w darmowym pakiecie MIT.`,
       release: "Najnowsze wydanie: v0.22.1 · 24 paź 2026",
@@ -455,6 +477,24 @@ const APSW_TRANSLATIONS = {
       tier_pro_badge: "PRO · WKRÓTCE",
       tier_pro_desc: "Dodatkowe dodatki, priorytetowe wsparcie z gwarantowanym czasem odpowiedzi i pomoc w przeniesieniu istniejącej tabeli na Gridwright. Cena jeszcze nieustalona.",
       tier_pro_btn: "Napisz, czego potrzebujesz"
+    },
+    indaba: {
+      tag: "APSW Labs · Open Source",
+      title_html: `Indaba: <br>niech agenci się spierają, wdrażaj to, na co się zgodzą`,
+      subtitle: "Deterministyczny silnik orkiestracji, debaty i obserwowalności dla agentów AI. To silnik, a nie model, decyduje, co uruchomić dalej: zadeklarowany graf kroków za bramkami jakości, agenci, którzy wzajemnie się weryfikują aż do konsensusu, i ślad tego, ile kosztował każdy krok.",
+      release: "Wersja preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+",
+      p1_title: "Deterministyczne potoki z bramkami",
+      p1_desc: "Plik workflow to graf kroków z bramkami jakości i strażnikami systemu plików. Weryfikacja to zwykłe polecenia, których kod wyjścia decyduje o wyniku, a nieudany krok jest ponawiany tylko z ostatnim błędem.",
+      p2_title: "Rada, a nie pojedynczy agent",
+      p2_desc: "Role obsługiwane przez różne silniki oceniają tę samą pracę i odpowiadają sobie nawzajem, aż osiągną konsensus zgodnie z regułami kworum, albo człowiek rozstrzyga na podstawie zapisu rozmowy.",
+      p3_title: "Dowolny runner za jednym kontraktem",
+      p3_desc: "Claude Code, Codex, Gemini, Cursor, Antigravity, modele przez OpenRouter albo polecenie powłoki. Implementacja działa w jednorazowym git worktree i wychodzi jako patch.",
+      p4_title: "Każdy krok to ślad",
+      p4_desc: "Spany OpenTelemetry GenAI z liczbą tokenów i kosztem, gdy dostawca go podaje, śledzone na żywo w terminalu albo w lokalnym widoku webowym.",
+      cta_docs: "Przeczytaj dokumentację",
+      note: "Wersja preview: API nie jest stabilne przed 1.0. Gridwright powstaje z jej pomocą.",
+      shot_aria: "Otwórz dokumentację Indaba",
+      shot_alt: "Widok webowy Indaba po zakończonym uruchomieniu: cztery kroki (rfc, code, verify, review) jako graf, ze ścieżką ponowienia z verify do code i tabelą prób i czasów każdego kroku."
     },
     assurance: {
       tag: "Gwarancja Jakości Dostarczania",

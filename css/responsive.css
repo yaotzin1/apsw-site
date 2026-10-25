@@ -62,8 +62,14 @@
     gap: 32px;
   }
 
-  .product-grid {
+  .product-grid,
+  .product-grid--reverse {
     grid-template-columns: 1fr;
+  }
+
+  /* On one column the copy reads first, then the screenshot */
+  .product-grid--reverse .product-shot {
+    order: 2;
   }
 
   .product-facts,

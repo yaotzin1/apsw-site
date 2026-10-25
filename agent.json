@@ -47,6 +47,7 @@
     {
       "id": "apsw-gridwright",
       "name": "Gridwright",
+      "product_line": "APSW Labs",
       "package": "apsw-gridwright",
       "latest_version": "0.22.1",
       "released": "2026-10-24",
@@ -78,6 +79,32 @@
         "playground": "https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html",
         "docs": "https://yaotzin1.github.io/apsw-gridwright/docs/getting-started.html",
         "page": "https://apsw.pl/#gridwright"
+      }
+    }
+,
+    {
+      "id": "indaba",
+      "name": "Indaba",
+      "product_line": "APSW Labs",
+      "package": "indaba",
+      "latest_version": "0.1.0-alpha.2",
+      "status": "preview; API not stable below 1.0",
+      "description": "Deterministic orchestration, debate and observability engine for AI agents: gated workflow DAGs, multi-agent cross-examination to consensus, git-worktree isolation, OpenTelemetry GenAI traces with token and cost accounting.",
+      "license": "MIT",
+      "runtime": "Node 22+ (Windows, macOS, Linux)",
+      "runners": [
+        "claude-code",
+        "codex",
+        "gemini",
+        "cursor",
+        "antigravity",
+        "openrouter",
+        "shell"
+      ],
+      "links": {
+        "docs": "https://yaotzin1.github.io/indaba/",
+        "source": "https://github.com/yaotzin1/indaba",
+        "page": "https://apsw.pl/#indaba"
       }
     }
   ],

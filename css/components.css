@@ -1260,3 +1260,19 @@
   gap: 12px;
   margin-top: 32px;
 }
+
+.product-grid--reverse {
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+}
+
+.product-note {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Grid items default to min-width: auto, so a long install command would widen the column */
+.product-copy,
+.product-shot {
+  min-width: 0;
+}

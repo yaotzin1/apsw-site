@@ -68,8 +68,11 @@ C. ENTERPRISE SOFTWARE ARCHITECTURE
 - High-throughput CQRS, Event-Driven Architectures, and Multi-Tenant database isolation.
 
 =============================================================================
-4. OPEN-SOURCE PRODUCT: GRIDWRIGHT (apsw-gridwright)
+4. APSW LABS: OPEN-SOURCE PRODUCTS
 =============================================================================
+APSW Labs is the product line of APSW: Gridwright and Indaba, both MIT licensed.
+
+A. GRIDWRIGHT (apsw-gridwright) - https://apsw.pl/#gridwright
 Gridwright is a React data grid published on npm under the MIT licence, built on a headless,
 framework-agnostic engine. Latest release: 0.22.1 (2026-10-24).
 
@@ -92,7 +95,26 @@ framework-agnostic engine. Latest release: 0.22.1 (2026-10-24).
 - Links: https://www.npmjs.com/package/apsw-gridwright | https://github.com/yaotzin1/apsw-gridwright |
   https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
 
-Delivery assurance (https://apsw.pl/#assurance): Gridwright is built by one architect with the
+B. INDABA - https://apsw.pl/#indaba
+Indaba is an open-source, deterministic orchestration, debate and observability engine for AI
+agents, written in TypeScript for Node 22 and newer, running on Windows, macOS and Linux. The name
+is Zulu for a gathering convened to resolve a hard matter by reaching consensus.
+- Status: preview. Newest published version 0.1.0-alpha.2 (`npx indaba@next`); the API is not
+  stable below 1.0.
+- Deterministic pipelines: a workflow file is a DAG of steps with quality gates, filesystem guards
+  and artifact handoffs; the engine, not a model, decides what runs next. Verification is plain
+  commands whose exit codes decide pass or fail; a failed step is retried with only the last failure.
+- Multi-agent cross-examination: roles backed by different engines (Claude Code, Codex, Gemini,
+  Cursor, Antigravity, models over OpenRouter) review each other through a blackboard with a
+  consensus arbiter, quorum rules and ping-pong detection.
+- Isolation: implementation steps run in an ephemeral git worktree and leave as a patch artifact.
+- Observability: every task is a trace; steps and LLM or tool calls are spans with OpenTelemetry
+  GenAI attributes, token counts and USD cost where known. Terminal dashboard and local web view.
+- Packages: indaba (CLI), @indaba/core, @indaba/engine, @indaba/runners, optional @indaba/tui and
+  @indaba/server.
+- Links: https://yaotzin1.github.io/indaba/ | https://github.com/yaotzin1/indaba
+
+C. DELIVERY ASSURANCE (https://apsw.pl/#assurance): Gridwright is built by one architect with the
 Indaba engine and coding agents under a single workflow.ai.yml that outranks every other
 instruction. AGENTS.md, CLAUDE.md, GEMINI.md and skill pointers are generated from it; each rule is
 marked enforced (a hook, CI job, lint rule or test fails) or guidance; every commit declares its
