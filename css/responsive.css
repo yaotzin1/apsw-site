@@ -3,6 +3,32 @@
    Mobile-First & Fluid Layout Optimizations
    ========================================================================== */
 
+/* Eight primary links no longer fit beside the language, theme and CTA controls below this width,
+   so the menu collapses behind the toggle earlier than the 768px layout switch. */
+@media (max-width: 1180px) {
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg-surface-1);
+    border-bottom: 1px solid var(--border-medium);
+    flex-direction: column;
+    padding: 24px;
+    gap: 18px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-menu.mobile-open {
+    display: flex;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -34,6 +60,15 @@
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-facts,
+  #assurance .services-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -87,6 +122,12 @@
   }
 
   .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-facts,
+  .product-tiers,
+  #assurance .services-grid {
     grid-template-columns: 1fr;
   }
 
