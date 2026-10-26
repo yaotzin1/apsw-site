@@ -190,7 +190,7 @@
         <ul class="nav-menu">
           <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
           <li><a href="#agentic-dev" class="nav-link" data-i18n="nav.agentic">Agentic Dev</a></li>
-          <li><a href="#gridwright" class="nav-link" data-i18n="nav.labs">APSW Labs</a></li>
+          <li><a href="#labs" class="nav-link" data-i18n="nav.labs">APSW Labs</a></li>
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
           <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
           <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
@@ -457,11 +457,23 @@
     <!-- =======================================================================
          OPEN-SOURCE PRODUCT: GRIDWRIGHT (apsw-gridwright)
          ======================================================================= -->
-    <section class="section" id="gridwright">
+    <section class="section" id="labs">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag emerald" data-i18n="gridwright.tag">APSW Labs · Open Source</span>
-          <h2 class="section-title" data-i18n-html="gridwright.title_html">Gridwright: <br>the React data grid that does not care where your rows live</h2>
+          <span class="section-tag emerald" data-i18n="labs.tag">APSW Labs · Open Source</span>
+          <h2 class="section-title" data-i18n="labs.title">Two Products Built the Way I Build for Clients</h2>
+          <p class="section-subtitle" data-i18n="labs.subtitle">Open-source work from APSW Labs. Gridwright is the data grid; Indaba is the engine it was built with.</p>
+        </div>
+
+        <!-- Both panels stay in the HTML; without JS they simply stack. -->
+        <div class="labs-tabs" role="tablist" data-i18n-aria="labs.tabs_aria" aria-label="APSW Labs products">
+          <button type="button" role="tab" class="labs-tab" id="tab-gridwright" aria-controls="gridwright" aria-selected="true" data-labs-tab="gridwright">Gridwright</button>
+          <button type="button" role="tab" class="labs-tab" id="tab-indaba" aria-controls="indaba" aria-selected="false" tabindex="-1" data-labs-tab="indaba">Indaba</button>
+        </div>
+
+      <div class="labs-panel" id="gridwright" role="tabpanel" aria-labelledby="tab-gridwright">
+        <div class="section-header">
+          <h3 class="section-title" data-i18n-html="gridwright.title_html">Gridwright: <br>the React data grid that does not care where your rows live</h3>
           <p class="section-subtitle" data-i18n-html="gridwright.subtitle_html">
             Hand it an array today and a paginating API tomorrow: swap <code>data</code> for <code>dataSource</code> and the columns and add-ons stay exactly as they were. Tree data, grouping, Excel export and ten million rows are in the free MIT package.
           </p>
@@ -548,16 +560,11 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- =======================================================================
-         APSW LABS PRODUCT: INDABA (multi-agent workflow engine)
-         ======================================================================= -->
-    <section class="section" id="indaba">
-      <div class="container">
+      <!-- APSW LABS PRODUCT: INDABA (multi-agent workflow engine) -->
+      <div class="labs-panel" id="indaba" role="tabpanel" aria-labelledby="tab-indaba">
         <div class="section-header">
-          <span class="section-tag emerald" data-i18n="indaba.tag">APSW Labs · Open Source</span>
-          <h2 class="section-title" data-i18n-html="indaba.title_html">Indaba: <br>let your agents argue, ship what they agree on</h2>
+          <h3 class="section-title" data-i18n-html="indaba.title_html">Indaba: <br>let your agents argue, ship what they agree on</h3>
           <p class="section-subtitle" data-i18n="indaba.subtitle">
             A deterministic orchestration, debate and observability engine for AI agents. The engine, not a model, decides what runs next: a declared graph of steps behind quality gates, agents that cross-examine each other until they reach consensus, and a trace of what every step cost.
           </p>
@@ -606,6 +613,7 @@
             <p class="product-note" data-i18n="indaba.note">A preview: the API is not stable below 1.0. Gridwright is built with it.</p>
           </div>
         </div>
+      </div>
       </div>
     </section>
 

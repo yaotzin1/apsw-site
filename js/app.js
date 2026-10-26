@@ -201,4 +201,49 @@ curl -s https://apsw.pl/agent.json | jq .services
       }
     });
   }
+
+  // 8. APSW Labs tabs (Gridwright | Indaba). Both panels are in the HTML; this
+  // only hides the inactive one, so crawlers and no-JS visitors see both.
+  const labsTabs = Array.from(document.querySelectorAll('[data-labs-tab]'));
+  if (labsTabs.length) {
+    const labsSection = document.getElementById('labs');
+    const showLabsTab = (name, focus) => {
+      labsTabs.forEach(tab => {
+        const on = tab.getAttribute('data-labs-tab') === name;
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        tab.tabIndex = on ? 0 : -1;
+        const panel = document.getElementById(tab.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !on;
+        if (on && focus) tab.focus();
+      });
+    };
+    labsTabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => showLabsTab(tab.getAttribute('data-labs-tab')));
+      tab.addEventListener('keydown', e => {
+        const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (e.key === 'Home' || e.key === 'End') {
+          e.preventDefault();
+          showLabsTab(labsTabs[e.key === 'Home' ? 0 : labsTabs.length - 1].getAttribute('data-labs-tab'), true);
+        } else if (step) {
+          e.preventDefault();
+          showLabsTab(labsTabs[(i + step + labsTabs.length) % labsTabs.length].getAttribute('data-labs-tab'), true);
+        }
+      });
+    });
+
+    // Deep links (#gridwright, #indaba, footer/nav links) open the right tab.
+    const openFromHash = () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const known = labsTabs.map(t => t.getAttribute('data-labs-tab'));
+      if (known.includes(id)) {
+        showLabsTab(id);
+        if (labsSection) labsSection.scrollIntoView();
+      } else if (!labsTabs.some(t => t.getAttribute('aria-selected') === 'true' && !document.getElementById(t.getAttribute('aria-controls')).hidden)) {
+        showLabsTab(known[0]);
+      }
+    };
+    showLabsTab(labsTabs[0].getAttribute('data-labs-tab'));
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+  }
 });
