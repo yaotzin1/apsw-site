@@ -201,14 +201,8 @@ sequenceDiagram
 - **Lead Skills:** `qa`, `debugger`, `pixel`
 - **Verification Commands:**
   ```bash
-  # Frontend Type-Check & Linting
-  cd web && npm run type-check && npm run lint
-
-  # Backend PHPUnit Suite
-  cd api && bin/phpunit
-
-  # Skills Security & Syntax Validator
-  node scripts/validate-skills.mjs
+  # Every gate: skills, generated agent docs, workflow claims, site integrity (i18n, anchors, JSON, php -l)
+  npm run verify
   ```
 - **On Failure (Self-Healing Loop):** Intercepts test/build errors, invokes `debugger` & `qa` to generate targeted remediation tasks in `tasks.md`, and loops back to implementation (up to 3 cycles).
 

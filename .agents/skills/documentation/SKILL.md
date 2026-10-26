@@ -21,7 +21,7 @@ Every architectural feature implemented under `specs/<feature-name>/` MUST conta
 | **`research.md`** | **Technical Decisions & Trade-offs**: CENTS strategic moat analysis, architectural decision records (ADRs), alternative trade-off matrices, heuristic flowcharts, and memory isolation under FrankenPHP worker mode. |
 | **`openapi.yaml`** | **Immutable REST Contract**: Strict OpenAPI 3.1.0 specification defining all endpoint paths, request bodies, query parameters, security schemes (`BearerAuth`), and standard response envelopes (`{"status": string, "message": string, "data": mixed}`). |
 | **`asyncapi.yaml`** | **Immutable Real-Time Contract**: Strict AsyncAPI 2.6.0 specification defining Mercure SSE channel topics (`/api/brands/{id}`, `/api/prospects/{id}`) and structured event message payloads (`SYNC_COMPLETE`, `PROSPECT_UPDATED`, `CRISIS_ALERT`). |
-| **`review.md`** | **Verification & Sign-Off**: 7-Dimension Self-Review audit report ([`.agents/rules/review.md`](file:///D:/projects/private/Brandmonitor/.agents/rules/review.md)), empirical test execution metrics table (PHPUnit, Vitest, TypeScript, ESLint), and PR release notes. |
+| **`review.md`** | **Verification & Sign-Off**: 7-Dimension Self-Review audit report (`.agents/rules/review.md`), empirical test execution metrics table (PHPUnit, Vitest, TypeScript, ESLint), and PR release notes. |
 
 ---
 

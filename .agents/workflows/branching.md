@@ -9,7 +9,7 @@ Maintain code stability, auditability, and zero-downtime releases by enforcing *
 1. **`main` is Protected Trunk:** The `main` branch MUST remain stable, passing, and production-ready at all times.
 2. **MANDATORY Pull Request (PR MUST):** EVERY feature, bug fix, refactoring, or workflow update MUST be submitted via a GitHub Pull Request. Direct local merges into `main` are STRICTLY FORBIDDEN.
 3. **Short-Lived Topic Branches:** Create focused topic branches off `main` (`feat/*`, `fix/*`, `refactor/*`, `chore/*`). Merge PRs promptly to prevent branch drift.
-4. **Automated CI Gate (STRICT MUST HAVE):** Pull Requests trigger GitHub Actions CI. A PR MUST NOT be merged under any circumstances until ALL GitHub Actions CI checks (tests, type-checks, lints, production builds) have completed with a 100% green (`pass`) status. Merging while checks are `pending` or `failing` is STRICTLY PROHIBITED.
+4. **Automated CI Gate (STRICT MUST HAVE):** Pull Requests trigger GitHub Actions CI. A PR MUST NOT be merged under any circumstances until ALL GitHub Actions CI checks (`Verify site`, `Track declared` in `.github/workflows/ci.yml`) have completed with a 100% green (`pass`) status. Merging while checks are `pending` or `failing` is STRICTLY PROHIBITED.
 
 ---
 
@@ -24,7 +24,7 @@ git checkout -b feat/short-descriptive-name
 ```
 
 #### Branch Naming Standard:
-* `feat/<feature-description>` – New feature or add-on implementation
+* `feat/<feature-description>` – New section, copy or behaviour on the site
 * `fix/<bug-description>` – Bug fixes and patch resolution
 * `refactor/<scope>` – Internal code refactoring or structural cleanup
 * `chore/<task-name>` – Maintenance, configuration, or dependency updates
@@ -35,9 +35,11 @@ git checkout -b feat/short-descriptive-name
 1. Develop your feature or bug fix on the topic branch.
 2. Run mandatory local verification steps (`.agents/workflows/verification.md`):
    ```bash
-   cd web && npm run type-check && npm run lint
-   cd ../api && bin/phpunit
+   npm run verify
    ```
+3. Every commit message ends with a `Track: content|fix|chore` trailer (and `Workflow-Change: <why>`
+   when it touches `workflow.ai.yml`, `scripts/`, `.githooks/`, `.github/workflows/` or `package.json`).
+   The commit-msg hook installed by `npm run hooks:install` checks it.
 
 ---
 
@@ -55,13 +57,12 @@ git push -u origin feat/short-descriptive-name
    gh pr create --title "feat(scope): concise title" --body "## Summary of Changes
 - Detailed breakdown of implemented features and architectural rationale.
 
-## Technical & Architectural Impact
-- **Backend/Frontend/Database:** Impact analysis on services, controllers, multi-tenancy, or MUI components.
+## Impact
+- **Page / i18n / contact.php / discovery files:** what changed for a visitor, in which language keys, and which of agent.json, llms*.txt, sitemap.xml and the JSON-LD followed.
 
 ## Verification & Quality Assurance
-- [x] type-check (0 errors)
-- [x] lint (0 errors)
-- [x] PHPUnit suite (100% green)
+- [x] npm run verify (all checks green)
+- [x] Manual checks from .agents/workflows/verification.md (both languages, both themes, 375px, keyboard)
 - [x] Self-review checklist verified against .agents/rules/review.md"
    ```
 2. Verify that GitHub Actions CI pipeline passes all checks on the PR.

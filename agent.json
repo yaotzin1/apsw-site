@@ -43,6 +43,76 @@
       "technologies": ["ESRI", "Smallworld", "PostGIS", "Event-Driven", "IoT Telemetry Loops", "Industrial Asset Engine"]
     }
   ],
+  "products": [
+    {
+      "id": "apsw-gridwright",
+      "name": "Gridwright",
+      "product_line": "APSW Labs",
+      "package": "apsw-gridwright",
+      "latest_version": "0.22.1",
+      "released": "2026-10-24",
+      "description": "React data grid on a headless engine: local arrays and paginating APIs share one pipeline, negotiated through data-source capabilities.",
+      "license": "MIT",
+      "pricing": {
+        "open_source": "free",
+        "pro": "planned, not priced yet"
+      },
+      "facts": {
+        "runtime_dependencies": 0,
+        "gzipped_component_kb_approx": 17,
+        "react": "18, 19",
+        "max_rows_windowed": 10000000,
+        "locales": [
+          "en",
+          "de",
+          "es",
+          "fr",
+          "pl"
+        ]
+      },
+      "companion_packages": [
+        "apsw-gridwright-mui"
+      ],
+      "links": {
+        "npm": "https://www.npmjs.com/package/apsw-gridwright",
+        "source": "https://github.com/yaotzin1/apsw-gridwright",
+        "playground": "https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html",
+        "docs": "https://yaotzin1.github.io/apsw-gridwright/docs/getting-started.html",
+        "page": "https://apsw.pl/#gridwright"
+      }
+    }
+,
+    {
+      "id": "indaba",
+      "name": "Indaba",
+      "product_line": "APSW Labs",
+      "package": "indaba",
+      "latest_version": "0.1.0-alpha.2",
+      "status": "preview; API not stable below 1.0",
+      "description": "Deterministic orchestration, debate and observability engine for AI agents: gated workflow DAGs, multi-agent cross-examination to consensus, git-worktree isolation, OpenTelemetry GenAI traces with token and cost accounting.",
+      "license": "MIT",
+      "runtime": "Node 22+ (Windows, macOS, Linux)",
+      "runners": [
+        "claude-code",
+        "codex",
+        "gemini",
+        "cursor",
+        "antigravity",
+        "openrouter",
+        "shell"
+      ],
+      "links": {
+        "docs": "https://yaotzin1.github.io/indaba/",
+        "source": "https://github.com/yaotzin1/indaba",
+        "page": "https://apsw.pl/#indaba"
+      }
+    }
+  ],
+  "delivery_assurance": {
+    "page": "https://apsw.pl/#assurance",
+    "summary": "The workflow.ai.yml-driven agent setup Gridwright is built with (generated agent instructions, enforced gates, declared tracks, packaging and security audits), offered to B2B teams.",
+    "reference_workflow": "https://github.com/yaotzin1/apsw-gridwright/blob/main/workflow.ai.yml"
+  },
   "verified_track_record": [
     {
       "client_domain": "Tier-1 European Commercial & Investment Bank (Institutional Finance)",

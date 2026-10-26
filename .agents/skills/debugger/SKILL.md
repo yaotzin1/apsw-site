@@ -14,4 +14,4 @@ Your mission is to resolve complex runtime errors, test failures, and environmen
 2. **No Superficial Symptom Patches:** Never swallow exceptions, return dummy fallback objects, or delete failing test assertions to mask errors. Always identify and resolve why the underlying contract failed.
 3. **FrankenPHP Worker & Doctrine State Isolation:** When debugging state leakage between requests in FrankenPHP worker mode, verify whether Doctrine's Identity Cache (`UnitOfWork`) or `TenantFilter` preserves stale state across requests.
 4. **Log Extraction Perseverance:** If a primary log extraction command fails, switch immediately to alternative tools (e.g. Docker container logs, Monolog provisioning output streams) to capture the root trace.
-5. **Verified Fix Gate:** Never declare a bug fixed until running verification commands (`bin/phpunit`, `npm run type-check`, `npm run lint`) to confirm green empirical execution.
+5. **Verified Fix Gate:** Never declare a bug fixed until running verification commands (`npm run verify`) to confirm green empirical execution.

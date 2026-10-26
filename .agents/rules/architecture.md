@@ -29,5 +29,5 @@
 
 ## 6. Trunk-Based Development & Mandatory Pull Requests (PR MUST)
 * **`main` is Protected Trunk:** The `main` branch must always remain stable, passing, and deployment-ready.
-* **MANDATORY GitHub Pull Requests (PR MUST):** ALL new features (`feat/*`), bug fixes (`fix/*`), refactoring (`refactor/*`), and maintenance (`chore/*`) MUST be pushed as short-lived topic branches and merged via **GitHub Pull Requests (PR)**. Direct local merging or pushing directly into `main` is STRICTLY PROHIBITED. See [`.agents/workflows/branching.md`](file:///D:/projects/private/Brandmonitor/.agents/workflows/branching.md).
-* **ALL CHECKS GREEN CI GATE:** A Pull Request MUST NOT be merged under any circumstances until ALL GitHub Actions CI checks (tests, lints, type-checks, production builds) have finished with a 100% green (`pass`) status. Never merge while checks are `pending` or failing.
+* **MANDATORY GitHub Pull Requests (PR MUST):** ALL new features (`feat/*`), bug fixes (`fix/*`), refactoring (`refactor/*`), and maintenance (`chore/*`) MUST be pushed as short-lived topic branches and merged via **GitHub Pull Requests (PR)**. Direct local merging or pushing directly into `main` is STRICTLY PROHIBITED. See `.agents/workflows/branching.md`.
+* **ALL CHECKS GREEN CI GATE:** A Pull Request MUST NOT be merged under any circumstances until ALL GitHub Actions CI checks (`Verify site`, `Track declared`) have finished with a 100% green (`pass`) status. Never merge while checks are `pending` or failing.

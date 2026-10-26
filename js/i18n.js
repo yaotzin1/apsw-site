@@ -13,6 +13,9 @@ const APSW_TRANSLATIONS = {
       brand_sub: "AI NATIVE ARCHITECTURE",
       speckit: "Spec-Kit AI",
       agentic: "Agentic Dev",
+      gridwright: "Gridwright Data Grid",
+      indaba: "Indaba Agent Engine",
+      labs: "APSW Labs",
       services: "Services",
       engagement: "Engagements",
       track_record: "Case Studies",
@@ -91,6 +94,69 @@ const APSW_TRANSLATIONS = {
       swarm_log5_html: `<span style="color: #34d399;">[WORKER_SUBAGENT_02]</span> Executed test runner: 34 tests passed, 0 failures`,
       swarm_log6_html: `<span style="color: #fbbf24;">[CRITIC_VERIFIER]</span> Static analysis: 0 warnings, OWASP security pass certified`,
       swarm_log7_html: `✓ SYNTHESIS_COMPLETE: Production branch ready for pull request.`
+    },
+    gridwright: {
+      tag: "APSW Labs · Open Source",
+      title_html: `Gridwright: <br>the React data grid that does not care where your rows live`,
+      subtitle_html: `Hand it an array today and a paginating API tomorrow: swap <code>data</code> for <code>dataSource</code> and the columns and add-ons stay exactly as they were. Tree data, grouping, Excel export and ten million rows are in the free MIT package.`,
+      release: "Latest release: v0.22.1 · 24 Oct 2026",
+      p1_title: "One pipeline, any source",
+      p1_desc: "A data source declares what it already resolved (sort, filter, search, paging); the grid does the rest in memory. Moving to a server is a one-line change.",
+      p2_title: "Huge data is the use case",
+      p2_desc: "Row and column windowing together: hundreds of columns and up to ten million rows with a small DOM.",
+      p3_title: "Real table semantics",
+      p3_desc: "A real HTML table with role=\"grid\", aria-sort and one live region, plus an opt-in WCAG 2.2 AA add-on.",
+      p4_title: "Every feature is an add-on",
+      p4_desc: "Search, column filters, tree, grouping, export, inline editing, column layout, row detail, URL sync. Yours get the same reach as the built-ins.",
+      p5_title: "Honest numbers",
+      p5_desc: "When an API sends no total, the grid says \"of many\" instead of inventing a count from one page.",
+      cta_playground: "Open the Live Playground",
+      cta_docs: "Getting Started",
+      shot_aria: "Open the Gridwright live playground",
+      shot_alt: "Gridwright playground: a searchable, sortable employee table with a selection column and status chips.",
+      fact_deps: "Runtime dependencies",
+      fact_size: "Gzipped component",
+      fact_rows_val: "10M rows",
+      fact_rows: "Windowed, plus column virtualization",
+      fact_react: "TypeScript, ESM + CommonJS, optional MUI package",
+      tier_free_badge: "OPEN SOURCE · MIT",
+      tier_free_desc: "The full grid, every add-on and the apsw-gridwright-mui theme bridge. Free, and nothing free today becomes paid.",
+      tier_pro_badge: "PRO · COMING",
+      tier_pro_desc: "Additional add-ons, priority support with a response commitment, and help moving an existing grid onto Gridwright. Not priced yet.",
+      tier_pro_btn: "Tell Me What You Need"
+    },
+    indaba: {
+      tag: "APSW Labs · Open Source",
+      title_html: `Indaba: <br>let your agents argue, ship what they agree on`,
+      subtitle: "A deterministic orchestration, debate and observability engine for AI agents. The engine, not a model, decides what runs next: a declared graph of steps behind quality gates, agents that cross-examine each other until they reach consensus, and a trace of what every step cost.",
+      release: "Preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+",
+      p1_title: "Deterministic, gated pipelines",
+      p1_desc: "A workflow file is a graph of steps with quality gates and filesystem guards. Verification is plain commands whose exit codes decide pass or fail, and a failed step is retried with only the latest failure.",
+      p2_title: "A council, not a single agent",
+      p2_desc: "Roles backed by different engines review the same work and answer each other until they reach consensus under quorum rules, or a human rules on the transcript.",
+      p3_title: "Any runner behind one contract",
+      p3_desc: "Claude Code, Codex, Gemini, Cursor, Antigravity, models over OpenRouter, or a shell command. Implementation runs in a disposable git worktree and leaves as a patch.",
+      p4_title: "Every step is a trace",
+      p4_desc: "OpenTelemetry GenAI spans with token counts and cost where the provider reports it, followed live in the terminal or in a local web view.",
+      cta_docs: "Read the Documentation",
+      note: "A preview: the API is not stable below 1.0. Gridwright is built with it.",
+      shot_aria: "Open the Indaba documentation",
+      shot_alt: "Indaba web view of a finished run: four steps (rfc, code, verify, review) as a graph, with the retry path from verify back to code and a table of each step's tries and times."
+    },
+    assurance: {
+      tag: "Delivery Assurance",
+      title: "The Standard Behind Gridwright, Brought to Your Team",
+      subtitle: "Gridwright was built by one architect with the Indaba engine and coding agents. The same written process, gates and checks are what I set up in B2B teams.",
+      a1_title: "One Rules File for Every Agent",
+      a1_desc: "A single workflow.ai.yml outranks every other instruction. AGENTS.md, CLAUDE.md, GEMINI.md and skill pointers are generated from it, so Claude Code, Codex and Antigravity follow the same text.",
+      a2_title: "Enforced, Not Just Written",
+      a2_desc: "Each rule is marked as enforced or guidance. Enforced rules have a hook, CI job, lint rule or test that fails, and CI fails when the instructions drift from the repository.",
+      a3_title: "Every Change Declares Its Track",
+      a3_desc: "Feature, fix, chore or release decides which stages a change goes through, from a written spec to review. The commit trailer is checked against the diff.",
+      a4_title: "Verified Where It Breaks",
+      a4_desc: "Beyond unit tests: smoke tests against the built package, a packaging audit and a security audit that blocks the commit. Gridwright carries over 1,300 automated tests.",
+      cta_engagement: "See Engagement Models",
+      cta_workflow: "Read Gridwright's workflow.ai.yml"
     },
     services: {
       tag: "Capabilities",
@@ -300,6 +366,9 @@ const APSW_TRANSLATIONS = {
       brand_sub: "ARCHITEKTURA AI-NATIVE",
       speckit: "Metodyka Spec-Kit",
       agentic: "Agentic Dev",
+      gridwright: "Tabela danych Gridwright",
+      indaba: "Silnik agentów Indaba",
+      labs: "APSW Labs",
       services: "Usługi",
       engagement: "Współpraca",
       track_record: "Projekty",
@@ -378,6 +447,69 @@ const APSW_TRANSLATIONS = {
       swarm_log5_html: `<span style="color: #34d399;">[WORKER_SUBAGENT_02]</span> Uruchomiono testy: 34 zaliczone, 0 błędów`,
       swarm_log6_html: `<span style="color: #fbbf24;">[CRITIC_VERIFIER]</span> Analiza statyczna: 0 ostrzeżeń, certyfikat bezpieczeństwa OWASP`,
       swarm_log7_html: `✓ SYNTEZA_ZAKOŃCZONA: Gałąź produkcyjna gotowa do pull requesta.`
+    },
+    gridwright: {
+      tag: "APSW Labs · Open Source",
+      title_html: `Gridwright: <br>tabela danych dla Reacta, której nie obchodzi, skąd pochodzą wiersze`,
+      subtitle_html: `Dziś przekaż jej tablicę, jutro stronicowane API: zamień <code>data</code> na <code>dataSource</code>, a kolumny i dodatki zostają bez zmian. Dane drzewiaste, grupowanie, eksport do Excela i dziesięć milionów wierszy są w darmowym pakiecie MIT.`,
+      release: "Najnowsze wydanie: v0.22.1 · 24 paź 2026",
+      p1_title: "Jeden potok, dowolne źródło",
+      p1_desc: "Źródło danych deklaruje, co już rozwiązało (sortowanie, filtrowanie, wyszukiwanie, stronicowanie); resztę tabela robi w pamięci. Przejście na serwer to zmiana jednej linii.",
+      p2_title: "Duże dane to norma, nie wyjątek",
+      p2_desc: "Wirtualizacja wierszy i kolumn naraz: setki kolumn i do dziesięciu milionów wierszy przy małym DOM.",
+      p3_title: "Prawdziwa semantyka tabeli",
+      p3_desc: "Prawdziwa tabela HTML z role=\"grid\", aria-sort i jednym regionem live, plus opcjonalny dodatek WCAG 2.2 AA.",
+      p4_title: "Każda funkcja to dodatek",
+      p4_desc: "Wyszukiwanie, filtry kolumn, drzewo, grupowanie, eksport, edycja w miejscu, układ kolumn, szczegóły wiersza, stan w URL. Twoje dodatki mają te same możliwości co wbudowane.",
+      p5_title: "Uczciwe liczby",
+      p5_desc: "Gdy API nie podaje sumy, tabela pisze „z wielu” zamiast wymyślać liczbę na podstawie jednej strony.",
+      cta_playground: "Otwórz Playground na żywo",
+      cta_docs: "Pierwsze kroki",
+      shot_aria: "Otwórz playground Gridwright na żywo",
+      shot_alt: "Playground Gridwright: przeszukiwalna, sortowalna tabela pracowników z kolumną zaznaczania i etykietami statusu.",
+      fact_deps: "Zależności w runtime",
+      fact_size: "Komponent po kompresji gzip",
+      fact_rows_val: "10 mln wierszy",
+      fact_rows: "Okienkowanie plus wirtualizacja kolumn",
+      fact_react: "TypeScript, ESM + CommonJS, opcjonalny pakiet MUI",
+      tier_free_badge: "OPEN SOURCE · MIT",
+      tier_free_desc: "Pełna tabela, wszystkie dodatki i most motywu apsw-gridwright-mui. Za darmo, i nic, co jest darmowe dziś, nie stanie się płatne.",
+      tier_pro_badge: "PRO · WKRÓTCE",
+      tier_pro_desc: "Dodatkowe dodatki, priorytetowe wsparcie z gwarantowanym czasem odpowiedzi i pomoc w przeniesieniu istniejącej tabeli na Gridwright. Cena jeszcze nieustalona.",
+      tier_pro_btn: "Napisz, czego potrzebujesz"
+    },
+    indaba: {
+      tag: "APSW Labs · Open Source",
+      title_html: `Indaba: <br>niech agenci się spierają, wdrażaj to, na co się zgodzą`,
+      subtitle: "Deterministyczny silnik orkiestracji, debaty i obserwowalności dla agentów AI. To silnik, a nie model, decyduje, co uruchomić dalej: zadeklarowany graf kroków za bramkami jakości, agenci, którzy wzajemnie się weryfikują aż do konsensusu, i ślad tego, ile kosztował każdy krok.",
+      release: "Wersja preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+",
+      p1_title: "Deterministyczne potoki z bramkami",
+      p1_desc: "Plik workflow to graf kroków z bramkami jakości i strażnikami systemu plików. Weryfikacja to zwykłe polecenia, których kod wyjścia decyduje o wyniku, a nieudany krok jest ponawiany tylko z ostatnim błędem.",
+      p2_title: "Rada, a nie pojedynczy agent",
+      p2_desc: "Role obsługiwane przez różne silniki oceniają tę samą pracę i odpowiadają sobie nawzajem, aż osiągną konsensus zgodnie z regułami kworum, albo człowiek rozstrzyga na podstawie zapisu rozmowy.",
+      p3_title: "Dowolny runner za jednym kontraktem",
+      p3_desc: "Claude Code, Codex, Gemini, Cursor, Antigravity, modele przez OpenRouter albo polecenie powłoki. Implementacja działa w jednorazowym git worktree i wychodzi jako patch.",
+      p4_title: "Każdy krok to ślad",
+      p4_desc: "Spany OpenTelemetry GenAI z liczbą tokenów i kosztem, gdy dostawca go podaje, śledzone na żywo w terminalu albo w lokalnym widoku webowym.",
+      cta_docs: "Przeczytaj dokumentację",
+      note: "Wersja preview: API nie jest stabilne przed 1.0. Gridwright powstaje z jej pomocą.",
+      shot_aria: "Otwórz dokumentację Indaba",
+      shot_alt: "Widok webowy Indaba po zakończonym uruchomieniu: cztery kroki (rfc, code, verify, review) jako graf, ze ścieżką ponowienia z verify do code i tabelą prób i czasów każdego kroku."
+    },
+    assurance: {
+      tag: "Gwarancja Jakości Dostarczania",
+      title: "Standard stojący za Gridwright, wdrożony w Twoim zespole",
+      subtitle: "Gridwright zbudował jeden architekt z silnikiem Indaba i agentami kodującymi. Ten sam spisany proces, bramki i kontrole wdrażam w zespołach B2B.",
+      a1_title: "Jeden plik reguł dla każdego agenta",
+      a1_desc: "Jeden plik workflow.ai.yml ma pierwszeństwo przed każdą inną instrukcją. AGENTS.md, CLAUDE.md, GEMINI.md i wskaźniki skilli są z niego generowane, więc Claude Code, Codex i Antigravity stosują ten sam tekst.",
+      a2_title: "Egzekwowane, nie tylko spisane",
+      a2_desc: "Każda reguła jest oznaczona jako egzekwowana albo zalecana. Egzekwowana ma hook, zadanie CI, regułę lintera lub test, który się wywali, a CI pada, gdy instrukcje rozjadą się z repozytorium.",
+      a3_title: "Każda zmiana deklaruje swoją ścieżkę",
+      a3_desc: "Feature, fix, chore lub release decyduje, przez które etapy przechodzi zmiana, od spisanej specyfikacji po review. Stopka commita jest sprawdzana względem diffu.",
+      a4_title: "Weryfikacja tam, gdzie coś pęka",
+      a4_desc: "Nie tylko testy jednostkowe: testy smoke na zbudowanym pakiecie, audyt paczki i audyt bezpieczeństwa blokujący commit. Gridwright ma ponad 1300 testów automatycznych.",
+      cta_engagement: "Zobacz modele współpracy",
+      cta_workflow: "Przeczytaj workflow.ai.yml Gridwright"
     },
     services: {
       tag: "Kompetencje",
@@ -677,6 +809,15 @@ window.APSW_I18N = {
       const val = getNestedTranslation(dict, key);
       if (val !== null && val !== undefined) {
         el.setAttribute('title', val);
+      }
+    });
+
+    // 7a. Update Image Alt Text (data-i18n-alt)
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.getAttribute('data-i18n-alt');
+      const val = getNestedTranslation(dict, key);
+      if (val !== null && val !== undefined) {
+        el.setAttribute('alt', val);
       }
     });
 

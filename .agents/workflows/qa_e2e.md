@@ -1,5 +1,7 @@
 # Workflow: Playwright E2E QA Testing SOP
 
+> **Inherited from another project** (a Symfony + React + PostgreSQL application). Nothing in this file describes apsw-site, which has no `api/`, `web/`, database, PHPUnit or Playwright. It is kept for reference only; `workflow.ai.yml` and `npm run verify` govern this repository.
+
 ## Purpose
 Guide the creation, execution, and debugging of Playwright end-to-end (E2E) automated browser test suites.
 

@@ -1,5 +1,7 @@
 # Database & Migration Guidelines
 
+> **Inherited from another project** (a Symfony + React + PostgreSQL application). Nothing in this file describes apsw-site, which has no `api/`, `web/`, database, PHPUnit or Playwright. It is kept for reference only; `workflow.ai.yml` and `npm run verify` govern this repository.
+
 ## 1. Environment Safety & Production Lock
 * **Dev Environment:** Developers and AI agents are authorized to resolve corrupt schemas locally by dropping the database (`php bin/console doctrine:schema:drop --full-database --force`), running fresh migrations (`doctrine:migrations:migrate -n`), and re-seeding data (`idumela:setup-admin`).
 * **Production/Staging (PRODUCTION LOCK):** Absolutely NO destructive commands (`schema:drop`, `database:drop`, `TRUNCATE`) are permitted in non-dev environments. All production schema changes MUST be zero-downtime, non-destructive, and additive.

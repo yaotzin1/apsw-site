@@ -8,8 +8,7 @@ Guide the safe extraction of business logic, controller thinning, component modu
 ## Step 1: Pre-Refactoring Test Baseline
 Before modifying any code, establish a green test baseline:
 ```bash
-cd web && npm run type-check && npm run lint
-cd ../api && bin/phpunit
+npm run verify
 ```
 Do NOT begin refactoring if existing tests are failing.
 
@@ -34,7 +33,6 @@ Do NOT begin refactoring if existing tests are failing.
 ## Step 4: Post-Refactoring Verification
 1. Run local verification suite (`.agents/workflows/verification.md`):
    ```bash
-   cd web && npm run type-check && npm run lint
-   cd ../api && bin/phpunit
+   npm run verify
    ```
 2. Confirm 100% green test execution with 0 contract breakages.

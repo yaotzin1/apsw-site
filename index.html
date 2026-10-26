@@ -100,6 +100,43 @@
         }
       },
       {
+        "@type": "SoftwareApplication",
+        "@id": "https://apsw.pl/#gridwright",
+        "name": "Gridwright (apsw-gridwright)",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (React 18 or 19)",
+        "softwareVersion": "0.22.1",
+        "datePublished": "2026-10-24",
+        "license": "https://opensource.org/licenses/MIT",
+        "description": "React data grid on a headless engine. Local arrays and paginating APIs share one pipeline; tree data, grouping, Excel export and windowing to ten million rows are in the MIT package.",
+        "url": "https://www.npmjs.com/package/apsw-gridwright",
+        "codeRepository": "https://github.com/yaotzin1/apsw-gridwright",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "author": { "@id": "https://apsw.pl/#founder" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://apsw.pl/#indaba",
+        "name": "Indaba",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux (Node 22+)",
+        "softwareVersion": "0.1.0-alpha.2",
+        "license": "https://opensource.org/licenses/MIT",
+        "description": "Deterministic orchestration, debate and observability engine for AI agents: gated workflow DAGs, multi-agent cross-examination to consensus, git-worktree isolation and OpenTelemetry traces with token and cost accounting.",
+        "url": "https://yaotzin1.github.io/indaba/",
+        "codeRepository": "https://github.com/yaotzin1/indaba",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "author": { "@id": "https://apsw.pl/#founder" }
+      },
+      {
         "@type": "HowTo",
         "name": "Spec-Kit Methodology: Deterministic AI Software Engineering",
         "description": "A 4-stage specification-first workflow for building robust, enterprise-grade AI applications without AI slop.",
@@ -153,6 +190,7 @@
         <ul class="nav-menu">
           <li><a href="#speckit" class="nav-link" data-i18n="nav.speckit">Spec-Kit AI</a></li>
           <li><a href="#agentic-dev" class="nav-link" data-i18n="nav.agentic">Agentic Dev</a></li>
+          <li><a href="#gridwright" class="nav-link" data-i18n="nav.labs">APSW Labs</a></li>
           <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
           <li><a href="#engagement" class="nav-link" data-i18n="nav.engagement">Engagements</a></li>
           <li><a href="#track-record" class="nav-link" data-i18n="nav.track_record">Case Studies</a></li>
@@ -412,6 +450,201 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         OPEN-SOURCE PRODUCT: GRIDWRIGHT (apsw-gridwright)
+         ======================================================================= -->
+    <section class="section" id="gridwright">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag emerald" data-i18n="gridwright.tag">APSW Labs · Open Source</span>
+          <h2 class="section-title" data-i18n-html="gridwright.title_html">Gridwright: <br>the React data grid that does not care where your rows live</h2>
+          <p class="section-subtitle" data-i18n-html="gridwright.subtitle_html">
+            Hand it an array today and a paginating API tomorrow: swap <code>data</code> for <code>dataSource</code> and the columns and add-ons stay exactly as they were. Tree data, grouping, Excel export and ten million rows are in the free MIT package.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-copy">
+            <div class="product-release-row">
+              <img src="assets/products/gridwright/gridwright-mark.svg" alt="" width="40" height="40" class="product-mark">
+              <div>
+                <span class="product-name">apsw-gridwright</span>
+                <span class="product-release" data-i18n="gridwright.release">Latest release: v0.22.1 · 24 Oct 2026</span>
+              </div>
+            </div>
+
+            <pre class="product-install" aria-label="Install command"><code>npm install apsw-gridwright</code></pre>
+
+            <ul class="product-points">
+              <li>
+                <strong data-i18n="gridwright.p1_title">One pipeline, any source</strong>
+                <span data-i18n="gridwright.p1_desc">A data source declares what it already resolved (sort, filter, search, paging); the grid does the rest in memory. Moving to a server is a one-line change.</span>
+              </li>
+              <li>
+                <strong data-i18n="gridwright.p2_title">Huge data is the use case</strong>
+                <span data-i18n="gridwright.p2_desc">Row and column windowing together: hundreds of columns and up to ten million rows with a small DOM.</span>
+              </li>
+              <li>
+                <strong data-i18n="gridwright.p3_title">Real table semantics</strong>
+                <span data-i18n="gridwright.p3_desc">A real HTML table with role="grid", aria-sort and one live region, plus an opt-in WCAG 2.2 AA add-on.</span>
+              </li>
+              <li>
+                <strong data-i18n="gridwright.p4_title">Every feature is an add-on</strong>
+                <span data-i18n="gridwright.p4_desc">Search, column filters, tree, grouping, export, inline editing, column layout, row detail, URL sync. Yours get the same reach as the built-ins.</span>
+              </li>
+              <li>
+                <strong data-i18n="gridwright.p5_title">Honest numbers</strong>
+                <span data-i18n="gridwright.p5_desc">When an API sends no total, the grid says "of many" instead of inventing a count from one page.</span>
+              </li>
+            </ul>
+
+            <div class="product-cta-group">
+              <a href="https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html" class="btn btn-emerald" target="_blank" rel="noopener noreferrer" data-i18n="gridwright.cta_playground">Open the Live Playground</a>
+              <a href="https://yaotzin1.github.io/apsw-gridwright/docs/getting-started.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="gridwright.cta_docs">Getting Started</a>
+              <a href="https://www.npmjs.com/package/apsw-gridwright" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">npm</a>
+              <a href="https://github.com/yaotzin1/apsw-gridwright" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+
+          <a class="product-shot" href="https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html" target="_blank" rel="noopener noreferrer" data-i18n-aria="gridwright.shot_aria" aria-label="Open the Gridwright live playground">
+            <img src="assets/products/gridwright/playground-light.webp" class="product-shot-light" width="1108" height="560" loading="lazy" alt="Gridwright playground: a searchable, sortable employee table with a selection column and status chips." data-i18n-alt="gridwright.shot_alt">
+            <img src="assets/products/gridwright/playground-dark.webp" class="product-shot-dark" width="1108" height="560" loading="lazy" alt="Gridwright playground: a searchable, sortable employee table with a selection column and status chips." data-i18n-alt="gridwright.shot_alt">
+          </a>
+        </div>
+
+        <!-- Facts taken from the package and its README; no invented metrics -->
+        <div class="product-facts">
+          <div class="metric-item">
+            <span class="metric-value">0</span>
+            <span class="metric-label" data-i18n="gridwright.fact_deps">Runtime dependencies</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">~17 kB</span>
+            <span class="metric-label" data-i18n="gridwright.fact_size">Gzipped component</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value" data-i18n="gridwright.fact_rows_val">10M rows</span>
+            <span class="metric-label" data-i18n="gridwright.fact_rows">Windowed, plus column virtualization</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">React 18 &amp; 19</span>
+            <span class="metric-label" data-i18n="gridwright.fact_react">TypeScript, ESM + CommonJS, optional MUI package</span>
+          </div>
+        </div>
+
+        <div class="product-tiers">
+          <div class="product-tier">
+            <span class="engagement-badge" data-i18n="gridwright.tier_free_badge">OPEN SOURCE · MIT</span>
+            <p data-i18n="gridwright.tier_free_desc">The full grid, every add-on and the apsw-gridwright-mui theme bridge. Free, and nothing free today becomes paid.</p>
+          </div>
+          <div class="product-tier featured">
+            <span class="engagement-badge featured-tag" data-i18n="gridwright.tier_pro_badge">PRO · COMING</span>
+            <p data-i18n="gridwright.tier_pro_desc">Additional add-ons, priority support with a response commitment, and help moving an existing grid onto Gridwright. Not priced yet.</p>
+            <a href="#contact" class="btn btn-primary btn-sm" data-i18n="gridwright.tier_pro_btn">Tell Me What You Need</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         APSW LABS PRODUCT: INDABA (multi-agent workflow engine)
+         ======================================================================= -->
+    <section class="section" id="indaba">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag emerald" data-i18n="indaba.tag">APSW Labs · Open Source</span>
+          <h2 class="section-title" data-i18n-html="indaba.title_html">Indaba: <br>let your agents argue, ship what they agree on</h2>
+          <p class="section-subtitle" data-i18n="indaba.subtitle">
+            A deterministic orchestration, debate and observability engine for AI agents. The engine, not a model, decides what runs next: a declared graph of steps behind quality gates, agents that cross-examine each other until they reach consensus, and a trace of what every step cost.
+          </p>
+        </div>
+
+        <div class="product-grid product-grid--reverse">
+          <a class="product-shot" href="https://yaotzin1.github.io/indaba/" target="_blank" rel="noopener noreferrer" data-i18n-aria="indaba.shot_aria" aria-label="Open the Indaba documentation">
+            <img src="assets/products/indaba/indaba-web-view-light.webp" class="product-shot-light" width="1108" height="744" loading="lazy" alt="Indaba web view of a finished run: four steps (rfc, code, verify, review) as a graph, with the retry path from verify back to code and a table of each step's tries and times." data-i18n-alt="indaba.shot_alt">
+            <img src="assets/products/indaba/indaba-web-view-dark.webp" class="product-shot-dark" width="1108" height="744" loading="lazy" alt="Indaba web view of a finished run: four steps (rfc, code, verify, review) as a graph, with the retry path from verify back to code and a table of each step's tries and times." data-i18n-alt="indaba.shot_alt">
+          </a>
+
+          <div class="product-copy">
+            <div class="product-release-row">
+              <img src="assets/products/indaba/indaba-mark.svg" alt="" width="40" height="40" class="product-mark">
+              <div>
+                <span class="product-name">indaba</span>
+                <span class="product-release" data-i18n="indaba.release">Preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+</span>
+              </div>
+            </div>
+
+            <pre class="product-install" aria-label="Run command"><code>npx indaba@next validate workflow.ai.yml</code></pre>
+
+            <ul class="product-points">
+              <li>
+                <strong data-i18n="indaba.p1_title">Deterministic, gated pipelines</strong>
+                <span data-i18n="indaba.p1_desc">A workflow file is a graph of steps with quality gates and filesystem guards. Verification is plain commands whose exit codes decide pass or fail, and a failed step is retried with only the latest failure.</span>
+              </li>
+              <li>
+                <strong data-i18n="indaba.p2_title">A council, not a single agent</strong>
+                <span data-i18n="indaba.p2_desc">Roles backed by different engines review the same work and answer each other until they reach consensus under quorum rules, or a human rules on the transcript.</span>
+              </li>
+              <li>
+                <strong data-i18n="indaba.p3_title">Any runner behind one contract</strong>
+                <span data-i18n="indaba.p3_desc">Claude Code, Codex, Gemini, Cursor, Antigravity, models over OpenRouter, or a shell command. Implementation runs in a disposable git worktree and leaves as a patch.</span>
+              </li>
+              <li>
+                <strong data-i18n="indaba.p4_title">Every step is a trace</strong>
+                <span data-i18n="indaba.p4_desc">OpenTelemetry GenAI spans with token counts and cost where the provider reports it, followed live in the terminal or in a local web view.</span>
+              </li>
+            </ul>
+
+            <div class="product-cta-group">
+              <a href="https://yaotzin1.github.io/indaba/" class="btn btn-emerald" target="_blank" rel="noopener noreferrer" data-i18n="indaba.cta_docs">Read the Documentation</a>
+              <a href="https://github.com/yaotzin1/indaba" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <p class="product-note" data-i18n="indaba.note">A preview: the API is not stable below 1.0. Gridwright is built with it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         DELIVERY ASSURANCE: THE GRIDWRIGHT STANDARD FOR B2B TEAMS
+         (linked from the Gridwright README and playground as apsw.pl/#assurance)
+         ======================================================================= -->
+    <section class="section" id="assurance">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="assurance.tag">Delivery Assurance</span>
+          <h2 class="section-title" data-i18n="assurance.title">The Standard Behind Gridwright, Brought to Your Team</h2>
+          <p class="section-subtitle" data-i18n="assurance.subtitle">
+            Gridwright was built by one architect with the Indaba engine and coding agents. The same written process, gates and checks are what I set up in B2B teams.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="assurance.a1_title">One Rules File for Every Agent</h3>
+            <p class="service-desc" data-i18n="assurance.a1_desc">A single workflow.ai.yml outranks every other instruction. AGENTS.md, CLAUDE.md, GEMINI.md and skill pointers are generated from it, so Claude Code, Codex and Antigravity follow the same text.</p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="assurance.a2_title">Enforced, Not Just Written</h3>
+            <p class="service-desc" data-i18n="assurance.a2_desc">Each rule is marked as enforced or guidance. Enforced rules have a hook, CI job, lint rule or test that fails, and CI fails when the instructions drift from the repository.</p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="assurance.a3_title">Every Change Declares Its Track</h3>
+            <p class="service-desc" data-i18n="assurance.a3_desc">Feature, fix, chore or release decides which stages a change goes through, from a written spec to review. The commit trailer is checked against the diff.</p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title" data-i18n="assurance.a4_title">Verified Where It Breaks</h3>
+            <p class="service-desc" data-i18n="assurance.a4_desc">Beyond unit tests: smoke tests against the built package, a packaging audit and a security audit that blocks the commit. Gridwright carries over 1,300 automated tests.</p>
+          </div>
+        </div>
+
+        <div class="assurance-cta">
+          <a href="#engagement" class="btn btn-emerald" data-i18n="assurance.cta_engagement">See Engagement Models</a>
+          <a href="https://github.com/yaotzin1/apsw-gridwright/blob/main/workflow.ai.yml" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="assurance.cta_workflow">Read Gridwright's workflow.ai.yml</a>
         </div>
       </div>
     </section>
@@ -1049,6 +1282,9 @@
             <li><a href="#agentic-dev" data-i18n="nav.agentic">Fully Agentic Dev</a></li>
             <li><a href="#engagement" data-i18n="nav.engagement">Engagement Models</a></li>
             <li><a href="#track-record" data-i18n="nav.track_record">Verifiable Case Studies</a></li>
+            <li><a href="#gridwright" data-i18n="nav.gridwright">Gridwright Data Grid</a></li>
+            <li><a href="#indaba" data-i18n="nav.indaba">Indaba Agent Engine</a></li>
+            <li><a href="#assurance" data-i18n="assurance.tag">Delivery Assurance</a></li>
           </ul>
         </div>
 

@@ -34,19 +34,16 @@ Follow `.agents/workflows/branching.md`:
    ```bash
    git push -u origin feat/your-feature-name
    ```
-3. **MANDATORY PR CREATION:** Open a Pull Request on GitHub (`https://github.com/yaotzin1/Brandmonitor/pull/new/feat/your-feature-name`) or run `gh pr create`.
+3. **MANDATORY PR CREATION:** Open a Pull Request on GitHub  or run `gh pr create`.
 4. Direct local merging into `main` is STRICTLY PROHIBITED.
 
 ---
 
 ## Step 4: Monitor GitHub Actions CI Pipeline & Merge PR
-1. GitHub Actions workflow ([`.github/workflows/deploy.yml`](file:///D:/projects/private/Brandmonitor/.github/workflows/deploy.yml)) automatically triggers on PR creation and updates.
+1. GitHub Actions workflow (`.github/workflows/ci.yml`) automatically triggers on PR creation and updates.
 2. Pipeline steps:
-   - PostgreSQL 18 `pgvector` container startup.
-   - JWT keypair generation (`lexik:jwt:generate-keypair --skip-if-exists`).
-   - Database migrations execution (`doctrine:migrations:migrate -n --env=test`).
-   - Execution of `bin/phpunit`.
-   - Frontend `npm ci` & `npm run type-check`.
+   - `Verify site`: `php -l contact.php` and `npm run verify` on Node 22.
+   - `Track declared` (pull requests): every commit carries a `Track:` trailer.
 3. Once CI checks pass green, merge the Pull Request on GitHub (or `gh pr merge`).
 4. Pull updated `main` locally:
    ```bash

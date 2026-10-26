@@ -8,3 +8,17 @@ branding_raw/
 pureCV.tex
 projectlist.tex
 LICENSE
+
+# Repository tooling (agent setup and checks), not served
+.agents/
+.claude/
+.githooks/
+.github/
+.indaba/
+scripts/
+workflow.ai.yml
+package.json
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+README.md

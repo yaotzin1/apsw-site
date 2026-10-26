@@ -1,5 +1,7 @@
 # Workflow: Database Migration Standard Operating Procedure
 
+> **Inherited from another project** (a Symfony + React + PostgreSQL application). Nothing in this file describes apsw-site, which has no `api/`, `web/`, database, PHPUnit or Playwright. It is kept for reference only; `workflow.ai.yml` and `npm run verify` govern this repository.
+
 ## Purpose
 Ensure zero-downtime, non-destructive schema migrations for local development and production environments.
 

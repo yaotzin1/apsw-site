@@ -16,6 +16,27 @@
 3. Enterprise Software Architecture: High-throughput Java 21 / Spring Boot and PHP 8.3 / Symfony microservices, CQRS, Event-Driven, Azure Cloud (Bicep/ARM).
 4. High-Load Data & Spatial Telemetry: Databricks, Azure Data Factory, IoT recursive asset tracking engines, Smallworld & ESRI GIS.
 
+## APSW Labs: Open-Source Products
+APSW Labs is the product line of APSW. Both products are MIT licensed and built by the same architect.
+
+### Gridwright (apsw-gridwright)
+- What: React data grid on a headless engine; local arrays and paginating APIs share one pipeline, negotiated through data-source capabilities.
+- Latest release: 0.22.1 (2026-10-24). MIT, zero runtime dependencies, about 17 kB gzipped, React 18 and 19, TypeScript, optional MUI package (apsw-gridwright-mui).
+- Features: sorting, selection, paging, search, column filters, tree data, grouping with aggregates, CSV/Excel/Markdown/print/PDF export, row and column virtualization (up to ten million rows), inline editing, column layout, row detail, URL sync, WCAG 2.2 AA add-on, translations en/de/es/fr/pl.
+- Pro tier: planned, not priced yet (additional add-ons, priority support, migration help).
+- npm: https://www.npmjs.com/package/apsw-gridwright
+- Source: https://github.com/yaotzin1/apsw-gridwright
+- Live playground: https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
+- Docs: https://yaotzin1.github.io/apsw-gridwright/docs/getting-started.html
+- Built by one architect with the Indaba engine and coding agents under a single workflow.ai.yml; the same delivery standard is offered to B2B teams: https://apsw.pl/#assurance
+
+### Indaba
+- What: deterministic orchestration, debate and observability engine for AI agents, in TypeScript for Node 22+ (Windows, macOS, Linux). Tagline: "Let your agents argue. Ship what they agree on."
+- Status: preview; newest published version 0.1.0-alpha.2 (`npx indaba@next`); the API is not stable below 1.0. MIT.
+- Features: workflow file as a DAG of steps with quality gates and filesystem guards; multi-agent council with cross-examination, consensus arbiter and quorum rules; runners for Claude Code, Codex, Gemini, Cursor, Antigravity, OpenRouter models and shell behind one contract; implementation in disposable git worktrees leaving as a patch; OpenTelemetry GenAI traces with tokens and cost where known; terminal dashboard and local web view.
+- Documentation: https://yaotzin1.github.io/indaba/
+- Source: https://github.com/yaotzin1/indaba
+
 ## Track Record & Enterprise References (NDA Compliant)
 - Tier-1 European Commercial & Investment Bank: Technical Lead & Solution Architect (Java 17/21, Spring Boot, Azure SQL, YAML declarative CI/CD).
 - Autonomous AI B2B SaaS (100% Fully Agentic Development): Multi-tenant autonomous B2B reputation engine built on Symfony 8 & React with 45-second triage UX, swappable multi-LLM engine with context embeddings, token-credit ledger tracking, and Spec-Kit governance. 100% synthesized by AI agents with zero manual developer coding.
@@ -28,3 +49,6 @@
 - Agent Manifest: https://apsw.pl/agent.json
 - Full Context: https://apsw.pl/llms-full.txt
 - Engagement Models: https://apsw.pl/#engagement
+- Gridwright (APSW Labs): https://apsw.pl/#gridwright
+- Indaba (APSW Labs): https://apsw.pl/#indaba
+- Delivery Assurance (the Gridwright standard for B2B teams): https://apsw.pl/#assurance

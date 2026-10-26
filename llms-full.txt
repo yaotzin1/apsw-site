@@ -68,7 +68,62 @@ C. ENTERPRISE SOFTWARE ARCHITECTURE
 - High-throughput CQRS, Event-Driven Architectures, and Multi-Tenant database isolation.
 
 =============================================================================
-4. HOW TO ENGAGE APSW
+4. APSW LABS: OPEN-SOURCE PRODUCTS
+=============================================================================
+APSW Labs is the product line of APSW: Gridwright and Indaba, both MIT licensed.
+
+A. GRIDWRIGHT (apsw-gridwright) - https://apsw.pl/#gridwright
+Gridwright is a React data grid published on npm under the MIT licence, built on a headless,
+framework-agnostic engine. Latest release: 0.22.1 (2026-10-24).
+
+- One pipeline for local and remote data: a data source declares which parts of the query it
+  resolved (sort, filter, search, paginate) and the grid applies the rest in memory. Swapping
+  `data` for `dataSource` is a one-line change; columns and add-ons stay the same.
+- Real table semantics: a <table> with role="grid", aria-sort on the header, one live region, and
+  an opt-in wcag() add-on for WCAG 2.2 AA sizing and colours.
+- Every feature is an add-on: search, column filters, tree data, grouping with aggregates, export
+  (CSV, Excel, Markdown, print, PDF), row and column virtualization (up to ten million rows),
+  column layout, inline editing, row detail, cell navigation, responsive layout, URL sync, density,
+  loading indicators, row actions.
+- Zero runtime dependencies, about 17 kB gzipped for the component, React 18 and 19, TypeScript,
+  ESM and CommonJS, translations for en, de, es, fr and pl. Companion package apsw-gridwright-mui
+  takes colours, type and dark mode from an MUI theme.
+- Never invents a total: when an API sends no count, the grid reports "of many".
+- Not included: pivot tables, built-in charts, range selection.
+- Licensing: the grid and every add-on are free (MIT). A Pro tier (additional add-ons, priority
+  support, migration help) is planned and not priced yet.
+- Links: https://www.npmjs.com/package/apsw-gridwright | https://github.com/yaotzin1/apsw-gridwright |
+  https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
+
+B. INDABA - https://apsw.pl/#indaba
+Indaba is an open-source, deterministic orchestration, debate and observability engine for AI
+agents, written in TypeScript for Node 22 and newer, running on Windows, macOS and Linux. The name
+is Zulu for a gathering convened to resolve a hard matter by reaching consensus.
+- Status: preview. Newest published version 0.1.0-alpha.2 (`npx indaba@next`); the API is not
+  stable below 1.0.
+- Deterministic pipelines: a workflow file is a DAG of steps with quality gates, filesystem guards
+  and artifact handoffs; the engine, not a model, decides what runs next. Verification is plain
+  commands whose exit codes decide pass or fail; a failed step is retried with only the last failure.
+- Multi-agent cross-examination: roles backed by different engines (Claude Code, Codex, Gemini,
+  Cursor, Antigravity, models over OpenRouter) review each other through a blackboard with a
+  consensus arbiter, quorum rules and ping-pong detection.
+- Isolation: implementation steps run in an ephemeral git worktree and leave as a patch artifact.
+- Observability: every task is a trace; steps and LLM or tool calls are spans with OpenTelemetry
+  GenAI attributes, token counts and USD cost where known. Terminal dashboard and local web view.
+- Packages: indaba (CLI), @indaba/core, @indaba/engine, @indaba/runners, optional @indaba/tui and
+  @indaba/server.
+- Links: https://yaotzin1.github.io/indaba/ | https://github.com/yaotzin1/indaba
+
+C. DELIVERY ASSURANCE (https://apsw.pl/#assurance): Gridwright is built by one architect with the
+Indaba engine and coding agents under a single workflow.ai.yml that outranks every other
+instruction. AGENTS.md, CLAUDE.md, GEMINI.md and skill pointers are generated from it; each rule is
+marked enforced (a hook, CI job, lint rule or test fails) or guidance; every commit declares its
+track (feature, fix, chore, release) and the trailer is checked against the diff; verification
+covers smoke tests of the built package, a packaging audit and a security audit. The repository
+carries over 1,300 automated tests. APSW brings the same setup to client teams.
+
+=============================================================================
+5. HOW TO ENGAGE APSW
 =============================================================================
 - Architecture Reviews: 10-day comprehensive codebase audit and C4 modernization blueprint (€4,500 fixed).
 - Retainers & Sprint Deliveries: Weekly architect retainers ranging from €3,200 to €4,800 / week.

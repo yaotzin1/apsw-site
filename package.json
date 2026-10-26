@@ -1,0 +1,16 @@
+{
+  "name": "apsw-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The APSW website (apsw.pl). Static files served as committed; this manifest only runs the checks.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "verify": "node scripts/validate-skills.mjs && node scripts/sync-claude-skills.mjs --check && node scripts/sync-agent-docs.mjs --check && node scripts/check-workflow.mjs && node scripts/check-site.mjs",
+    "sync": "node scripts/sync-agent-docs.mjs && node scripts/sync-claude-skills.mjs",
+    "hooks:install": "node scripts/install-hooks.mjs"
+  }
+}

@@ -28,5 +28,5 @@ Before finalizing any task, declaring completion, or submitting code changes, AI
 * **Question:** Is standard REST payload unwrapping using the standard envelope (`{"status": string, "message": string, "data": mixed}`)?
 
 ## 7. Mandatory Verification (NO TEST, NO MERGE)
-* **Question:** Did I write dedicated automated tests (PHPUnit for backend, Vitest/RTL for frontend) covering this new logic or bug fix?
-* **Question:** Did I run all verification commands (`npm run type-check`, `npm run lint`, and `bin/phpunit`) and confirm concrete, empirical green results before reporting completion?
+* **Question:** Did I run `npm run verify` and confirm concrete, empirical green results before reporting completion?
+* **Question:** Did I do the manual checks in `.agents/workflows/verification.md` (both languages, both themes, 375px, keyboard) and say which?
