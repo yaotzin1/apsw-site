@@ -456,6 +456,8 @@
   padding: 3px 6px;
   border-radius: 4px;
   border: 1px solid var(--accent-emerald-border);
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 /* Comparison Table */
@@ -678,6 +680,7 @@
 }
 
 .engagement-card {
+  min-width: 0;
   background: var(--bg-surface-1);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
@@ -1317,3 +1320,13 @@
 .labs-panel { margin-top: 36px; }
 .labs-panel[hidden] { display: none; }
 .labs-panel .section-header { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   SPEC-KIT STAGE DETAIL (description beside the stage's spec code)
+   -------------------------------------------------------------------------- */
+.speckit-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}

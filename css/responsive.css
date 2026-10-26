@@ -31,7 +31,7 @@
 
 @media (max-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 
@@ -44,17 +44,26 @@
   }
 
   .estimator-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Three cards with deliverable lists are too narrow below this width; one column, capped so a
+     card does not stretch into a wide band on a tablet */
+  .engagement-models-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .architect-profile-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
     padding: 32px;
   }
 
   .contact-section-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer-grid {
@@ -64,7 +73,7 @@
 
   .product-grid,
   .product-grid--reverse {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   /* On one column the copy reads first, then the screenshot */
@@ -111,38 +120,43 @@
   }
 
   .hero-metrics-bar {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
 
   .spec-kit-card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .agentic-dev-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .speckit-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
   }
 
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .case-studies-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .product-facts,
   .product-tiers,
   #assurance .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .tier-options-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .comparison-header, .comparison-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 8px;
   }
 
@@ -159,7 +173,7 @@
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer-bottom {
@@ -182,5 +196,26 @@
   .lang-btn {
     padding: 3px 6px;
     font-size: 0.7rem;
+  }
+}
+
+/* Logo, name, language, theme, CTA and the menu toggle do not fit one row on the narrowest phones;
+   the tagline goes first, the mark and the name still identify the site */
+@media (max-width: 400px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+}
+
+/* At 360px and below even the name does not fit; the logo mark already reads APSW and the link
+   keeps its aria-label */
+@media (max-width: 360px) {
+  .brand-text-block {
+    display: none;
   }
 }
