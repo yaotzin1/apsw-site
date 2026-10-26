@@ -95,8 +95,13 @@ const APSW_TRANSLATIONS = {
       swarm_log6_html: `<span style="color: #fbbf24;">[CRITIC_VERIFIER]</span> Static analysis: 0 warnings, OWASP security pass certified`,
       swarm_log7_html: `✓ SYNTHESIS_COMPLETE: Production branch ready for pull request.`
     },
-    gridwright: {
+    labs: {
       tag: "APSW Labs · Open Source",
+      title: "Two Products Built the Way I Build for Clients",
+      subtitle: "Open-source work from APSW Labs. Gridwright is the data grid; Indaba is the engine it was built with.",
+      tabs_aria: "APSW Labs products"
+    },
+    gridwright: {
       title_html: `Gridwright: <br>the React data grid that does not care where your rows live`,
       subtitle_html: `Hand it an array today and a paginating API tomorrow: swap <code>data</code> for <code>dataSource</code> and the columns and add-ons stay exactly as they were. Tree data, grouping, Excel export and ten million rows are in the free MIT package.`,
       release: "Latest release: v0.22.1 · 24 Oct 2026",
@@ -126,7 +131,6 @@ const APSW_TRANSLATIONS = {
       tier_pro_btn: "Tell Me What You Need"
     },
     indaba: {
-      tag: "APSW Labs · Open Source",
       title_html: `Indaba: <br>let your agents argue, ship what they agree on`,
       subtitle: "A deterministic orchestration, debate and observability engine for AI agents. The engine, not a model, decides what runs next: a declared graph of steps behind quality gates, agents that cross-examine each other until they reach consensus, and a trace of what every step cost.",
       release: "Preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+",
@@ -448,10 +452,15 @@ const APSW_TRANSLATIONS = {
       swarm_log6_html: `<span style="color: #fbbf24;">[CRITIC_VERIFIER]</span> Analiza statyczna: 0 ostrzeżeń, certyfikat bezpieczeństwa OWASP`,
       swarm_log7_html: `✓ SYNTEZA_ZAKOŃCZONA: Gałąź produkcyjna gotowa do pull requesta.`
     },
-    gridwright: {
+    labs: {
       tag: "APSW Labs · Open Source",
-      title_html: `Gridwright: <br>tabela danych dla Reacta, której nie obchodzi, skąd pochodzą wiersze`,
-      subtitle_html: `Dziś przekaż jej tablicę, jutro stronicowane API: zamień <code>data</code> na <code>dataSource</code>, a kolumny i dodatki zostają bez zmian. Dane drzewiaste, grupowanie, eksport do Excela i dziesięć milionów wierszy są w darmowym pakiecie MIT.`,
+      title: "Dwa produkty zbudowane tak, jak buduję dla klientów",
+      subtitle: "Open source z APSW Labs. Gridwright to tabela danych, Indaba to silnik, za pomocą którego powstała.",
+      tabs_aria: "Produkty APSW Labs"
+    },
+    gridwright: {
+      title_html: `Gridwright: <br>tabela danych dla Reacta, która działa tak samo na tablicy i na API`,
+      subtitle_html: `Zaczynasz od zwykłej tablicy, a gdy dane wylądują na serwerze, podmieniasz <code>data</code> na <code>dataSource</code>. Kolumny i dodatki zostają, jak były. Drzewa, grupowanie, eksport do Excela i dziesięć milionów wierszy dostajesz w darmowym pakiecie MIT.`,
       release: "Najnowsze wydanie: v0.22.1 · 24 paź 2026",
       p1_title: "Jeden potok, dowolne źródło",
       p1_desc: "Źródło danych deklaruje, co już rozwiązało (sortowanie, filtrowanie, wyszukiwanie, stronicowanie); resztę tabela robi w pamięci. Przejście na serwer to zmiana jednej linii.",
@@ -479,9 +488,8 @@ const APSW_TRANSLATIONS = {
       tier_pro_btn: "Napisz, czego potrzebujesz"
     },
     indaba: {
-      tag: "APSW Labs · Open Source",
-      title_html: `Indaba: <br>niech agenci się spierają, wdrażaj to, na co się zgodzą`,
-      subtitle: "Deterministyczny silnik orkiestracji, debaty i obserwowalności dla agentów AI. To silnik, a nie model, decyduje, co uruchomić dalej: zadeklarowany graf kroków za bramkami jakości, agenci, którzy wzajemnie się weryfikują aż do konsensusu, i ślad tego, ile kosztował każdy krok.",
+      title_html: `Indaba: <br>agenci kłócą się między sobą, a ty wdrażasz to, co ustalą`,
+      subtitle: "Deterministyczny silnik do orkiestracji agentów AI, ich debat i podglądu pracy. Co wykona się dalej, decyduje silnik, a nie model: kroki leżą w opisanym z góry grafie i przechodzą przez bramki jakości. Agenci sprawdzają nawzajem swoją pracę, aż dojdą do zgody, a po każdym kroku zostaje ślad z jego kosztem.",
       release: "Wersja preview: v0.1.0-alpha.2 · MIT · TypeScript, Node 22+",
       p1_title: "Deterministyczne potoki z bramkami",
       p1_desc: "Plik workflow to graf kroków z bramkami jakości i strażnikami systemu plików. Weryfikacja to zwykłe polecenia, których kod wyjścia decyduje o wyniku, a nieudany krok jest ponawiany tylko z ostatnim błędem.",

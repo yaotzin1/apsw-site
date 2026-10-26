@@ -1276,3 +1276,44 @@
 .product-shot {
   min-width: 0;
 }
+
+/* --------------------------------------------------------------------------
+   APSW LABS TABS (Gridwright | Indaba)
+   Without JS both panels stack; app.js hides the inactive one.
+   -------------------------------------------------------------------------- */
+.labs-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 28px 0 8px;
+  flex-wrap: wrap;
+}
+
+.labs-tab {
+  appearance: none;
+  cursor: pointer;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface-2);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.labs-tab:hover { color: var(--text-primary); border-color: var(--accent-emerald-border); }
+
+.labs-tab[aria-selected="true"] {
+  background: var(--accent-emerald-bg);
+  border-color: var(--accent-emerald-border);
+  color: var(--accent-emerald);
+}
+
+.labs-tab:focus-visible { outline: 2px solid var(--accent-emerald); outline-offset: 2px; }
+
+.labs-panel { margin-top: 36px; }
+.labs-panel[hidden] { display: none; }
+.labs-panel .section-header { margin-bottom: 0; }
