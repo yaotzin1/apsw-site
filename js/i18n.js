@@ -37,7 +37,7 @@ const APSW_TRANSLATIONS = {
       "tab1": "High-Load UI",
       "tab2": "Multi-Agent Engine",
       "tab3": "Turnkey B2B SaaS",
-      "tab3_sub": "AI Reputation Platform"
+      "tab3_sub": "Idumela · AI reputation platform"
     },
     "wb": {
       "engine_title": "The engine",
@@ -117,11 +117,12 @@ const APSW_TRANSLATIONS = {
       "cost_src": "reported by the provider"
     },
     "belt": {
-      "title": "Multi-tenant AI reputation triage",
+      "title": "Idumela: multi-tenant reputation triage",
+      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it.",
       "fact_time_k": "Build time",
       "fact_time_v": "2 weeks",
       "fact_how_k": "Method",
-      "fact_how_v": "Synthesized under Indaba CI contract gates",
+      "fact_how_v": "Agent-written from specifications, behind pre-commit quality gates",
       "fact_stack_k": "Stack",
       "fact_stack_v": "Symfony 8 + React / MUI",
       "tenant_aria": "Active tenant",
@@ -151,6 +152,8 @@ const APSW_TRANSLATIONS = {
       "indaba_m3": "Runs Claude Code, Codex, Gemini, Cursor or Antigravity in disposable git worktrees.",
       "indaba_m4": "OpenTelemetry GenAI traces. Every token and dollar is counted, never invented.",
       "indaba_note": "Preview release. The API is not stable below 1.0.",
+      "indaba_shot_alt": "Indaba web view: a run shown as a graph of steps with their status and cost",
+      "grid_shot_alt": "Gridwright playground: a data grid of people with a search box, sortable columns and row selection",
       "grid_tag": "The React data grid that does not care where your rows live.",
       "grid_m1": "Built by one architect using the Indaba engine and covered by 1,300+ automated tests.",
       "grid_m2": "0 runtime dependencies, about 22 kB gzipped.",
@@ -306,7 +309,7 @@ const APSW_TRANSLATIONS = {
       "tab1": "Interfejs pod dużym obciążeniem",
       "tab2": "Silnik wieloagentowy",
       "tab3": "B2B SaaS pod klucz",
-      "tab3_sub": "Platforma reputacji AI"
+      "tab3_sub": "Idumela · platforma reputacji AI"
     },
     "wb": {
       "engine_title": "Silnik",
@@ -386,11 +389,12 @@ const APSW_TRANSLATIONS = {
       "cost_src": "podany przez dostawcę"
     },
     "belt": {
-      "title": "Wielodostępny triaż reputacji AI",
+      "title": "Idumela: wielodostępny triaż reputacji",
+      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi.",
       "fact_time_k": "Czas budowy",
       "fact_time_v": "2 tygodnie",
       "fact_how_k": "Metoda",
-      "fact_how_v": "Synteza pod bramkami kontraktowymi CI Indaby",
+      "fact_how_v": "Kod pisany przez agentów ze specyfikacji, za bramkami jakości przed commitem",
       "fact_stack_k": "Stos",
       "fact_stack_v": "Symfony 8 + React / MUI",
       "tenant_aria": "Aktywny tenant",
@@ -420,6 +424,8 @@ const APSW_TRANSLATIONS = {
       "indaba_m3": "Uruchamia Claude Code, Codex, Gemini, Cursor lub Antigravity w jednorazowych worktree gita.",
       "indaba_m4": "Ślady OpenTelemetry GenAI. Każdy token i dolar jest policzony, nigdy zmyślony.",
       "indaba_note": "Wydanie podglądowe. API nie jest stabilne poniżej wersji 1.0.",
+      "indaba_shot_alt": "Widok webowy Indaby: przebieg pokazany jako graf kroków z ich statusem i kosztem",
+      "grid_shot_alt": "Playground Gridwrighta: grid danych z listą osób, polem wyszukiwania, sortowalnymi kolumnami i zaznaczaniem wierszy",
       "grid_tag": "Grid danych dla Reacta, któremu wszystko jedno, gdzie mieszkają wiersze.",
       "grid_m1": "Zbudowany przez jednego architekta silnikiem Indaba i pokryty ponad 1300 testami automatycznymi.",
       "grid_m2": "0 zależności w czasie działania, około 22 kB po kompresji gzip.",

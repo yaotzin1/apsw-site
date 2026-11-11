@@ -53,8 +53,10 @@ Scaled partner delivery (Principal architecture plus partner software house squa
   legacy modernization or dedicated multi-disciplinary squads (Java 21, Symfony 8, React,
   Cloud / Data). Architected and gated by APSW Labs, scaled and staffed by a partner software house.
 
-Reference build: a multi-tenant AI reputation triage platform (Symfony 8 + React / MUI, tenant
-isolation, token-credit ledger) built in 2 weeks under Indaba CI contract gates.
+Reference build: Idumela (https://idumela.com), APSW's own B2B reputation engine. It monitors a
+brand's reviews, drafts replies in the brand's voice and publishes only after a manager approves.
+Multi-tenant (Symfony 8 + React / MUI, tenant isolation, token-credit ledger), built in 2 weeks,
+agent-written from specifications behind pre-commit quality gates.
 
 =============================================================================
 4. APSW LABS: OPEN-SOURCE PRODUCTS

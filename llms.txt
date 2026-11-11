@@ -38,6 +38,10 @@ Scaled partner delivery:
 - npm: https://www.npmjs.com/package/apsw-gridwright
 - Source: https://github.com/yaotzin1/apsw-gridwright
 
+## Reference build: Idumela
+- Idumela (https://idumela.com) is APSW's own B2B reputation engine: it monitors a brand's reviews, drafts replies in the brand's voice, and publishes only after a manager approves.
+- Multi-tenant, Symfony 8 + React / MUI, tenant isolation and a token-credit ledger. Built in 2 weeks, agent-written from specifications behind pre-commit quality gates.
+
 ## The engineering standard
 One workflow.ai.yml outranks every prompt. AGENTS.md, CLAUDE.md and GEMINI.md are generated from it, pre-commit hooks and CI enforce it, and CI fails when a repository instruction drifts from it: https://apsw.pl/#assurance
 

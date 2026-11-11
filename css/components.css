@@ -124,6 +124,8 @@
 .artifact { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .art-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .art-title { font-size: var(--fs-md); font-weight: 700; }
+.art-about { color: var(--text-secondary); font-size: var(--fs-sm); max-width: 70ch; }
+.art-about a { color: var(--accent-primary); font-family: var(--font-mono); font-size: var(--fs-xs); white-space: nowrap; }
 .art-hint { color: var(--text-secondary); font-size: var(--fs-sm); }
 .mini { font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 .ok { color: var(--accent-verify); }
@@ -257,6 +259,9 @@
 .mech li { padding-left: 18px; position: relative; max-width: 62ch; }
 .mech li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 1px; background: var(--accent-primary); }
 .mech code { color: var(--text-primary); font-size: 0.92em; }
+.oss-shot { display: block; border: 1px solid var(--border-highlight); background: var(--bg-canvas); aspect-ratio: 16 / 9; overflow: hidden; }
+.oss-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.oss-shot:hover { border-color: var(--accent-primary); }
 .oss-note { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-muted); }
 .oss-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border-subtle); font-size: var(--fs-sm); font-weight: 600; }
 .oss-links a { color: var(--accent-primary); }

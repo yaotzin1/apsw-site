@@ -134,6 +134,14 @@
       }
     }
   ],
+  "reference_builds": [
+    {
+      "name": "Idumela",
+      "url": "https://idumela.com",
+      "description": "APSW's own B2B reputation engine: monitors a brand's reviews, drafts replies in the brand's voice, publishes only after a manager approves. Multi-tenant, Symfony 8 + React / MUI, tenant isolation, token-credit ledger.",
+      "build": "2 weeks; agent-written from specifications behind pre-commit quality gates"
+    }
+  ],
   "delivery_assurance": {
     "page": "https://apsw.pl/#assurance",
     "summary": "The workflow.ai.yml-driven agent setup Gridwright is built with (generated agent instructions, enforced gates, declared tracks, packaging and security audits), offered to B2B teams.",
