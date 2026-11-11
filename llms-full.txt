@@ -1,80 +1,69 @@
-# APSW - FULL SEMANTIC CONTEXT FOR LLMS & AI PROCUREMENT AGENTS
-Author: Piotr Solarz-Wnęk (APSW)
-Role: AI-Native Solution Developer & Enterprise Solution Architect
-Website: https://apsw.pl
+# APSW LABS - FULL SEMANTIC CONTEXT FOR LLMS & AI PROCUREMENT AGENTS
+Studio: APSW Labs, AI-native architecture and turnkey engineering studio
+Principal: Piotr Solarz-Wnęk, Principal Software Architect
+Website: https://apsw.pl (also https://apswlabs.com)
 Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
+GitHub: https://github.com/yaotzin1
 LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
 
 =============================================================================
-1. PROFESSIONAL PROFILE & POSITIONING
+1. POSITIONING
 =============================================================================
-Piotr Solarz-Wnęk is a Solution Architect and AI-Native Engineer with over 19 years of verified technical delivery experience. His career bridges enterprise software architecture (Java 21, Spring Boot, PHP 8 / Symfony, Azure Cloud) and state-of-the-art AI development (Fully Agentic Development, Spec-Kit Methodology, Multi-Agent Swarms, Computer Vision, and deterministic AI pipelines).
+Models guess. Engines verify. We ship deterministic software.
 
-Key Differentiators:
-- "Anti-AI-Slop" Philosophy: Replaces vague, non-deterministic chat prompting with formal, executable domain specifications and automated CI contract test gates.
-- "Cheap to Verify": Transparent scope, milestone pricing, and public machine-readable manifests (agent.json) that allow AI procurement agents and CTOs to verify capabilities in seconds.
-- High-Scale Track Record: Led engineering streams expanding to 30+ developers across Tier-1 European Banking, Heavy Industry Telemetry, Big-Four Consulting, and Biotech instrumentation.
+APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic
+partner engineering capacity, taking a client from a 10-day architectural blueprint to a full-scale
+production platform. It is led by Piotr Solarz-Wnęk, Principal Software Architect with 19+ years
+designing mission-critical platforms across institutional finance, industrial IoT and enterprise
+SaaS, and creator of Indaba and Gridwright.
 
-=============================================================================
-2. COMPLETE ENTERPRISE PROJECT HISTORY (NDA COMPLIANT)
-=============================================================================
-- Tier-1 European Commercial & Investment Bank (Institutional Finance):
-  Role: Technical Lead (Java) & Solution Architect.
-  Tech Stack: Java 11/17/21, Spring Boot, Azure SQL DB, BICEP, Azure Pipelines (YAML), Databricks, Azure Data Factory (ADF), Karate Test Suite, Cucumber.
-  Highlights: Architected cloud-native financial transaction management utilities, YAML declarative IaC, and service decoupling in regulated banking. Reduced deployment cycle time by 40%.
-
-- Autonomous AI B2B SaaS (100% Fully Agentic AI Development):
-  Role: Principal Solution Architect & AI System Director.
-  Tech Stack: Symfony 8, React / MUI v6, Doctrine TenantFilter, Swappable LLM Engine (Claude, OpenAI, Ollama), Mercure SSE, Spec-Kit, Docker/FrankenPHP.
-  Highlights: Architected multi-tenant B2B reputation engine featuring 45-second conveyor-belt triage UX, swappable multi-LLM engine with context embeddings, token-credit ledger tracking, and tenant isolation shields. 100% Fully Agentic Development: Entire production codebase and test suites synthesized autonomously by AI agents under formal architectural direction with zero human manual coding.
-
-- Heavy Industry & Energy Operations (Industrial Asset ERP & IoT Platform):
-  Role: Principal Software Architect & Lead Fullstack Engineer.
-  Tech Stack: PHP 8.2, Symfony, Java, Spring Framework, Multi-Tenant PostgreSQL, ReactJS.
-  Highlights: Architected recursive tree asset engine mapping multi-unit telemetry indices (operating days, engine hours, drilled meters) with automated threshold double-tracking overrides.
-
-- Big-Four Global Professional Services Firm (M&A Analytics Platform):
-  Role: Senior Frontend Software Developer & Architect.
-  Tech Stack: ReactJS, Azure Cloud Platform, Splunk Core, Aspose Middleware.
-  Highlights: Engineered front-end layers for high-availability corporate M&A deal analytics and real-time transaction data visualizers.
-
-- Global Biotech & Medical Diagnostics Leader (Biomedical Instrumentation):
-  Role: Systems Architect & Senior Developer.
-  Tech Stack: C/C++, UML, Decoupled Telemetry Modules.
-  Highlights: Formulated architectural decomposition and race-condition elimination for telemetry loops driving automated clinical analysis machinery under strict biomedical compliance.
-
-- Global Programmatic Recruitment & Marketing SaaS:
-  Role: Lead Frontend Architect.
-  Tech Stack: ReactJS, Node.js, Azure Platform.
-  Highlights: Supervised architectural modernization combining automated social advertisement engines with modular Applicant Tracking Systems.
+APSW Labs is a product and turnkey engineering studio. It does not sell hours, seats in a standup
+or body leasing. Clients talk to the architect, not to an account manager.
 
 =============================================================================
-3. CORE CAPABILITIES & METHODOLOGIES
+2. DELIVERY MODEL: PRINCIPAL-LED, ELASTIC CAPACITY
 =============================================================================
-A. FULLY AGENTIC APPLICATION DEVELOPMENT
-- Autonomous multi-agent swarms (Planner, Worker, Verifier) that decompose specifications into parallel execution threads.
-- Self-healing execution loops: agents compile code, execute unit/contract tests, diagnose stack traces, and self-correct until 100% of requirements pass.
-- Isolated sandboxes with declarative tool interfaces (AST analysis, Git workflows, database schema migration safety).
+Principal architecture at the root. Elastic engineering squads at scale.
 
-B. THE SPEC-KIT METHODOLOGY (DETERMINISTIC AI ENGINEERING)
-- Stage 01: Formal Domain & Invariant Specification (JSON Schema / Protobuf).
-- Stage 02: Architectural Guardrail Injection (C4 models, security boundaries, asynchronous patterns).
-- Stage 03: Autonomous Code Synthesis.
-- Stage 04: Deterministic CI Quality Gates (Contract tests, static analysis, performance benchmarks).
+- Phase 01, Principal Wedge & Blueprint (APSW Labs core): the Principal Architect personally
+  defines C4 boundaries, domain contracts, security isolation and the repository CI guardrails in
+  workflow.ai.yml.
+- Phase 02, Autonomous Core Synthesis (APSW Labs engine): high-leverage core modules, data
+  pipelines and MVPs are synthesized and verified with @indaba/engine and multi-agent councils.
+- Phase 03, Elastic Partner Scale-Out (partner software house squads): for 4-8 engineers of
+  long-term feature expansion, mobile apps or a 24/7 SLA, vetted partner squads plug into the
+  pre-configured workflow.ai.yml repository. Automated CI gates govern every commit after handoff.
 
-C. ENTERPRISE SOFTWARE ARCHITECTURE
-- Java 21, Spring Boot, PHP 8.3, Symfony microservices.
-- Azure Cloud Infrastructure as Code (Bicep, ARM, YAML Pipelines).
-- High-throughput CQRS, Event-Driven Architectures, and Multi-Tenant database isolation.
+=============================================================================
+3. ENGAGEMENT TRACKS
+=============================================================================
+High-velocity lab sprints (direct APSW Labs Principal execution):
+- Track 01, 10-Day Architecture & AI Readiness Blueprint (entry wedge, fixed scope): deep-dive
+  codebase and microservice audit, C4 target blueprints, security and isolation review, and an
+  executable workflow.ai.yml roadmap.
+- Track 02, Turnkey Core MVP / Module Sprint (APSW Labs delivery, 3-6 weeks): fixed-scope delivery
+  of a complete MVP, a high-load telemetry backend or a 10M-row Gridwright Pro interface, with over
+  90% automated contract tests and Docker / Cloud IaC.
+- Track 03, Deterministic AI Factory Setup (in-house team enablement, 2-3 weeks): the engineering
+  standard behind Gridwright installed into the client's repository: custom workflow.ai.yml tracks,
+  multi-agent review councils, CI drift guards and senior engineering playbooks.
+
+Scaled partner delivery (Principal architecture plus partner software house squad):
+- Track 04, Full-Scale Platform & Dedicated Squads: end-to-end enterprise product development,
+  legacy modernization or dedicated multi-disciplinary squads (Java 21, Symfony 8, React,
+  Cloud / Data). Architected and gated by APSW Labs, scaled and staffed by a partner software house.
+
+Reference build: a multi-tenant AI reputation triage platform (Symfony 8 + React / MUI, tenant
+isolation, token-credit ledger) built in 2 weeks under Indaba CI contract gates.
 
 =============================================================================
 4. APSW LABS: OPEN-SOURCE PRODUCTS
 =============================================================================
-APSW Labs is the product line of APSW: Gridwright and Indaba, both MIT licensed.
+Gridwright and Indaba are both MIT licensed.
 
 A. GRIDWRIGHT (apsw-gridwright) - https://apsw.pl/#gridwright
 Gridwright is a React data grid published on npm under the MIT licence, built on a headless,
-framework-agnostic engine. Latest release: 0.22.1 (2026-10-24).
+framework-agnostic engine. Latest release: 0.24.0. Covered by 1,300+ automated tests.
 
 - One pipeline for local and remote data: a data source declares which parts of the query it
   resolved (sort, filter, search, paginate) and the grid applies the rest in memory. Swapping
@@ -123,9 +112,10 @@ covers smoke tests of the built package, a packaging audit and a security audit.
 carries over 1,300 automated tests. APSW brings the same setup to client teams.
 
 =============================================================================
-5. HOW TO ENGAGE APSW
+5. HOW TO ENGAGE
 =============================================================================
-- Architecture Reviews: 10-day comprehensive codebase audit and C4 modernization blueprint (€4,500 fixed).
-- Retainers & Sprint Deliveries: Weekly architect retainers ranging from €3,200 to €4,800 / week.
-- Engagement Models: https://apsw.pl/#engagement
-- Direct Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
+- Scope a project: https://apsw.pl/#contact (track, delivery scale, brief; a mutual NDA can be
+  executed before the technical alignment call).
+- Engagement tracks: https://apsw.pl/#tracks
+- Direct contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
+- Agent manifest: https://apsw.pl/agent.json

@@ -1,35 +1,39 @@
-# APSW — AI-Native Solution Architecture & Enterprise Engineering
+# APSW Labs — AI-Native Architecture & Turnkey Engineering Studio
 
-> **Official Website & Digital Presence of Piotr Solarz-Wnęk (APSW)**  
-> High-performance, responsive SaaS landing page featuring Spec-Kit methodology, fully agentic multi-agent development showcases, enterprise architecture track record, structured fixed-scope engagement models, mutual NDA compliance, and machine-readable AI agent discovery endpoints (`agent.json`, `llms.txt`).
+> **Website of APSW Labs, led by Piotr Solarz-Wnęk.**  
+> One static bilingual (EN/PL) landing page with an interactive hero workbench, the Indaba and Gridwright open-source projects, the delivery model, engagement tracks, a scoping form, and machine-readable discovery endpoints (`agent.json`, `llms.txt`).
 
 ---
 
-## 🌟 Key Architecture & Highlights
+## Key Architecture & Highlights
 
-1. **Design System & Aesthetics**:
-   - **Anti-AI-Slop Visual Doctrine**: No generic templates. Built with a bespoke design token system (Dark slate navy `#0c2333`, vibrant cyan/teal `#00a8cc`, pure white, glowing cyan accents `#00e5ff`).
-   - **Dual-Theme Support**: Instant Light/Dark mode switching with `[data-theme="dark"]` CSS variables and local storage persistence.
-   - **Dynamic Dual-Theme Vector Logos**: Responsive SVGs (`apsw-logo-color.svg` and `apsw-logo-white.svg`) with vector scaling and crisp typography.
+1. **Positioning**: APSW Labs is an AI-native architecture and turnkey engineering studio on a
+   "Principal-led, elastic capacity" model. The page is not a CV: no employer history, no hourly
+   retainers. Methodology is named after **Indaba** and `workflow.ai.yml` only.
 
-2. **Core Sections**:
-   - **Hero & Trust Metrics**: High-impact enterprise positioning (*"Move Beyond Fragile AI Prototypes. Build Reliable, Production-Ready Systems."*), verifiable trust metrics (19+ yrs, 500k+ LOC, €100M+ enterprise impact, 0% AI hallucination leakage).
-   - **Spec-Kit Pipeline & Interactive Code Switcher**: Interactive 4-stage pipeline (Domain Model, Invariant Schema, Prompt Injection, CI Test Gate) with real-time JSON Schema, Proto, and Test assertions.
-   - **Fully Agentic Development Showcase**: Multi-agent swarms (Planner, Worker, Verifier) with self-healing feedback loops and 100% autonomous code synthesis demonstrations.
-   - **Enterprise Services Grid**: 4 deep-dive capability cards (Fully Agentic Dev, Spec-Kit AI, Enterprise Architecture, High-Load Telemetry/GIS).
-   - **Structured Engagement Models**: 3 fixed-scope transparent engagement cards (10-Day Strategic Architecture Audit, Production Delivery Sprint, Fractional Principal Architect Retainer).
-   - **Enterprise Case Studies (NDA Compliant)**: Tier-1 Commercial & Investment Banking, Autonomous AI B2B SaaS (100% AI-developed), Industrial IoT Asset Management, Big-Four M&A Analytics, and Biotech Clinical Instrumentation.
-   - **Gridwright (Open-Source Product, `#gridwright`)**: showcase of the latest `apsw-gridwright` release (0.22.1) — the MIT React data grid on a headless engine — with install command, key capabilities, playground screenshot (light/dark), sourced facts and the planned Pro tier.
-   - **Indaba (APSW Labs, `#indaba`)**: the open-source multi-agent workflow engine (preview, 0.1.0-alpha.2) with its web-view screenshot (light/dark) and links to the docs site and GitHub. The Gridwright section is also tagged APSW Labs, and the nav links to both as "APSW Labs".
-   - **Delivery Assurance (`#assurance`)**: the `workflow.ai.yml`-driven agent standard Gridwright is built with, offered to B2B teams. The Gridwright README and playground link here as `apsw.pl/#assurance`, so the anchor must stay.
-   - **Principal Architect Profile & Credentials**: Piotr Solarz-Wnęk (19+ yrs, MSc, Azure AZ-900, DNA Architect, ITIL, EU GDPR compliant).
-   - **Contact Flow & Anti-Spam Bot Defense**: 3-step SLA (24h review, 15m qualification call, C4 proposal), 1-click Mutual NDA request (`oneNDA` standard), dual hidden honeypots, 2-second time-trap defense, and IP rate limiting.
+2. **Design system**: one cold, dark, industrial palette defined as tokens in
+   `css/design-system.css` (no warm neutrals, no light theme), Plus Jakarta Sans with JetBrains
+   Mono, and exposed 1px hairlines.
 
-3. **Machine-Readable AI Discovery Endpoints**:
-   - `/agent.json`: Agent / AI procurement discovery manifest.
-   - `/llms.txt` & `/llms-full.txt`: Curated semantic context for LLMs, Claude, ChatGPT, and automated research bots.
-   - `/robots.txt`: Search crawler directives explicitly welcoming GPTBot, ClaudeBot, PerplexityBot, and Google-Extended.
-   - `/sitemap.xml`: Complete XML search index.
+3. **Sections** (anchors in brackets):
+   - **Hero workbench (`#workbench`)**: three scenarios. The left pane replays a simulated Indaba
+     run (spec, council debate, a gate that fails once and passes on an isolated retry, verified
+     artifact) with a telemetry bar. The right pane is the working artifact: a miniature data grid
+     (search, sort with `aria-sort`, paging, array / remote switch with the "of many" footer), a
+     council transcript with exit-code guards and span data, and a multi-tenant triage belt with a
+     token-credit ledger. All of it is sample data and labelled as such.
+   - **Open source (`#open-source`, `#indaba`, `#gridwright`)**: the two MIT projects with copyable
+     commands and links.
+   - **The standard (`#assurance`)**: one rules file generating and enforcing the agent documents,
+     with a drift demo. The Gridwright README links here as `apsw.pl/#assurance`, so the anchor
+     must stay.
+   - **Delivery model (`#delivery`)**: Principal wedge, core synthesis, partner scale-out.
+   - **Engagement tracks (`#tracks`)**: three lab sprints and one scaled partner track.
+   - **Scope & Route (`#contact`)**: the configurator form. The execution mode switches to the
+     partner route for track 04 or the dedicated-squad scale. It posts to `contact.php`.
+
+4. **Machine-readable discovery**: `/agent.json`, `/llms.txt`, `/llms-full.txt`, `/robots.txt`,
+   `/sitemap.xml`. They describe the same offer as the page and change with it.
 
 ---
 
@@ -37,7 +41,7 @@
 
 - **Frontend**: HTML5, Vanilla CSS3 (Custom Properties & Design System), Vanilla Modern ES6+ JavaScript.
 - **Backend (Contact API)**: PHP 8.2+ (`contact.php`) with JSON response protocol, dual-honeypot bot defense, time trap, rate limiting, and audit logging.
-- **Fonts**: Inter & JetBrains Mono (Google Fonts).
+- **Fonts**: Plus Jakarta Sans & JetBrains Mono (Google Fonts stylesheet; no third-party scripts).
 - **Containerization**: Docker / Apache / FrankenPHP.
 
 ---
@@ -109,7 +113,7 @@ The agent setup mirrors [apsw-gridwright](https://github.com/yaotzin1/apsw-gridw
 ## 👤 Author & Contact
 
 **Piotr Solarz-Wnęk**  
-*Principal Solution Architect & AI-Native Engineer*  
+*Principal Software Architect, APSW Labs*  
 - **Email**: [piotr.solarz-wnek@apsw.pl](mailto:piotr.solarz-wnek@apsw.pl)  
 - **Phone**: +48 666 522 923  
 - **LinkedIn**: [linkedin.com/in/piotrsolarzwnek](https://www.linkedin.com/in/piotrsolarzwnek/)  

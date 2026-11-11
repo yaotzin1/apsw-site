@@ -1,249 +1,142 @@
 /**
- * APSW Brand Website - Main Application Logic
- * Navigation, Theme Switcher, Human/Agent Terminal Preview, Copy Handlers & Anti-Bot Protection
+ * APSW Labs website - page behaviour outside the hero workbench:
+ * navigation, copy buttons, the rules-file drift demo, and the "Scope & Route" form.
+ *
+ * Text shown to the visitor is always written with textContent, and always through a translation
+ * key, so a language switch (js/i18n.js) keeps it in step.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Theme Switcher (Default: Light / Executive Editorial, Toggle: Dark)
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const htmlElement = document.documentElement;
+  const i18n = window.APSW_I18N;
+  const t = (key) => (i18n ? i18n.t(key) : key);
+  /** Puts a translated string on an element and records its key, so the language switcher updates it. */
+  const setKey = (element, key) => {
+    if (!element) return;
+    element.setAttribute('data-i18n', key);
+    element.textContent = t(key);
+  };
 
-  // Retrieve stored theme or default to 'light'
-  const savedTheme = localStorage.getItem('apsw_theme') || 'light';
-  htmlElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      htmlElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('apsw_theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-  }
-
-  function updateThemeIcon(theme) {
-    if (!themeToggleBtn) return;
-    if (theme === 'dark') {
-      themeToggleBtn.innerHTML = `
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" title="Switch to light mode">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-      `;
-    } else {
-      themeToggleBtn.innerHTML = `
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" title="Switch to dark mode">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      `;
-    }
-  }
-
-  // 2. Set Anti-Bot Form Timestamp
+  // 1. Anti-bot time trap: contact.php drops a form submitted under two seconds after render.
   const renderTimeInput = document.getElementById('form-rendered-at');
-  if (renderTimeInput) {
-    renderTimeInput.value = Math.floor(Date.now() / 1000).toString();
+  if (renderTimeInput) renderTimeInput.value = Math.floor(Date.now() / 1000).toString();
+
+  const yearElement = document.getElementById('footer-year');
+  if (yearElement) yearElement.textContent = String(new Date().getFullYear());
+
+  // 2. Mobile menu
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  if (mobileToggle && navMenu) {
+    const setOpen = (open) => {
+      navMenu.classList.toggle('mobile-open', open);
+      mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    mobileToggle.addEventListener('click', () => setOpen(!navMenu.classList.contains('mobile-open')));
+    navMenu.querySelectorAll('.nav-link').forEach((link) => link.addEventListener('click', () => setOpen(false)));
   }
 
-  // 3. Navigation Scroll Effect
-  const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  // 3. Copy buttons for the CLI snippets
+  document.querySelectorAll('.copy-btn[data-copy]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(button.getAttribute('data-copy'));
+      } catch {
+        return; // clipboard refused: the command stays selectable in the page
+      }
+      setKey(button, 'common.copied');
+      button.setAttribute('data-done', 'true');
+      setTimeout(() => {
+        setKey(button, 'common.copy');
+        button.removeAttribute('data-done');
+      }, 1800);
+    });
+  });
+
+  // 4. The standard: simulate a hand edit that drifts from workflow.ai.yml, then regenerate.
+  const diagram = document.getElementById('std-diagram');
+  const driftButton = document.getElementById('std-btn');
+  if (diagram && driftButton) {
+    const output = document.getElementById('std-out');
+    const status = document.getElementById('std-status');
+    driftButton.addEventListener('click', () => {
+      const drift = diagram.getAttribute('data-drift') !== 'true';
+      diagram.setAttribute('data-drift', drift ? 'true' : 'false');
+      output.textContent = drift
+        ? '$ ci: instructions-drift --check   → exit 1\n  CLAUDE.md differs from workflow.ai.yml'
+        : '$ ci: instructions-drift --check   → exit 0';
+      setKey(status, drift ? 'std.status_drift' : 'std.status_ok');
+      setKey(driftButton, drift ? 'std.btn_regen' : 'std.btn_drift');
+    });
+  }
+
+  // 5. Scope & Route: the execution mode follows the chosen track and scale.
+  const form = document.getElementById('apsw-contact-form');
+  if (!form) return;
+  const route = document.getElementById('route');
+  const routeMode = document.getElementById('route-mode');
+  const routeNote = document.getElementById('route-note');
+  const rfpInput = document.getElementById('form-rfp');
+  const feedback = document.getElementById('form-feedback');
+  const submitButton = document.getElementById('form-submit');
+  const checked = (name) => form.querySelector(`input[name="${name}"]:checked`);
+
+  const isPartnerRoute = () => checked('service_type')?.dataset.track === '4' || checked('scale')?.dataset.scale === 'squad';
+  const updateRoute = () => {
+    const partner = isPartnerRoute();
+    route.setAttribute('data-mode', partner ? 'partner' : 'direct');
+    setKey(routeMode, partner ? 'scope.mode_partner' : 'scope.mode_direct');
+    setKey(routeNote, partner ? 'scope.note_partner' : 'scope.note_direct');
+  };
+  form.querySelectorAll('input[name="service_type"], input[name="scale"]').forEach((input) => input.addEventListener('change', updateRoute));
+  updateRoute();
+
+  // "Scope this track" links preselect the track before the jump to the form.
+  document.querySelectorAll('.track-cta[data-track]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const input = form.querySelector(`input[name="service_type"][data-track="${link.dataset.track}"]`);
+      if (!input) return;
+      input.checked = true;
+      updateRoute();
+    });
+  });
+
+  const showFeedback = (key, state) => {
+    feedback.hidden = false;
+    feedback.setAttribute('data-state', state);
+    setKey(feedback, key);
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      showFeedback('scope.fb_invalid', 'error');
+      form.querySelector(':invalid')?.focus();
+      return;
+    }
+    // Always English: this text goes into the email the Principal reads, not onto the page.
+    rfpInput.value = [
+      `Delivery scale: ${checked('scale')?.value ?? ''}`,
+      `Execution mode: ${isPartnerRoute() ? 'Principal architecture + partner software house squad' : 'Direct APSW Labs Principal execution'}`,
+    ].join('\n');
+
+    submitButton.disabled = true;
+    setKey(submitButton, 'scope.sending');
+    try {
+      const response = await fetch(form.getAttribute('action'), { method: 'POST', body: new FormData(form) });
+      const result = await response.json();
+      if (result.success) {
+        showFeedback('scope.fb_success', 'ok');
+        form.reset();
+        updateRoute();
+      } else {
+        showFeedback(response.status === 429 ? 'scope.fb_rate' : 'scope.fb_invalid', 'error');
+      }
+    } catch {
+      // No server, or a non-JSON answer. Nothing was sent, and the page says so.
+      showFeedback('scope.fb_unreachable', 'error');
+    } finally {
+      submitButton.disabled = false;
+      setKey(submitButton, 'scope.submit');
     }
   });
-
-  // 4. Mobile Menu Toggle
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('mobile-open');
-      const isOpen = navMenu.classList.contains('mobile-open');
-      mobileToggle.innerHTML = isOpen 
-        ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
-        : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-    });
-
-    // Close on nav link click
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('mobile-open');
-      });
-    });
-  }
-
-  // 5. Hero Dual-Mode Terminal Switcher (Human Summary vs Agent JSON vs Spec-Kit Contract)
-  const heroTabs = document.querySelectorAll('.terminal-tabs .term-tab');
-  const terminalContent = document.getElementById('terminal-live-code');
-
-  const previews = {
-    agent: `{
-  <span class="code-property">"provider"</span>: <span class="code-string">"APSW (Piotr Solarz-Wnek)"</span>,
-  <span class="code-property">"role"</span>: <span class="code-string">"AI Native Developer & Solution Architect"</span>,
-  <span class="code-property">"experience_years"</span>: <span class="code-number">19</span>,
-  <span class="code-property">"capabilities"</span>: [
-    <span class="code-string">"Fully Agentic Application Development"</span>,
-    <span class="code-string">"Spec-Kit Deterministic AI Engineering"</span>,
-    <span class="code-string">"Enterprise Microservices (Java 21 / Spring, PHP 8 / Symfony)"</span>,
-    <span class="code-string">"High-Load Spatial & Telemetry Engines (Databricks, Azure)"</span>
-  ],
-  <span class="code-property">"anti_slop_guarantee"</span>: <span class="code-keyword">true</span>,
-  <span class="code-property">"endpoints"</span>: {
-    <span class="code-property">"manifest"</span>: <span class="code-string">"https://apsw.pl/agent.json"</span>,
-    <span class="code-property">"context"</span>: <span class="code-string">"https://apsw.pl/llms.txt"</span>
-  }
-}`,
-    speckit: `<span class="code-comment"># Spec-Kit Deterministic Contract Example</span>
-<span class="code-keyword">feature_specification</span>:
-  <span class="code-property">id</span>: <span class="code-string">"SPEC-AI-CORE-01"</span>
-  <span class="code-property">domain</span>: <span class="code-string">"Multi-Agent Settlement Engine"</span>
-  <span class="code-property">deterministic_contract</span>:
-    <span class="code-property">input_schema</span>: <span class="code-string">"OrderBatchPayload.json"</span>
-    <span class="code-property">verification_rules</span>:
-      - <span class="code-string">"Zero Hallucination Gate: STRICT"</span>
-      - <span class="code-string">"Automated Contract Test Suite: 100% PASS"</span>
-      - <span class="code-string">"P99 Latency SLA: < 120ms"</span>
-  <span class="code-property">agentic_execution_mode</span>: <span class="code-string">"Planner-Worker-Verifier Swarm"</span>`,
-    curl: `<span class="code-comment"># Query APSW Agent Manifest Directly via cURL</span>
-curl -s https://apsw.pl/agent.json | jq .services
-
-<span class="code-comment"># Response: Returns machine-verifiable service tiers, SLAs, and pricing models</span>`
-  };
-
-  heroTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      heroTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const target = tab.getAttribute('data-target');
-      if (terminalContent && previews[target]) {
-        terminalContent.innerHTML = previews[target];
-      }
-    });
-  });
-
-  // 6. Copy to Clipboard Functionality
-  window.copyToClipboard = function(text, btnElement) {
-    navigator.clipboard.writeText(text).then(() => {
-      const originalText = btnElement.innerHTML;
-      const copiedText = (window.APSW_I18N && window.APSW_I18N.t('contact.copied_tooltip')) || 'Copied!';
-      btnElement.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> ${copiedText}`;
-      btnElement.style.borderColor = 'var(--accent-emerald)';
-      btnElement.style.color = 'var(--accent-emerald)';
-      setTimeout(() => {
-        btnElement.innerHTML = originalText;
-        btnElement.style.borderColor = '';
-        btnElement.style.color = '';
-      }, 2000);
-    });
-  };
-
-  // 7. Contact Form Submission with Anti-Bot Time-Trap & Rate Limiting
-  const contactForm = document.getElementById('apsw-contact-form');
-  const formFeedback = document.getElementById('form-feedback');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = (window.APSW_I18N && window.APSW_I18N.t('contact.sending_inquiry')) || 'Sending Inquiry...';
-
-      const formData = new FormData(contactForm);
-
-      try {
-        const response = await fetch('contact.php', {
-          method: 'POST',
-          body: formData
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          const successMsg = result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_success')) || 'Thank you! Your message has been sent successfully.';
-          formFeedback.innerHTML = `
-            <div style="padding: 14px; background: var(--accent-emerald-bg); border: 1px solid var(--accent-emerald-border); border-radius: var(--radius-md); color: var(--accent-emerald); margin-bottom: 16px; font-weight: 500;">
-              ✓ ${successMsg}
-            </div>
-          `;
-          contactForm.reset();
-        } else {
-          const errorMsg = result.message || (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_error')) || 'An error occurred. Please reach out directly to piotr.solarz-wnek@apsw.pl';
-          formFeedback.innerHTML = `
-            <div style="padding: 14px; background: var(--accent-coral-bg); border: 1px solid var(--accent-coral); border-radius: var(--radius-md); color: var(--accent-coral); margin-bottom: 16px; font-weight: 500;">
-              ⚠ ${errorMsg}
-            </div>
-          `;
-        }
-      } catch (err) {
-        const fallbackMsg = (window.APSW_I18N && window.APSW_I18N.t('contact.feedback_fallback_html')) || '✓ Inquiry recorded. You can also contact directly at <a href="mailto:piotr.solarz-wnek@apsw.pl" style="color: var(--text-brand); text-decoration: underline; font-weight: 600;">piotr.solarz-wnek@apsw.pl</a>';
-        formFeedback.innerHTML = `
-          <div style="padding: 14px; background: var(--accent-emerald-bg); border: 1px solid var(--accent-emerald-border); border-radius: var(--radius-md); color: var(--accent-emerald); margin-bottom: 16px; font-weight: 500;">
-            ${fallbackMsg}
-          </div>
-        `;
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      }
-    });
-  }
-
-  // 8. APSW Labs tabs (Gridwright | Indaba). Both panels are in the HTML; this
-  // only hides the inactive one, so crawlers and no-JS visitors see both.
-  const labsTabs = Array.from(document.querySelectorAll('[data-labs-tab]'));
-  if (labsTabs.length) {
-    const labsSection = document.getElementById('labs');
-    const showLabsTab = (name, focus) => {
-      labsTabs.forEach(tab => {
-        const on = tab.getAttribute('data-labs-tab') === name;
-        tab.setAttribute('aria-selected', on ? 'true' : 'false');
-        tab.tabIndex = on ? 0 : -1;
-        const panel = document.getElementById(tab.getAttribute('aria-controls'));
-        if (panel) panel.hidden = !on;
-        if (on && focus) tab.focus();
-      });
-    };
-    labsTabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => showLabsTab(tab.getAttribute('data-labs-tab')));
-      tab.addEventListener('keydown', e => {
-        const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (e.key === 'Home' || e.key === 'End') {
-          e.preventDefault();
-          showLabsTab(labsTabs[e.key === 'Home' ? 0 : labsTabs.length - 1].getAttribute('data-labs-tab'), true);
-        } else if (step) {
-          e.preventDefault();
-          showLabsTab(labsTabs[(i + step + labsTabs.length) % labsTabs.length].getAttribute('data-labs-tab'), true);
-        }
-      });
-    });
-
-    // Deep links (#gridwright, #indaba, footer/nav links) open the right tab.
-    const openFromHash = () => {
-      const id = decodeURIComponent(location.hash.slice(1));
-      const known = labsTabs.map(t => t.getAttribute('data-labs-tab'));
-      if (known.includes(id)) {
-        showLabsTab(id);
-        if (labsSection) labsSection.scrollIntoView();
-      } else if (!labsTabs.some(t => t.getAttribute('aria-selected') === 'true' && !document.getElementById(t.getAttribute('aria-controls')).hidden)) {
-        showLabsTab(known[0]);
-      }
-    };
-    showLabsTab(labsTabs[0].getAttribute('data-labs-tab'));
-    openFromHash();
-    window.addEventListener('hashchange', openFromHash);
-  }
 });
