@@ -74,7 +74,7 @@ framework-agnostic engine. Latest release: 0.24.0. Covered by 1,300+ automated t
   (CSV, Excel, Markdown, print, PDF), row and column virtualization (up to ten million rows),
   column layout, inline editing, row detail, cell navigation, responsive layout, URL sync, density,
   loading indicators, row actions.
-- Zero runtime dependencies, about 17 kB gzipped for the component, React 18 and 19, TypeScript,
+- Zero runtime dependencies, about 22 kB gzipped for the component, React 18 and 19, TypeScript,
   ESM and CommonJS, translations for en, de, es, fr and pl. Companion package apsw-gridwright-mui
   takes colours, type and dark mode from an MUI theme.
 - Never invents a total: when an API sends no count, the grid reports "of many".
@@ -88,7 +88,7 @@ B. INDABA - https://apsw.pl/#indaba
 Indaba is an open-source, deterministic orchestration, debate and observability engine for AI
 agents, written in TypeScript for Node 22 and newer, running on Windows, macOS and Linux. The name
 is Zulu for a gathering convened to resolve a hard matter by reaching consensus.
-- Status: preview. Newest published version 0.1.0-alpha.2 (`npx indaba@next`); the API is not
+- Status: preview. Newest published version 0.1.0-alpha.5 (`npx indaba@next`); the API is not
   stable below 1.0.
 - Deterministic pipelines: a workflow file is a DAG of steps with quality gates, filesystem guards
   and artifact handoffs; the engine, not a model, decides what runs next. Verification is plain

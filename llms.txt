@@ -25,7 +25,7 @@ Scaled partner delivery:
 
 ### Indaba (@indaba/engine)
 - Tagline: "Let your agents argue. Ship what they agree on."
-- Version 0.1.0-alpha.2, preview; the API is not stable below 1.0. TypeScript, Node 22+. Try: `npx indaba@next validate workflow.ai.yml`
+- Version 0.1.0-alpha.5 (npm dist-tag `next`), preview; the API is not stable below 1.0. TypeScript, Node 22+. Try: `npx indaba@next validate workflow.ai.yml`
 - A declared graph of steps behind exit-code guards; multi-agent council consensus with a human arbiter fallback; runs Claude Code, Codex, Gemini, Cursor or Antigravity in disposable git worktrees; OpenTelemetry GenAI traces where tokens and cost come from the provider or are marked unknown, never invented.
 - Documentation: https://yaotzin1.github.io/indaba/
 - Source: https://github.com/yaotzin1/indaba
@@ -33,7 +33,7 @@ Scaled partner delivery:
 ### Gridwright (apsw-gridwright)
 - Tagline: "The React data grid that does not care where your rows live."
 - Version 0.24.0. React 18 and 19, optional MUI package (apsw-gridwright-mui). Install: `npm install apsw-gridwright apsw-gridwright-mui`
-- Built by one architect using the Indaba engine and covered by 1,300+ automated tests. Zero runtime dependencies, about 17 kB gzipped, up to ten million rows with row and column virtualization, real HTML table semantics with a WCAG 2.2 AA add-on. When a server sends no count, the grid says "of many" instead of inventing a number.
+- Built by one architect using the Indaba engine and covered by 1,300+ automated tests. Zero runtime dependencies, about 22 kB gzipped, up to ten million rows with row and column virtualization, real HTML table semantics with a WCAG 2.2 AA add-on. When a server sends no count, the grid says "of many" instead of inventing a number.
 - Documentation: https://yaotzin1.github.io/apsw-gridwright/
 - npm: https://www.npmjs.com/package/apsw-gridwright
 - Source: https://github.com/yaotzin1/apsw-gridwright

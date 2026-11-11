@@ -85,7 +85,7 @@
       },
       "facts": {
         "runtime_dependencies": 0,
-        "gzipped_component_kb_approx": 17,
+        "gzipped_component_kb_approx": 22,
         "react": "18, 19",
         "max_rows_windowed": 10000000,
         "locales": [
@@ -113,7 +113,7 @@
       "name": "Indaba",
       "product_line": "APSW Labs",
       "package": "indaba",
-      "latest_version": "0.1.0-alpha.2",
+      "latest_version": "0.1.0-alpha.5",
       "status": "preview; API not stable below 1.0",
       "description": "Deterministic orchestration, debate and observability engine for AI agents: gated workflow DAGs, multi-agent cross-examination to consensus, git-worktree isolation, OpenTelemetry GenAI traces with token and cost accounting.",
       "license": "MIT",

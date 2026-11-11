@@ -79,7 +79,7 @@
         "operatingSystem": "Any (React 18 or 19)",
         "softwareVersion": "0.24.0",
         "license": "https://opensource.org/licenses/MIT",
-        "description": "The React data grid that does not care where your rows live. Zero runtime dependencies, about 17 kB gzipped, row and column virtualization to ten million rows, real HTML table semantics.",
+        "description": "The React data grid that does not care where your rows live. Zero runtime dependencies, about 22 kB gzipped, row and column virtualization to ten million rows, real HTML table semantics.",
         "url": "https://yaotzin1.github.io/apsw-gridwright/",
         "codeRepository": "https://github.com/yaotzin1/apsw-gridwright",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
@@ -91,7 +91,7 @@
         "name": "Indaba (@indaba/engine)",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Windows, macOS, Linux (Node 22+)",
-        "softwareVersion": "0.1.0-alpha.2",
+        "softwareVersion": "0.1.0-alpha.5",
         "license": "https://opensource.org/licenses/MIT",
         "description": "Let your agents argue. Ship what they agree on. A declared graph of steps behind exit-code guards, multi-agent council consensus, disposable git worktrees and OpenTelemetry GenAI traces.",
         "url": "https://yaotzin1.github.io/indaba/",
@@ -179,7 +179,7 @@
             </div>
 
             <div class="code-card">
-              <div class="code-bar"><span class="code-file">workflow.ai.yml</span><span class="code-note" data-i18n="wb.contract_note">abridged, illustrative</span></div>
+              <div class="code-bar"><span class="code-file">workflow.ai.yml</span><span class="code-note" data-i18n="wb.contract_note">abridged example</span></div>
               <pre class="code-body" id="wb-yaml" tabindex="0"><code></code></pre>
             </div>
 
@@ -188,7 +188,7 @@
                 <span class="pidx">01</span>
                 <div class="pmain">
                   <div class="pline"><span class="pname" data-i18n="wb.s1">SPEC</span></div>
-                  <p class="pnote" data-i18n="wb.n_spec_ok">Specification written. Guard: the file exists and is not empty.</p>
+                  <p class="pnote" data-i18n="wb.n_spec_ok">Specification written. Guard: no source file was touched.</p>
                 </div>
                 <span class="pstate" aria-hidden="true"></span>
               </li>
@@ -251,7 +251,7 @@
               </div>
               <div class="diff" id="grid-diff" data-remote="false">
                 <code class="diff-line diff-local">&lt;Gridwright columns={columns} <b>data={services}</b> /&gt;</code>
-                <code class="diff-line diff-remote">&lt;Gridwright columns={columns} <b>dataSource={servicesApi}</b> /&gt;</code>
+                <code class="diff-line diff-remote">&lt;Gridwright columns={columns} <b>dataSource={createRestDataSource({ url: '/api/services' })}</b> /&gt;</code>
                 <p class="diff-note" data-i18n="grid.diff_note">One line changes. Search, sort and paging stay as written.</p>
               </div>
               <div class="grid-toolbar">
@@ -280,7 +280,7 @@
                   <span class="grid-count" id="gw-count" aria-live="polite"></span>
                   <button type="button" class="pg" id="gw-next" aria-label="Next page" data-i18n-aria="grid.next">›</button>
                 </div>
-                <span class="grid-facts" data-i18n="grid.facts">0 deps · ~17 kB · 10M rows windowed</span>
+                <span class="grid-facts" data-i18n="grid.facts">0 deps · ~22 kB · 10M rows windowed</span>
               </div>
               <p class="grid-honest" id="gw-note" data-i18n="grid.local_note">The array is in memory, so the total is known.</p>
             </div>
@@ -307,9 +307,9 @@
 <span class="d-del">- claude:      total ?? "of many"</span>
 <span class="d-add">+ antigravity: lastPage.length &lt; pageSize ? offset + lastPage.length : "of many"</span></pre>
                     <p class="outcome" data-i18n="council.rfc_out">Both proposals recorded. No code yet.</p>
-                    <h4 class="mini" data-i18n="council.guards">Exit-code guards</h4>
-                    <pre class="guards"><span class="ok">exit 0</span>  test -s specs/rfc-claude.md
-<span class="ok">exit 0</span>  test -s specs/rfc-antigravity.md</pre>
+                    <h4 class="mini" data-i18n="council.guards">Guards and exit codes</h4>
+                    <pre class="guards"><span class="ok">pass</span>    git_diff_empty   paths: ["src/", "tests/"]
+<span class="ok">pass</span>    outputs          specs/rfc.md</pre>
                     <dl class="span">
                       <div><dt data-i18n="council.span">Span</dt><dd>indaba.step rfc</dd></div>
                       <div><dt data-i18n="council.duration">duration</dt><dd>41.2 s</dd></div>
@@ -334,9 +334,9 @@
 <span class="d-add">+ if (page.length &lt; pageSize) return offset + page.length;</span>
 <span class="d-add">+ return t("of many");</span></pre>
                     <p class="outcome" data-i18n="council.debate_out">Quorum 2 of 2 in round 2. No human arbiter needed.</p>
-                    <h4 class="mini" data-i18n="council.guards">Exit-code guards</h4>
-                    <pre class="guards"><span class="ok">exit 0</span>  git diff --quiet main -- src/public-api.ts
-<span class="ok">exit 0</span>  test -s .indaba/council/verdict.json</pre>
+                    <h4 class="mini" data-i18n="council.guards">Guards and exit codes</h4>
+                    <pre class="guards"><span class="ok">pass</span>    decision_type: consensus   2 of 2
+<span class="ok">pass</span>    arbiter: human             not called</pre>
                     <dl class="span">
                       <div><dt data-i18n="council.span">Span</dt><dd>indaba.step debate</dd></div>
                       <div><dt data-i18n="council.duration">duration</dt><dd>118.6 s</dd></div>
@@ -358,10 +358,10 @@
                     <pre class="diffblock"><span class="d-del">- if (page.length &lt;= pageSize) return offset + page.length;</span>
 <span class="d-add">+ if (page.length &lt; pageSize) return offset + page.length;</span></pre>
                     <p class="outcome" data-i18n="council.verify_out">Exit code 0. The patch leaves the worktree.</p>
-                    <h4 class="mini" data-i18n="council.guards">Exit-code guards</h4>
-                    <pre class="guards"><span class="fail">exit 1</span>  npx vitest run            # attempt 1 · 1 failed
-<span class="ok">exit 0</span>  npx vitest run            # attempt 2 · retry saw the last failure only
-<span class="ok">exit 0</span>  npm pack --dry-run        # packaging audit</pre>
+                    <h4 class="mini" data-i18n="council.guards">Guards and exit codes</h4>
+                    <pre class="guards"><span class="fail">exit 1</span>  pnpm test                 # attempt 1 · 1 failed
+<span class="ok">exit 0</span>  pnpm test                 # attempt 2 · retry_step saw the last failure only
+<span class="ok">exit 0</span>  pnpm typecheck</pre>
                     <dl class="span">
                       <div><dt data-i18n="council.span">Span</dt><dd>indaba.step verify</dd></div>
                       <div><dt data-i18n="council.duration">duration</dt><dd>63.9 s</dd></div>
@@ -429,7 +429,7 @@
           <article class="oss-card" id="indaba">
             <header class="oss-head">
               <h3 class="oss-name">Indaba</h3>
-              <p class="oss-meta">@indaba/engine · v0.1.0-alpha.2 · MIT · TypeScript, Node 22+</p>
+              <p class="oss-meta">@indaba/engine · v0.1.0-alpha.5 · MIT · TypeScript, Node 22+</p>
             </header>
             <p class="oss-tag" data-i18n="oss.indaba_tag">Let your agents argue. Ship what they agree on.</p>
             <div class="cli">
@@ -461,7 +461,7 @@
             </div>
             <ul class="mech">
               <li data-i18n="oss.grid_m1">Built by one architect using the Indaba engine and covered by 1,300+ automated tests.</li>
-              <li data-i18n="oss.grid_m2">0 runtime dependencies, about 17 kB gzipped.</li>
+              <li data-i18n="oss.grid_m2">0 runtime dependencies, about 22 kB gzipped.</li>
               <li data-i18n="oss.grid_m3">Up to 10M rows with row and column virtualization.</li>
               <li data-i18n-html="oss.grid_m4_html">Real HTML <code>&lt;table&gt;</code> semantics, with a WCAG 2.2 AA add-on.</li>
               <li data-i18n="oss.grid_m5">Honest "of many" totals when an API omits the count.</li>
