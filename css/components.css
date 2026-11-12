@@ -60,10 +60,12 @@
 }
 .hero-real { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); border: 1px solid var(--border-highlight); background: var(--bg-surface); margin: 0; }
 .hero-real-shot { position: relative; display: block; min-width: 0; border-right: 1px solid var(--border-subtle); background: var(--bg-canvas); }
-.hero-real-shot { aspect-ratio: 1040 / 638; }
-.hero-real-shot img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.hero-real-shot img.shot-light { filter: brightness(0.8) contrast(1.05); }
-.hero-real-shot:has(img.shot-light) { box-shadow: inset 0 0 0 1px var(--border-highlight); }
+.hero-real-shot { aspect-ratio: 1040 / 638; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px 22px 30px; overflow: hidden; }
+/* Each product screenshot sits in a monitor frame: dark bezel, soft glow, neck and base. */
+.hero-real-shot img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; min-height: 0; padding: 9px 9px 13px; box-sizing: border-box; object-fit: contain; background: #0d1117; border: 1px solid var(--border-highlight); border-radius: 10px; box-shadow: 0 0 40px rgba(56, 189, 248, 0.10), inset 0 0 0 1px rgba(255, 255, 255, 0.04); }
+.hero-real-shot::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 34%; height: 28px; transform: translateX(-50%); pointer-events: none;
+  background: linear-gradient(#1b222c, #10151c) 50% 0 / 14% 20px no-repeat, linear-gradient(#1b222c, #1b222c) 50% 100% / 100% 8px no-repeat; }
+.hero-real-shot img.shot-light { filter: brightness(0.82) contrast(1.05); }
 .hero-real-cap { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; padding: 24px; min-width: 0; }
 .hero-real-text { font-size: var(--fs-md); color: var(--text-primary); line-height: 1.5; }
 .hero-real-note { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-muted); line-height: 1.5; }
