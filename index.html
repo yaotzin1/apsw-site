@@ -260,7 +260,7 @@
               <li class="pstep" data-step="council" data-state="ok">
                 <span class="pidx">02</span>
                 <div class="pmain">
-                  <div class="pline"><span class="pname" data-i18n="wb.s2">COUNCIL DEBATE</span><span class="pdetail" id="wb-pair">claude-code ⇄ gemini</span></div>
+                  <div class="pline"><span class="pname" data-i18n="wb.s2">COUNCIL DEBATE</span><span class="pdetail" id="wb-pair">claude-code ⇄ antigravity</span></div>
                   <p class="pnote" data-i18n="wb.n_council_ok">Quorum 2 of 2 after two rounds.</p>
                 </div>
                 <span class="pstate" aria-hidden="true"></span>
@@ -365,7 +365,7 @@
                   </button>
                   <div class="acc-panel" id="acc-rfc" role="region" aria-labelledby="acc-rfc-btn" hidden>
                     <div class="voices">
-                      <div class="voice"><span class="voice-name">claude</span><p data-i18n="council.rfc_claude">Print "of many" in the footer when the source reports no total. Keep page arithmetic unchanged.</p></div>
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.rfc_claude">Print "of many" in the footer when the source reports no total. Keep page arithmetic unchanged.</p></div>
                       <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.rfc_anti">Agreed on the footer. Objection: a short last page proves the end, so the grid should print the real total then.</p></div>
                     </div>
                     <pre class="diffblock"><span class="d-ctx">  footer.total</span>
@@ -390,7 +390,7 @@
                   </button>
                   <div class="acc-panel" id="acc-debate" role="region" aria-labelledby="acc-debate-btn">
                     <div class="voices">
-                      <div class="voice"><span class="voice-name">claude</span><p data-i18n="council.debate_claude">Accepts the objection. A page shorter than the page size sets the total.</p></div>
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.debate_claude">Accepts the objection. A page shorter than the page size sets the total.</p></div>
                       <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.debate_anti">Confirms the revised diff. Asks for a test covering the short last page.</p></div>
                     </div>
                     <pre class="diffblock"><span class="d-ctx">@@ src/footer/total.ts @@</span>
@@ -417,7 +417,7 @@
                   </button>
                   <div class="acc-panel" id="acc-verify" role="region" aria-labelledby="acc-verify-btn" hidden>
                     <div class="voices">
-                      <div class="voice"><span class="voice-name">claude</span><p data-i18n="council.verify_claude">Attempt 1 failed one test. Retried with that failure only and fixed the off-by-one.</p></div>
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.verify_claude">Attempt 1 failed one test. Retried with that failure only and fixed the off-by-one.</p></div>
                       <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.verify_anti">Re-ran the suite and the packaging audit against the built package. Both pass.</p></div>
                     </div>
                     <pre class="diffblock"><span class="d-del">- if (page.length &lt;= pageSize) return offset + page.length;</span>
