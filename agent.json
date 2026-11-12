@@ -9,7 +9,7 @@
     "email": "piotr.solarz-wnek@apsw.pl",
     "phone": "+48 666 522 923",
     "linkedin": "https://www.linkedin.com/in/piotrsolarzwnek/",
-    "website": "https://apsw.pl",
+    "website": "https://apswlabs.com",
     "role_of_principal": "Principal Software Architect",
     "labs_website": "https://apswlabs.com",
     "github": "https://github.com/yaotzin1"
@@ -105,7 +105,7 @@
         "source": "https://github.com/yaotzin1/apsw-gridwright",
         "playground": "https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html",
         "docs": "https://yaotzin1.github.io/apsw-gridwright/docs/getting-started.html",
-        "page": "https://apsw.pl/#gridwright"
+        "page": "https://apswlabs.com/#gridwright"
       }
     },
     {
@@ -130,7 +130,7 @@
       "links": {
         "docs": "https://yaotzin1.github.io/indaba/",
         "source": "https://github.com/yaotzin1/indaba",
-        "page": "https://apsw.pl/#indaba"
+        "page": "https://apswlabs.com/#indaba"
       }
     }
   ],
@@ -143,17 +143,17 @@
     }
   ],
   "delivery_assurance": {
-    "page": "https://apsw.pl/#assurance",
+    "page": "https://apswlabs.com/#assurance",
     "summary": "The workflow.ai.yml-driven agent setup Gridwright is built with (generated agent instructions, enforced gates, declared tracks, packaging and security audits), offered to B2B teams.",
     "reference_workflow": "https://github.com/yaotzin1/apsw-gridwright/blob/main/workflow.ai.yml"
   },
   "contact": {
-    "scope_form": "https://apsw.pl/#contact",
+    "scope_form": "https://apswlabs.com/#contact",
     "email": "piotr.solarz-wnek@apsw.pl",
     "mutual_nda": "available before the technical alignment call"
   },
   "discovery": {
-    "llms_txt": "https://apsw.pl/llms.txt",
-    "llms_full": "https://apsw.pl/llms-full.txt"
+    "llms_txt": "https://apswlabs.com/llms.txt",
+    "llms_full": "https://apswlabs.com/llms-full.txt"
   }
 }

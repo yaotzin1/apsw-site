@@ -25,7 +25,7 @@
    - **Open source (`#open-source`, `#indaba`, `#gridwright`)**: the two MIT projects with copyable
      commands and links.
    - **The standard (`#assurance`)**: one rules file generating and enforcing the agent documents,
-     with a drift demo. The Gridwright README links here as `apsw.pl/#assurance`, so the anchor
+     with a drift demo. The Gridwright README links here as `apswlabs.com/#assurance`, so the anchor
      must stay.
    - **Delivery model (`#delivery`)**: Principal wedge, core synthesis, partner scale-out.
    - **Engagement tracks (`#tracks`)**: three lab sprints and one scaled partner track.
@@ -88,7 +88,7 @@ The agent setup mirrors [apsw-gridwright](https://github.com/yaotzin1/apsw-gridw
 1. Upload the site files to `public_html/` (the repository tooling — `scripts/`, `.agents/`, `.claude/`, `.githooks/`, `.github/`, `workflow.ai.yml`, `package.json` — is not needed on the server).
 2. Ensure `.logs/` directory has write permissions (`chmod 770 .logs`).
 3. Configure PHP version to **PHP 8.2, 8.3, 8.4 or 8.5** in cPanel / Cyber_Folks.
-4. Test contact form submission at `https://apsw.pl/#contact`.
+4. Test contact form submission at `https://apswlabs.com/#contact`.
 
 ### Option B: Hetzner Cloud / Docker PaaS (Coolify / Portainer)
 1. Build and run using the included `Dockerfile` and `docker-compose.yml`:
@@ -117,4 +117,4 @@ The agent setup mirrors [apsw-gridwright](https://github.com/yaotzin1/apsw-gridw
 - **Email**: [piotr.solarz-wnek@apsw.pl](mailto:piotr.solarz-wnek@apsw.pl)  
 - **Phone**: +48 666 522 923  
 - **LinkedIn**: [linkedin.com/in/piotrsolarzwnek](https://www.linkedin.com/in/piotrsolarzwnek/)  
-- **Website**: [https://apsw.pl](https://apsw.pl)
+- **Website**: [https://apswlabs.com](https://apswlabs.com)
