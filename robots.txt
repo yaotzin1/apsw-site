@@ -26,4 +26,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://apsw.pl/sitemap.xml
+Sitemap: https://apswlabs.com/sitemap.xml

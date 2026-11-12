@@ -2,7 +2,7 @@
 
 > Models guess. Engines verify. APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Led by Piotr Solarz-Wnęk, Principal Software Architect, creator of Indaba and Gridwright.
 
-Website: https://apsw.pl (also https://apswlabs.com)
+Website: https://apswlabs.com (alias: https://apsw.pl)
 Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
 GitHub: https://github.com/yaotzin1
 LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
@@ -40,15 +40,15 @@ Scaled partner delivery:
 
 ## Reference build: Idumela
 - Idumela is APSW's own B2B reputation engine: it monitors a brand's reviews, drafts replies in the brand's voice, and publishes only after a manager approves.
-- Multi-tenant, Symfony 8 + React / MUI, tenant isolation and a token-credit ledger. Built in 2 weeks, agent-written from specifications behind pre-commit quality gates. Not yet in production, for organisational reasons.
+- Multi-tenant, Symfony 8 + React / MUI, tenant isolation and a token-credit ledger. Built in 2 weeks, agent-written from specifications behind pre-commit quality gates. Internal APSW Labs product, not yet public.
 
 ## The engineering standard
-One workflow.ai.yml outranks every prompt. AGENTS.md, CLAUDE.md and GEMINI.md are generated from it, pre-commit hooks and CI enforce it, and CI fails when a repository instruction drifts from it: https://apsw.pl/#assurance
+One workflow.ai.yml outranks every prompt. AGENTS.md, CLAUDE.md and GEMINI.md are generated from it, pre-commit hooks and CI enforce it, and CI fails when a repository instruction drifts from it: https://apswlabs.com/#assurance
 
 ## Machine-Readable Endpoints
-- Agent Manifest: https://apsw.pl/agent.json
-- Full Context: https://apsw.pl/llms-full.txt
-- Engagement tracks: https://apsw.pl/#tracks
-- Scope a project: https://apsw.pl/#contact
-- Gridwright: https://apsw.pl/#gridwright
-- Indaba: https://apsw.pl/#indaba
+- Agent Manifest: https://apswlabs.com/agent.json
+- Full Context: https://apswlabs.com/llms-full.txt
+- Engagement tracks: https://apswlabs.com/#tracks
+- Scope a project: https://apswlabs.com/#contact
+- Gridwright: https://apswlabs.com/#gridwright
+- Indaba: https://apswlabs.com/#indaba
