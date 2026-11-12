@@ -308,7 +308,7 @@ const APSW_TRANSLATIONS = {
   "pl": {
     "meta": {
       "page_title": "APSW Labs | Architect. Prove. Ship. Watch.",
-      "page_description": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta."
+      "page_description": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z dedykowanymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta."
     },
     "common": {
       "copy": "Kopiuj",
@@ -330,16 +330,16 @@ const APSW_TRANSLATIONS = {
     },
     "cookie": {
       "aria": "Cookies",
-      "text": "Bez cookies śledzących i reklamowych. Strona zapisuje w przeglądarce wybór języka, formularz kontaktowy ustawia techniczne cookie sesji przy wysyłce, a czcionki ładują się z Google Fonts.",
+      "text": "Bez cookies śledzących i reklamowych. Strona zapisuje w przeglądarce wybór języka, formularz kontaktowy ustawia techniczne cookie sesji podczas przesyłania formularza, a czcionki ładują się z Google Fonts.",
       "ok": "Rozumiem"
     },
     "hero": {
       "eyebrow": "STUDIO ARCHITEKTURY AI-NATIVE I INŻYNIERII POD KLUCZ",
       "title_html": "Architect. Prove.<br><span class=\"hl\">Ship. Watch.</span>",
       "lead": "Dostarczamy oprogramowanie.",
-      "ac_a_html": "<strong class=\"ac-word\"><span class=\"hl\">A</span>rchitect</strong><span class=\"ac-text\">Architektura systemu prowadzona przez głównego architekta, od 10-dniowego blueprintu.</span>",
+      "ac_a_html": "<strong class=\"ac-word\"><span class=\"hl\">A</span>rchitect</strong><span class=\"ac-text\">Architektura systemu pod kierunkiem głównego architekta, od 10-dniowego planu architektury.</span>",
       "ac_p_html": "<strong class=\"ac-word\"><span class=\"hl\">P</span>rove</strong><span class=\"ac-text\">Modele AI wzajemnie sprawdzają każdą zmianę, aż dojdą do zgody.</span>",
-      "ac_s_html": "<strong class=\"ac-word\"><span class=\"hl\">S</span>hip</strong><span class=\"ac-text\">Wdrożenie pod klucz aż do pełnoskalowej platformy produkcyjnej, z elastycznym zespołem partnerskim.</span>",
+      "ac_s_html": "<strong class=\"ac-word\"><span class=\"hl\">S</span>hip</strong><span class=\"ac-text\">Wdrożenie pod klucz aż do pełnoskalowej platformy produkcyjnej z dedykowanym zespołem partnerskim.</span>",
       "ac_w_html": "<strong class=\"ac-word\"><span class=\"hl\">W</span>atch</strong><span class=\"ac-text\">CI od razu blokuje zmiany niezgodne z ustaloną architekturą i workflow.</span>",
       "cta_secondary": "Zobacz open source",
       "switch_label": "Wybierz scenariusz. Przebieg po lewej wytwarza artefakt po prawej.",
@@ -541,7 +541,7 @@ const APSW_TRANSLATIONS = {
       "s3": "3 · Podgląd routingu",
       "mode_label": "Tryb realizacji",
       "mode_direct": "Bezpośrednia realizacja przez głównego architekta APSW Labs (zero narzutu agencyjnego)",
-      "mode_partner": "Architektura głównego architekta APSW Labs + elastyczny zespół inżynierski software house’u",
+      "mode_partner": "Architektura głównego architekta APSW Labs + dedykowany zespół inżynierski software house’u",
       "note_direct": "Rozmawiasz z architektem, który to buduje.",
       "note_partner": "Architekt ustala kontrakty i bramki. Zespół buduje w ich granicach.",
       "s4": "4 · Kontakt i NDA",
@@ -569,7 +569,7 @@ const APSW_TRANSLATIONS = {
     "model": {
       "eyebrow": "MODEL DOSTAWY „KLIN ARCHITEKTA”",
       "title": "Precyzja architekta. Skala partnera.",
-      "sub": "Na początku architektura od głównego architekta. Dalej elastyczne zespoły inżynierskie.",
+      "sub": "Na początku architektura od głównego architekta. Dalej dedykowane zespoły inżynierskie.",
       "cmp_free_k": "Samodzielny freelancer",
       "cmp_free_v": "Duże umiejętności, brak mocy przerobowych. Projekt staje, gdy staje jedna osoba.",
       "cmp_agency_k": "Tradycyjna agencja",
