@@ -360,7 +360,7 @@ const APSW_TRANSLATIONS = {
       "grid_caption": "Wyszukiwanie, sortowanie kolumn i zaznaczanie wierszy w jednej siatce bez zależności.",
       "grid_note": "Zrzut placu zabaw Gridwright.",
       "grid_link": "Otwórz plac zabaw ↗",
-      "idu_label": "PRODUKT, KTÓRY BUDUJEMY NA SILNIKU INDABA",
+      "idu_label": "PRODUKT BUDOWANY NA SILNIKU INDABA",
       "idu_alt": "Ekran akceptacji w Idumeli: oczekująca opinia z oceną w gwiazdkach i odpowiedzią napisaną przez AI, która czeka na akceptację menedżera",
       "idu_caption": "Idumela pisze każdą odpowiedź głosem marki i nie publikuje niczego, dopóki menedżer jej nie zatwierdzi.",
       "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Własnościowy produkt SaaS B2B budowany przez APSW Labs, jeszcze niedostępny publicznie.",
