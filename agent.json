@@ -138,7 +138,7 @@
     {
       "name": "Idumela",
       "description": "APSW's own B2B reputation engine: monitors a brand's reviews, drafts replies in the brand's voice, publishes only after a manager approves. Multi-tenant, Symfony 8 + React / MUI, tenant isolation, token-credit ledger.",
-      "status": "proprietary B2B SaaS built and operated by APSW Labs",
+      "status": "proprietary B2B SaaS built by APSW Labs, not publicly available yet",
       "build": "2 weeks; agent-written from specifications behind pre-commit quality gates"
     }
   ],

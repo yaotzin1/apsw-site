@@ -56,7 +56,7 @@ Scaled partner delivery (Principal architecture plus software house squad):
 Reference build: Idumela, APSW's own B2B reputation engine. It monitors a
 brand's reviews, drafts replies in the brand's voice and publishes only after a manager approves.
 Multi-tenant (Symfony 8 + React / MUI, tenant isolation, token-credit ledger), built in 2 weeks,
-agent-written from specifications behind pre-commit quality gates. Proprietary B2B SaaS built and operated by APSW Labs.
+agent-written from specifications behind pre-commit quality gates. Proprietary B2B SaaS built by APSW Labs, not publicly available yet.
 
 =============================================================================
 4. APSW LABS: OPEN-SOURCE PRODUCTS
