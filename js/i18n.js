@@ -34,7 +34,8 @@ const APSW_TRANSLATIONS = {
     },
     "hero": {
       "eyebrow": "AI-NATIVE ARCHITECTURE & TURNKEY ENGINEERING STUDIO",
-      "title_html": "Models guess.<br><span class=\"hl\">Engines verify.</span><br>We ship deterministic software.",
+      "title_html": "Models guess.<br><span class=\"hl\">Engines verify.</span>",
+      "lead": "We ship deterministic software.",
       "sub": "APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity — taking you from a 10-day architectural blueprint to a full-scale production platform.",
       "cta_secondary": "See the open source",
       "switch_label": "Pick a scenario. The run on the left produces the artifact on the right.",
@@ -304,7 +305,7 @@ const APSW_TRANSLATIONS = {
   "pl": {
     "meta": {
       "page_title": "APSW Labs | Modele zgadują. Silniki weryfikują.",
-      "page_description": "APSW Labs łączy architekturę systemów prowadzoną przez Principala i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta."
+      "page_description": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta."
     },
     "common": {
       "copy": "Kopiuj",
@@ -331,8 +332,9 @@ const APSW_TRANSLATIONS = {
     },
     "hero": {
       "eyebrow": "STUDIO ARCHITEKTURY AI-NATIVE I INŻYNIERII POD KLUCZ",
-      "title_html": "Modele zgadują.<br><span class=\"hl\">Silniki weryfikują.</span><br>Dostarczamy deterministyczne oprogramowanie.",
-      "sub": "APSW Labs łączy architekturę systemów prowadzoną przez Principala i deterministyczne potoki AI z elastycznymi zespołami partnerskimi — od 10-dniowego blueprintu architektury do pełnoskalowej platformy produkcyjnej.",
+      "title_html": "Modele zgadują.<br><span class=\"hl\">Silniki weryfikują.</span>",
+      "lead": "Dostarczamy deterministyczne oprogramowanie.",
+      "sub": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi — od 10-dniowego blueprintu architektury do pełnoskalowej platformy produkcyjnej.",
       "cta_secondary": "Zobacz open source",
       "switch_label": "Wybierz scenariusz. Przebieg po lewej wytwarza artefakt po prawej.",
       "tabs_aria": "Scenariusz warsztatu",
@@ -532,8 +534,8 @@ const APSW_TRANSLATIONS = {
       "p3": "Dedykowany zespół partnerski (3–12+ miesięcy / wielu inżynierów)",
       "s3": "3 · Podgląd routingu",
       "mode_label": "Tryb realizacji",
-      "mode_direct": "Bezpośrednia realizacja przez Principala APSW Labs (zero narzutu agencyjnego)",
-      "mode_partner": "Architektura Principala APSW Labs + elastyczny zespół inżynierski software house’u",
+      "mode_direct": "Bezpośrednia realizacja przez głównego architekta APSW Labs (zero narzutu agencyjnego)",
+      "mode_partner": "Architektura głównego architekta APSW Labs + elastyczny zespół inżynierski software house’u",
       "note_direct": "Rozmawiasz z architektem, który to buduje.",
       "note_partner": "Architekt ustala kontrakty i bramki. Zespół buduje w ich granicach.",
       "s4": "4 · Kontakt i NDA",
@@ -544,7 +546,7 @@ const APSW_TRANSLATIONS = {
       "brief_label": "Opis techniczny / stos",
       "brief_placeholder": "Co system ma robić, w jakim stosie działa i kiedy ma ruszyć.",
       "nda_html": "<strong>Podpisz wzajemne NDA przed techniczną rozmową uzgadniającą.</strong> Podpisujemy, zanim przekażesz cokolwiek wrażliwego.",
-      "submit": "Poproś o zakres techniczny (odpowiedź Principala <4h) →",
+      "submit": "Poproś o zakres techniczny (odpowiedź architekta <4h) →",
       "sending": "Wysyłanie…",
       "fb_success": "Otrzymano. Piotr czyta każdy opis osobiście i odpowiada bezpośrednio.",
       "fb_invalid": "Nie wysłano. Sprawdź imię i nazwisko, służbowy e-mail oraz opis o długości co najmniej 8 znaków.",
@@ -552,7 +554,7 @@ const APSW_TRANSLATIONS = {
       "fb_unreachable": "Nie wysłano. Serwer nie odpowiedział. Napisz bezpośrednio: piotr.solarz-wnek@apsw.pl"
     },
     "footer": {
-      "desc": "APSW Labs. Architektura prowadzona przez Principala, silniki open source i dostawa pod klucz.",
+      "desc": "APSW Labs. Architektura prowadzona przez głównego architekta, silniki open source i dostawa pod klucz.",
       "build": "Bez kroku budowania. Pliki w repozytorium to pliki serwowane.",
       "col_products": "Open source",
       "col_studio": "Studio",
