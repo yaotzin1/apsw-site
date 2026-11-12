@@ -17,7 +17,7 @@ const APSW_TRANSLATIONS = {
     "nav": {
       "brand_badge": "ARCHITECTURE · OPEN SOURCE · TURNKEY DELIVERY",
       "main_aria": "Main navigation",
-      "workshop": "Live Workbench",
+      "workshop": "Try it",
       "oss": "Open Source",
       "standard": "The Standard",
       "delivery": "Delivery & Scale",
@@ -26,6 +26,11 @@ const APSW_TRANSLATIONS = {
       "lang_aria": "Language",
       "menu_aria": "Open or close the menu",
       "skip": "Skip to content"
+    },
+    "cookie": {
+      "aria": "Cookies",
+      "text": "No tracking or advertising cookies. This site stores your language choice in your browser, the contact form starts a technical session cookie when you send it, and fonts load from Google Fonts.",
+      "ok": "Got it"
     },
     "hero": {
       "eyebrow": "AI-NATIVE ARCHITECTURE & TURNKEY ENGINEERING STUDIO",
@@ -37,7 +42,27 @@ const APSW_TRANSLATIONS = {
       "tab1": "High-Load UI",
       "tab2": "Multi-Agent Engine",
       "tab3": "Turnkey B2B SaaS",
-      "tab3_sub": "Idumela · AI reputation platform"
+      "tab3_sub": "Idumela · AI reputation platform",
+      "real_label": "THE ENGINE, RUNNING",
+      "real_alt": "Indaba web view: four steps, rfc, code, verify and review, with a dashed route from verify back to code and the details of the verify step",
+      "real_caption": "Four steps, one failed test. The engine sends the run back to code and tries again, all declared in a single workflow.ai.yml.",
+      "real_note": "Screenshot of the real Indaba web view on a demo project: shell steps, no model calls.",
+      "real_link": "Open the Indaba docs ↗",
+      "car_aria": "The products in use",
+      "car_tabs_aria": "Product views",
+      "grid_label": "THE GRID, IN THE BROWSER",
+      "grid_alt": "Gridwright playground: a data grid of people with a search box, sortable columns and row selection",
+      "grid_caption": "Search, sortable columns and row selection in one dependency-free grid.",
+      "grid_note": "Screenshot of the Gridwright playground.",
+      "grid_link": "Open the playground ↗",
+      "idu_label": "A PRODUCT WE RUN",
+      "idu_alt": "Idumela approval screen: a pending review with its star rating and an AI-drafted reply waiting for a manager to approve it",
+      "idu_caption": "Idumela drafts each reply in the brand’s voice and publishes nothing until a manager approves it.",
+      "idu_note": "Screenshot of the Idumela interface with example data; the AI reply is sample text. Not yet in production, for organisational reasons.",
+      "example_badge": "Example data",
+      "try_eyebrow": "TRY IT",
+      "try_title": "A simulated run you can drive",
+      "try_sub": "A simplified simulation in your browser, not the Indaba engine itself."
     },
     "wb": {
       "engine_title": "The engine",
@@ -118,7 +143,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: multi-tenant reputation triage",
-      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it.",
+      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is not yet in production, for organisational reasons.",
       "fact_time_k": "Build time",
       "fact_time_v": "2 weeks",
       "fact_how_k": "Method",
@@ -202,7 +227,7 @@ const APSW_TRANSLATIONS = {
       "c3": "AI Factory Repo Installation",
       "b3": "Team Enablement · 2–3 Wks",
       "c4": "Full-Scale Platform / Engineering Squad",
-      "b4": "Principal + Partner Software House",
+      "b4": "Principal + Software House",
       "s2": "2 · Delivery scale and timeline",
       "p1": "Surgical Sprint (Fixed Deliverable)",
       "p2": "Core System Build (1–3 Months)",
@@ -210,7 +235,7 @@ const APSW_TRANSLATIONS = {
       "s3": "3 · Routing preview",
       "mode_label": "Execution Mode",
       "mode_direct": "Direct APSW Labs Principal Execution (Zero agency overhead)",
-      "mode_partner": "Principal Architecture by APSW Labs + Elastic Engineering Squad via Partner Software House",
+      "mode_partner": "Principal Architecture by APSW Labs + Elastic Engineering Squad via Software House",
       "note_direct": "You talk to the architect who builds it.",
       "note_partner": "The architect sets the contracts and the gates. The squad builds inside them.",
       "s4": "4 · Contact and NDA",
@@ -251,7 +276,7 @@ const APSW_TRANSLATIONS = {
       "ph2_tag": "APSW LABS ENGINE",
       "ph2_name": "Autonomous Core Synthesis",
       "ph2_text": "High-leverage core modules, data pipelines and MVPs are synthesized and verified with @indaba/engine and multi-agent councils. Weeks, not quarters.",
-      "ph3_tag": "PARTNER SOFTWARE HOUSE SQUADS",
+      "ph3_tag": "SOFTWARE HOUSE SQUADS",
       "ph3_name": "Elastic Partner Scale-Out",
       "ph3_text": "Need 4–8 engineers for long-term feature expansion, mobile apps or a 24/7 SLA? Our vetted partner squads plug directly into the pre-configured workflow.ai.yml repository. Automated CI gates govern every commit, so code quality does not degrade after handoff.",
       "gate": "same CI gates"
@@ -271,8 +296,8 @@ const APSW_TRANSLATIONS = {
       "t3_terms": "In-House Team Enablement · 2–3 Weeks",
       "t3_text": "We install the exact engineering standard behind Gridwright into your repository: custom workflow.ai.yml tracks, multi-agent review councils, CI drift guards and senior engineering playbooks.",
       "t4_name": "Full-Scale Platform & Dedicated Squads",
-      "t4_terms": "Architect-Led + Partner Software House",
-      "t4_text": "End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our partner software house.",
+      "t4_terms": "Architect-Led + Software House",
+      "t4_text": "End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our software house.",
       "cta": "Scope this track →"
     }
   },
@@ -289,7 +314,7 @@ const APSW_TRANSLATIONS = {
     "nav": {
       "brand_badge": "ARCHITEKTURA · OPEN SOURCE · DOSTAWA POD KLUCZ",
       "main_aria": "Nawigacja główna",
-      "workshop": "Warsztat na żywo",
+      "workshop": "Wypróbuj",
       "oss": "Open Source",
       "standard": "Standard",
       "delivery": "Dostawa i skala",
@@ -298,6 +323,11 @@ const APSW_TRANSLATIONS = {
       "lang_aria": "Język",
       "menu_aria": "Otwórz lub zamknij menu",
       "skip": "Przejdź do treści"
+    },
+    "cookie": {
+      "aria": "Cookies",
+      "text": "Bez cookies śledzących i reklamowych. Strona zapisuje w przeglądarce wybór języka, formularz kontaktowy ustawia techniczne cookie sesji przy wysyłce, a czcionki ładują się z Google Fonts.",
+      "ok": "Rozumiem"
     },
     "hero": {
       "eyebrow": "STUDIO ARCHITEKTURY AI-NATIVE I INŻYNIERII POD KLUCZ",
@@ -309,7 +339,28 @@ const APSW_TRANSLATIONS = {
       "tab1": "Interfejs pod dużym obciążeniem",
       "tab2": "Silnik wieloagentowy",
       "tab3": "B2B SaaS pod klucz",
-      "tab3_sub": "Idumela · platforma reputacji AI"
+      "tab3_sub": "Idumela · platforma reputacji AI",
+      "real_label": "SILNIK W DZIAŁANIU",
+      "real_alt": "Widok webowy Indaba: cztery kroki, rfc, code, verify i review, z przerywaną ścieżką z verify z powrotem do code i szczegółami kroku verify",
+      "real_caption": "Cztery kroki i jeden nieudany test. Silnik cofa przebieg do kroku code i próbuje ponownie, wszystko zapisane w jednym workflow.ai.yml.",
+      "real_note": "Zrzut prawdziwego widoku webowego Indaba na projekcie demo: kroki powłoki, bez wywołań modeli.",
+      "real_link": "Otwórz dokumentację Indaby ↗",
+      "car_aria": "Produkty w użyciu",
+      "car_tabs_aria": "Widoki produktów",
+      "grid_label": "SIATKA W PRZEGLĄDARCE",
+      "grid_alt": "Plac zabaw Gridwright: siatka danych z listą osób, wyszukiwarką, sortowanymi kolumnami i zaznaczaniem wierszy",
+      "grid_caption": "Wyszukiwanie, sortowanie kolumn i zaznaczanie wierszy w jednej siatce bez zależności.",
+      "grid_note": "Zrzut placu zabaw Gridwright.",
+      "grid_link": "Otwórz plac zabaw ↗",
+      "idu_label": "PRODUKT, KTÓRY PROWADZIMY",
+      "idu_alt": "Ekran akceptacji w Idumeli: oczekująca opinia z oceną w gwiazdkach i odpowiedzią napisaną przez AI, która czeka na akceptację menedżera",
+      "idu_caption": "Idumela pisze każdą odpowiedź głosem marki i nie publikuje niczego, dopóki menedżer jej nie zatwierdzi.",
+      "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Produkt nie jest jeszcze wdrożony produkcyjnie z przyczyn organizacyjnych.",
+      "example_badge": "Dane przykładowe",
+
+      "try_eyebrow": "WYPRÓBUJ",
+      "try_title": "Symulowany przebieg, którym możesz sterować",
+      "try_sub": "Uproszczona symulacja w przeglądarce, a nie sam silnik Indaba."
     },
     "wb": {
       "engine_title": "Silnik",
@@ -390,7 +441,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: wielodostępny triaż reputacji",
-      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi.",
+      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. Nie jest jeszcze wdrożona produkcyjnie z przyczyn organizacyjnych.",
       "fact_time_k": "Czas budowy",
       "fact_time_v": "2 tygodnie",
       "fact_how_k": "Metoda",
@@ -474,7 +525,7 @@ const APSW_TRANSLATIONS = {
       "c3": "Instalacja fabryki AI w repozytorium",
       "b3": "Wzmocnienie zespołu · 2–3 tyg.",
       "c4": "Pełnoskalowa platforma / zespół inżynierski",
-      "b4": "Principal + partnerski software house",
+      "b4": "Principal + software house",
       "s2": "2 · Skala dostawy i horyzont",
       "p1": "Sprint chirurgiczny (stały rezultat)",
       "p2": "Budowa rdzenia systemu (1–3 miesiące)",
@@ -482,7 +533,7 @@ const APSW_TRANSLATIONS = {
       "s3": "3 · Podgląd routingu",
       "mode_label": "Tryb realizacji",
       "mode_direct": "Bezpośrednia realizacja przez Principala APSW Labs (zero narzutu agencyjnego)",
-      "mode_partner": "Architektura Principala APSW Labs + elastyczny zespół inżynierski partnerskiego software house’u",
+      "mode_partner": "Architektura Principala APSW Labs + elastyczny zespół inżynierski software house’u",
       "note_direct": "Rozmawiasz z architektem, który to buduje.",
       "note_partner": "Architekt ustala kontrakty i bramki. Zespół buduje w ich granicach.",
       "s4": "4 · Kontakt i NDA",
@@ -509,8 +560,8 @@ const APSW_TRANSLATIONS = {
     },
     "model": {
       "eyebrow": "MODEL DOSTAWY „KLIN ARCHITEKTA”",
-      "title": "Precyzja Principala. Skala partnera.",
-      "sub": "Architektura Principala u podstaw. Elastyczne zespoły inżynierskie w skali.",
+      "title": "Precyzja architekta. Skala partnera.",
+      "sub": "Na początku architektura od głównego architekta. Dalej elastyczne zespoły inżynierskie.",
       "cmp_free_k": "Samodzielny freelancer",
       "cmp_free_v": "Duże umiejętności, brak mocy przerobowych. Projekt staje, gdy staje jedna osoba.",
       "cmp_agency_k": "Tradycyjna agencja",
@@ -518,12 +569,12 @@ const APSW_TRANSLATIONS = {
       "cmp_apsw_k": "APSW Labs",
       "cmp_apsw_v": "Jeden architekt ustala kontrakty i bramki. Moce przerobowe dochodzą za nimi.",
       "ph1_tag": "RDZEŃ APSW LABS",
-      "ph1_name": "Klin Principala i blueprint",
+      "ph1_name": "Wejście architekta i blueprint",
       "ph1_text": "Piotr osobiście określa granice C4, kontrakty domenowe, izolację bezpieczeństwa i zabezpieczenia CI repozytorium w workflow.ai.yml. Zero handlowców, zero strat w tłumaczeniu.",
       "ph2_tag": "SILNIK APSW LABS",
       "ph2_name": "Autonomiczna synteza rdzenia",
       "ph2_text": "Kluczowe moduły rdzenia, potoki danych i MVP są syntetyzowane i weryfikowane przez @indaba/engine i rady wielu agentów. Tygodnie, nie kwartały.",
-      "ph3_tag": "ZESPOŁY PARTNERSKIEGO SOFTWARE HOUSE’U",
+      "ph3_tag": "ZESPOŁY SOFTWARE HOUSE’U",
       "ph3_name": "Elastyczne skalowanie z partnerem",
       "ph3_text": "Potrzebujesz 4–8 inżynierów do długofalowego rozwoju funkcji, aplikacji mobilnych albo SLA 24/7? Sprawdzone zespoły partnerskie wpinają się prosto w skonfigurowane repozytorium z workflow.ai.yml. Każdym commitem rządzą automatyczne bramki CI, więc jakość kodu nie spada po przekazaniu.",
       "gate": "te same bramki CI"
@@ -543,8 +594,8 @@ const APSW_TRANSLATIONS = {
       "t3_terms": "Wzmocnienie zespołu wewnętrznego · 2–3 tygodnie",
       "t3_text": "Instalujemy w twoim repozytorium dokładnie ten standard inżynierski, który stoi za Gridwrightem: własne ścieżki workflow.ai.yml, wieloagentowe rady przeglądu, strażników rozjazdu w CI i playbooki dla starszych inżynierów.",
       "t4_name": "Pełnoskalowa platforma i dedykowane zespoły",
-      "t4_terms": "Prowadzi architekt + partnerski software house",
-      "t4_text": "Kompleksowy rozwój produktu enterprise, modernizacja legacy albo dedykowane zespoły interdyscyplinarne: Java 21, Symfony 8, React, chmura i dane. Architektura i bramki po stronie APSW Labs, skala i obsada po stronie partnerskiego software house’u.",
+      "t4_terms": "Prowadzi architekt + software house",
+      "t4_text": "Kompleksowy rozwój produktu enterprise, modernizacja legacy albo dedykowane zespoły interdyscyplinarne: Java 21, Symfony 8, React, chmura i dane. Architektura i bramki po stronie APSW Labs, skala i obsada po stronie software house’u.",
       "cta": "Określ zakres tej ścieżki →"
     }
   }

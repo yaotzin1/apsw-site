@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ================================================================== Scenario tabs
 
-  const tabs = Array.from(document.querySelectorAll('.scenario-tab'));
+  const tabs = Array.from(document.querySelectorAll('#try .scenario-tab'));
 
   function selectScenario(name, { focus = false, run = true } = {}) {
     scenario = name;

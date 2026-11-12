@@ -23,6 +23,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearElement = document.getElementById('footer-year');
   if (yearElement) yearElement.textContent = String(new Date().getFullYear());
 
+  // 1b. Hero carousel: three product views. Tabs switch slides; it advances on its own until the
+  // visitor touches it, hovers it or focuses it, and never when they prefer reduced motion.
+  const carousel = document.getElementById('hero-carousel');
+  if (carousel) {
+    const tabs = Array.from(carousel.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(carousel.querySelectorAll('[role="tabpanel"]'));
+    let current = 0;
+    let timer = null;
+    let engaged = false;
+    const show = (index, focus) => {
+      current = (index + tabs.length) % tabs.length;
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === current));
+        tab.tabIndex = i === current ? 0 : -1;
+      });
+      panels.forEach((panel, i) => panel.classList.toggle('is-active', i === current));
+      if (focus) tabs[current].focus();
+    };
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+    const start = () => {
+      if (engaged || timer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = setInterval(() => show(current + 1), 7000);
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => { engaged = true; stop(); show(i); });
+      tab.addEventListener('keydown', (event) => {
+        const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+        if (!step) return;
+        event.preventDefault();
+        engaged = true; stop(); show(current + step, true);
+      });
+    });
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+    start();
+  }
+
+  // 1c. Cookie notice. The site sets no tracking cookies, so this only informs and remembers that it
+  // was read, in localStorage. Storage can be blocked: then the notice simply shows on every visit.
+  const cookieBar = document.getElementById('cookie-bar');
+  const cookieOk = document.getElementById('cookie-ok');
+  if (cookieBar && cookieOk) {
+    let seen = false;
+    try { seen = localStorage.getItem('apsw_cookie_notice') === '1'; } catch { seen = false; }
+    cookieBar.hidden = seen;
+    cookieOk.addEventListener('click', () => {
+      cookieBar.hidden = true;
+      try { localStorage.setItem('apsw_cookie_notice', '1'); } catch { /* blocked storage: nothing to remember */ }
+    });
+  }
+
   // 2. Mobile menu
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
@@ -116,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Always English: this text goes into the email the Principal reads, not onto the page.
     rfpInput.value = [
       `Delivery scale: ${checked('scale')?.value ?? ''}`,
-      `Execution mode: ${isPartnerRoute() ? 'Principal architecture + partner software house squad' : 'Direct APSW Labs Principal execution'}`,
+      `Execution mode: ${isPartnerRoute() ? 'Principal architecture + software house squad' : 'Direct APSW Labs Principal execution'}`,
     ].join('\n');
 
     submitButton.disabled = true;

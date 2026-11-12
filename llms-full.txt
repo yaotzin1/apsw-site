@@ -30,7 +30,7 @@ Principal architecture at the root. Elastic engineering squads at scale.
   workflow.ai.yml.
 - Phase 02, Autonomous Core Synthesis (APSW Labs engine): high-leverage core modules, data
   pipelines and MVPs are synthesized and verified with @indaba/engine and multi-agent councils.
-- Phase 03, Elastic Partner Scale-Out (partner software house squads): for 4-8 engineers of
+- Phase 03, Elastic Partner Scale-Out (software house squads): for 4-8 engineers of
   long-term feature expansion, mobile apps or a 24/7 SLA, vetted partner squads plug into the
   pre-configured workflow.ai.yml repository. Automated CI gates govern every commit after handoff.
 
@@ -48,15 +48,15 @@ High-velocity lab sprints (direct APSW Labs Principal execution):
   standard behind Gridwright installed into the client's repository: custom workflow.ai.yml tracks,
   multi-agent review councils, CI drift guards and senior engineering playbooks.
 
-Scaled partner delivery (Principal architecture plus partner software house squad):
+Scaled partner delivery (Principal architecture plus software house squad):
 - Track 04, Full-Scale Platform & Dedicated Squads: end-to-end enterprise product development,
   legacy modernization or dedicated multi-disciplinary squads (Java 21, Symfony 8, React,
-  Cloud / Data). Architected and gated by APSW Labs, scaled and staffed by a partner software house.
+  Cloud / Data). Architected and gated by APSW Labs, scaled and staffed by a software house.
 
-Reference build: Idumela (https://idumela.com), APSW's own B2B reputation engine. It monitors a
+Reference build: Idumela, APSW's own B2B reputation engine. It monitors a
 brand's reviews, drafts replies in the brand's voice and publishes only after a manager approves.
 Multi-tenant (Symfony 8 + React / MUI, tenant isolation, token-credit ledger), built in 2 weeks,
-agent-written from specifications behind pre-commit quality gates.
+agent-written from specifications behind pre-commit quality gates. Not yet in production, for organisational reasons.
 
 =============================================================================
 4. APSW LABS: OPEN-SOURCE PRODUCTS

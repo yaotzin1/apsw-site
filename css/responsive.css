@@ -9,6 +9,8 @@
 
 @media (max-width: 1020px) {
   .hero-head { grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+  .hero-real { grid-template-columns: minmax(0, 1fr); }
+  .hero-real-shot { border-right: 0; border-bottom: 1px solid var(--border-subtle); }
   .workbench { grid-template-columns: minmax(0, 1fr); }
   .wb-engine { border-right: 0; border-bottom: 1px solid var(--border-subtle); }
   .std-diagram { grid-template-columns: minmax(0, 1fr); }

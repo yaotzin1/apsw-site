@@ -36,7 +36,7 @@
     {
       "phase": 3,
       "name": "Elastic Partner Scale-Out",
-      "owner": "Partner software house squads",
+      "owner": "Software house squads",
       "description": "Squads of 4-8 engineers for long-term expansion, mobile apps or 24/7 SLA, working in the pre-configured workflow.ai.yml repository under automated CI gates."
     }
   ],
@@ -66,8 +66,8 @@
       "id": "platform-squads",
       "group": "partner_delivery",
       "name": "Full-Scale Platform & Dedicated Squads",
-      "terms": "Architect-led plus partner software house",
-      "description": "Enterprise product development, legacy modernization or dedicated squads (Java 21, Symfony 8, React, Cloud/Data). Architected and gated by APSW Labs, scaled and staffed by a partner software house."
+      "terms": "Architect-led plus software house",
+      "description": "Enterprise product development, legacy modernization or dedicated squads (Java 21, Symfony 8, React, Cloud/Data). Architected and gated by APSW Labs, scaled and staffed by a software house."
     }
   ],
   "products": [
@@ -137,8 +137,8 @@
   "reference_builds": [
     {
       "name": "Idumela",
-      "url": "https://idumela.com",
       "description": "APSW's own B2B reputation engine: monitors a brand's reviews, drafts replies in the brand's voice, publishes only after a manager approves. Multi-tenant, Symfony 8 + React / MUI, tenant isolation, token-credit ledger.",
+      "status": "not yet in production, for organisational reasons",
       "build": "2 weeks; agent-written from specifications behind pre-commit quality gates"
     }
   ],
