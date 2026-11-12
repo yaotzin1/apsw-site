@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showTokens(value) {
     shownTokens = value;
-    tokensElement.textContent = Math.round(value).toLocaleString('en-US');
+    tokensElement.textContent = Math.round(value).toLocaleString(locale());
     costElement.textContent = `$${((value / TOTAL_TOKENS) * TOTAL_COST).toFixed(3)}`;
   }
 
@@ -624,10 +624,22 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('apsw:languageChanged', () => {
     refreshGrid();
     paintBelt();
+    showTokens(shownTokens);
   });
 
   refreshGrid();
   paintBelt();
-  // With reduced motion the run is shown finished; otherwise it plays once on load.
-  selectScenario('grid', { run: !reducedMotion });
+  // The simulator sits below the hero carousel, so a run started on load would be over before anyone
+  // scrolls here. It is shown finished, and plays once the first time at least a third of it is on screen.
+  // With reduced motion, or without IntersectionObserver, it simply stays finished.
+  selectScenario('grid', { run: false });
+  const bench = byId('wb');
+  if (bench && !reducedMotion && 'IntersectionObserver' in window) {
+    const watcher = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      watcher.disconnect();
+      replay();
+    }, { threshold: 0.33 });
+    watcher.observe(bench);
+  }
 });
