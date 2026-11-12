@@ -44,7 +44,7 @@
   background: radial-gradient(120% 90% at 20% 0%, color-mix(in srgb, var(--bg-canvas) 55%, transparent) 0%, var(--bg-canvas) 62%);
 }
 .hero > .shell > * { position: relative; }
-.hero-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: end; margin-bottom: 32px; }
+.hero-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: start; margin-bottom: 32px; }
 .hero-carousel > .hc-tabs { border-bottom: 0; }
 .hc-stage { display: grid; }
 .hc-slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 0.6s ease, visibility 0s linear 0.6s; }
