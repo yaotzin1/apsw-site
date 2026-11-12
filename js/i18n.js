@@ -62,7 +62,7 @@ const APSW_TRANSLATIONS = {
       "idu_label": "A PRODUCT WE RUN",
       "idu_alt": "Idumela approval screen: a pending review with its star rating and an AI-drafted reply waiting for a manager to approve it",
       "idu_caption": "Idumela drafts each reply in the brand’s voice and publishes nothing until a manager approves it.",
-      "idu_note": "Screenshot of the Idumela interface with example data; the AI reply is sample text. Internal APSW Labs product, not yet public.",
+      "idu_note": "Screenshot of the Idumela interface with example data; the AI reply is sample text. Proprietary B2B SaaS built & operated by APSW Labs.",
       "example_badge": "Example data",
       "try_eyebrow": "TRY IT",
       "try_title": "A simulated run you can drive",
@@ -147,7 +147,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: multi-tenant reputation triage",
-      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is an internal APSW Labs product, not yet public.",
+      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is a proprietary B2B SaaS built and operated by APSW Labs.",
       "fact_time_k": "Build time",
       "fact_time_v": "2 weeks",
       "fact_how_k": "Method",
@@ -301,7 +301,7 @@ const APSW_TRANSLATIONS = {
       "t3_text": "We install the exact engineering standard behind Gridwright into your repository: custom workflow.ai.yml tracks, multi-agent review councils, CI drift guards and senior engineering playbooks.",
       "t4_name": "Full-Scale Platform & Dedicated Squads",
       "t4_terms": "Architect-Led + Software House",
-      "t4_text": "End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our software house.",
+      "t4_text": "End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our vetted partner squads.",
       "cta": "Scope this track →"
     }
   },
@@ -363,7 +363,7 @@ const APSW_TRANSLATIONS = {
       "idu_label": "PRODUKT, KTÓRY PROWADZIMY",
       "idu_alt": "Ekran akceptacji w Idumeli: oczekująca opinia z oceną w gwiazdkach i odpowiedzią napisaną przez AI, która czeka na akceptację menedżera",
       "idu_caption": "Idumela pisze każdą odpowiedź głosem marki i nie publikuje niczego, dopóki menedżer jej nie zatwierdzi.",
-      "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Produkt wewnętrzny APSW Labs, jeszcze niepubliczny.",
+      "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Własnościowy produkt SaaS B2B, zbudowany i prowadzony przez APSW Labs.",
       "example_badge": "Dane przykładowe",
 
       "try_eyebrow": "WYPRÓBUJ",
@@ -449,7 +449,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: wielodostępny triaż reputacji",
-      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. To wewnętrzny produkt APSW Labs, jeszcze niepubliczny.",
+      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. To własnościowy produkt SaaS B2B, zbudowany i prowadzony przez APSW Labs.",
       "fact_time_k": "Czas budowy",
       "fact_time_v": "2 tygodnie",
       "fact_how_k": "Metoda",
@@ -603,7 +603,7 @@ const APSW_TRANSLATIONS = {
       "t3_text": "Instalujemy w twoim repozytorium dokładnie ten standard inżynierski, który stoi za Gridwrightem: własne ścieżki workflow.ai.yml, wieloagentowe rady przeglądu, strażników rozjazdu w CI i playbooki dla starszych inżynierów.",
       "t4_name": "Pełnoskalowa platforma i dedykowane zespoły",
       "t4_terms": "Prowadzi architekt + software house",
-      "t4_text": "Kompleksowy rozwój produktu enterprise, modernizacja legacy albo dedykowane zespoły interdyscyplinarne: Java 21, Symfony 8, React, chmura i dane. Architektura i bramki po stronie APSW Labs, skala i obsada po stronie software house’u.",
+      "t4_text": "Kompleksowy rozwój produktu enterprise, modernizacja legacy albo dedykowane zespoły interdyscyplinarne: Java 21, Symfony 8, React, chmura i dane. Architektura i bramki po stronie APSW Labs, skalę i obsadę zapewniają sprawdzone zespoły partnerskie.",
       "cta": "Określ zakres tej ścieżki →"
     }
   }
@@ -631,9 +631,13 @@ window.APSW_I18N = {
     const urlLang = urlParams.get('lang');
     const savedLang = localStorage.getItem('apsw_lang');
     const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    const onPolishPage = this.isPolishPath();
 
     let initialLang = 'en';
-    if (urlLang && (urlLang === 'pl' || urlLang === 'en')) {
+    if (onPolishPage) {
+      // /pl/ is generated in Polish (scripts/build-pl.mjs): the path decides, not the saved choice.
+      initialLang = 'pl';
+    } else if (urlLang && (urlLang === 'pl' || urlLang === 'en')) {
       initialLang = urlLang;
     } else if (savedLang && (savedLang === 'pl' || savedLang === 'en')) {
       initialLang = savedLang;
@@ -641,7 +645,17 @@ window.APSW_I18N = {
       initialLang = 'pl';
     }
 
+    // Polish has its own address: send a visitor who resolved to Polish on the English page there.
+    if (!onPolishPage && initialLang === 'pl') {
+      window.location.replace('/pl/' + window.location.hash);
+      return;
+    }
+
     this.setLanguage(initialLang, false);
+  },
+
+  isPolishPath() {
+    return /^\/pl(\/|$)/.test(window.location.pathname);
   },
 
   /**
@@ -762,7 +776,9 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetLang = btn.getAttribute('data-lang');
       if (targetLang && targetLang !== window.APSW_I18N.currentLang) {
-        window.APSW_I18N.setLanguage(targetLang, true);
+        // One address per language: remember the choice, then go to that language's page.
+        try { localStorage.setItem('apsw_lang', targetLang); } catch (error) { /* storage can be blocked */ }
+        window.location.assign((targetLang === 'pl' ? '/pl/' : '/') + window.location.hash);
       }
     });
   });

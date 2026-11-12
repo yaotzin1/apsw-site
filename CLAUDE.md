@@ -32,6 +32,11 @@ Read the canonical file. Several skills were written for a Symfony + React proje
   `?lang=pl`, never see it. Change the key in `js/i18n.js` as well, or the edit is invisible to them
   and reverts for everyone on the first switch.
 
+- **`pl/index.html` is generated.** After any change to `index.html` or to the `pl` dictionary in
+  `js/i18n.js`, run `npm run build:pl` and commit the result; `check-site.mjs` fails when it is stale.
+  The switcher moves between `/` and `/pl/`; `?lang=pl` and a saved or browser Polish preference on `/`
+  redirect to `/pl/`.
+
 - **There is no build step.** Do not add a bundler, a framework, an npm dependency or a CDN script.
   `package.json` exists only to run the checks, and `check-site.mjs` fails if it gains dependencies
   or if `index.html` loads a script from another origin.

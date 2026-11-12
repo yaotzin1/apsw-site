@@ -12,6 +12,8 @@
  *   JSON-LD                every application/ld+json block in index.html parses   machine-readable files
  *   sitemap.xml            well-formed, <urlset>, absolute https://apswlabs.com locs  machine-readable files
  *   llms.txt, llms-full    start with a Markdown H1                               machine-readable files
+ *   pl/index.html          equals the output of build-pl.mjs; canonical and hreflang
+ *                          on both pages; /pl/ in sitemap.xml                    machine-readable files
  *   i18n keys              every data-i18n* key in index.html and every
  *                          APSW_I18N.t('key') in js/ resolves to a string in
  *                          both en and pl; en and pl hold the same leaf keys     every string in both languages
@@ -122,6 +124,27 @@ check('sitemap.xml is well-formed', () => {
         if (!/^\d{4}-\d{2}-\d{2}(T[\d:.+-]+Z?)?$/.test(date[1].trim())) problems.push(`<lastmod> is not a W3C date: ${date[1]}`);
     }
     return { problems, note: `${locs.length} URL(s)` };
+});
+
+check('pl/index.html is the current output of scripts/build-pl.mjs, and both pages declare hreflang', () => {
+    const problems = [];
+    try {
+        execFileSync(process.execPath, [path.join(ROOT_DIR, 'scripts', 'build-pl.mjs'), '--check'], { stdio: 'pipe' });
+    } catch (error) {
+        problems.push(String(error.stderr || error.message).trim() || 'pl/index.html is out of date. Run: npm run build:pl');
+    }
+    const pairs = [['index.html', 'https://apswlabs.com/'], ['pl/index.html', 'https://apswlabs.com/pl/']];
+    for (const [file, canonical] of pairs) {
+        if (!exists(file)) { problems.push(`${file} is missing`); continue; }
+        const html = read(file);
+        if (!html.includes(`<link rel="canonical" href="${canonical}">`)) problems.push(`${file}: canonical is not ${canonical}`);
+        for (const hreflang of ['en', 'pl', 'x-default']) {
+            if (!new RegExp(`<link rel="alternate" hreflang="${hreflang}" href="https://apswlabs\\.com/(pl/)?">`).test(html)) problems.push(`${file}: hreflang="${hreflang}" is missing`);
+        }
+    }
+    if (exists('pl/index.html') && !/<html lang="pl"/.test(read('pl/index.html'))) problems.push('pl/index.html is not <html lang="pl">');
+    if (!read('sitemap.xml').includes('<loc>https://apswlabs.com/pl/</loc>')) problems.push('sitemap.xml does not list https://apswlabs.com/pl/');
+    return { problems };
 });
 
 check('llms.txt and llms-full.txt start with a Markdown H1', () => {

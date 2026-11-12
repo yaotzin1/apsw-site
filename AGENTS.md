@@ -11,6 +11,7 @@ runtime dependencies: the files committed are the files served.
 | Path | Holds |
 | :--- | :--- |
 | `index.html` | the whole page, its JSON-LD, and every visible string tagged with a `data-i18n*` key |
+| `pl/index.html` | GENERATED Polish page (`npm run build:pl`); never edit by hand, it is served as committed |
 | `js/i18n.js` | `APSW_TRANSLATIONS` (`en` and `pl`) and the language switcher |
 | `js/app.js`, `js/workbench.js` | navigation, copy buttons, drift demo and the scope form; the hero workbench (pipeline run, mini grid, council transcript, triage belt) |
 | `css/` | `design-system.css` (tokens; one cold dark palette, no light theme), `components.css`, `responsive.css` |
@@ -26,6 +27,7 @@ runtime dependencies: the files committed are the files served.
 npm run hooks:install   # once per clone: points core.hooksPath at .githooks
 npm run verify          # every gate: skills, generated docs, workflow claims, site integrity
 npm run sync            # regenerate AGENTS.md cycle block, GEMINI.md, .claude/skills
+npm run build:pl        # regenerate pl/index.html from index.html and js/i18n.js
 php -S 127.0.0.1:8088   # serve the site with a working contact.php
 ```
 

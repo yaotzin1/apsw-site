@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+
+  <title>APSW Labs | Architect. Prove. Ship. Watch.</title>
+  <meta name="description" content="APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta.">
+  <meta name="author" content="Piotr Solarz-Wnęk - APSW Labs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://apswlabs.com/pl/">
+  <link rel="alternate" hreflang="en" href="https://apswlabs.com/">
+  <link rel="alternate" hreflang="pl" href="https://apswlabs.com/pl/">
+  <link rel="alternate" hreflang="x-default" href="https://apswlabs.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apswlabs.com/pl/">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="APSW Labs | Architect. Prove. Ship. Watch.">
+  <meta property="og:description" content="APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta.">
+  <meta property="og:image" content="https://apswlabs.com/assets/brand/apsw-logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="APSW Labs | Architect. Prove. Ship. Watch.">
+  <meta name="twitter:description" content="APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta.">
+
+  <!-- AI agent and LLM discovery -->
+  <link rel="agent-manifest" type="application/json" href="/agent.json">
+  <link rel="llms-txt" type="text/plain" href="/llms.txt">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/apsw-logo-color.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://apswlabs.com/#organization",
+        "name": "APSW Labs",
+        "alternateName": "APSW - Piotr Solarz-Wnęk",
+        "url": "https://apswlabs.com",
+        "sameAs": ["https://apsw.pl", "https://github.com/yaotzin1"],
+        "logo": "https://apswlabs.com/assets/brand/apsw-logo.png",
+        "description": "AI-native architecture and turnkey engineering studio. Principal-led system architecture and deterministic AI pipelines, with elastic partner engineering capacity. Creators of Indaba and Gridwright.",
+        "email": "piotr.solarz-wnek@apsw.pl",
+        "telephone": "+48666522923",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Przybymierz / Zielona Gora",
+          "addressCountry": "PL"
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://apswlabs.com/#founder",
+          "name": "Piotr Solarz-Wnęk",
+          "jobTitle": "Principal Software Architect",
+          "sameAs": ["https://www.linkedin.com/in/piotrsolarzwnek/", "https://github.com/yaotzin1"]
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "APSW Labs engagement tracks",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "10-Day Architecture & AI Readiness Blueprint", "description": "Fixed scope. Codebase and microservice audit, C4 target blueprints, security and isolation review, and an executable workflow.ai.yml roadmap." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Turnkey Core MVP / Module Sprint", "description": "Fixed scope, 3-6 weeks. A complete MVP, high-load telemetry backend or 10M-row Gridwright Pro interface, with over 90% automated contract tests and Docker / Cloud IaC." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deterministic AI Factory Setup", "description": "2-3 weeks. The engineering standard behind Gridwright installed into the client's repository: workflow.ai.yml tracks, multi-agent review councils, CI drift guards and playbooks." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full-Scale Platform & Dedicated Squads", "description": "Architected and gated by APSW Labs, scaled and staffed by vetted partner squads: enterprise product development, legacy modernization, dedicated squads." } }
+          ]
+        }
+      },
+      {
+        "@type": ["SoftwareApplication", "SoftwareSourceCode"],
+        "@id": "https://apswlabs.com/#gridwright",
+        "name": "Gridwright (apsw-gridwright)",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (React 18 or 19)",
+        "softwareVersion": "0.24.0",
+        "license": "https://opensource.org/licenses/MIT",
+        "description": "The React data grid that does not care where your rows live. Zero runtime dependencies, about 22 kB gzipped, row and column virtualization to ten million rows, real HTML table semantics.",
+        "url": "https://yaotzin1.github.io/apsw-gridwright/",
+        "codeRepository": "https://github.com/yaotzin1/apsw-gridwright",
+        "sameAs": ["https://www.npmjs.com/package/apsw-gridwright"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@id": "https://apswlabs.com/#founder" }
+      },
+      {
+        "@type": ["SoftwareApplication", "SoftwareSourceCode"],
+        "@id": "https://apswlabs.com/#indaba",
+        "name": "Indaba (@indaba/engine)",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux (Node 22+)",
+        "softwareVersion": "0.1.0-alpha.5",
+        "license": "https://opensource.org/licenses/MIT",
+        "description": "Let your agents argue. Ship what they agree on. A declared graph of steps behind exit-code guards, multi-agent council consensus, disposable git worktrees and OpenTelemetry GenAI traces.",
+        "url": "https://yaotzin1.github.io/indaba/",
+        "codeRepository": "https://github.com/yaotzin1/indaba",
+        "sameAs": ["https://www.npmjs.com/package/@indaba/engine"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@id": "https://apswlabs.com/#founder" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#hero" data-i18n="nav.skip">Przejdź do treści</a>
+
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="/assets/brand/apsw-logo-white.svg" width="50" height="58" alt="">
+        <span class="brand-name">APSW LABS</span>
+        <span class="brand-badge" data-i18n="nav.brand_badge">ARCHITEKTURA · OPEN SOURCE · DOSTAWA POD KLUCZ</span>
+      </a>
+      <nav class="nav-menu" id="nav-menu" aria-label="Nawigacja główna" data-i18n-aria="nav.main_aria">
+        <a class="nav-link" href="#try" data-i18n="nav.workshop">Wypróbuj</a>
+        <a class="nav-link" href="#open-source" data-i18n="nav.oss">Open Source</a>
+        <a class="nav-link" href="#assurance" data-i18n="nav.standard">Standard</a>
+        <a class="nav-link" href="#delivery" data-i18n="nav.delivery">Dostawa i skala</a>
+      </nav>
+      <div class="nav-right">
+        <a class="nav-gh" href="https://github.com/yaotzin1" rel="noopener" aria-label="APSW Labs na GitHubie (yaotzin1)" data-i18n-aria="nav.github_aria">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.33.66.07-.52.28-.87.5-1.07-1.77-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/></svg>
+          <span class="nav-gh-name">yaotzin1</span>
+        </a>
+        <div class="lang-switch" role="group" aria-label="Język" data-i18n-aria="nav.lang_aria">
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" class="lang-btn active" data-lang="pl" aria-pressed="true">PL</button>
+        </div>
+        <a class="btn btn-primary nav-cta" href="#contact" data-i18n="nav.cta">Określ zakres systemu →</a>
+        <button type="button" class="mobile-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Otwórz lub zamknij menu" data-i18n-aria="nav.menu_aria">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================================================================== HERO / WORKBENCH -->
+    <section class="hero" id="hero">
+      <div class="shell">
+        <div class="hero-head">
+          <div>
+            <p class="eyebrow" data-i18n="hero.eyebrow">STUDIO ARCHITEKTURY AI-NATIVE I INŻYNIERII POD KLUCZ</p>
+            <h1 class="hero-title" data-i18n-html="hero.title_html">Architect. Prove.<br><span class="hl">Ship. Watch.</span></h1>
+          </div>
+          <div class="hero-side">
+            <p class="hero-lead" data-i18n="hero.lead">Dostarczamy oprogramowanie.</p>
+            <ul class="hero-acronym" aria-label="APSW">
+              <li data-i18n-html="hero.ac_a_html"><strong class="ac-word"><span class="hl">A</span>rchitect</strong><span class="ac-text">Architektura systemu prowadzona przez głównego architekta, od 10-dniowego blueprintu.</span></li>
+              <li data-i18n-html="hero.ac_p_html"><strong class="ac-word"><span class="hl">P</span>rove</strong><span class="ac-text">Modele AI wzajemnie sprawdzają każdą zmianę, aż dojdą do zgody.</span></li>
+              <li data-i18n-html="hero.ac_s_html"><strong class="ac-word"><span class="hl">S</span>hip</strong><span class="ac-text">Wdrożenie pod klucz aż do pełnoskalowej platformy produkcyjnej, z elastycznym zespołem partnerskim.</span></li>
+              <li data-i18n-html="hero.ac_w_html"><strong class="ac-word"><span class="hl">W</span>atch</strong><span class="ac-text">CI od razu blokuje zmiany niezgodne z ustaloną architekturą i workflow.</span></li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact" data-i18n="nav.cta">Określ zakres systemu →</a>
+              <a class="btn btn-ghost" href="#open-source" data-i18n="hero.cta_secondary">Zobacz open source</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-carousel" id="hero-carousel" role="region" aria-roledescription="carousel" aria-label="Produkty w użyciu" data-i18n-aria="hero.car_aria">
+        <div class="scenario-tabs hc-tabs" role="tablist" aria-label="Widoki produktów" data-i18n-aria="hero.car_tabs_aria">
+          <button type="button" class="scenario-tab" role="tab" id="hc-tab-0" aria-controls="hc-panel-0" aria-selected="true">
+            <span class="tab-idx">01</span>
+            <span class="tab-body"><span class="tab-name" data-i18n="hero.tab2">Silnik wieloagentowy</span><span class="tab-pkg">@indaba/engine</span></span>
+          </button>
+          <button type="button" class="scenario-tab" role="tab" id="hc-tab-1" aria-controls="hc-panel-1" aria-selected="false" tabindex="-1">
+            <span class="tab-idx">02</span>
+            <span class="tab-body"><span class="tab-name" data-i18n="hero.tab1">Interfejs pod dużym obciążeniem</span><span class="tab-pkg">apsw-gridwright</span></span>
+          </button>
+          <button type="button" class="scenario-tab" role="tab" id="hc-tab-2" aria-controls="hc-panel-2" aria-selected="false" tabindex="-1">
+            <span class="tab-idx">03</span>
+            <span class="tab-body"><span class="tab-name" data-i18n="hero.tab3">B2B SaaS pod klucz</span><span class="tab-pkg" data-i18n="hero.tab3_sub">Idumela · platforma reputacji AI</span></span>
+          </button>
+        </div>
+          <div class="hc-stage">
+          <figure class="hero-real hc-slide is-active" id="hc-panel-0" role="tabpanel" aria-labelledby="hc-tab-0">
+            <a class="hero-real-shot" href="https://yaotzin1.github.io/indaba/" rel="noopener"><img src="/assets/products/indaba/indaba-run-view.jpg" width="1040" height="638" alt="Widok webowy Indaba: cztery kroki, rfc, code, verify i review, z przerywaną ścieżką z verify z powrotem do code i szczegółami kroku verify" data-i18n-alt="hero.real_alt"></a>
+            <figcaption class="hero-real-cap">
+              <p class="eyebrow" data-i18n="hero.real_label">SILNIK W DZIAŁANIU</p>
+              <p class="hero-real-text" data-i18n="hero.real_caption">Cztery kroki i jeden nieudany test. Silnik cofa przebieg do kroku code i próbuje ponownie, wszystko zapisane w jednym workflow.ai.yml.</p>
+              <p class="hero-real-note" data-i18n="hero.real_note">Zrzut prawdziwego widoku webowego Indaba na projekcie demo: kroki powłoki, bez wywołań modeli.</p>
+              <a class="btn btn-ghost btn-small" href="https://yaotzin1.github.io/indaba/" rel="noopener" data-i18n="hero.real_link">Otwórz dokumentację Indaby ↗</a>
+            </figcaption>
+          </figure>
+          <figure class="hero-real hc-slide" id="hc-panel-1" role="tabpanel" aria-labelledby="hc-tab-1">
+            <a class="hero-real-shot" href="https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html" rel="noopener"><span class="shot-badge" data-i18n="hero.example_badge">Dane przykładowe</span><img src="/assets/products/gridwright/playground-dark.webp" width="2216" height="1120" loading="lazy" alt="Plac zabaw Gridwright: siatka danych z listą osób, wyszukiwarką, sortowanymi kolumnami i zaznaczaniem wierszy" data-i18n-alt="hero.grid_alt"></a>
+            <figcaption class="hero-real-cap">
+              <p class="eyebrow" data-i18n="hero.grid_label">SIATKA W PRZEGLĄDARCE</p>
+              <p class="hero-real-text" data-i18n="hero.grid_caption">Wyszukiwanie, sortowanie kolumn i zaznaczanie wierszy w jednej siatce bez zależności.</p>
+              <p class="hero-real-note" data-i18n="hero.grid_note">Zrzut placu zabaw Gridwright.</p>
+              <a class="btn btn-ghost btn-small" href="https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html" rel="noopener" data-i18n="hero.grid_link">Otwórz plac zabaw ↗</a>
+            </figcaption>
+          </figure>
+          <figure class="hero-real hc-slide" id="hc-panel-2" role="tabpanel" aria-labelledby="hc-tab-2">
+            <div class="hero-real-shot"><span class="shot-badge" data-i18n="hero.example_badge">Dane przykładowe</span><img src="/assets/products/idumela/idumela-approval.jpg" width="1280" height="720" loading="lazy" alt="Ekran akceptacji w Idumeli: oczekująca opinia z oceną w gwiazdkach i odpowiedzią napisaną przez AI, która czeka na akceptację menedżera" data-i18n-alt="hero.idu_alt"></div>
+            <figcaption class="hero-real-cap">
+              <p class="eyebrow" data-i18n="hero.idu_label">PRODUKT, KTÓRY PROWADZIMY</p>
+              <p class="hero-real-text" data-i18n="hero.idu_caption">Idumela pisze każdą odpowiedź głosem marki i nie publikuje niczego, dopóki menedżer jej nie zatwierdzi.</p>
+              <p class="hero-real-note" data-i18n="hero.idu_note">Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Własnościowy produkt SaaS B2B, zbudowany i prowadzony przez APSW Labs.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== TRY IT -->
+    <section class="section" id="try">
+      <div class="shell">
+        <header class="sec-head">
+          <p class="eyebrow"><span class="sec-no">01</span><span data-i18n="hero.try_eyebrow">WYPRÓBUJ</span></p>
+          <h2 class="sec-title" data-i18n="hero.try_title">Symulowany przebieg, którym możesz sterować</h2>
+          <p class="sec-sub" data-i18n="hero.try_sub">Uproszczona symulacja w przeglądarce, a nie sam silnik Indaba.</p>
+        </header>
+
+        <p class="switch-label" data-i18n="hero.switch_label">Wybierz scenariusz. Przebieg po lewej wytwarza artefakt po prawej.</p>
+        <div class="scenario-tabs" role="tablist" aria-label="Scenariusz warsztatu" data-i18n-aria="hero.tabs_aria">
+          <button type="button" class="scenario-tab" role="tab" id="tab-engine" data-scenario="engine" aria-selected="false" aria-controls="panel-engine" tabindex="-1">
+            <span class="tab-idx">01</span>
+            <span class="tab-body"><span class="tab-name" data-i18n="hero.tab2">Silnik wieloagentowy</span><span class="tab-pkg">@indaba/engine</span></span>
+          </button>
+          <button type="button" class="scenario-tab" role="tab" id="tab-grid" data-scenario="grid" aria-selected="true" aria-controls="panel-grid">
+            <span class="tab-idx">02</span>
+            <span class="tab-body"><span class="tab-name" data-i18n="hero.tab1">Interfejs pod dużym obciążeniem</span><span class="tab-pkg">apsw-gridwright</span></span>
+          </button>
+          <button type="button" class="scenario-tab" role="tab" id="tab-saas" data-scenario="saas" aria-selected="false" aria-controls="panel-saas" tabindex="-1">
+            <span class="tab-idx">03</span>
+            <span class="tab-body"><span class="tab-name" data-i18n="hero.tab3">B2B SaaS pod klucz</span><span class="tab-pkg" data-i18n="hero.tab3_sub">Idumela · platforma reputacji AI</span></span>
+          </button>
+        </div>
+
+        <div class="workbench" id="wb" data-done="true">
+          <!-- LEFT: the engine -->
+          <div class="wb-pane wb-engine">
+            <div class="wb-head">
+              <h2 class="wb-title" data-i18n="wb.engine_title">Silnik</h2>
+              <span class="chip chip-sim" data-i18n="wb.simulated">Przebieg symulowany</span>
+            </div>
+
+            <div class="code-card">
+              <div class="code-bar"><span class="code-file">workflow.ai.yml</span><span class="code-note" data-i18n="wb.contract_note">skrócony przykład</span></div>
+              <pre class="code-body" id="wb-yaml" tabindex="0"><code></code></pre>
+            </div>
+
+            <ol class="pipeline" id="pipeline" aria-label="Przebieg potoku" data-i18n-aria="wb.pipeline_aria">
+              <li class="pstep" data-step="spec" data-state="ok">
+                <span class="pidx">01</span>
+                <div class="pmain">
+                  <div class="pline"><span class="pname" data-i18n="wb.s1">SPECYFIKACJA</span></div>
+                  <p class="pnote" data-i18n="wb.n_spec_ok">Specyfikacja zapisana. Strażnik: żaden plik źródłowy nie został zmieniony.</p>
+                </div>
+                <span class="pstate" aria-hidden="true"></span>
+              </li>
+              <li class="pstep" data-step="council" data-state="ok">
+                <span class="pidx">02</span>
+                <div class="pmain">
+                  <div class="pline"><span class="pname" data-i18n="wb.s2">DEBATA RADY</span><span class="pdetail" id="wb-pair">claude-code ⇄ antigravity</span></div>
+                  <p class="pnote" data-i18n="wb.n_council_ok">Kworum 2 z 2 po dwóch rundach.</p>
+                </div>
+                <span class="pstate" aria-hidden="true"></span>
+              </li>
+              <li class="pstep" data-step="gate" data-state="ok">
+                <span class="pidx">03</span>
+                <div class="pmain">
+                  <div class="pline"><span class="pname" data-i18n="wb.s3">BRAMKA</span><span class="pdetail" id="wb-gate">vitest + packaging audit</span></div>
+                  <p class="pnote" data-i18n="wb.n_gate_ok">Bramka przeszła w próbie 2. Kod wyjścia 0.</p>
+                  <pre class="plog" id="wb-log" hidden></pre>
+                </div>
+                <span class="pstate" aria-hidden="true"></span>
+              </li>
+              <li class="pstep" data-step="artifact" data-state="ok">
+                <span class="pidx">04</span>
+                <div class="pmain">
+                  <div class="pline"><span class="pname" data-i18n="wb.s4">ARTEFAKT ZWERYFIKOWANY</span></div>
+                  <p class="pnote" data-i18n="wb.n_art_ok">Artefakt opuścił worktree jako patch. Wypróbuj go po prawej.</p>
+                </div>
+                <span class="pstate" aria-hidden="true"></span>
+              </li>
+            </ol>
+
+            <div class="wb-controls">
+              <button type="button" class="btn btn-small" id="wb-replay" data-i18n="wb.replay">Odtwórz przebieg</button>
+              <div class="seg" role="group" aria-label="Tryb przebiegu" data-i18n-aria="wb.mode_aria">
+                <button type="button" class="seg-btn" id="wb-mode-auto" aria-pressed="true" data-i18n="wb.mode_auto">Auto</button>
+                <button type="button" class="seg-btn" id="wb-mode-step" aria-pressed="false" data-i18n="wb.mode_step">Tryb krokowy</button>
+              </div>
+              <button type="button" class="btn btn-small btn-ghost" id="wb-next" disabled data-i18n="wb.next">Następny krok</button>
+            </div>
+
+            <dl class="telemetry" aria-label="Telemetria śladu" data-i18n-aria="wb.tel_aria">
+              <div><dt>trace_id</dt><dd id="tel-trace">8f92a1</dd></div>
+              <div><dt>tokens</dt><dd id="tel-tokens">14,820</dd></div>
+              <div><dt>cost</dt><dd><span id="tel-cost">$0.042</span> <span class="tel-note" id="tel-cost-note">(<span data-i18n="wb.cost_note">potwierdzone przez dostawcę</span>)</span></dd></div>
+              <div><dt>worktree</dt><dd data-i18n="wb.worktree">izolowany</dd></div>
+            </dl>
+          </div>
+
+          <!-- RIGHT: the artifact -->
+          <div class="wb-pane wb-artifact">
+            <div class="wb-head">
+              <h2 class="wb-title" data-i18n="wb.artifact_title">Zmaterializowany artefakt</h2>
+              <span class="chip chip-status" id="wb-status" data-state="verified" data-i18n="wb.status_verified">Zweryfikowany</span>
+            </div>
+
+            <!-- 01 · Gridwright -->
+            <div class="artifact" id="panel-grid" role="tabpanel" aria-labelledby="tab-grid">
+              <div class="art-top">
+                <h3 class="art-title" data-i18n="grid.title">apsw-gridwright, działa tutaj</h3>
+                <span class="chip" data-i18n="common.sample">Dane przykładowe</span>
+              </div>
+              <div class="diff" id="grid-diff" data-remote="false">
+                <code class="diff-line diff-local">&lt;Gridwright columns={columns} <b>data={services}</b> /&gt;</code>
+                <code class="diff-line diff-remote">&lt;Gridwright columns={columns} <b>dataSource={createRestDataSource({ url: '/api/services' })}</b> /&gt;</code>
+                <p class="diff-note" data-i18n="grid.diff_note">Zmienia się jedna linia. Wyszukiwanie, sortowanie i stronicowanie zostają bez zmian.</p>
+              </div>
+              <div class="grid-toolbar">
+                <label class="sr-only" for="grid-search" data-i18n="grid.search_label">Szukaj wierszy</label>
+                <input type="search" class="input" id="grid-search" autocomplete="off" placeholder="Szukaj usług…" data-i18n-placeholder="grid.search_placeholder">
+                <button type="button" class="btn btn-small" id="grid-swap" aria-pressed="false" data-i18n="grid.swap_to_remote">Zamień tablicę → zdalne API</button>
+              </div>
+              <pre class="reqline" id="grid-req" hidden></pre>
+              <div class="grid-scroll" id="grid-scroll" tabindex="0">
+                <table class="gw" id="gw">
+                  <caption class="sr-only" data-i18n="grid.caption">Stan usług, dane przykładowe</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" aria-sort="none"><button type="button" class="gw-sort" data-key="name"><span data-i18n="grid.col_service">Usługa</span><i aria-hidden="true"></i></button></th>
+                      <th scope="col" aria-sort="none" class="num"><button type="button" class="gw-sort" data-key="latency"><span data-i18n="grid.col_latency">Opóźnienie (p99)</span><i aria-hidden="true"></i></button></th>
+                      <th scope="col" aria-sort="none" class="num"><button type="button" class="gw-sort" data-key="throughput"><span data-i18n="grid.col_throughput">Przepustowość</span><i aria-hidden="true"></i></button></th>
+                      <th scope="col" aria-sort="none"><button type="button" class="gw-sort" data-key="status"><span data-i18n="grid.col_status">Status</span><i aria-hidden="true"></i></button></th>
+                    </tr>
+                  </thead>
+                  <tbody id="gw-body">
+                    <tr><td>billing-api.eu1/s1</td><td class="num">335 ms</td><td class="num">21,508 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>ledger-api.eu1/s1</td><td class="num">8 ms</td><td class="num">6,533 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>auth-api.eu1/s1</td><td class="num">80 ms</td><td class="num">22,503 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>search-api.eu1/s1</td><td class="num">829 ms</td><td class="num">7,226 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">obniżona</span></td></tr>
+                    <tr><td>ingest-api.eu1/s1</td><td class="num">33 ms</td><td class="num">315 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>notify-api.eu1/s1</td><td class="num">148 ms</td><td class="num">44,729 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>pricing-api.eu1/s1</td><td class="num">344 ms</td><td class="num">10,061 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>routing-api.eu1/s1</td><td class="num">139 ms</td><td class="num">27,704 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>catalog-api.eu1/s1</td><td class="num">662 ms</td><td class="num">12,028 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">obniżona</span></td></tr>
+                    <tr><td>audit-api.eu1/s1</td><td class="num">203 ms</td><td class="num">41 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>export-api.eu1/s1</td><td class="num">394 ms</td><td class="num">7,374 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>session-api.eu1/s1</td><td class="num">340 ms</td><td class="num">18,427 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>quota-api.eu1/s1</td><td class="num">8 ms</td><td class="num">18,844 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>risk-api.eu1/s1</td><td class="num">—</td><td class="num">0 req/s</td><td><span class="st st-down" data-i18n="grid.st_down">niedostępna</span></td></tr>
+                    <tr><td>geo-api.eu1/s1</td><td class="num">12 ms</td><td class="num">24,425 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>media-api.eu1/s1</td><td class="num">45 ms</td><td class="num">1,239 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>billing-worker.eu1/s1</td><td class="num">13 ms</td><td class="num">32,606 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>ledger-worker.eu1/s1</td><td class="num">286 ms</td><td class="num">3,351 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>auth-worker.eu1/s1</td><td class="num">200 ms</td><td class="num">468 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">obniżona</span></td></tr>
+                    <tr><td>search-worker.eu1/s1</td><td class="num">404 ms</td><td class="num">1,664 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>ingest-worker.eu1/s1</td><td class="num">35 ms</td><td class="num">41,361 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>notify-worker.eu1/s1</td><td class="num">51 ms</td><td class="num">42,871 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>pricing-worker.eu1/s1</td><td class="num">199 ms</td><td class="num">21 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">obniżona</span></td></tr>
+                    <tr><td>routing-worker.eu1/s1</td><td class="num">112 ms</td><td class="num">4,510 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>catalog-worker.eu1/s1</td><td class="num">90 ms</td><td class="num">34,022 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>audit-worker.eu1/s1</td><td class="num">53 ms</td><td class="num">9,365 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>export-worker.eu1/s1</td><td class="num">159 ms</td><td class="num">2,422 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>session-worker.eu1/s1</td><td class="num">16 ms</td><td class="num">36,668 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>quota-worker.eu1/s1</td><td class="num">8 ms</td><td class="num">14,667 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>risk-worker.eu1/s1</td><td class="num">84 ms</td><td class="num">42,594 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>geo-worker.eu1/s1</td><td class="num">203 ms</td><td class="num">2,677 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">obniżona</span></td></tr>
+                    <tr><td>media-worker.eu1/s1</td><td class="num">219 ms</td><td class="num">24 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>billing-gateway.eu1/s1</td><td class="num">81 ms</td><td class="num">11,603 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>ledger-gateway.eu1/s1</td><td class="num">9 ms</td><td class="num">18,579 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>auth-gateway.eu1/s1</td><td class="num">227 ms</td><td class="num">3,103 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>search-gateway.eu1/s1</td><td class="num">1,051 ms</td><td class="num">8,164 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">obniżona</span></td></tr>
+                    <tr><td>ingest-gateway.eu1/s1</td><td class="num">46 ms</td><td class="num">18,608 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>notify-gateway.eu1/s1</td><td class="num">291 ms</td><td class="num">23,759 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>pricing-gateway.eu1/s1</td><td class="num">73 ms</td><td class="num">38,006 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>routing-gateway.eu1/s1</td><td class="num">421 ms</td><td class="num">36,706 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">obniżona</span></td></tr>
+                    <tr><td>catalog-gateway.eu1/s1</td><td class="num">8 ms</td><td class="num">35,905 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>audit-gateway.eu1/s1</td><td class="num">12 ms</td><td class="num">39,723 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>export-gateway.eu1/s1</td><td class="num">11 ms</td><td class="num">1,579 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>session-gateway.eu1/s1</td><td class="num">30 ms</td><td class="num">396 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>quota-gateway.eu1/s1</td><td class="num">11 ms</td><td class="num">157 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>risk-gateway.eu1/s1</td><td class="num">17 ms</td><td class="num">13,680 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>geo-gateway.eu1/s1</td><td class="num">8 ms</td><td class="num">42 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>media-gateway.eu1/s1</td><td class="num">244 ms</td><td class="num">7,694 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>billing-stream.eu1/s1</td><td class="num">240 ms</td><td class="num">4,579 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                    <tr><td>ledger-stream.eu1/s1</td><td class="num">16 ms</td><td class="num">23,635 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">sprawna</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="grid-foot">
+                <div class="grid-pager">
+                  <button type="button" class="pg" id="gw-prev" aria-label="Poprzednia strona" data-i18n-aria="grid.prev">‹</button>
+                  <span class="grid-count" id="gw-count" aria-live="polite">1–50 <span data-i18n="grid.of">z</span> 1,284</span>
+                  <button type="button" class="pg" id="gw-next" aria-label="Następna strona" data-i18n-aria="grid.next">›</button>
+                </div>
+                <span class="grid-facts" data-i18n="grid.facts">Zero zależności · ok. 22 kB · 10 mln wierszy z wirtualizacją</span>
+              </div>
+              <p class="grid-honest" id="gw-note" data-i18n="grid.local_note">Dane są w pamięci, więc znamy łączną liczbę wierszy.</p>
+            </div>
+
+            <!-- 02 · Indaba -->
+            <div class="artifact" id="panel-engine" role="tabpanel" aria-labelledby="tab-engine" hidden>
+              <div class="art-top">
+                <h3 class="art-title" data-i18n="council.title">Zapis obrad rady i inspektor spanów</h3>
+                <span class="chip" data-i18n="common.sample">Dane przykładowe</span>
+              </div>
+              <p class="art-hint" data-i18n="council.hint">Otwórz krok, żeby zobaczyć wzajemną weryfikację i bramki kontrolne, które o nim zdecydowały.</p>
+
+              <div class="acc">
+                <div class="acc-item">
+                  <button type="button" class="acc-btn" aria-expanded="false" aria-controls="acc-rfc" id="acc-rfc-btn">
+                    <span class="acc-step">rfc</span><span class="acc-sum" data-i18n="council.rfc_sum">Dwie propozycje tej samej zmiany.</span><span class="acc-exit ok">exit 0</span>
+                  </button>
+                  <div class="acc-panel" id="acc-rfc" role="region" aria-labelledby="acc-rfc-btn" hidden>
+                    <div class="voices">
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.rfc_claude">Wypisz w stopce „z wielu”, gdy źródło nie podaje sumy. Arytmetyka stron bez zmian.</p></div>
+                      <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.rfc_anti">Zgoda co do stopki. Zastrzeżenie: krótka ostatnia strona dowodzi końca, więc wtedy grid powinien podać prawdziwą sumę.</p></div>
+                    </div>
+                    <pre class="diffblock"><span class="d-ctx">  footer.total</span>
+<span class="d-del">- claude:      total ?? "of many"</span>
+<span class="d-add">+ antigravity: lastPage.length &lt; pageSize ? offset + lastPage.length : "of many"</span></pre>
+                    <p class="outcome" data-i18n="council.rfc_out">Obie propozycje zapisane. Kodu jeszcze nie ma.</p>
+                    <h4 class="mini" data-i18n="council.guards">Strażnicy i kody wyjścia</h4>
+                    <pre class="guards"><span class="ok">pass</span>    git_diff_empty   paths: ["src/", "tests/"]
+<span class="ok">pass</span>    outputs          specs/rfc.md</pre>
+                    <dl class="span">
+                      <div><dt data-i18n="council.span">Span</dt><dd>indaba.step rfc</dd></div>
+                      <div><dt data-i18n="council.duration">czas</dt><dd>41.2 s</dd></div>
+                      <div><dt data-i18n="council.tokens">tokeny</dt><dd>3,140</dd></div>
+                      <div><dt data-i18n="council.cost">koszt</dt><dd>$0.009 · <span data-i18n="council.cost_src">podany przez dostawcę</span></dd></div>
+                    </dl>
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button type="button" class="acc-btn" aria-expanded="true" aria-controls="acc-debate" id="acc-debate-btn">
+                    <span class="acc-step">debate</span><span class="acc-sum" data-i18n="council.debate_sum">Spór, potem kworum.</span><span class="acc-exit ok">exit 0</span>
+                  </button>
+                  <div class="acc-panel" id="acc-debate" role="region" aria-labelledby="acc-debate-btn">
+                    <div class="voices">
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.debate_claude">Przyjmuje zastrzeżenie. Strona krótsza niż rozmiar strony ustala sumę.</p></div>
+                      <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.debate_anti">Potwierdza poprawiony diff. Prosi o test krótkiej ostatniej strony.</p></div>
+                    </div>
+                    <pre class="diffblock"><span class="d-ctx">@@ src/footer/total.ts @@</span>
+<span class="d-del">- return total ?? t("of many");</span>
+<span class="d-add">+ if (total != null) return total;</span>
+<span class="d-add">+ if (page.length &lt; pageSize) return offset + page.length;</span>
+<span class="d-add">+ return t("of many");</span></pre>
+                    <p class="outcome" data-i18n="council.debate_out">Kworum 2 z 2 w rundzie 2. Arbiter-człowiek nie był potrzebny.</p>
+                    <h4 class="mini" data-i18n="council.guards">Strażnicy i kody wyjścia</h4>
+                    <pre class="guards"><span class="ok">pass</span>    decision_type: consensus   2 of 2
+<span class="ok">pass</span>    arbiter: human             not called</pre>
+                    <dl class="span">
+                      <div><dt data-i18n="council.span">Span</dt><dd>indaba.step debate</dd></div>
+                      <div><dt data-i18n="council.duration">czas</dt><dd>118.6 s</dd></div>
+                      <div><dt data-i18n="council.tokens">tokeny</dt><dd>7,960</dd></div>
+                      <div><dt data-i18n="council.cost">koszt</dt><dd>$0.023 · <span data-i18n="council.cost_src">podany przez dostawcę</span></dd></div>
+                    </dl>
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button type="button" class="acc-btn" aria-expanded="false" aria-controls="acc-verify" id="acc-verify-btn">
+                    <span class="acc-step">verify</span><span class="acc-sum" data-i18n="council.verify_sum">Błąd, izolowane ponowienie, zaliczenie.</span><span class="acc-exit fail">exit 1</span><span class="acc-exit ok">exit 0</span>
+                  </button>
+                  <div class="acc-panel" id="acc-verify" role="region" aria-labelledby="acc-verify-btn" hidden>
+                    <div class="voices">
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.verify_claude">W próbie 1 nie przeszedł jeden test. Ponowienie tylko z tym błędem naprawiło pomyłkę o jeden.</p></div>
+                      <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.verify_anti">Ponownie uruchomił testy i audyt paczki na zbudowanym pakiecie. Oba przechodzą.</p></div>
+                    </div>
+                    <pre class="diffblock"><span class="d-del">- if (page.length &lt;= pageSize) return offset + page.length;</span>
+<span class="d-add">+ if (page.length &lt; pageSize) return offset + page.length;</span></pre>
+                    <p class="outcome" data-i18n="council.verify_out">Kod wyjścia 0. Patch opuszcza worktree.</p>
+                    <h4 class="mini" data-i18n="council.guards">Strażnicy i kody wyjścia</h4>
+                    <pre class="guards"><span class="fail">exit 1</span>  pnpm test                 # attempt 1 · 1 failed
+<span class="ok">exit 0</span>  pnpm test                 # attempt 2 · retry_step saw the last failure only
+<span class="ok">exit 0</span>  pnpm typecheck</pre>
+                    <dl class="span">
+                      <div><dt data-i18n="council.span">Span</dt><dd>indaba.step verify</dd></div>
+                      <div><dt data-i18n="council.duration">czas</dt><dd>63.9 s</dd></div>
+                      <div><dt data-i18n="council.tokens">tokeny</dt><dd>3,720</dd></div>
+                      <div><dt data-i18n="council.cost">koszt</dt><dd>$0.010 · <span data-i18n="council.cost_src">podany przez dostawcę</span></dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 03 · Turnkey SaaS -->
+            <div class="artifact" id="panel-saas" role="tabpanel" aria-labelledby="tab-saas" hidden>
+              <div class="art-top">
+                <h3 class="art-title" data-i18n="belt.title">Idumela: wielodostępny triaż reputacji</h3>
+                <span class="chip" data-i18n="common.sample">Dane przykładowe</span>
+              </div>
+              <p class="art-about"><span data-i18n="belt.about">Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. To własnościowy produkt SaaS B2B, zbudowany i prowadzony przez APSW Labs.</span></p>
+              <dl class="facts">
+                <div><dt data-i18n="belt.fact_time_k">Czas budowy</dt><dd data-i18n="belt.fact_time_v">2 tygodnie</dd></div>
+                <div><dt data-i18n="belt.fact_how_k">Metoda</dt><dd data-i18n="belt.fact_how_v">Kod pisany przez agentów ze specyfikacji, za bramkami jakości przed commitem</dd></div>
+                <div><dt data-i18n="belt.fact_stack_k">Stos</dt><dd data-i18n="belt.fact_stack_v">Symfony 8 + React / MUI</dd></div>
+              </dl>
+              <div class="belt-bar">
+                <div class="seg" role="group" aria-label="Aktywny tenant" data-i18n-aria="belt.tenant_aria">
+                  <button type="button" class="seg-btn tenant-btn" data-tenant="tenant_a" aria-pressed="true">tenant_a</button>
+                  <button type="button" class="seg-btn tenant-btn" data-tenant="tenant_b" aria-pressed="false">tenant_b</button>
+                  <button type="button" class="seg-btn tenant-btn" data-tenant="tenant_c" aria-pressed="false">tenant_c</button>
+                </div>
+                <button type="button" class="btn btn-small" id="belt-advance" data-i18n="belt.advance">Przesuń taśmę</button>
+              </div>
+              <p class="shield" id="belt-shield" aria-live="polite">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span id="belt-shield-text"></span>
+              </p>
+              <div class="belt" id="belt">
+                <div class="belt-col" data-stage="0"><h4 class="belt-h" data-i18n="belt.st_ingest">Pobranie</h4><ul class="belt-list"></ul></div>
+                <div class="belt-col" data-stage="1"><h4 class="belt-h" data-i18n="belt.st_classify">Klasyfikacja</h4><ul class="belt-list"></ul></div>
+                <div class="belt-col" data-stage="2"><h4 class="belt-h" data-i18n="belt.st_draft">Szkic odpowiedzi</h4><ul class="belt-list"></ul></div>
+                <div class="belt-col" data-stage="3"><h4 class="belt-h" data-i18n="belt.st_approve">Akceptacja człowieka</h4><ul class="belt-list"></ul></div>
+              </div>
+              <div class="ledger">
+                <div class="ledger-head">
+                  <h4 class="mini" data-i18n="belt.ledger_title">Księga kredytów tokenowych</h4>
+                  <span class="ledger-bal"><span data-i18n="belt.balance">Saldo</span>: <b id="ledger-balance">0</b> <span data-i18n="belt.credits">kredytów</span></span>
+                  <span class="ledger-pub"><span data-i18n="belt.published">Opublikowane</span>: <b id="ledger-published">0</b></span>
+                </div>
+                <ul class="ledger-list" id="ledger-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== OPEN SOURCE -->
+    <section class="section" id="open-source">
+      <div class="shell">
+        <header class="sec-head">
+          <p class="eyebrow"><span class="sec-no">02</span><span data-i18n="oss.eyebrow">DOWÓD PRACY W OPEN SOURCE</span></p>
+          <h2 class="sec-title" data-i18n="oss.title">Najpierw budujemy własne silniki</h2>
+          <p class="sec-sub" data-i18n="oss.sub">Oba projekty mają licencję MIT. Przeczytaj kod, zanim przeczytasz naszą ofertę.</p>
+        </header>
+
+        <div class="oss-grid">
+          <article class="oss-card" id="indaba">
+            <header class="oss-head">
+              <h3 class="oss-name">Indaba</h3>
+              <p class="oss-meta">@indaba/engine · v0.1.0-alpha.5 · MIT · TypeScript, Node 22+</p>
+            </header>
+            <p class="oss-tag" data-i18n="oss.indaba_tag">Pozwól agentom się spierać. Wdrażaj to, co uzgodnią.</p>
+            <a class="oss-shot" href="https://yaotzin1.github.io/indaba/" rel="noopener"><img src="/assets/products/indaba/indaba-web-view-dark.webp" width="1108" height="744" loading="lazy" alt="Widok webowy Indaby: przebieg pokazany jako graf kroków z ich statusem i kosztem" data-i18n-alt="oss.indaba_shot_alt"></a>
+            <div class="cli">
+              <code>npx indaba@next validate workflow.ai.yml</code>
+              <button type="button" class="copy-btn" data-copy="npx indaba@next validate workflow.ai.yml" data-i18n="common.copy">Kopiuj</button>
+            </div>
+            <ul class="mech">
+              <li data-i18n="oss.indaba_m1">Zadeklarowany graf kroków za strażnikami kodu wyjścia. Krok przechodzi, gdy polecenie kończy się kodem 0, a nie gdy model tak twierdzi.</li>
+              <li data-i18n="oss.indaba_m2">Rada agentów uzgadnia wynik przez wzajemną weryfikację. Gdy nie dojdą do zgody, decyduje człowiek jako arbiter.</li>
+              <li data-i18n="oss.indaba_m3">Uruchamia Claude Code, Codex, Gemini, Cursor lub Antigravity w jednorazowych worktree gita.</li>
+              <li data-i18n="oss.indaba_m4">Ślady OpenTelemetry GenAI. Każdy token i dolar jest policzony, nigdy zmyślony.</li>
+            </ul>
+            <p class="oss-note" data-i18n="oss.indaba_note">Wydanie podglądowe. API nie jest stabilne poniżej wersji 1.0.</p>
+            <footer class="oss-links">
+              <a href="https://yaotzin1.github.io/indaba/" rel="noopener"><span data-i18n="oss.docs">Dokumentacja</span> ↗</a>
+              <a href="https://github.com/yaotzin1/indaba" rel="noopener"><span data-i18n="oss.source">Kod na GitHubie</span> ↗</a>
+            </footer>
+          </article>
+
+          <article class="oss-card" id="gridwright">
+            <header class="oss-head">
+              <h3 class="oss-name">Gridwright</h3>
+              <p class="oss-meta">apsw-gridwright · v0.24.0 · MIT · React 18 &amp; 19 + MUI 7/9</p>
+            </header>
+            <p class="oss-tag" data-i18n="oss.grid_tag">Grid danych dla Reacta, niezależny od tego, skąd pochodzą wiersze.</p>
+            <a class="oss-shot" href="https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html" rel="noopener"><img src="/assets/products/gridwright/playground-dark.webp" width="2216" height="1120" loading="lazy" alt="Playground Gridwrighta: grid danych z listą osób, polem wyszukiwania, sortowalnymi kolumnami i zaznaczaniem wierszy" data-i18n-alt="oss.grid_shot_alt"></a>
+            <div class="cli">
+              <code>npm install apsw-gridwright apsw-gridwright-mui</code>
+              <button type="button" class="copy-btn" data-copy="npm install apsw-gridwright apsw-gridwright-mui" data-i18n="common.copy">Kopiuj</button>
+            </div>
+            <ul class="mech">
+              <li data-i18n="oss.grid_m1">Zbudowany przez jednego architekta silnikiem Indaba i pokryty ponad 1300 testami automatycznymi.</li>
+              <li data-i18n="oss.grid_m2">0 zależności w czasie działania, około 22 kB po kompresji gzip.</li>
+              <li data-i18n="oss.grid_m3">Do 10 mln wierszy dzięki wirtualizacji wierszy i kolumn.</li>
+              <li data-i18n-html="oss.grid_m4_html">Prawdziwa semantyka HTML <code>&lt;table&gt;</code> i moduł zgodności z WCAG 2.2 AA.</li>
+              <li data-i18n="oss.grid_m5">Rzetelny licznik „N z wielu”, gdy API nie zwraca łącznej liczby wierszy.</li>
+            </ul>
+            <footer class="oss-links">
+              <a href="https://yaotzin1.github.io/apsw-gridwright/" rel="noopener"><span data-i18n="oss.docs">Dokumentacja</span> ↗</a>
+              <a href="https://github.com/yaotzin1/apsw-gridwright" rel="noopener"><span data-i18n="oss.source">Kod na GitHubie</span> ↗</a>
+              <a href="https://www.npmjs.com/package/apsw-gridwright" rel="noopener"><span data-i18n="oss.npm">Pakiet npm</span> ↗</a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== THE STANDARD -->
+    <section class="section" id="assurance">
+      <div class="shell">
+        <header class="sec-head">
+          <p class="eyebrow"><span class="sec-no">03</span><span data-i18n="std.eyebrow">STANDARD INŻYNIERSKI</span></p>
+          <h2 class="sec-title" data-i18n="std.title">Jeden plik reguł jest ważniejszy niż każdy prompt</h2>
+          <p class="sec-sub" data-i18n="std.sub">Zespół, który promptuje z przyzwyczajenia, dostaje inny kod od każdego inżyniera. My utrzymujemy jeden plik. Wszystko, co czyta agent, jest z niego generowane, a CI nie przechodzi, gdy kopia się rozjedzie.</p>
+        </header>
+
+        <div class="std-diagram" id="std-diagram" data-drift="false">
+          <div class="std-src">
+            <span class="std-file">workflow.ai.yml</span>
+            <span class="std-cap" data-i18n="std.src_note">jedyne źródło reguł</span>
+          </div>
+          <ul class="std-targets">
+            <li class="std-node"><span class="std-rel" data-i18n="std.generates">generuje</span><span class="std-file">AGENTS.md</span><span class="std-cap" data-i18n="std.n_agents">ładowany przez każdego agenta czytającego AGENTS.md</span></li>
+            <li class="std-node" id="std-claude"><span class="std-rel" data-i18n="std.generates">generuje</span><span class="std-file">CLAUDE.md</span><span class="std-cap" data-i18n="std.n_claude">punkt wejścia Claude Code</span></li>
+            <li class="std-node"><span class="std-rel" data-i18n="std.generates">generuje</span><span class="std-file">GEMINI.md</span><span class="std-cap" data-i18n="std.n_gemini">punkt wejścia Gemini</span></li>
+            <li class="std-node"><span class="std-rel" data-i18n="std.enforces">egzekwuje</span><span class="std-file">.githooks/pre-commit</span><span class="std-cap" data-i18n="std.n_hook">bramki działają, zanim powstanie commit</span></li>
+            <li class="std-node" id="std-ci"><span class="std-rel" data-i18n="std.enforces">egzekwuje</span><span class="std-file">CI · drift check</span><span class="std-cap" data-i18n="std.n_ci">te same bramki przy każdym pull requeście</span></li>
+          </ul>
+          <div class="std-console">
+            <button type="button" class="btn btn-small" id="std-btn" data-i18n="std.btn_drift">Edytuj ręcznie CLAUDE.md</button>
+            <pre class="std-out" id="std-out">$ ci: instructions-drift --check   → exit 0</pre>
+            <p class="std-status" id="std-status" aria-live="polite" data-i18n="std.status_ok">Zsynchronizowane. Każdy wygenerowany plik zgadza się z plikiem reguł.</p>
+          </div>
+        </div>
+
+        <ol class="pillars">
+          <li><span class="pillar-no">1</span><h3 data-i18n="std.p1_title">Graf z bramkami</h3><p data-i18n="std.p1_text">O wyniku decydują strażnicy: polecenia, diffy gita, sprawdzenia plików. Błąd ponawia tylko wskazany krok z ostatnim błędem. Pełna historia nigdy nie zaśmieca kontekstu.</p></li>
+          <li><span class="pillar-no">2</span><h3 data-i18n="std.p2_title">Rada, nie chór</h3><p data-i18n="std.p2_text">Kilka modeli weryfikuje nawzajem ten sam diff, aż osiągną kworum.</p></li>
+          <li><span class="pillar-no">3</span><h3 data-i18n="std.p3_title">Egzekwowane, nie tylko zapisane</h3><p data-i18n="std.p3_text">CI od razu blokuje zmiany, gdy instrukcje w repozytorium przestają się zgadzać z workflow.ai.yml.</p></li>
+          <li><span class="pillar-no">4</span><h3 data-i18n="std.p4_title">Weryfikowane tam, gdzie pęka</h3><p data-i18n="std.p4_text">Testy dymne na zbudowanych pakietach, audyty paczek i bramki bezpieczeństwa blokują złe commity przed przeglądem człowieka.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================================================================== DELIVERY MODEL -->
+    <section class="section" id="delivery">
+      <div class="shell">
+        <header class="sec-head">
+          <p class="eyebrow"><span class="sec-no">04</span><span data-i18n="model.eyebrow">MODEL DOSTAWY „KLIN ARCHITEKTA”</span></p>
+          <h2 class="sec-title" data-i18n="model.title">Precyzja architekta. Skala partnera.</h2>
+          <p class="sec-sub" data-i18n="model.sub">Na początku architektura od głównego architekta. Dalej elastyczne zespoły inżynierskie.</p>
+        </header>
+
+        <dl class="compare">
+          <div><dt data-i18n="model.cmp_free_k">Samodzielny freelancer</dt><dd data-i18n="model.cmp_free_v">Duże umiejętności, brak mocy przerobowych. Projekt staje, gdy staje jedna osoba.</dd></div>
+          <div><dt data-i18n="model.cmp_agency_k">Tradycyjna agencja</dt><dd data-i18n="model.cmp_agency_v">Moce są, ale start jest powolny, po drodze stoją opiekunowie klienta, a kodu nikt nie zweryfikował.</dd></div>
+          <div class="is-us"><dt data-i18n="model.cmp_apsw_k">APSW Labs</dt><dd data-i18n="model.cmp_apsw_v">Jeden architekt ustala kontrakty i bramki. Moce przerobowe dochodzą za nimi.</dd></div>
+        </dl>
+
+        <ol class="phases">
+          <li class="phase">
+            <p class="phase-no">PHASE 01</p>
+            <p class="phase-tag" data-i18n="model.ph1_tag">RDZEŃ APSW LABS</p>
+            <h3 data-i18n="model.ph1_name">Wejście architekta i blueprint</h3>
+            <p class="phase-text" data-i18n="model.ph1_text">Dedykowany architekt wyznacza granice C4, kontrakty domenowe, izolację bezpieczeństwa i bramki CI w repozytorium (workflow.ai.yml). Bez handlowców, bez przekłamań po drodze.</p>
+          </li>
+          <li class="phase-link" aria-hidden="true"><span data-i18n="model.gate">te same bramki CI</span></li>
+          <li class="phase">
+            <p class="phase-no">PHASE 02</p>
+            <p class="phase-tag" data-i18n="model.ph2_tag">SILNIK APSW LABS</p>
+            <h3 data-i18n="model.ph2_name">Autonomiczna synteza rdzenia</h3>
+            <p class="phase-text" data-i18n="model.ph2_text">Kluczowe moduły rdzenia, potoki danych i MVP są syntetyzowane i weryfikowane przez @indaba/engine i rady wielu agentów. Tygodnie, nie kwartały.</p>
+          </li>
+          <li class="phase-link" aria-hidden="true"><span data-i18n="model.gate">te same bramki CI</span></li>
+          <li class="phase phase-partner">
+            <p class="phase-no">PHASE 03</p>
+            <p class="phase-tag" data-i18n="model.ph3_tag">ZESPOŁY SOFTWARE HOUSE’U</p>
+            <h3 data-i18n="model.ph3_name">Elastyczne skalowanie z partnerem</h3>
+            <p class="phase-text" data-i18n="model.ph3_text">Potrzebujesz 4–8 inżynierów do długofalowego rozwoju funkcji, aplikacji mobilnych albo SLA 24/7? Sprawdzone zespoły partnerskie wpinają się prosto w skonfigurowane repozytorium z workflow.ai.yml. Każdym commitem rządzą automatyczne bramki CI, więc jakość kodu nie spada po przekazaniu.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================================================================== TRACKS -->
+    <section class="section" id="tracks">
+      <div class="shell">
+        <header class="sec-head">
+          <p class="eyebrow"><span class="sec-no">05</span><span data-i18n="tracks.eyebrow">ŚCIEŻKI WSPÓŁPRACY</span></p>
+          <h2 class="sec-title" data-i18n="tracks.title">Wybierz punkt wejścia</h2>
+        </header>
+
+        <div class="tracks">
+          <div class="track-group">
+            <h3 class="group-title" data-i18n="tracks.g_lab">Szybkie sprinty laboratorium</h3>
+            <div class="track-row three">
+              <article class="track">
+                <p class="track-no">TRACK 01</p>
+                <h4 data-i18n="tracks.t1_name">10-dniowy blueprint architektury i gotowości na AI</h4>
+                <p class="track-terms" data-i18n="tracks.t1_terms">Klin wejściowy · Stały zakres</p>
+                <p class="track-text" data-i18n="tracks.t1_text">Dogłębny audyt kodu i mikroserwisów, docelowe schematy C4, przegląd bezpieczeństwa i izolacji oraz wykonywalna mapa drogowa w workflow.ai.yml. Właściwy początek, zanim zdecydujesz się na dużą budowę.</p>
+                <a class="track-cta" href="#contact" data-track="1" data-i18n="tracks.cta">Określ zakres tej ścieżki →</a>
+              </article>
+              <article class="track">
+                <p class="track-no">TRACK 02</p>
+                <h4 data-i18n="tracks.t2_name">Sprint: rdzeń MVP lub moduł pod klucz</h4>
+                <p class="track-terms" data-i18n="tracks.t2_terms">Dostawa APSW Labs · 3–6 tygodni</p>
+                <p class="track-text" data-i18n="tracks.t2_text">Szybka dostawa o stałym zakresie: kompletne MVP, backend telemetryczny pod duże obciążenie albo interfejs Gridwright Pro na 10 mln wierszy. Syntetyzowane w laboratorium z ponad 90% automatycznych testów kontraktowych i Docker / IaC w chmurze.</p>
+                <a class="track-cta" href="#contact" data-track="2" data-i18n="tracks.cta">Określ zakres tej ścieżki →</a>
+              </article>
+              <article class="track">
+                <p class="track-no">TRACK 03</p>
+                <h4 data-i18n="tracks.t3_name">Uruchomienie deterministycznej fabryki AI</h4>
+                <p class="track-terms" data-i18n="tracks.t3_terms">Wzmocnienie zespołu wewnętrznego · 2–3 tygodnie</p>
+                <p class="track-text" data-i18n="tracks.t3_text">Instalujemy w twoim repozytorium dokładnie ten standard inżynierski, który stoi za Gridwrightem: własne ścieżki workflow.ai.yml, wieloagentowe rady przeglądu, strażników rozjazdu w CI i playbooki dla starszych inżynierów.</p>
+                <a class="track-cta" href="#contact" data-track="3" data-i18n="tracks.cta">Określ zakres tej ścieżki →</a>
+              </article>
+            </div>
+          </div>
+          <div class="track-group group-partner">
+            <h3 class="group-title" data-i18n="tracks.g_partner">Dostawa w skali z partnerem</h3>
+            <div class="track-row">
+              <article class="track track-wide">
+                <p class="track-no">TRACK 04</p>
+                <h4 data-i18n="tracks.t4_name">Pełnoskalowa platforma i dedykowane zespoły</h4>
+                <p class="track-terms" data-i18n="tracks.t4_terms">Prowadzi architekt + software house</p>
+                <p class="track-text" data-i18n="tracks.t4_text">Kompleksowy rozwój produktu enterprise, modernizacja legacy albo dedykowane zespoły interdyscyplinarne: Java 21, Symfony 8, React, chmura i dane. Architektura i bramki po stronie APSW Labs, skalę i obsadę zapewniają sprawdzone zespoły partnerskie.</p>
+                <a class="track-cta" href="#contact" data-track="4" data-i18n="tracks.cta">Określ zakres tej ścieżki →</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== SCOPE & ROUTE -->
+    <section class="section" id="contact">
+      <div class="shell">
+        <header class="sec-head">
+          <p class="eyebrow"><span class="sec-no">06</span><span data-i18n="scope.eyebrow">UWAGI GŁÓWNEGO ARCHITEKTA I DOBÓR ZAKRESU PRAC</span></p>
+          <h2 class="sec-title" data-i18n="scope.title">Zakres i routing</h2>
+        </header>
+
+        <div class="scope-grid">
+          <aside class="founder">
+            <p class="founder-text" data-i18n-html="scope.founder_html">APSW Labs prowadzi <strong>Piotr Solarz-Wnęk</strong> — Principal Software Architect z ponad 19-letnim doświadczeniem w projektowaniu platform krytycznych dla finansów instytucjonalnych, przemysłowego IoT i enterprise SaaS, twórca Indaby i Gridwrighta.</p>
+            <ul class="founder-links">
+              <li><a href="https://github.com/yaotzin1" rel="noopener">GitHub ↗</a></li>
+              <li><a href="https://www.linkedin.com/in/piotrsolarzwnek/" rel="noopener">LinkedIn ↗</a></li>
+              <li><span class="founder-k" data-i18n="scope.direct">Bezpośredni e-mail</span><a href="mailto:piotr.solarz-wnek@apsw.pl">piotr.solarz-wnek@apsw.pl</a></li>
+            </ul>
+          </aside>
+
+          <form class="scope-form" id="apsw-contact-form" action="/contact.php" method="POST" novalidate>
+            <input type="text" name="website_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="form_verify_token_dummy" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="form_rendered_at" id="form-rendered-at" value="">
+            <input type="hidden" name="rfp_data" id="form-rfp" value="">
+
+            <fieldset class="fs">
+              <legend data-i18n="scope.s1">1 · Ścieżka współpracy</legend>
+              <div class="track-cards">
+                <label class="tcard"><input type="radio" name="service_type" value="10-Day Architecture Blueprint" data-track="1" checked><span class="tcard-name" data-i18n="scope.c1">10-dniowy blueprint architektury</span><span class="tcard-badge" data-i18n="scope.b1">Tylko główny architekt · Szybki start</span></label>
+                <label class="tcard"><input type="radio" name="service_type" value="Turnkey MVP / High-Load Module" data-track="2"><span class="tcard-name" data-i18n="scope.c2">MVP pod klucz / moduł pod duże obciążenie</span><span class="tcard-badge" data-i18n="scope.b2">Synteza w laboratorium · 3–6 tyg.</span></label>
+                <label class="tcard"><input type="radio" name="service_type" value="AI Factory Repo Installation" data-track="3"><span class="tcard-name" data-i18n="scope.c3">Instalacja fabryki AI w repozytorium</span><span class="tcard-badge" data-i18n="scope.b3">Wzmocnienie zespołu · 2–3 tyg.</span></label>
+                <label class="tcard tcard-partner"><input type="radio" name="service_type" value="Full-Scale Platform / Engineering Squad" data-track="4"><span class="tcard-name" data-i18n="scope.c4">Pełnoskalowa platforma / zespół inżynierski</span><span class="tcard-badge" data-i18n="scope.b4">Główny architekt + zespół software house’u</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="fs">
+              <legend data-i18n="scope.s2">2 · Skala dostawy i horyzont</legend>
+              <div class="pills">
+                <label class="pill"><input type="radio" name="scale" value="Surgical Sprint (Fixed Deliverable)" data-scale="sprint" checked><span data-i18n="scope.p1">Sprint chirurgiczny (stały rezultat)</span></label>
+                <label class="pill"><input type="radio" name="scale" value="Core System Build (1-3 Months)" data-scale="core"><span data-i18n="scope.p2">Budowa rdzenia systemu (1–3 miesiące)</span></label>
+                <label class="pill pill-partner"><input type="radio" name="scale" value="Dedicated Partner Squad (3-12+ Months / Multi-Engineer)" data-scale="squad"><span data-i18n="scope.p3">Dedykowany zespół partnerski (3–12+ miesięcy / wielu inżynierów)</span></label>
+              </div>
+            </fieldset>
+
+            <div class="fs route" id="route" data-mode="direct" aria-live="polite">
+              <p class="fs-legend" data-i18n="scope.s3">3 · Podgląd routingu</p>
+              <div class="route-bar">
+                <span class="route-k" data-i18n="scope.mode_label">Tryb realizacji</span>
+                <span class="route-v" id="route-mode" data-i18n="scope.mode_direct">Bezpośrednia realizacja przez głównego architekta APSW Labs (zero narzutu agencyjnego)</span>
+              </div>
+              <div class="route-path" aria-hidden="true">
+                <span class="rp rp-core">APSW Labs · Principal</span>
+                <span class="rp-line"></span>
+                <span class="rp rp-engine">@indaba/engine</span>
+                <span class="rp-line rp-line-partner"></span>
+                <span class="rp rp-partner">Partner squad</span>
+              </div>
+              <p class="route-note" id="route-note" data-i18n="scope.note_direct">Rozmawiasz z architektem, który to buduje.</p>
+            </div>
+
+            <fieldset class="fs">
+              <legend data-i18n="scope.s4">4 · Kontakt i NDA</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="form-name" data-i18n="scope.name_label">Imię i nazwisko / firma</label>
+                  <input class="input" type="text" id="form-name" name="name" autocomplete="name" required minlength="2" maxlength="120" placeholder="Imię, nazwisko i firma" data-i18n-placeholder="scope.name_placeholder">
+                </div>
+                <div class="field">
+                  <label for="form-email" data-i18n="scope.email_label">Służbowy e-mail</label>
+                  <input class="input" type="email" id="form-email" name="email" autocomplete="email" required maxlength="150" placeholder="ty@firma.pl" data-i18n-placeholder="scope.email_placeholder">
+                </div>
+              </div>
+              <div class="field">
+                <label for="form-message" data-i18n="scope.brief_label">Opis techniczny / stos</label>
+                <textarea class="input" id="form-message" name="message" rows="5" required minlength="8" maxlength="5000" placeholder="Co system ma robić, w jakim stosie działa i kiedy ma ruszyć." data-i18n-placeholder="scope.brief_placeholder"></textarea>
+              </div>
+              <label class="nda">
+                <input type="checkbox" id="form-nda" name="nda_requested" value="yes">
+                <span data-i18n-html="scope.nda_html"><strong>Podpisz wzajemne NDA przed techniczną rozmową uzgadniającą.</strong> Podpisujemy, zanim przekażesz cokolwiek wrażliwego.</span>
+              </label>
+            </fieldset>
+
+            <p class="form-feedback" id="form-feedback" role="status" hidden></p>
+            <button type="submit" class="btn btn-primary btn-submit" id="form-submit" data-i18n="scope.submit">Poproś o zakres techniczny (odpowiedź architekta &lt;4h) →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <img class="brand-logo brand-logo-lg" src="/assets/brand/apsw-logo-white.svg" width="72" height="83" loading="lazy" alt="APSW Labs">
+        <p class="brand-name">APSW LABS</p>
+        <p class="footer-desc" data-i18n="footer.desc">APSW Labs. Architektura prowadzona przez głównego architekta, silniki open source i dostawa pod klucz.</p>
+        <p class="footer-build" data-i18n="footer.build">Bez kroku budowania. Pliki w repozytorium to pliki serwowane.</p>
+      </div>
+      <div>
+        <h2 class="footer-h" data-i18n="footer.col_products">Open source</h2>
+        <ul class="footer-links">
+          <li><a href="#indaba">Indaba</a></li>
+          <li><a href="#gridwright">Gridwright</a></li>
+          <li><a href="https://github.com/yaotzin1" rel="noopener">github.com/yaotzin1</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-h" data-i18n="footer.col_studio">Studio</h2>
+        <ul class="footer-links">
+          <li><a href="#assurance" data-i18n="nav.standard">Standard</a></li>
+          <li><a href="#delivery" data-i18n="nav.delivery">Dostawa i skala</a></li>
+          <li><a href="#contact" data-i18n="scope.title">Zakres i routing</a></li>
+          <li><a href="mailto:piotr.solarz-wnek@apsw.pl">piotr.solarz-wnek@apsw.pl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell footer-base">
+      <span>© <span id="footer-year">2026</span> <span data-i18n="footer.rights">APSW Labs · Piotr Solarz-Wnęk</span></span>
+      <span class="footer-mono">agent.json · llms.txt</span>
+    </div>
+  </footer>
+
+  <div class="cookie-bar" id="cookie-bar" role="region" aria-label="Cookies" data-i18n-aria="cookie.aria" hidden>
+    <p class="cookie-text" data-i18n="cookie.text">Bez cookies śledzących i reklamowych. Strona zapisuje w przeglądarce wybór języka, formularz kontaktowy ustawia techniczne cookie sesji przy wysyłce, a czcionki ładują się z Google Fonts.</p>
+    <button type="button" class="btn btn-small btn-primary" id="cookie-ok" data-i18n="cookie.ok">Rozumiem</button>
+  </div>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/workbench.js"></script>
+</body>
+</html>
