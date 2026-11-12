@@ -73,7 +73,7 @@ Branch protection lives in GitHub settings, where no commit can see it.
   *Enforced by:* `scripts/check-site.mjs` (php -l, defence markers in contact.php, matching form fields); review for anything new
 - No HTML sink receives untrusted input. innerHTML is for strings this repository wrote (translations, static snippets); anything from the network or the visitor goes through textContent. eval, new Function, document.write and string timers are banned in js/.
   *Enforced by:* `scripts/check-site.mjs` (banned APIs); review for innerHTML
-- Machine-readable files stay valid and agree with the page. agent.json and every JSON-LD block parse as JSON, sitemap.xml is well-formed and lists only absolute https://apsw.pl URLs, and llms.txt starts with its H1. When the offer on the page changes, they change in the same pull request.
+- Machine-readable files stay valid and agree with the page. agent.json and every JSON-LD block parse as JSON, sitemap.xml is well-formed and lists only absolute https://apswlabs.com URLs, and llms.txt starts with its H1. When the offer on the page changes, they change in the same pull request.
   *Enforced by:* `scripts/check-site.mjs` (validity); review for agreement
 - Every in-page link lands somewhere. Each href="#id" in index.html has a matching id.
   *Enforced by:* `scripts/check-site.mjs`

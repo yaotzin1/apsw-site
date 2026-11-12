@@ -1,5 +1,5 @@
 # ==============================================================================
-# workflow.ai.yml - the AI workflow for apsw-site (https://apsw.pl)
+# workflow.ai.yml - the AI workflow for apsw-site (https://apswlabs.com)
 #
 # The single source for the rules every agent in this repository follows: Claude Code, Antigravity,
 # Gemini and anything else. No agent toolchain loads this file by itself, so what it says reaches
@@ -26,7 +26,7 @@
 
 version: "1.0"
 name: apsw-site
-description: "The APSW business website (apsw.pl): one static bilingual page, vanilla CSS and JS, and a single PHP contact endpoint."
+description: "The APSW business website (apswlabs.com): one static bilingual page, vanilla CSS and JS, and a single PHP contact endpoint."
 
 # ------------------------------------------------------------------------------
 # 0. Governance & Precedence
@@ -280,7 +280,7 @@ architectural_rules:
     enforced_by: "`scripts/check-site.mjs` (php -l, defence markers in contact.php, matching form fields); review for anything new"
   - rule: "No HTML sink receives untrusted input. innerHTML is for strings this repository wrote (translations, static snippets); anything from the network or the visitor goes through textContent. eval, new Function, document.write and string timers are banned in js/."
     enforced_by: "`scripts/check-site.mjs` (banned APIs); review for innerHTML"
-  - rule: "Machine-readable files stay valid and agree with the page. agent.json and every JSON-LD block parse as JSON, sitemap.xml is well-formed and lists only absolute https://apsw.pl URLs, and llms.txt starts with its H1. When the offer on the page changes, they change in the same pull request."
+  - rule: "Machine-readable files stay valid and agree with the page. agent.json and every JSON-LD block parse as JSON, sitemap.xml is well-formed and lists only absolute https://apswlabs.com URLs, and llms.txt starts with its H1. When the offer on the page changes, they change in the same pull request."
     enforced_by: "`scripts/check-site.mjs` (validity); review for agreement"
   - rule: "Every in-page link lands somewhere. Each href=\"#id\" in index.html has a matching id."
     enforced_by: "`scripts/check-site.mjs`"

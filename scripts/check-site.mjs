@@ -10,7 +10,7 @@
  *
  *   agent.json             parses as JSON                                         machine-readable files
  *   JSON-LD                every application/ld+json block in index.html parses   machine-readable files
- *   sitemap.xml            well-formed, <urlset>, absolute https://apsw.pl locs  machine-readable files
+ *   sitemap.xml            well-formed, <urlset>, absolute https://apswlabs.com locs  machine-readable files
  *   llms.txt, llms-full    start with a Markdown H1                               machine-readable files
  *   i18n keys              every data-i18n* key in index.html and every
  *                          APSW_I18N.t('key') in js/ resolves to a string in
@@ -33,7 +33,7 @@ import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SITE_ORIGIN = 'https://apsw.pl/';
+const SITE_ORIGIN = 'https://apswlabs.com/';
 const I18N_ATTRIBUTES = ['data-i18n', 'data-i18n-html', 'data-i18n-placeholder', 'data-i18n-title', 'data-i18n-aria', 'data-i18n-alt'];
 const LANGUAGES = ['en', 'pl'];
 
@@ -364,7 +364,7 @@ const RED = '\x1b[31m';
 const YELLOW = '\x1b[33m';
 const RESET = '\x1b[0m';
 
-console.log('check-site: apsw.pl integrity checks');
+console.log('check-site: apswlabs.com integrity checks');
 for (const result of results) {
     const label = result.skipped ? `${YELLOW}  --${RESET}` : result.ok ? `${GREEN}  ok${RESET}` : `${RED}FAIL${RESET}`;
     console.log(`${label}  ${result.name}${result.note ? ` (${result.note})` : ''}`);

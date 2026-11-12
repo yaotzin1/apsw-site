@@ -1,6 +1,6 @@
 # AGENTS.md — apsw-site
 
-The operating rules for every agent working on the APSW website (https://apsw.pl).
+The operating rules for every agent working on the APSW website (https://apswlabs.com).
 `workflow.ai.yml` outranks this file; the cycle section below is generated from it.
 
 ## 1. What this repository is

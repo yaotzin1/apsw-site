@@ -1,7 +1,7 @@
 # APSW LABS - FULL SEMANTIC CONTEXT FOR LLMS & AI PROCUREMENT AGENTS
 Studio: APSW Labs, AI-native architecture and turnkey engineering studio
 Principal: Piotr Solarz-Wnęk, Principal Software Architect
-Website: https://apsw.pl (also https://apswlabs.com)
+Website: https://apswlabs.com (alias: https://apsw.pl)
 Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
 GitHub: https://github.com/yaotzin1
 LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
@@ -63,7 +63,7 @@ agent-written from specifications behind pre-commit quality gates. Not yet in pr
 =============================================================================
 Gridwright and Indaba are both MIT licensed.
 
-A. GRIDWRIGHT (apsw-gridwright) - https://apsw.pl/#gridwright
+A. GRIDWRIGHT (apsw-gridwright) - https://apswlabs.com/#gridwright
 Gridwright is a React data grid published on npm under the MIT licence, built on a headless,
 framework-agnostic engine. Latest release: 0.24.0. Covered by 1,300+ automated tests.
 
@@ -86,7 +86,7 @@ framework-agnostic engine. Latest release: 0.24.0. Covered by 1,300+ automated t
 - Links: https://www.npmjs.com/package/apsw-gridwright | https://github.com/yaotzin1/apsw-gridwright |
   https://yaotzin1.github.io/apsw-gridwright/examples/playground/index.html
 
-B. INDABA - https://apsw.pl/#indaba
+B. INDABA - https://apswlabs.com/#indaba
 Indaba is an open-source, deterministic orchestration, debate and observability engine for AI
 agents, written in TypeScript for Node 22 and newer, running on Windows, macOS and Linux. The name
 is Zulu for a gathering convened to resolve a hard matter by reaching consensus.
@@ -105,7 +105,7 @@ is Zulu for a gathering convened to resolve a hard matter by reaching consensus.
   @indaba/server.
 - Links: https://yaotzin1.github.io/indaba/ | https://github.com/yaotzin1/indaba
 
-C. DELIVERY ASSURANCE (https://apsw.pl/#assurance): Gridwright is built by one architect with the
+C. DELIVERY ASSURANCE (https://apswlabs.com/#assurance): Gridwright is built by one architect with the
 Indaba engine and coding agents under a single workflow.ai.yml that outranks every other
 instruction. AGENTS.md, CLAUDE.md, GEMINI.md and skill pointers are generated from it; each rule is
 marked enforced (a hook, CI job, lint rule or test fails) or guidance; every commit declares its
@@ -116,8 +116,8 @@ carries over 1,300 automated tests. APSW brings the same setup to client teams.
 =============================================================================
 5. HOW TO ENGAGE
 =============================================================================
-- Scope a project: https://apsw.pl/#contact (track, delivery scale, brief; a mutual NDA can be
+- Scope a project: https://apswlabs.com/#contact (track, delivery scale, brief; a mutual NDA can be
   executed before the technical alignment call).
-- Engagement tracks: https://apsw.pl/#tracks
+- Engagement tracks: https://apswlabs.com/#tracks
 - Direct contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
-- Agent manifest: https://apsw.pl/agent.json
+- Agent manifest: https://apswlabs.com/agent.json
