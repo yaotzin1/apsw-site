@@ -9,7 +9,7 @@ LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
 =============================================================================
 1. POSITIONING
 =============================================================================
-Models guess. Engines verify. We ship deterministic software.
+Architect. Prove. Ship. Watch. We ship software.
 
 APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic
 partner engineering capacity, taking a client from a 10-day architectural blueprint to a full-scale

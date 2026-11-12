@@ -68,7 +68,10 @@
 .hero-title { font-size: var(--fs-hero); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; margin-top: 18px; }
 .hero-title .hl { color: var(--accent-primary); }
 .hero-side { display: grid; gap: 22px; }
-.hero-sub { color: var(--text-secondary); font-size: var(--fs-md); max-width: 52ch; }
+.hero-acronym { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 52ch; }
+.hero-acronym li { display: grid; grid-template-columns: 10ch 1fr; gap: 12px; align-items: baseline; font-size: var(--fs-md); color: var(--text-secondary); line-height: 1.45; }
+.hero-acronym .ac-word { font-family: var(--font-mono); font-weight: 700; color: var(--text-primary); }
+.hero-acronym .hl { color: var(--accent-primary); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .switch-label { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-muted); margin-bottom: 10px; }

@@ -6,7 +6,7 @@
 const APSW_TRANSLATIONS = {
   "en": {
     "meta": {
-      "page_title": "APSW Labs | Models guess. Engines verify.",
+      "page_title": "APSW Labs | Architect. Prove. Ship. Watch.",
       "page_description": "APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Creators of Indaba and Gridwright."
     },
     "common": {
@@ -34,9 +34,12 @@ const APSW_TRANSLATIONS = {
     },
     "hero": {
       "eyebrow": "AI-NATIVE ARCHITECTURE & TURNKEY ENGINEERING STUDIO",
-      "title_html": "Models guess.<br><span class=\"hl\">Engines verify.</span>",
-      "lead": "We ship deterministic software.",
-      "sub": "APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity — taking you from a 10-day architectural blueprint to a full-scale production platform.",
+      "title_html": "Architect. Prove.<br><span class=\"hl\">Ship. Watch.</span>",
+      "lead": "We ship software.",
+      "ac_a_html": "<strong class=\"ac-word\"><span class=\"hl\">A</span>rchitect</strong><span class=\"ac-text\">Principal-led system architecture, starting from a 10-day blueprint.</span>",
+      "ac_p_html": "<strong class=\"ac-word\"><span class=\"hl\">P</span>rove</strong><span class=\"ac-text\">AI models cross-check every change until they agree.</span>",
+      "ac_s_html": "<strong class=\"ac-word\"><span class=\"hl\">S</span>hip</strong><span class=\"ac-text\">Turnkey delivery up to a full-scale production platform, with elastic partner engineering capacity.</span>",
+      "ac_w_html": "<strong class=\"ac-word\"><span class=\"hl\">W</span>atch</strong><span class=\"ac-text\">CI blocks changes that drift from the agreed architecture and workflow.</span>",
       "cta_secondary": "See the open source",
       "switch_label": "Pick a scenario. The run on the left produces the artifact on the right.",
       "tabs_aria": "Workshop scenario",
@@ -304,7 +307,7 @@ const APSW_TRANSLATIONS = {
   },
   "pl": {
     "meta": {
-      "page_title": "APSW Labs | Modele zgadują. Silniki weryfikują.",
+      "page_title": "APSW Labs | Architect. Prove. Ship. Watch.",
       "page_description": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta."
     },
     "common": {
@@ -332,9 +335,12 @@ const APSW_TRANSLATIONS = {
     },
     "hero": {
       "eyebrow": "STUDIO ARCHITEKTURY AI-NATIVE I INŻYNIERII POD KLUCZ",
-      "title_html": "Modele zgadują.<br><span class=\"hl\">Silniki weryfikują.</span>",
-      "lead": "Dostarczamy deterministyczne oprogramowanie.",
-      "sub": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi — od 10-dniowego blueprintu architektury do pełnoskalowej platformy produkcyjnej.",
+      "title_html": "Architect. Prove.<br><span class=\"hl\">Ship. Watch.</span>",
+      "lead": "Dostarczamy oprogramowanie.",
+      "ac_a_html": "<strong class=\"ac-word\"><span class=\"hl\">A</span>rchitect</strong><span class=\"ac-text\">Architektura systemu prowadzona przez głównego architekta, od 10-dniowego blueprintu.</span>",
+      "ac_p_html": "<strong class=\"ac-word\"><span class=\"hl\">P</span>rove</strong><span class=\"ac-text\">Modele AI wzajemnie sprawdzają każdą zmianę, aż dojdą do zgody.</span>",
+      "ac_s_html": "<strong class=\"ac-word\"><span class=\"hl\">S</span>hip</strong><span class=\"ac-text\">Wdrożenie pod klucz aż do pełnoskalowej platformy produkcyjnej, z elastycznym zespołem partnerskim.</span>",
+      "ac_w_html": "<strong class=\"ac-word\"><span class=\"hl\">W</span>atch</strong><span class=\"ac-text\">CI od razu blokuje zmiany niezgodne z ustaloną architekturą i workflow.</span>",
       "cta_secondary": "Zobacz open source",
       "switch_label": "Wybierz scenariusz. Przebieg po lewej wytwarza artefakt po prawej.",
       "tabs_aria": "Scenariusz warsztatu",

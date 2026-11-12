@@ -1,6 +1,6 @@
 # APSW Labs - AI-Native Architecture & Turnkey Engineering Studio
 
-> Models guess. Engines verify. APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Led by Piotr Solarz-Wnęk, Principal Software Architect, creator of Indaba and Gridwright.
+> Architect. Prove. Ship. Watch. APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Led by Piotr Solarz-Wnęk, Principal Software Architect, creator of Indaba and Gridwright.
 
 Website: https://apswlabs.com (alias: https://apsw.pl)
 Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923

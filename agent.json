@@ -15,7 +15,7 @@
     "github": "https://github.com/yaotzin1"
   },
   "positioning": {
-    "headline": "Models guess. Engines verify. We ship deterministic software.",
+    "headline": "Architect. Prove. Ship. Watch. We ship software.",
     "summary": "AI-native architecture and turnkey engineering studio. Principal-led system architecture and deterministic AI pipelines, with elastic partner engineering capacity.",
     "model": "Principal-led, elastic capacity: every engagement starts with the Principal Architect setting the C4 architecture, domain contracts and workflow.ai.yml CI gates. Core work is synthesized inside APSW Labs; multi-team scale-out is staffed by vetted partner engineering squads working inside those gates.",
     "methodology": "Indaba (@indaba/engine) and a single workflow.ai.yml: a declared graph of steps behind exit-code guards, multi-agent councils, CI drift checks."
