@@ -59,7 +59,7 @@ const APSW_TRANSLATIONS = {
       "idu_label": "A PRODUCT WE RUN",
       "idu_alt": "Idumela approval screen: a pending review with its star rating and an AI-drafted reply waiting for a manager to approve it",
       "idu_caption": "Idumela drafts each reply in the brand’s voice and publishes nothing until a manager approves it.",
-      "idu_note": "Screenshot of the Idumela interface with example data; the AI reply is sample text. Not yet in production, for organisational reasons.",
+      "idu_note": "Screenshot of the Idumela interface with example data; the AI reply is sample text. Internal APSW Labs product, not yet public.",
       "example_badge": "Example data",
       "try_eyebrow": "TRY IT",
       "try_title": "A simulated run you can drive",
@@ -144,7 +144,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: multi-tenant reputation triage",
-      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is not yet in production, for organisational reasons.",
+      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is an internal APSW Labs product, not yet public.",
       "fact_time_k": "Build time",
       "fact_time_v": "2 weeks",
       "fact_how_k": "Method",
@@ -357,7 +357,7 @@ const APSW_TRANSLATIONS = {
       "idu_label": "PRODUKT, KTÓRY PROWADZIMY",
       "idu_alt": "Ekran akceptacji w Idumeli: oczekująca opinia z oceną w gwiazdkach i odpowiedzią napisaną przez AI, która czeka na akceptację menedżera",
       "idu_caption": "Idumela pisze każdą odpowiedź głosem marki i nie publikuje niczego, dopóki menedżer jej nie zatwierdzi.",
-      "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Produkt nie jest jeszcze wdrożony produkcyjnie z przyczyn organizacyjnych.",
+      "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Produkt wewnętrzny APSW Labs, jeszcze niepubliczny.",
       "example_badge": "Dane przykładowe",
 
       "try_eyebrow": "WYPRÓBUJ",
@@ -443,7 +443,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: wielodostępny triaż reputacji",
-      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. Nie jest jeszcze wdrożona produkcyjnie z przyczyn organizacyjnych.",
+      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. To wewnętrzny produkt APSW Labs, jeszcze niepubliczny.",
       "fact_time_k": "Czas budowy",
       "fact_time_v": "2 tygodnie",
       "fact_how_k": "Metoda",

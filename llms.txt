@@ -40,7 +40,7 @@ Scaled partner delivery:
 
 ## Reference build: Idumela
 - Idumela is APSW's own B2B reputation engine: it monitors a brand's reviews, drafts replies in the brand's voice, and publishes only after a manager approves.
-- Multi-tenant, Symfony 8 + React / MUI, tenant isolation and a token-credit ledger. Built in 2 weeks, agent-written from specifications behind pre-commit quality gates. Not yet in production, for organisational reasons.
+- Multi-tenant, Symfony 8 + React / MUI, tenant isolation and a token-credit ledger. Built in 2 weeks, agent-written from specifications behind pre-commit quality gates. Internal APSW Labs product, not yet public.
 
 ## The engineering standard
 One workflow.ai.yml outranks every prompt. AGENTS.md, CLAUDE.md and GEMINI.md are generated from it, pre-commit hooks and CI enforce it, and CI fails when a repository instruction drifts from it: https://apswlabs.com/#assurance
