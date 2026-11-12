@@ -12,8 +12,8 @@ runtime dependencies: the files committed are the files served.
 | :--- | :--- |
 | `index.html` | the whole page, its JSON-LD, and every visible string tagged with a `data-i18n*` key |
 | `js/i18n.js` | `APSW_TRANSLATIONS` (`en` and `pl`) and the language switcher |
-| `js/app.js`, `js/spec-kit-flow.js`, `js/estimator.js` | theme, navigation, contact form, interactive sections |
-| `css/` | `design-system.css` (tokens), `components.css`, `responsive.css` |
+| `js/app.js`, `js/workbench.js` | navigation, copy buttons, drift demo and the scope form; the hero workbench (pipeline run, mini grid, council transcript, triage belt) |
+| `css/` | `design-system.css` (tokens; one cold dark palette, no light theme), `components.css`, `responsive.css` |
 | `contact.php` | the only server code: POST-only contact handler with honeypots, time trap, rate limit |
 | `agent.json`, `llms.txt`, `llms-full.txt`, `sitemap.xml`, `robots.txt` | machine-readable discovery files |
 | `Dockerfile`, `docker-compose.yml`, `.htaccess` | Apache + PHP 8.2 hosting |

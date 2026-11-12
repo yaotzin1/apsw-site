@@ -7,7 +7,9 @@
     RewriteBase /
 
     # 1. Force HTTPS (Auto-redirect all HTTP traffic to HTTPS)
+    # Skipped for localhost so docker compose works at http://localhost:8090/
     RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:[0-9]+)?$ [NC]
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # 2. Canonical Domain (Optional: redirect www to non-www)
