@@ -15,7 +15,7 @@
     "github": "https://github.com/yaotzin1"
   },
   "positioning": {
-    "headline": "Models guess. Engines verify. We ship deterministic software.",
+    "headline": "Architect. Prove. Ship. Watch. We ship software.",
     "summary": "AI-native architecture and turnkey engineering studio. Principal-led system architecture and deterministic AI pipelines, with elastic partner engineering capacity.",
     "model": "Principal-led, elastic capacity: every engagement starts with the Principal Architect setting the C4 architecture, domain contracts and workflow.ai.yml CI gates. Core work is synthesized inside APSW Labs; multi-team scale-out is staffed by vetted partner engineering squads working inside those gates.",
     "methodology": "Indaba (@indaba/engine) and a single workflow.ai.yml: a declared graph of steps behind exit-code guards, multi-agent councils, CI drift checks."
@@ -67,7 +67,7 @@
       "group": "partner_delivery",
       "name": "Full-Scale Platform & Dedicated Squads",
       "terms": "Architect-led plus software house",
-      "description": "Enterprise product development, legacy modernization or dedicated squads (Java 21, Symfony 8, React, Cloud/Data). Architected and gated by APSW Labs, scaled and staffed by a software house."
+      "description": "Enterprise product development, legacy modernization or dedicated squads (Java 21, Symfony 8, React, Cloud/Data). Architected and gated by APSW Labs, scaled and staffed by vetted partner squads."
     }
   ],
   "products": [
@@ -138,7 +138,7 @@
     {
       "name": "Idumela",
       "description": "APSW's own B2B reputation engine: monitors a brand's reviews, drafts replies in the brand's voice, publishes only after a manager approves. Multi-tenant, Symfony 8 + React / MUI, tenant isolation, token-credit ledger.",
-      "status": "internal APSW Labs product, not yet public",
+      "status": "proprietary B2B SaaS built by APSW Labs, not publicly available yet",
       "build": "2 weeks; agent-written from specifications behind pre-commit quality gates"
     }
   ],

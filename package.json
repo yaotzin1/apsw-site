@@ -11,6 +11,7 @@
   "scripts": {
     "verify": "node scripts/validate-skills.mjs && node scripts/sync-claude-skills.mjs --check && node scripts/sync-agent-docs.mjs --check && node scripts/check-workflow.mjs && node scripts/check-site.mjs",
     "sync": "node scripts/sync-agent-docs.mjs && node scripts/sync-claude-skills.mjs",
+    "build:pl": "node scripts/build-pl.mjs",
     "hooks:install": "node scripts/install-hooks.mjs"
   }
 }

@@ -5,19 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="dark">
 
-  <title>APSW Labs | Models guess. Engines verify.</title>
+  <title>APSW Labs | Architect. Prove. Ship. Watch.</title>
   <meta name="description" content="APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Creators of Indaba and Gridwright.">
   <meta name="author" content="Piotr Solarz-Wnęk - APSW Labs">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://apswlabs.com/">
+  <link rel="alternate" hreflang="en" href="https://apswlabs.com/">
+  <link rel="alternate" hreflang="pl" href="https://apswlabs.com/pl/">
+  <link rel="alternate" hreflang="x-default" href="https://apswlabs.com/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://apswlabs.com/">
-  <meta property="og:title" content="APSW Labs | Models guess. Engines verify.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pl_PL">
+  <meta property="og:title" content="APSW Labs | Architect. Prove. Ship. Watch.">
   <meta property="og:description" content="APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Creators of Indaba and Gridwright.">
   <meta property="og:image" content="https://apswlabs.com/assets/brand/apsw-logo.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="APSW Labs | Models guess. Engines verify.">
+  <meta name="twitter:title" content="APSW Labs | Architect. Prove. Ship. Watch.">
   <meta name="twitter:description" content="APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Creators of Indaba and Gridwright.">
 
   <!-- AI agent and LLM discovery -->
@@ -67,12 +72,12 @@
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "10-Day Architecture & AI Readiness Blueprint", "description": "Fixed scope. Codebase and microservice audit, C4 target blueprints, security and isolation review, and an executable workflow.ai.yml roadmap." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Turnkey Core MVP / Module Sprint", "description": "Fixed scope, 3-6 weeks. A complete MVP, high-load telemetry backend or 10M-row Gridwright Pro interface, with over 90% automated contract tests and Docker / Cloud IaC." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deterministic AI Factory Setup", "description": "2-3 weeks. The engineering standard behind Gridwright installed into the client's repository: workflow.ai.yml tracks, multi-agent review councils, CI drift guards and playbooks." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full-Scale Platform & Dedicated Squads", "description": "Architected and gated by APSW Labs, scaled and staffed by a software house: enterprise product development, legacy modernization, dedicated squads." } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full-Scale Platform & Dedicated Squads", "description": "Architected and gated by APSW Labs, scaled and staffed by vetted partner squads: enterprise product development, legacy modernization, dedicated squads." } }
           ]
         }
       },
       {
-        "@type": "SoftwareApplication",
+        "@type": ["SoftwareApplication", "SoftwareSourceCode"],
         "@id": "https://apswlabs.com/#gridwright",
         "name": "Gridwright (apsw-gridwright)",
         "applicationCategory": "DeveloperApplication",
@@ -82,11 +87,12 @@
         "description": "The React data grid that does not care where your rows live. Zero runtime dependencies, about 22 kB gzipped, row and column virtualization to ten million rows, real HTML table semantics.",
         "url": "https://yaotzin1.github.io/apsw-gridwright/",
         "codeRepository": "https://github.com/yaotzin1/apsw-gridwright",
+        "sameAs": ["https://www.npmjs.com/package/apsw-gridwright"],
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
         "author": { "@id": "https://apswlabs.com/#founder" }
       },
       {
-        "@type": "SoftwareApplication",
+        "@type": ["SoftwareApplication", "SoftwareSourceCode"],
         "@id": "https://apswlabs.com/#indaba",
         "name": "Indaba (@indaba/engine)",
         "applicationCategory": "DeveloperApplication",
@@ -96,6 +102,7 @@
         "description": "Let your agents argue. Ship what they agree on. A declared graph of steps behind exit-code guards, multi-agent council consensus, disposable git worktrees and OpenTelemetry GenAI traces.",
         "url": "https://yaotzin1.github.io/indaba/",
         "codeRepository": "https://github.com/yaotzin1/indaba",
+        "sameAs": ["https://www.npmjs.com/package/@indaba/engine"],
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
         "author": { "@id": "https://apswlabs.com/#founder" }
       }
@@ -144,11 +151,16 @@
         <div class="hero-head">
           <div>
             <p class="eyebrow" data-i18n="hero.eyebrow">AI-NATIVE ARCHITECTURE &amp; TURNKEY ENGINEERING STUDIO</p>
-            <h1 class="hero-title" data-i18n-html="hero.title_html">Models guess.<br><span class="hl">Engines verify.</span></h1>
+            <h1 class="hero-title" data-i18n-html="hero.title_html">Architect. Prove.<br><span class="hl">Ship. Watch.</span></h1>
           </div>
           <div class="hero-side">
-            <p class="hero-lead" data-i18n="hero.lead">We ship deterministic software.</p>
-            <p class="hero-sub" data-i18n="hero.sub">APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity — taking you from a 10-day architectural blueprint to a full-scale production platform.</p>
+            <p class="hero-lead" data-i18n="hero.lead">We ship software.</p>
+            <ul class="hero-acronym" aria-label="APSW">
+              <li data-i18n-html="hero.ac_a_html"><strong class="ac-word"><span class="hl">A</span>rchitect</strong><span class="ac-text">Principal-led system architecture, starting from a 10-day blueprint.</span></li>
+              <li data-i18n-html="hero.ac_p_html"><strong class="ac-word"><span class="hl">P</span>rove</strong><span class="ac-text">AI models cross-check every change until they agree.</span></li>
+              <li data-i18n-html="hero.ac_s_html"><strong class="ac-word"><span class="hl">S</span>hip</strong><span class="ac-text">Turnkey delivery up to a full-scale production platform, with elastic partner engineering capacity.</span></li>
+              <li data-i18n-html="hero.ac_w_html"><strong class="ac-word"><span class="hl">W</span>atch</strong><span class="ac-text">CI blocks changes that drift from the agreed architecture and workflow.</span></li>
+            </ul>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact" data-i18n="nav.cta">Scope a System →</a>
               <a class="btn btn-ghost" href="#open-source" data-i18n="hero.cta_secondary">See the open source</a>
@@ -191,11 +203,11 @@
             </figcaption>
           </figure>
           <figure class="hero-real hc-slide" id="hc-panel-2" role="tabpanel" aria-labelledby="hc-tab-2">
-            <div class="hero-real-shot"><span class="shot-badge" data-i18n="hero.example_badge">Example data</span><img src="assets/products/idumela/idumela-approval.jpg" width="1280" height="720" loading="lazy" alt="Idumela approval screen: a pending review with its star rating and an AI-drafted reply waiting for a manager to approve it" data-i18n-alt="hero.idu_alt"></div>
+            <div class="hero-real-shot"><span class="shot-badge" data-i18n="hero.example_badge">Example data</span><img class="shot-light" src="assets/products/idumela/idumela-approval.jpg" width="1280" height="720" loading="lazy" alt="Idumela approval screen: a pending review with its star rating and an AI-drafted reply waiting for a manager to approve it" data-i18n-alt="hero.idu_alt"></div>
             <figcaption class="hero-real-cap">
-              <p class="eyebrow" data-i18n="hero.idu_label">A PRODUCT WE RUN</p>
+              <p class="eyebrow" data-i18n="hero.idu_label">A PRODUCT WE BUILD WITH THE INDABA ENGINE</p>
               <p class="hero-real-text" data-i18n="hero.idu_caption">Idumela drafts each reply in the brand’s voice and publishes nothing until a manager approves it.</p>
-              <p class="hero-real-note" data-i18n="hero.idu_note">Screenshot of the Idumela interface with example data; the AI reply is sample text. Internal APSW Labs product, not yet public.</p>
+              <p class="hero-real-note" data-i18n="hero.idu_note">Screenshot of the Idumela interface with example data; the AI reply is sample text. Proprietary B2B SaaS built by APSW Labs, not publicly available yet.</p>
             </figcaption>
           </figure>
         </div>
@@ -207,7 +219,7 @@
     <section class="section" id="try">
       <div class="shell">
         <header class="sec-head">
-          <p class="eyebrow" data-i18n="hero.try_eyebrow">TRY IT</p>
+          <p class="eyebrow"><span class="sec-no">01</span><span data-i18n="hero.try_eyebrow">TRY IT</span></p>
           <h2 class="sec-title" data-i18n="hero.try_title">A simulated run you can drive</h2>
           <p class="sec-sub" data-i18n="hero.try_sub">A simplified simulation in your browser, not the Indaba engine itself. Pick a scenario: the run on the left produces the artifact on the right.</p>
         </header>
@@ -253,7 +265,7 @@
               <li class="pstep" data-step="council" data-state="ok">
                 <span class="pidx">02</span>
                 <div class="pmain">
-                  <div class="pline"><span class="pname" data-i18n="wb.s2">COUNCIL DEBATE</span><span class="pdetail" id="wb-pair">claude-code ⇄ gemini</span></div>
+                  <div class="pline"><span class="pname" data-i18n="wb.s2">COUNCIL DEBATE</span><span class="pdetail" id="wb-pair">claude-code ⇄ antigravity</span></div>
                   <p class="pnote" data-i18n="wb.n_council_ok">Quorum 2 of 2 after two rounds.</p>
                 </div>
                 <span class="pstate" aria-hidden="true"></span>
@@ -329,13 +341,64 @@
                       <th scope="col" aria-sort="none"><button type="button" class="gw-sort" data-key="status"><span data-i18n="grid.col_status">Status</span><i aria-hidden="true"></i></button></th>
                     </tr>
                   </thead>
-                  <tbody id="gw-body"></tbody>
+                  <tbody id="gw-body">
+                    <tr><td>billing-api.eu1/s1</td><td class="num">335 ms</td><td class="num">21,508 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>ledger-api.eu1/s1</td><td class="num">8 ms</td><td class="num">6,533 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>auth-api.eu1/s1</td><td class="num">80 ms</td><td class="num">22,503 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>search-api.eu1/s1</td><td class="num">829 ms</td><td class="num">7,226 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">degraded</span></td></tr>
+                    <tr><td>ingest-api.eu1/s1</td><td class="num">33 ms</td><td class="num">315 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>notify-api.eu1/s1</td><td class="num">148 ms</td><td class="num">44,729 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>pricing-api.eu1/s1</td><td class="num">344 ms</td><td class="num">10,061 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>routing-api.eu1/s1</td><td class="num">139 ms</td><td class="num">27,704 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>catalog-api.eu1/s1</td><td class="num">662 ms</td><td class="num">12,028 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">degraded</span></td></tr>
+                    <tr><td>audit-api.eu1/s1</td><td class="num">203 ms</td><td class="num">41 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>export-api.eu1/s1</td><td class="num">394 ms</td><td class="num">7,374 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>session-api.eu1/s1</td><td class="num">340 ms</td><td class="num">18,427 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>quota-api.eu1/s1</td><td class="num">8 ms</td><td class="num">18,844 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>risk-api.eu1/s1</td><td class="num">—</td><td class="num">0 req/s</td><td><span class="st st-down" data-i18n="grid.st_down">down</span></td></tr>
+                    <tr><td>geo-api.eu1/s1</td><td class="num">12 ms</td><td class="num">24,425 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>media-api.eu1/s1</td><td class="num">45 ms</td><td class="num">1,239 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>billing-worker.eu1/s1</td><td class="num">13 ms</td><td class="num">32,606 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>ledger-worker.eu1/s1</td><td class="num">286 ms</td><td class="num">3,351 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>auth-worker.eu1/s1</td><td class="num">200 ms</td><td class="num">468 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">degraded</span></td></tr>
+                    <tr><td>search-worker.eu1/s1</td><td class="num">404 ms</td><td class="num">1,664 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>ingest-worker.eu1/s1</td><td class="num">35 ms</td><td class="num">41,361 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>notify-worker.eu1/s1</td><td class="num">51 ms</td><td class="num">42,871 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>pricing-worker.eu1/s1</td><td class="num">199 ms</td><td class="num">21 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">degraded</span></td></tr>
+                    <tr><td>routing-worker.eu1/s1</td><td class="num">112 ms</td><td class="num">4,510 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>catalog-worker.eu1/s1</td><td class="num">90 ms</td><td class="num">34,022 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>audit-worker.eu1/s1</td><td class="num">53 ms</td><td class="num">9,365 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>export-worker.eu1/s1</td><td class="num">159 ms</td><td class="num">2,422 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>session-worker.eu1/s1</td><td class="num">16 ms</td><td class="num">36,668 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>quota-worker.eu1/s1</td><td class="num">8 ms</td><td class="num">14,667 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>risk-worker.eu1/s1</td><td class="num">84 ms</td><td class="num">42,594 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>geo-worker.eu1/s1</td><td class="num">203 ms</td><td class="num">2,677 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">degraded</span></td></tr>
+                    <tr><td>media-worker.eu1/s1</td><td class="num">219 ms</td><td class="num">24 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>billing-gateway.eu1/s1</td><td class="num">81 ms</td><td class="num">11,603 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>ledger-gateway.eu1/s1</td><td class="num">9 ms</td><td class="num">18,579 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>auth-gateway.eu1/s1</td><td class="num">227 ms</td><td class="num">3,103 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>search-gateway.eu1/s1</td><td class="num">1,051 ms</td><td class="num">8,164 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">degraded</span></td></tr>
+                    <tr><td>ingest-gateway.eu1/s1</td><td class="num">46 ms</td><td class="num">18,608 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>notify-gateway.eu1/s1</td><td class="num">291 ms</td><td class="num">23,759 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>pricing-gateway.eu1/s1</td><td class="num">73 ms</td><td class="num">38,006 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>routing-gateway.eu1/s1</td><td class="num">421 ms</td><td class="num">36,706 req/s</td><td><span class="st st-degraded" data-i18n="grid.st_degraded">degraded</span></td></tr>
+                    <tr><td>catalog-gateway.eu1/s1</td><td class="num">8 ms</td><td class="num">35,905 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>audit-gateway.eu1/s1</td><td class="num">12 ms</td><td class="num">39,723 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>export-gateway.eu1/s1</td><td class="num">11 ms</td><td class="num">1,579 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>session-gateway.eu1/s1</td><td class="num">30 ms</td><td class="num">396 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>quota-gateway.eu1/s1</td><td class="num">11 ms</td><td class="num">157 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>risk-gateway.eu1/s1</td><td class="num">17 ms</td><td class="num">13,680 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>geo-gateway.eu1/s1</td><td class="num">8 ms</td><td class="num">42 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>media-gateway.eu1/s1</td><td class="num">244 ms</td><td class="num">7,694 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>billing-stream.eu1/s1</td><td class="num">240 ms</td><td class="num">4,579 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                    <tr><td>ledger-stream.eu1/s1</td><td class="num">16 ms</td><td class="num">23,635 req/s</td><td><span class="st st-healthy" data-i18n="grid.st_healthy">healthy</span></td></tr>
+                  </tbody>
                 </table>
               </div>
               <div class="grid-foot">
                 <div class="grid-pager">
                   <button type="button" class="pg" id="gw-prev" aria-label="Previous page" data-i18n-aria="grid.prev">‹</button>
-                  <span class="grid-count" id="gw-count" aria-live="polite"></span>
+                  <span class="grid-count" id="gw-count" aria-live="polite">1–50 <span data-i18n="grid.of">of</span> 1,284</span>
                   <button type="button" class="pg" id="gw-next" aria-label="Next page" data-i18n-aria="grid.next">›</button>
                 </div>
                 <span class="grid-facts" data-i18n="grid.facts">0 deps · ~22 kB · 10M rows windowed</span>
@@ -358,7 +421,7 @@
                   </button>
                   <div class="acc-panel" id="acc-rfc" role="region" aria-labelledby="acc-rfc-btn" hidden>
                     <div class="voices">
-                      <div class="voice"><span class="voice-name">claude</span><p data-i18n="council.rfc_claude">Print "of many" in the footer when the source reports no total. Keep page arithmetic unchanged.</p></div>
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.rfc_claude">Print "of many" in the footer when the source reports no total. Keep page arithmetic unchanged.</p></div>
                       <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.rfc_anti">Agreed on the footer. Objection: a short last page proves the end, so the grid should print the real total then.</p></div>
                     </div>
                     <pre class="diffblock"><span class="d-ctx">  footer.total</span>
@@ -383,7 +446,7 @@
                   </button>
                   <div class="acc-panel" id="acc-debate" role="region" aria-labelledby="acc-debate-btn">
                     <div class="voices">
-                      <div class="voice"><span class="voice-name">claude</span><p data-i18n="council.debate_claude">Accepts the objection. A page shorter than the page size sets the total.</p></div>
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.debate_claude">Accepts the objection. A page shorter than the page size sets the total.</p></div>
                       <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.debate_anti">Confirms the revised diff. Asks for a test covering the short last page.</p></div>
                     </div>
                     <pre class="diffblock"><span class="d-ctx">@@ src/footer/total.ts @@</span>
@@ -410,7 +473,7 @@
                   </button>
                   <div class="acc-panel" id="acc-verify" role="region" aria-labelledby="acc-verify-btn" hidden>
                     <div class="voices">
-                      <div class="voice"><span class="voice-name">claude</span><p data-i18n="council.verify_claude">Attempt 1 failed one test. Retried with that failure only and fixed the off-by-one.</p></div>
+                      <div class="voice"><span class="voice-name">claude-code</span><p data-i18n="council.verify_claude">Attempt 1 failed one test. Retried with that failure only and fixed the off-by-one.</p></div>
                       <div class="voice"><span class="voice-name alt">antigravity</span><p data-i18n="council.verify_anti">Re-ran the suite and the packaging audit against the built package. Both pass.</p></div>
                     </div>
                     <pre class="diffblock"><span class="d-del">- if (page.length &lt;= pageSize) return offset + page.length;</span>
@@ -437,7 +500,7 @@
                 <h3 class="art-title" data-i18n="belt.title">Idumela: multi-tenant reputation triage</h3>
                 <span class="chip" data-i18n="common.sample">Sample data</span>
               </div>
-              <p class="art-about"><span data-i18n="belt.about">Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is an internal APSW Labs product, not yet public.</span></p>
+              <p class="art-about"><span data-i18n="belt.about">Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is a proprietary B2B SaaS built by APSW Labs and not publicly available yet.</span></p>
               <dl class="facts">
                 <div><dt data-i18n="belt.fact_time_k">Build time</dt><dd data-i18n="belt.fact_time_v">2 weeks</dd></div>
                 <div><dt data-i18n="belt.fact_how_k">Method</dt><dd data-i18n="belt.fact_how_v">Agent-written from specifications, behind pre-commit quality gates</dd></div>
@@ -594,7 +657,7 @@
             <p class="phase-no">PHASE 01</p>
             <p class="phase-tag" data-i18n="model.ph1_tag">APSW LABS CORE</p>
             <h3 data-i18n="model.ph1_name">Principal Wedge &amp; Blueprint</h3>
-            <p class="phase-text" data-i18n="model.ph1_text">Piotr personally defines C4 boundaries, domain contracts, security isolation and the repository CI guardrails in workflow.ai.yml. Zero sales reps, zero translation loss.</p>
+            <p class="phase-text" data-i18n="model.ph1_text">A dedicated architect defines C4 boundaries, domain contracts, security isolation and the repository CI guardrails in workflow.ai.yml. Zero sales reps, zero translation loss.</p>
           </li>
           <li class="phase-link" aria-hidden="true"><span data-i18n="model.gate">same CI gates</span></li>
           <li class="phase">
@@ -656,7 +719,7 @@
                 <p class="track-no">TRACK 04</p>
                 <h4 data-i18n="tracks.t4_name">Full-Scale Platform &amp; Dedicated Squads</h4>
                 <p class="track-terms" data-i18n="tracks.t4_terms">Architect-Led + Software House</p>
-                <p class="track-text" data-i18n="tracks.t4_text">End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our software house.</p>
+                <p class="track-text" data-i18n="tracks.t4_text">End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our vetted partner squads.</p>
                 <a class="track-cta" href="#contact" data-track="4" data-i18n="tracks.cta">Scope this track →</a>
               </article>
             </div>

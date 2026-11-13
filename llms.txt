@@ -1,8 +1,9 @@
 # APSW Labs - AI-Native Architecture & Turnkey Engineering Studio
 
-> Models guess. Engines verify. APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Led by Piotr Solarz-Wnęk, Principal Software Architect, creator of Indaba and Gridwright.
+> Architect. Prove. Ship. Watch. APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Led by Piotr Solarz-Wnęk, Principal Software Architect, creator of Indaba and Gridwright.
 
 Website: https://apswlabs.com (alias: https://apsw.pl)
+Polish version: https://apswlabs.com/pl/
 Contact: piotr.solarz-wnek@apsw.pl | +48 666 522 923
 GitHub: https://github.com/yaotzin1
 LinkedIn: https://www.linkedin.com/in/piotrsolarzwnek/
@@ -19,7 +20,7 @@ High-velocity lab sprints:
 - Track 03, Deterministic AI Factory Setup (in-house team enablement, 2-3 weeks): the engineering standard behind Gridwright installed into your repository: workflow.ai.yml tracks, multi-agent review councils, CI drift guards, senior engineering playbooks.
 
 Scaled partner delivery:
-- Track 04, Full-Scale Platform & Dedicated Squads (architect-led plus software house): enterprise product development, legacy modernization or dedicated squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by a software house.
+- Track 04, Full-Scale Platform & Dedicated Squads (architect-led plus vetted partner squads): enterprise product development, legacy modernization or dedicated squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by vetted partner squads.
 
 ## Open source (MIT)
 
@@ -40,7 +41,7 @@ Scaled partner delivery:
 
 ## Reference build: Idumela
 - Idumela is APSW's own B2B reputation engine: it monitors a brand's reviews, drafts replies in the brand's voice, and publishes only after a manager approves.
-- Multi-tenant, Symfony 8 + React / MUI, tenant isolation and a token-credit ledger. Built in 2 weeks, agent-written from specifications behind pre-commit quality gates. Internal APSW Labs product, not yet public.
+- Multi-tenant, Symfony 8 + React / MUI, tenant isolation and a token-credit ledger. Built in 2 weeks, agent-written from specifications behind pre-commit quality gates. Proprietary B2B SaaS built by APSW Labs, not publicly available yet.
 
 ## The engineering standard
 One workflow.ai.yml outranks every prompt. AGENTS.md, CLAUDE.md and GEMINI.md are generated from it, pre-commit hooks and CI enforce it, and CI fails when a repository instruction drifts from it: https://apswlabs.com/#assurance

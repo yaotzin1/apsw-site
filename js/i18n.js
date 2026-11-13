@@ -6,7 +6,7 @@
 const APSW_TRANSLATIONS = {
   "en": {
     "meta": {
-      "page_title": "APSW Labs | Models guess. Engines verify.",
+      "page_title": "APSW Labs | Architect. Prove. Ship. Watch.",
       "page_description": "APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity. Creators of Indaba and Gridwright."
     },
     "common": {
@@ -34,9 +34,12 @@ const APSW_TRANSLATIONS = {
     },
     "hero": {
       "eyebrow": "AI-NATIVE ARCHITECTURE & TURNKEY ENGINEERING STUDIO",
-      "title_html": "Models guess.<br><span class=\"hl\">Engines verify.</span>",
-      "lead": "We ship deterministic software.",
-      "sub": "APSW Labs combines Principal-led system architecture and deterministic AI pipelines with elastic partner engineering capacity — taking you from a 10-day architectural blueprint to a full-scale production platform.",
+      "title_html": "Architect. Prove.<br><span class=\"hl\">Ship. Watch.</span>",
+      "lead": "We ship software.",
+      "ac_a_html": "<strong class=\"ac-word\"><span class=\"hl\">A</span>rchitect</strong><span class=\"ac-text\">Principal-led system architecture, starting from a 10-day blueprint.</span>",
+      "ac_p_html": "<strong class=\"ac-word\"><span class=\"hl\">P</span>rove</strong><span class=\"ac-text\">AI models cross-check every change until they agree.</span>",
+      "ac_s_html": "<strong class=\"ac-word\"><span class=\"hl\">S</span>hip</strong><span class=\"ac-text\">Turnkey delivery up to a full-scale production platform, with elastic partner engineering capacity.</span>",
+      "ac_w_html": "<strong class=\"ac-word\"><span class=\"hl\">W</span>atch</strong><span class=\"ac-text\">CI blocks changes that drift from the agreed architecture and workflow.</span>",
       "cta_secondary": "See the open source",
       "switch_label": "Pick a scenario. The run on the left produces the artifact on the right.",
       "tabs_aria": "Workshop scenario",
@@ -56,10 +59,10 @@ const APSW_TRANSLATIONS = {
       "grid_caption": "Search, sortable columns and row selection in one dependency-free grid.",
       "grid_note": "Screenshot of the Gridwright playground.",
       "grid_link": "Open the playground ↗",
-      "idu_label": "A PRODUCT WE RUN",
+      "idu_label": "A PRODUCT WE BUILD WITH THE INDABA ENGINE",
       "idu_alt": "Idumela approval screen: a pending review with its star rating and an AI-drafted reply waiting for a manager to approve it",
       "idu_caption": "Idumela drafts each reply in the brand’s voice and publishes nothing until a manager approves it.",
-      "idu_note": "Screenshot of the Idumela interface with example data; the AI reply is sample text. Internal APSW Labs product, not yet public.",
+      "idu_note": "Screenshot of the Idumela interface with example data; the AI reply is sample text. Proprietary B2B SaaS built by APSW Labs, not publicly available yet.",
       "example_badge": "Example data",
       "try_eyebrow": "TRY IT",
       "try_title": "A simulated run you can drive",
@@ -144,7 +147,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: multi-tenant reputation triage",
-      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is an internal APSW Labs product, not yet public.",
+      "about": "Idumela is our own B2B reputation engine. It watches a brand's reviews, drafts each reply in the brand's voice, and publishes nothing until a manager approves it. It is a proprietary B2B SaaS built by APSW Labs and not publicly available yet.",
       "fact_time_k": "Build time",
       "fact_time_v": "2 weeks",
       "fact_how_k": "Method",
@@ -249,7 +252,7 @@ const APSW_TRANSLATIONS = {
       "nda_html": "<strong>Execute Mutual NDA before technical alignment call.</strong> We sign before you share anything sensitive.",
       "submit": "Request Technical Scope (<4h Principal Response) →",
       "sending": "Sending…",
-      "fb_success": "Received. Piotr reads every brief himself and replies directly.",
+      "fb_success": "Received. Our architect reads every brief and replies directly.",
       "fb_invalid": "Not sent. Check the name, the work email and a brief of at least 8 characters.",
       "fb_rate": "Too many requests from this address. Wait a few minutes, or use the direct email.",
       "fb_unreachable": "Not sent. The server did not answer. Use the direct email: piotr.solarz-wnek@apsw.pl"
@@ -273,7 +276,7 @@ const APSW_TRANSLATIONS = {
       "cmp_apsw_v": "One architect sets the contracts and the gates. Capacity is added behind them.",
       "ph1_tag": "APSW LABS CORE",
       "ph1_name": "Principal Wedge & Blueprint",
-      "ph1_text": "Piotr personally defines C4 boundaries, domain contracts, security isolation and the repository CI guardrails in workflow.ai.yml. Zero sales reps, zero translation loss.",
+      "ph1_text": "A dedicated architect defines C4 boundaries, domain contracts, security isolation and the repository CI guardrails in workflow.ai.yml. Zero sales reps, zero translation loss.",
       "ph2_tag": "APSW LABS ENGINE",
       "ph2_name": "Autonomous Core Synthesis",
       "ph2_text": "High-leverage core modules, data pipelines and MVPs are synthesized and verified with @indaba/engine and multi-agent councils. Weeks, not quarters.",
@@ -298,14 +301,14 @@ const APSW_TRANSLATIONS = {
       "t3_text": "We install the exact engineering standard behind Gridwright into your repository: custom workflow.ai.yml tracks, multi-agent review councils, CI drift guards and senior engineering playbooks.",
       "t4_name": "Full-Scale Platform & Dedicated Squads",
       "t4_terms": "Architect-Led + Software House",
-      "t4_text": "End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our software house.",
+      "t4_text": "End-to-end enterprise product development, legacy modernization or dedicated multi-disciplinary squads in Java 21, Symfony 8, React and Cloud / Data. Architected and gated by APSW Labs, scaled and staffed by our vetted partner squads.",
       "cta": "Scope this track →"
     }
   },
   "pl": {
     "meta": {
-      "page_title": "APSW Labs | Modele zgadują. Silniki weryfikują.",
-      "page_description": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta."
+      "page_title": "APSW Labs | Architect. Prove. Ship. Watch.",
+      "page_description": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z dedykowanymi zespołami partnerskimi. Twórcy Indaby i Gridwrighta."
     },
     "common": {
       "copy": "Kopiuj",
@@ -327,14 +330,17 @@ const APSW_TRANSLATIONS = {
     },
     "cookie": {
       "aria": "Cookies",
-      "text": "Bez cookies śledzących i reklamowych. Strona zapisuje w przeglądarce wybór języka, formularz kontaktowy ustawia techniczne cookie sesji przy wysyłce, a czcionki ładują się z Google Fonts.",
+      "text": "Bez cookies śledzących i reklamowych. Strona zapisuje w przeglądarce wybór języka, formularz kontaktowy ustawia techniczne cookie sesji podczas przesyłania formularza, a czcionki ładują się z Google Fonts.",
       "ok": "Rozumiem"
     },
     "hero": {
       "eyebrow": "STUDIO ARCHITEKTURY AI-NATIVE I INŻYNIERII POD KLUCZ",
-      "title_html": "Modele zgadują.<br><span class=\"hl\">Silniki weryfikują.</span>",
-      "lead": "Dostarczamy deterministyczne oprogramowanie.",
-      "sub": "APSW Labs łączy architekturę systemów prowadzoną przez głównego architekta i deterministyczne potoki AI z elastycznymi zespołami partnerskimi — od 10-dniowego blueprintu architektury do pełnoskalowej platformy produkcyjnej.",
+      "title_html": "Architect. Prove.<br><span class=\"hl\">Ship. Watch.</span>",
+      "lead": "Dostarczamy oprogramowanie.",
+      "ac_a_html": "<strong class=\"ac-word\"><span class=\"hl\">A</span>rchitect</strong><span class=\"ac-text\">Architektura systemu pod kierunkiem głównego architekta, od 10-dniowego planu architektury.</span>",
+      "ac_p_html": "<strong class=\"ac-word\"><span class=\"hl\">P</span>rove</strong><span class=\"ac-text\">Modele AI wzajemnie sprawdzają każdą zmianę, aż dojdą do zgody.</span>",
+      "ac_s_html": "<strong class=\"ac-word\"><span class=\"hl\">S</span>hip</strong><span class=\"ac-text\">Wdrożenie pod klucz aż do pełnoskalowej platformy produkcyjnej z dedykowanym zespołem partnerskim.</span>",
+      "ac_w_html": "<strong class=\"ac-word\"><span class=\"hl\">W</span>atch</strong><span class=\"ac-text\">CI od razu blokuje zmiany niezgodne z ustaloną architekturą i workflow.</span>",
       "cta_secondary": "Zobacz open source",
       "switch_label": "Wybierz scenariusz. Przebieg po lewej wytwarza artefakt po prawej.",
       "tabs_aria": "Scenariusz warsztatu",
@@ -351,13 +357,13 @@ const APSW_TRANSLATIONS = {
       "car_tabs_aria": "Widoki produktów",
       "grid_label": "SIATKA W PRZEGLĄDARCE",
       "grid_alt": "Plac zabaw Gridwright: siatka danych z listą osób, wyszukiwarką, sortowanymi kolumnami i zaznaczaniem wierszy",
-      "grid_caption": "Wyszukiwanie, sortowanie kolumn i zaznaczanie wierszy w jednej siatce bez zależności.",
-      "grid_note": "Zrzut placu zabaw Gridwright.",
-      "grid_link": "Otwórz plac zabaw ↗",
-      "idu_label": "PRODUKT, KTÓRY PROWADZIMY",
+      "grid_caption": "Wyszukiwanie, sortowanie kolumn i zaznaczanie wierszy w jednym komponencie bez zewnętrznych zależności.",
+      "grid_note": "Zrzut interaktywnego dema Gridwright.",
+      "grid_link": "Otwórz interaktywne demo ↗",
+      "idu_label": "PRODUKT BUDOWANY NA SILNIKU INDABA",
       "idu_alt": "Ekran akceptacji w Idumeli: oczekująca opinia z oceną w gwiazdkach i odpowiedzią napisaną przez AI, która czeka na akceptację menedżera",
       "idu_caption": "Idumela pisze każdą odpowiedź głosem marki i nie publikuje niczego, dopóki menedżer jej nie zatwierdzi.",
-      "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Produkt wewnętrzny APSW Labs, jeszcze niepubliczny.",
+      "idu_note": "Zrzut interfejsu Idumeli z przykładowymi danymi; odpowiedź AI to przykładowy tekst. Własnościowy produkt SaaS B2B budowany przez APSW Labs, jeszcze niedostępny publicznie.",
       "example_badge": "Dane przykładowe",
 
       "try_eyebrow": "WYPRÓBUJ",
@@ -377,7 +383,7 @@ const APSW_TRANSLATIONS = {
       "n_wait": "Oczekuje.",
       "n_spec_run": "Specyfikacja powstaje w izolowanym worktree.",
       "n_spec_ok": "Specyfikacja zapisana. Strażnik: żaden plik źródłowy nie został zmieniony.",
-      "n_council_run": "Dwa silniki krzyżowo przesłuchują ten sam diff.",
+      "n_council_run": "Dwa modele sprawdzają nawzajem swoją pracę na tym samym diffie.",
       "n_council_ok": "Kworum 2 z 2 po dwóch rundach.",
       "n_gate_run": "Uruchamiam polecenia bramki. Próba 1.",
       "n_gate_fail": "Bramka nie przeszła. Kod wyjścia 1.",
@@ -415,13 +421,13 @@ const APSW_TRANSLATIONS = {
       "no_rows": "Brak pasujących wierszy.",
       "prev": "Poprzednia strona",
       "next": "Następna strona",
-      "facts": "0 zależności · ~22 kB · 10 mln wierszy w oknie",
+      "facts": "Zero zależności · ok. 22 kB · 10 mln wierszy z wirtualizacją",
       "remote_note": "API nie podało liczby wierszy, więc grid jej nie wypisuje.",
-      "local_note": "Tablica jest w pamięci, więc suma jest znana."
+      "local_note": "Dane są w pamięci, więc znamy łączną liczbę wierszy."
     },
     "council": {
       "title": "Zapis obrad rady i inspektor spanów",
-      "hint": "Otwórz krok, aby przeczytać krzyżowe przesłuchanie i strażników, którzy o nim rozstrzygnęli.",
+      "hint": "Otwórz krok, żeby zobaczyć wzajemną weryfikację i bramki kontrolne, które o nim zdecydowały.",
       "rfc_sum": "Dwie propozycje tej samej zmiany.",
       "debate_sum": "Spór, potem kworum.",
       "verify_sum": "Błąd, izolowane ponowienie, zaliczenie.",
@@ -443,7 +449,7 @@ const APSW_TRANSLATIONS = {
     },
     "belt": {
       "title": "Idumela: wielodostępny triaż reputacji",
-      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. To wewnętrzny produkt APSW Labs, jeszcze niepubliczny.",
+      "about": "Idumela to nasz własny silnik reputacji B2B. Śledzi opinie o marce, pisze szkic każdej odpowiedzi głosem marki i niczego nie publikuje, dopóki menedżer tego nie zatwierdzi. To własnościowy produkt SaaS B2B budowany przez APSW Labs, jeszcze niedostępny publicznie.",
       "fact_time_k": "Czas budowy",
       "fact_time_v": "2 tygodnie",
       "fact_how_k": "Metoda",
@@ -473,18 +479,18 @@ const APSW_TRANSLATIONS = {
       "sub": "Oba projekty mają licencję MIT. Przeczytaj kod, zanim przeczytasz naszą ofertę.",
       "indaba_tag": "Pozwól agentom się spierać. Wdrażaj to, co uzgodnią.",
       "indaba_m1": "Zadeklarowany graf kroków za strażnikami kodu wyjścia. Krok przechodzi, gdy polecenie kończy się kodem 0, a nie gdy model tak twierdzi.",
-      "indaba_m2": "Rada wielu agentów dochodzi do konsensusu przez krzyżowe przesłuchanie. Gdy się nie uda, rozstrzyga arbiter-człowiek.",
+      "indaba_m2": "Rada agentów uzgadnia wynik przez wzajemną weryfikację. Gdy nie dojdą do zgody, decyduje człowiek jako arbiter.",
       "indaba_m3": "Uruchamia Claude Code, Codex, Gemini, Cursor lub Antigravity w jednorazowych worktree gita.",
       "indaba_m4": "Ślady OpenTelemetry GenAI. Każdy token i dolar jest policzony, nigdy zmyślony.",
       "indaba_note": "Wydanie podglądowe. API nie jest stabilne poniżej wersji 1.0.",
       "indaba_shot_alt": "Widok webowy Indaby: przebieg pokazany jako graf kroków z ich statusem i kosztem",
       "grid_shot_alt": "Playground Gridwrighta: grid danych z listą osób, polem wyszukiwania, sortowalnymi kolumnami i zaznaczaniem wierszy",
-      "grid_tag": "Grid danych dla Reacta, któremu wszystko jedno, gdzie mieszkają wiersze.",
+      "grid_tag": "Grid danych dla Reacta, niezależny od tego, skąd pochodzą wiersze.",
       "grid_m1": "Zbudowany przez jednego architekta silnikiem Indaba i pokryty ponad 1300 testami automatycznymi.",
       "grid_m2": "0 zależności w czasie działania, około 22 kB po kompresji gzip.",
       "grid_m3": "Do 10 mln wierszy dzięki wirtualizacji wierszy i kolumn.",
-      "grid_m4_html": "Prawdziwa semantyka HTML <code>&lt;table&gt;</code> z dodatkiem WCAG 2.2 AA.",
-      "grid_m5": "Uczciwe sumy „z wielu”, gdy API pomija liczbę wierszy.",
+      "grid_m4_html": "Prawdziwa semantyka HTML <code>&lt;table&gt;</code> i moduł zgodności z WCAG 2.2 AA.",
+      "grid_m5": "Rzetelny licznik „N z wielu”, gdy API nie zwraca łącznej liczby wierszy.",
       "docs": "Dokumentacja",
       "source": "Kod na GitHubie",
       "npm": "Pakiet npm"
@@ -508,26 +514,26 @@ const APSW_TRANSLATIONS = {
       "p1_title": "Graf z bramkami",
       "p1_text": "O wyniku decydują strażnicy: polecenia, diffy gita, sprawdzenia plików. Błąd ponawia tylko wskazany krok z ostatnim błędem. Pełna historia nigdy nie zaśmieca kontekstu.",
       "p2_title": "Rada, nie chór",
-      "p2_text": "Kilka silników krzyżowo przesłuchuje ten sam diff, aż do osiągnięcia kworum.",
+      "p2_text": "Kilka modeli weryfikuje nawzajem ten sam diff, aż osiągną kworum.",
       "p3_title": "Egzekwowane, nie tylko zapisane",
-      "p3_text": "CI nie przechodzi natychmiast, gdy instrukcje w repozytorium rozjadą się z workflow.ai.yml.",
+      "p3_text": "CI od razu blokuje zmiany, gdy instrukcje w repozytorium przestają się zgadzać z workflow.ai.yml.",
       "p4_title": "Weryfikowane tam, gdzie pęka",
       "p4_text": "Testy dymne na zbudowanych pakietach, audyty paczek i bramki bezpieczeństwa blokują złe commity przed przeglądem człowieka."
     },
     "scope": {
-      "eyebrow": "NOTA PRINCIPALA I ROUTING ZAKRESU",
+      "eyebrow": "UWAGI GŁÓWNEGO ARCHITEKTA I DOBÓR ZAKRESU PRAC",
       "title": "Zakres i routing",
       "founder_html": "APSW Labs prowadzi <strong>Piotr Solarz-Wnęk</strong> — Principal Software Architect z ponad 19-letnim doświadczeniem w projektowaniu platform krytycznych dla finansów instytucjonalnych, przemysłowego IoT i enterprise SaaS, twórca Indaby i Gridwrighta.",
       "direct": "Bezpośredni e-mail",
       "s1": "1 · Ścieżka współpracy",
       "c1": "10-dniowy blueprint architektury",
-      "b1": "Sam Principal · Szybki start",
+      "b1": "Tylko główny architekt · Szybki start",
       "c2": "MVP pod klucz / moduł pod duże obciążenie",
       "b2": "Synteza w laboratorium · 3–6 tyg.",
       "c3": "Instalacja fabryki AI w repozytorium",
       "b3": "Wzmocnienie zespołu · 2–3 tyg.",
       "c4": "Pełnoskalowa platforma / zespół inżynierski",
-      "b4": "Principal + software house",
+      "b4": "Główny architekt + zespół software house’u",
       "s2": "2 · Skala dostawy i horyzont",
       "p1": "Sprint chirurgiczny (stały rezultat)",
       "p2": "Budowa rdzenia systemu (1–3 miesiące)",
@@ -535,7 +541,7 @@ const APSW_TRANSLATIONS = {
       "s3": "3 · Podgląd routingu",
       "mode_label": "Tryb realizacji",
       "mode_direct": "Bezpośrednia realizacja przez głównego architekta APSW Labs (zero narzutu agencyjnego)",
-      "mode_partner": "Architektura głównego architekta APSW Labs + elastyczny zespół inżynierski software house’u",
+      "mode_partner": "Architektura głównego architekta APSW Labs + dedykowany zespół inżynierski software house’u",
       "note_direct": "Rozmawiasz z architektem, który to buduje.",
       "note_partner": "Architekt ustala kontrakty i bramki. Zespół buduje w ich granicach.",
       "s4": "4 · Kontakt i NDA",
@@ -548,7 +554,7 @@ const APSW_TRANSLATIONS = {
       "nda_html": "<strong>Podpisz wzajemne NDA przed techniczną rozmową uzgadniającą.</strong> Podpisujemy, zanim przekażesz cokolwiek wrażliwego.",
       "submit": "Poproś o zakres techniczny (odpowiedź architekta <4h) →",
       "sending": "Wysyłanie…",
-      "fb_success": "Otrzymano. Piotr czyta każdy opis osobiście i odpowiada bezpośrednio.",
+      "fb_success": "Mamy to. Nasz architekt czyta każde zgłoszenie i odpowiada bezpośrednio.",
       "fb_invalid": "Nie wysłano. Sprawdź imię i nazwisko, służbowy e-mail oraz opis o długości co najmniej 8 znaków.",
       "fb_rate": "Zbyt wiele zgłoszeń z tego adresu. Odczekaj kilka minut albo napisz bezpośrednio.",
       "fb_unreachable": "Nie wysłano. Serwer nie odpowiedział. Napisz bezpośrednio: piotr.solarz-wnek@apsw.pl"
@@ -563,7 +569,7 @@ const APSW_TRANSLATIONS = {
     "model": {
       "eyebrow": "MODEL DOSTAWY „KLIN ARCHITEKTA”",
       "title": "Precyzja architekta. Skala partnera.",
-      "sub": "Na początku architektura od głównego architekta. Dalej elastyczne zespoły inżynierskie.",
+      "sub": "Na początku architektura od głównego architekta. Dalej dedykowane zespoły inżynierskie.",
       "cmp_free_k": "Samodzielny freelancer",
       "cmp_free_v": "Duże umiejętności, brak mocy przerobowych. Projekt staje, gdy staje jedna osoba.",
       "cmp_agency_k": "Tradycyjna agencja",
@@ -572,7 +578,7 @@ const APSW_TRANSLATIONS = {
       "cmp_apsw_v": "Jeden architekt ustala kontrakty i bramki. Moce przerobowe dochodzą za nimi.",
       "ph1_tag": "RDZEŃ APSW LABS",
       "ph1_name": "Wejście architekta i blueprint",
-      "ph1_text": "Piotr osobiście określa granice C4, kontrakty domenowe, izolację bezpieczeństwa i zabezpieczenia CI repozytorium w workflow.ai.yml. Zero handlowców, zero strat w tłumaczeniu.",
+      "ph1_text": "Dedykowany architekt wyznacza granice C4, kontrakty domenowe, izolację bezpieczeństwa i bramki CI w repozytorium (workflow.ai.yml). Bez handlowców, bez przekłamań po drodze.",
       "ph2_tag": "SILNIK APSW LABS",
       "ph2_name": "Autonomiczna synteza rdzenia",
       "ph2_text": "Kluczowe moduły rdzenia, potoki danych i MVP są syntetyzowane i weryfikowane przez @indaba/engine i rady wielu agentów. Tygodnie, nie kwartały.",
@@ -597,7 +603,7 @@ const APSW_TRANSLATIONS = {
       "t3_text": "Instalujemy w twoim repozytorium dokładnie ten standard inżynierski, który stoi za Gridwrightem: własne ścieżki workflow.ai.yml, wieloagentowe rady przeglądu, strażników rozjazdu w CI i playbooki dla starszych inżynierów.",
       "t4_name": "Pełnoskalowa platforma i dedykowane zespoły",
       "t4_terms": "Prowadzi architekt + software house",
-      "t4_text": "Kompleksowy rozwój produktu enterprise, modernizacja legacy albo dedykowane zespoły interdyscyplinarne: Java 21, Symfony 8, React, chmura i dane. Architektura i bramki po stronie APSW Labs, skala i obsada po stronie software house’u.",
+      "t4_text": "Kompleksowy rozwój produktu enterprise, modernizacja legacy albo dedykowane zespoły interdyscyplinarne: Java 21, Symfony 8, React, chmura i dane. Architektura i bramki po stronie APSW Labs, skalę i obsadę zapewniają sprawdzone zespoły partnerskie.",
       "cta": "Określ zakres tej ścieżki →"
     }
   }
@@ -625,9 +631,13 @@ window.APSW_I18N = {
     const urlLang = urlParams.get('lang');
     const savedLang = localStorage.getItem('apsw_lang');
     const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    const onPolishPage = this.isPolishPath();
 
     let initialLang = 'en';
-    if (urlLang && (urlLang === 'pl' || urlLang === 'en')) {
+    if (onPolishPage) {
+      // /pl/ is generated in Polish (scripts/build-pl.mjs): the path decides, not the saved choice.
+      initialLang = 'pl';
+    } else if (urlLang && (urlLang === 'pl' || urlLang === 'en')) {
       initialLang = urlLang;
     } else if (savedLang && (savedLang === 'pl' || savedLang === 'en')) {
       initialLang = savedLang;
@@ -635,7 +645,17 @@ window.APSW_I18N = {
       initialLang = 'pl';
     }
 
+    // Polish has its own address: send a visitor who resolved to Polish on the English page there.
+    if (!onPolishPage && initialLang === 'pl') {
+      window.location.replace('/pl/' + window.location.hash);
+      return;
+    }
+
     this.setLanguage(initialLang, false);
+  },
+
+  isPolishPath() {
+    return /^\/pl(\/|$)/.test(window.location.pathname);
   },
 
   /**
@@ -756,7 +776,9 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetLang = btn.getAttribute('data-lang');
       if (targetLang && targetLang !== window.APSW_I18N.currentLang) {
-        window.APSW_I18N.setLanguage(targetLang, true);
+        // One address per language: remember the choice, then go to that language's page.
+        try { localStorage.setItem('apsw_lang', targetLang); } catch (error) { /* storage can be blocked */ }
+        window.location.assign((targetLang === 'pl' ? '/pl/' : '/') + window.location.hash);
       }
     });
   });

@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const SCENARIOS = {
     grid: {
       trace: '8f92a1',
-      pair: 'claude-code ⇄ gemini',
+      pair: 'claude-code ⇄ antigravity',
       gate: 'vitest + packaging audit',
       fail: 'FAIL  footer/total.spec.ts > says "of many" when the server sends no count\n      expected "1–50 of many", received "1–50 of 50"',
       pass: 'attempt 2 · vitest ok · smoke on the built package ok · exports ok',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '  implementer:',
         '    runner: "claude-code"',
         '  reviewer:',
-        '    runner: "gemini"',
+        '    runner: "antigravity"',
         'steps:',
         '  - id: "spec"',
         '    role: "implementer"',
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     engine: {
       trace: '8f92a1',
-      pair: 'claude ⇄ antigravity',
+      pair: 'claude-code ⇄ antigravity',
       gate: 'pnpm test + pnpm typecheck',
       fail: 'FAIL  council/quorum.spec.ts > a tie goes to the human arbiter\n      expected arbiter "human", received "none"',
       pass: 'attempt 2 · pnpm test ok · pnpm typecheck ok',
